@@ -237,7 +237,8 @@
         init.defaultBranch = "main";
         safe.directory = "/etc/nixos";
       };
-    }
+    };
+    
     zsh = {
       enable = true;
       autocd = true;
