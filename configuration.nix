@@ -106,11 +106,31 @@
  };
  
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; 
+    
+    # Common vars
     WLR_NO_HARDWARE_CURSORS = "1";
     XCURSOR_SIZE = "12";
     GDK_SCALE = "1";
+    
+    # Nix vars
+    NIXOS_OZONE_WL = "1"; 
     NIXPKGS_ALLOW_INSECURE="1";
+    
+    # Default applications
+    DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
+  };
+
+  # Default applications
+  xdg.mime = {
+    enable =  true;
+    defaultApplications = {
+      "default-web-browser"           = [ "firefox.desktop" ];
+      "text/html"                     = [ "firefox.desktop" ];
+      "x-scheme-handler/http"         = [ "firefox.desktop" ];
+      "x-scheme-handler/https"        = [ "firefox.desktop" ];
+      "x-scheme-handler/about"        = [ "firefox.desktop" ];
+      "x-scheme-handler/unknown"      = [ "firefox.desktop" ];
+    };
   };
 
   hardware = {
