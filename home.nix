@@ -229,6 +229,15 @@
 
   programs = {
     home-manager.enable = true;
+    git = {
+      enable = true;
+      userName = "Simone Tardiani";
+      userEmail = "simone.tardiani.imp@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+        safe.directory = "/etc/nixos";
+      };
+    }
     zsh = {
       enable = true;
       autocd = true;
