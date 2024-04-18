@@ -44,7 +44,7 @@
 
   # Configure keymap in X11
   services.xserver = {
-    xkb.layout = "us";
+    xkb.layout = "it";
     xkb.variant = "";
   };
 
@@ -80,6 +80,7 @@
     git                 # Version manager
     swww                # Wallpaper manager        
     qimgv               # Image viewer
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  # Fonts
 
     # Utility & QoL
     xdg-utils
