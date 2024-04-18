@@ -94,10 +94,10 @@
     # Programs & Apps
     android-studio      
     vscode
-    obsidian
+    obsidian 
   ];
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  # Fonts
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  # Font
   ];
 
  programs = {
@@ -122,6 +122,7 @@
     # Nix vars
     NIXOS_OZONE_WL = "1"; 
     NIXPKGS_ALLOW_INSECURE="1";
+    NIXPKGS_ALLOW_UNFREE="1";
     
     # Default applications
     DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";

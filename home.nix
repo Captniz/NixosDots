@@ -27,6 +27,13 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+  
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -226,10 +233,11 @@
 
     };
   };
-
+  
   programs = {
-    
-    home-manager.enable = true;
+    home-manager= {
+      enable = true;
+    };
 
     git = {
       enable = true;
@@ -259,6 +267,18 @@
     ranger = {
       enable = true;
       #rifle.*.condition = "mime ^image, has sxiv,      X, flag f = sxiv -- \"$@\"";
+    };
+    
+    vscode= {
+      enable = true;
+      userSettings = {
+        "window.menuBarVisibility" = "toggle";
+        "git.enableSmartCommit" = true;
+        "git.confirmSync" = false;
+        "editor.fontFamily" = "FiraCode Nerd Font,FiraCode Nerd Font Ret";
+        "editor.fontLigatures" = true;
+        "files.autoSave" = "afterDelay";
+      };
     };
   };
 }
