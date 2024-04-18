@@ -80,8 +80,7 @@
     git                 # Version manager
     swww                # Wallpaper manager        
     qimgv               # Image viewer
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  # Fonts
-
+    
     # Utility & QoL
     xdg-utils
     bash-completion
@@ -97,15 +96,18 @@
     vscode
     obsidian
   ];
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  # Fonts
+  ];
 
  programs = {
    zsh = {
-     enable = true;
+    enable = true;
    };
    
    hyprland = {
-     enable = true;
-     xwayland.enable = true;
+    enable = true;
+    xwayland.enable = true;
    };
  };
  
