@@ -228,7 +228,9 @@
   };
 
   programs = {
+    
     home-manager.enable = true;
+
     git = {
       enable = true;
       userName = "Simone Tardiani";
@@ -252,6 +254,11 @@
         nixconfigure = "code /etc/nixos";
         nixdeleteolder = "sudo nix-collect-garbage --delete-older-than";
       };
+    };
+
+    ranger = {
+      enable = true;
+      #rifle.*.condition = "mime ^image, has sxiv,      X, flag f = sxiv -- \"$@\"";
     };
   };
 }

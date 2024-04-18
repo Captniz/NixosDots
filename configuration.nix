@@ -91,6 +91,7 @@
     bibata-cursors
       
     # Programs & Apps
+    android-studio      
     vscode
     obsidian
   ];
@@ -112,6 +113,7 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     XCURSOR_SIZE = "12";
     GDK_SCALE = "1";
+    TERM = "xterm-256color";
     
     # Nix vars
     NIXOS_OZONE_WL = "1"; 
@@ -126,11 +128,14 @@
     enable =  true;
     defaultApplications = {
       "default-web-browser"           = [ "firefox.desktop" ];
-      "text/html"                     = [ "firefox.desktop" ];
+      "text/html"                     = [ "firefox.desktop" ];  # Browser
       "x-scheme-handler/http"         = [ "firefox.desktop" ];
       "x-scheme-handler/https"        = [ "firefox.desktop" ];
       "x-scheme-handler/about"        = [ "firefox.desktop" ];
       "x-scheme-handler/unknown"      = [ "firefox.desktop" ];
+      "image/jpeg"                    = [ "qimgv.desktop" ];    # Images
+      "image/jpg"                     = [ "qimgv.desktop" ];    # Images
+      "image/png"                     = [ "qimgv.desktop" ];    # Images
     };
   };
 
