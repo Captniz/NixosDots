@@ -55,7 +55,7 @@
   users.users.simo = {
     isNormalUser = true;
     description = "Simone";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
