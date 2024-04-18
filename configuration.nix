@@ -85,7 +85,8 @@
     xdg-utils
     bash-completion
     rofi-wayland        # App. launcher
-    unzip               
+    unzip          
+    btop     
 
     # Themes
     bibata-cursors

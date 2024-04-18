@@ -121,7 +121,7 @@
         "$mod, Q, exec, obsidian"
         "$mod, S, exec, grim -g \"$(slurp)\""
         "$mod, E, exec, alacritty -e ranger"
-        "$mod, W, exec, alacritty -e bpytop"
+        "$mod, W, exec, alacritty -e btop"
 
         # Window managment
         "$mod, J, togglesplit,"
