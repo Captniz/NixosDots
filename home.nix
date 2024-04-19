@@ -56,6 +56,7 @@
       
       # Vars
       "$mod" = "SUPER";
+      "$wallpaper" = "99.png";
       
       monitor = ",preferred,auto,1";
 
@@ -188,7 +189,7 @@
         "fakefullscreen,class:^(jetbrains-[A-Za-z0-9]+)$"
       ];
 
-      exec-once = "swww init & swww img ~/Images/Wallpapers/100.png";
+      exec-once = "swww init & swww img ~/Images/Wallpapers/$wallpaper";
     };
   };  
 
@@ -266,7 +267,7 @@
 
     ranger = {
       enable = true;
-      #rifle.*.condition = "mime ^image, has sxiv,      X, flag f = sxiv -- \"$@\"";
+      #rifle.image.condition = "X, flag f = sxiv -- \"$@\"";
     };
     
     vscode= {

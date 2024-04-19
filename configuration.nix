@@ -71,6 +71,7 @@
     hyprland            # Window manager
     zsh                 # Shell
     dunst               # Notification manager
+    sddm                # Display manager
 
     # Essentials
     neovim              # Text editor
@@ -168,6 +169,10 @@
   services = {
     openssh.enable = true;
     gnome.gnome-keyring.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
   };
 
   # Open ports in the firewall.
