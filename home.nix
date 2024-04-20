@@ -244,9 +244,11 @@
       enable = true;
       userName = "Simone Tardiani";
       userEmail = "simone.tardiani.imp@gmail.com";
+      lfs.enable = true;
       extraConfig = {
         init.defaultBranch = "main";
         safe.directory = "/etc/nixos";
+        credential.helper = "oauth";
       };
     };
     
@@ -257,6 +259,7 @@
       enableCompletion = true;
       shellAliases = {
         clr = "clear";
+        gacp = "git add * ; git commit --all -m '.' ; git push --all";
         flakeup = "nix flake update /etc/nixos";
         homeup = "home-manager switch --flake /etc/nixos";
         nixup = "sudo nixos-rebuild switch";

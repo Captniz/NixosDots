@@ -83,6 +83,7 @@
     qimgv               # Image viewer
     
     # Utility & QoL
+    git-credential-oauth
     xdg-utils
     bash-completion
     rofi-wayland        # App. launcher
@@ -102,14 +103,14 @@
   ];
 
  programs = {
-   zsh = {
-    enable = true;
-   };
-   
-   hyprland = {
-    enable = true;
-    xwayland.enable = true;
-   };
+  zsh = {
+   enable = true;
+  };
+  
+  hyprland = {
+   enable = true;
+   xwayland.enable = true;
+  };
  };
  
   environment.sessionVariables = {
