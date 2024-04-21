@@ -199,16 +199,30 @@
     enable = true;
     settings = {
       global = {
+        # Color
         frame_color = "#555555";
-        frame_width = 2;
-        geometry = "500x5-5+30";
-        horizontal_padding = 8;
-        markup = "full";
-        padding = 8;
         separator_color = "frame";
-        separator_height = 2;
         transparency = 10;
+        # Text
         word_wrap = true;
+        markup = "full";
+        progress_bar= true;
+        # Shape
+        frame_width = 2;
+        separator_height = 2;
+        horizontal_padding = 8;
+        padding = 8;
+        geometry = "500x5-5+30";
+        # Position
+        alignment = "center";
+        origin = "top_right";
+        offset = "(10,10)";
+        sort = "update";
+        stack_duplicates = true;
+        show_indicators = true;
+        # Xwayland
+        layer = "top";
+        #force_xwayland = true;
       };
 
       urgency_low = {
@@ -249,6 +263,7 @@
         init.defaultBranch = "main";
         safe.directory = "/etc/nixos";
         credential.helper = "oauth";
+        pull.rebase = false;
       };
     };
     
