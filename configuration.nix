@@ -55,13 +55,17 @@
   users.users.simo = {
     isNormalUser = true;
     description = "Simone";
-    extraGroups = [ "networkmanager" "wheel" "kvm" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "audio" "sound" "video"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  sound.enable = true;
+
+  nixpkgs.config = {
+    allowUnfree = true;
+  #  pulseaudio = true;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -72,6 +76,8 @@
     zsh                 # Shell
     dunst               # Notification manager
     sddm                # Display manager
+    pipewire            # Audio server
+    pavucontrol         # Audio control
 
     # Essentials
     neovim              # Text editor
@@ -81,6 +87,9 @@
     git                 # Version manager
     swww                # Wallpaper manager        
     qimgv               # Image viewer
+    libreoffice-qt-fresh# Office suite
+    nitch               # System fetch
+    btop                # System monitor     
     
     # Utility & QoL
     git-credential-oauth
@@ -88,14 +97,15 @@
     bash-completion
     rofi-wayland        # App. launcher
     unzip          
-    btop     
+    winetricks
+    wineWowPackages.waylandFull
 
     # Themes
     bibata-cursors
       
     # Programs & Apps
     android-studio      
-    vscode
+    vscode    
     obsidian 
   ];
   fonts.packages = with pkgs; [
@@ -149,6 +159,8 @@
   hardware = {
     opengl.enable = true;
     nvidia.modesetting.enable = true;
+    # pulseaudio.enable = true;
+    # pulseaudio.support32Bit = true;
   };
 
   xdg.portal = {
@@ -164,10 +176,18 @@
   #   enableSSHSupport = true;
   # };
 
+  security.rtkit.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
     openssh.enable = true;
     gnome.gnome-keyring.enable = true;
     displayManager.sddm = {
