@@ -104,6 +104,7 @@
     bibata-cursors
       
     # Programs & Apps
+    zathura
     android-studio      
     vscode    
     obsidian 
@@ -115,6 +116,7 @@
  programs = {
   zsh = {
    enable = true;
+   ohMyZsh.enable = true;
   };
   
   hyprland = {
