@@ -78,6 +78,7 @@
     sddm                # Display manager
     pipewire            # Audio server
     pavucontrol         # Audio control
+    light               # Brightness control
 
     # Essentials
     neovim              # Text editor
@@ -90,6 +91,8 @@
     libreoffice-qt-fresh# Office suite
     nitch               # System fetch
     btop                # System monitor     
+    grim                # Screenshot tool
+    slurp               # Region selector
     
     # Utility & QoL
     git-credential-oauth
@@ -114,6 +117,8 @@
   ];
 
  programs = {
+  light.enable = true;
+  
   zsh = {
    enable = true;
    ohMyZsh.enable = true;
