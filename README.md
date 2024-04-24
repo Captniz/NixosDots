@@ -8,7 +8,7 @@
 | NeoVim | ✔ | ❌ |
 | LibreOffice | ✔ | ✔ |
 | Wine | ✔ | ✔ |
-| Firefox | ✔ | ✔ |
+| Firefox (saved pssw and stting) | ✔ | ✔ | 
 | Alacritty | ✔ | ❌ |
 | VScode | ✔ | ✔ |
 | Git | ✔ | ✔ |
@@ -30,23 +30,23 @@
 | Rofi | ✔ | ❌ |
 | Nitch | ✔ | ✔ |
 | Zathura | ✔ | ✔ |
-| Qdirstat | ❌ | ❌ |
+| Qdirstat | ✔ | ❌ |
 | Jetbrains-toolbox | ❌ | ❌ |
 | Postman | ❌ | ❌ |
 | Tesseract | ❌ | ❌ |
 | Balena-etcher | ❌ | ❌ |
-| Gparted | ❌ | ❌ |
+| Gparted | ✔ | ❌ |
 | Docker | ❌ | ❌ |
 | Powership | ❌ | ❌ |
-| Lutris | ❌ | ❌ |
-| Steam | ❌ | ❌ |
+| Lutris | ✔ | ❌ |
+| Steam | ✔ | ❌ |
 | Xampp | ❌ | ❌ |
-| Discord | ❌ | ❌ |
+| Discord | ✔ | ❌ |
 | Qimgv | ✔ | ✔ |
 | fontforge | ❌ | ❌ |
-| Dia | ❌ | ❌ |
-| vlc | ❌ | ❌ |
-| obs | ❌ | ❌ |
+| Dia | ✔ | ❌ |
+| vlc | ✔ | ❌ |
+| obs | ✔ | ❌ |
 | Android studio | ✔ | ❌ |
 | light | ✔ | ✔ |
 

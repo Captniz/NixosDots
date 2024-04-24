@@ -103,6 +103,14 @@
     bibata-cursors
       
     # Programs & Apps
+    qdirstat
+    gparted
+    discord
+    lutris
+    steam
+    dia
+    vlc
+    obs-studio
     rofi-wayland      
     eww  
     zathura
