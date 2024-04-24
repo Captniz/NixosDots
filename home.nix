@@ -57,6 +57,9 @@
       # Vars
       "$mod" = "SUPER";
       "$wallpaper" = "99.png";
+      "$activeBorder" = "rgba(8DA101dd)";
+      "$inactiveBorder" = "rgba(c5c9aaff)";
+      "$shadow" = "rgba(1a1a1aee)";
       
       monitor = ",preferred,auto,1";
 
@@ -67,6 +70,8 @@
         no_border_on_floating = true;
         cursor_inactive_timeout = 3;
         layout = "dwindle";
+        "col.active_border" = "$activeBorder";
+        "col.inactive_border" = "$inactiveBorder";
       };
 
       misc = {
@@ -197,7 +202,10 @@
         "fakefullscreen,class:^(jetbrains-[A-Za-z0-9]+)$"
       ];
 
-      exec-once = "swww init & swww img ~/Images/Wallpapers/$wallpaper";
+      exec-once = [
+        "swww init & swww img ~/Images/Wallpapers/$wallpaper"
+        "eww open bar"
+      ];
     };
   };  
 
@@ -260,6 +268,11 @@
   programs = {
     home-manager= {
       enable = true;
+    };
+
+    eww = {
+      enable = true;
+      configDir = "/etc/nixos/extConfigs/eww";
     };
 
     alacritty = {
@@ -359,7 +372,7 @@
         clr = "clear";
         gacp = "git add * ; git commit --all -m '.' ; git push --all";
         flakeup = "nix flake update /etc/nixos";
-        homeup = "home-manager switch --flake /etc/nixos";
+        homeup = "home-manager switch --flake /etc/nixos --impure";
         nixup = "sudo nixos-rebuild switch";
         nixconfigure = "code /etc/nixos";
         nixdeleteolder = "sudo nix-collect-garbage --delete-older-than";

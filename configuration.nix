@@ -1,14 +1,9 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -98,22 +93,29 @@
     git-credential-oauth
     xdg-utils
     bash-completion
-    rofi-wayland        # App. launcher
     unzip          
     winetricks
+    jc
+    jq
     wineWowPackages.waylandFull
 
     # Themes
     bibata-cursors
       
     # Programs & Apps
+    rofi-wayland      
+    eww  
     zathura
     android-studio      
     vscode    
     obsidian 
+
+    #Test
   ];
+
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  # Font
+    # Fonts
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  
   ];
 
  programs = {
