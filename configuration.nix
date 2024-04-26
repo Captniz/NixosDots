@@ -97,10 +97,12 @@
     winetricks
     jc
     jq
+    bat
     wineWowPackages.waylandFull
 
     # Themes
     bibata-cursors
+    starship
       
     # Programs & Apps
     qdirstat
@@ -110,6 +112,7 @@
     steam
     dia
     vlc
+    #fontforge
     obs-studio
     rofi-wayland      
     eww  
@@ -131,7 +134,6 @@
   
   zsh = {
    enable = true;
-   ohMyZsh.enable = true;
   };
   
   hyprland = {

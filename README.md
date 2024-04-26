@@ -21,6 +21,7 @@
 | Nitch | ✔ | ✔ |
 | BTop | ✔ | ❌ |
 | ZSH / OhMyZSH | ✔ | ❌ |
+| Starship | ✔ | ❌ |
 | SWWW | ✔ | ✔ |
 | Flatpack | ❌ | ❌ |
 | Ranger | ✔ | ❌ |

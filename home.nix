@@ -270,6 +270,37 @@
       enable = true;
     };
 
+    starship = {
+      enable = true;
+      settings = {
+        format = "
+[┌](orange)[\\[](green) $all[\\]](green)
+[└─>](bold orange)$character$battery";
+
+        palette  = "custom";
+        palettes.custom = {
+          red =     "#cc241d";
+          orange =  "#d65d0e";
+          yellow =  "#d79921";
+          green =   "#98971a";
+          cyan =    "#689d6a";
+          blue =    "#458588";
+          purple =  "#b16286";
+          black =   "#282828";
+          white =   "#ebdbb2";
+        };
+
+        battery = {
+          disabled = false;
+        };
+
+        line_break = {
+          disabled = true;
+        };
+        add_newline = false;
+      };
+    };
+
     eww = {
       enable = true;
       configDir = "/etc/nixos/extConfigs/eww";
@@ -278,6 +309,42 @@
     alacritty = {
       enable = true;
       settings = {
+        window = {
+          padding = {
+            x = 4;
+            y = 0;
+          };
+        };
+        colors = {
+          primary = {
+            background =   "#282828";
+            foreground =   "#ebdbb2";
+          };
+          cursor = {
+            cursor =   "#ebdbb2";
+            text =   "#ebdbb2";
+          };
+          normal = {
+            red =     "#cc241d";
+            yellow =  "#d79921";
+            green =   "#98971a";
+            cyan =    "#689d6a";
+            blue =    "#458588";
+            magenta = "#b16286";
+            black =   "#282828";
+            white =   "#ebdbb2";
+          };
+          bright = {
+            red =     "#fb4934";
+            yellow =  "#fabd2f";
+            green =   "#b8bb26";
+            cyan =    "#8ec07c";
+            blue =    "#83a598";
+            magenta = "#d3869b";
+            black =   "#504945";
+            white =   "#fbf1c7";
+          };
+        };
         font = {
           normal = {
             family = "FiraCode Nerd Font";
@@ -368,14 +435,25 @@
       autocd = true;
       autosuggestion.enable = true;
       enableCompletion = true;
+      syntaxHighlighting.enable = true;
       shellAliases = {
         clr = "clear";
+        rcat = "cat";
+        cat = "bat";
         gacp = "git add * ; git commit --all -m '.' ; git push --all";
         flakeup = "nix flake update /etc/nixos";
         homeup = "home-manager switch --flake /etc/nixos --impure";
         nixup = "sudo nixos-rebuild switch";
         nixconfigure = "code /etc/nixos";
         nixdeleteolder = "sudo nix-collect-garbage --delete-older-than";
+      };
+      oh-my-zsh = {
+        enable = true;
+        theme = "robbyrussell";
+        plugins = [
+          "z"
+          "starship"
+        ];
       };
     };
 
