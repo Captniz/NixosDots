@@ -205,6 +205,8 @@
       exec-once = [
         "swww init & swww img ~/Images/Wallpapers/$wallpaper"
         "eww open bar"
+        "polkit-agent-helper-1" 
+        "systemctl start --user polkit-gnome-authentication-agent-1" 
       ];
     };
   };  
@@ -439,6 +441,7 @@
       shellAliases = {
         clr = "clear";
         rcat = "cat";
+        psqlogin = "sudo -u postgres psql";
         cat = "bat";
         gacp = "git add * ; git commit --all -m '.' ; git push --all";
         flakeup = "nix flake update /etc/nixos";

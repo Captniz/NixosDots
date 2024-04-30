@@ -8,7 +8,7 @@
 | NeoVim | ✔ | ❌ |
 | LibreOffice | ✔ | ✔ |
 | Wine | ✔ | ✔ |
-| Firefox (saved pssw and stting) | ✔ | ✔ | 
+| Firefox (saved pssw and stting) | ✔ | ✔ |
 | Alacritty | ✔ | ❌ |
 | VScode | ✔ | ✔ |
 | Git | ✔ | ✔ |
@@ -50,4 +50,3 @@
 | obs | ✔ | ❌ |
 | Android studio | ✔ | ❌ |
 | light | ✔ | ✔ |
-

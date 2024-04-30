@@ -92,12 +92,15 @@
     # Utility & QoL
     git-credential-oauth
     xdg-utils
+    xorg.xhost
     bash-completion
     unzip          
     winetricks
     jc
     jq
     bat
+    polkit
+    polkit_gnome
     wineWowPackages.waylandFull
 
     # Themes
@@ -130,6 +133,12 @@
   ];
 
  programs = {
+  steam = {
+   enable = true;
+   remotePlay.openFirewall = true; 
+   dedicatedServer.openFirewall = true;
+  };
+
   light.enable = true;
   
   zsh = {
@@ -195,7 +204,10 @@
   #   enableSSHSupport = true;
   # };
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
 
   # List services that you want to enable:
 
@@ -213,6 +225,36 @@
       enable = true;
       wayland.enable = true;
     };
+    postgresql = {
+      enable = true;
+      ensureDatabases = [ "mydatabase" ];
+      authentication = pkgs.lib.mkOverride 10 ''
+        #type database  DBuser  auth-method
+        local all       all     trust
+      '';
+    };
+  };
+
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
+  
+  fileSystems."mnt/Storage" = {
+    device = "/dev/disk/by-label/Storage";
+    fsType = "ext4";
+    #options = [ "uid=1000" "gid=1000" "dmask=007" "fmask=117" ];
   };
 
   # Open ports in the firewall.
