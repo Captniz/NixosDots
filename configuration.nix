@@ -89,11 +89,14 @@
     grim                # Screenshot tool
     slurp               # Region selector
     
+    # Languages
+
     # Utility & QoL
     git-credential-oauth
     xdg-utils
     xorg.xhost
     bash-completion
+    ueberzug
     unzip          
     winetricks
     jc
@@ -115,7 +118,6 @@
     steam
     dia
     vlc
-    #fontforge
     obs-studio
     rofi-wayland      
     eww  
@@ -164,6 +166,8 @@
     NIXPKGS_ALLOW_INSECURE="1";
     NIXPKGS_ALLOW_UNFREE="1";
     
+    # Application vars
+
     # Default applications
     DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
   };
@@ -220,6 +224,7 @@
       pulse.enable = true;
     };
     openssh.enable = true;
+    ollama.enable = true;
     gnome.gnome-keyring.enable = true;
     displayManager.sddm = {
       enable = true;

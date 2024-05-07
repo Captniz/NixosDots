@@ -462,7 +462,20 @@
 
     ranger = {
       enable = true;
-      #rifle.image.condition = "X, flag f = sxiv -- \"$@\"";
+      #rifle = [
+      #  "X, flag f = sxiv -- \"$@\""
+      #];
+      #settings = {
+      #};
+      #extraConfig = "linemode = devicons";
+      #plugins = [
+      #  {
+      #    name = "ranger_devicons";
+      #    src = builtins.fetchGit {
+      #      url = "https://github.com/alexanderjeurissen/ranger_devicons.git";
+      #    };
+      #  }
+      #];
     };
     
     vscode= {
