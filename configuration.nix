@@ -96,7 +96,9 @@
     xdg-utils
     xorg.xhost
     bash-completion
-    ueberzug
+    ueberzugpp
+    poppler
+    poppler_utils
     unzip          
     winetricks
     jc
@@ -224,7 +226,6 @@
       pulse.enable = true;
     };
     openssh.enable = true;
-    ollama.enable = true;
     gnome.gnome-keyring.enable = true;
     displayManager.sddm = {
       enable = true;
