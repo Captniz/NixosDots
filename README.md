@@ -9,44 +9,43 @@
 | LibreOffice | ✔ | ✔ |
 | Wine | ✔ | ✔ |
 | Firefox (saved pssw and stting) | ✔ | ✔ |
-| Alacritty | ✔ | ❌ |
+| Alacritty | ✔ | ✔ |
 | VScode | ✔ | ✔ |
 | Git | ✔ | ✔ |
 | GitCredentialManager | ✔ | ✔ |
 | NMCli | ✔ | ✔ |
 | Firacode / Nerdfonts | ✔ | ✔ |
-| EWW | ✔ | ❌ |
+| EWW | ✔ | ✔ |
 | PavuControl | ✔ | ✔ |
 | Pipewire | ✔ | ✔ |
 | Nitch | ✔ | ✔ |
-| BTop | ✔ | ❌ |
-| ZSH / OhMyZSH | ✔ | ❌ |
-| Starship | ✔ | ❌ |
+| BTop | ✔ | ✔ |
+| ZSH / OhMyZSH | ✔ | ✔ |
+| Starship | ✔ | ✔ |
 | SWWW | ✔ | ✔ |
 | Flatpack | ❌ | ❌ |
-| Ranger | ✔ | ❌ |
+| Ranger | ✔ | ✔ |
 | SDDM | ✔ | ❌ |
 | Slurp / Grim | ✔ | ✔ |
 | Blueman | ❌ | ❌ |
 | Rofi | ✔ | ❌ |
 | Nitch | ✔ | ✔ |
 | Zathura | ✔ | ✔ |
-| Qdirstat | ✔ | ❌ |
+| Qdirstat | ✔ | ✔ |
 | Jetbrains-toolbox | ❌ | ❌ |
 | Postman | ❌ | ❌ |
 | Tesseract | ❌ | ❌ |
 | Balena-etcher | ❌ | ❌ |
-| Gparted | ✔ | ❌ |
+| Gparted | ✔ | ✔ |
 | Docker | ❌ | ❌ |
-| Powership | ❌ | ❌ |
 | Lutris | ✔ | ❌ |
-| Steam | ✔ | ❌ |
+| Steam | ✔ | ✔ |
 | Xampp | ❌ | ❌ |
-| Discord | ✔ | ❌ |
+| Discord | ✔ | ✔ |
 | Qimgv | ✔ | ✔ |
 | fontforge | ❌ | ❌ |
-| Dia | ✔ | ❌ |
-| vlc | ✔ | ❌ |
-| obs | ✔ | ❌ |
-| Android studio | ✔ | ❌ |
+| Dia | ✔ | ✔ |
+| vlc | ✔ | ✔ |
+| obs | ✔ | ✔ |
+| Android studio | ✔ | ✔ |
 | light | ✔ | ✔ |
