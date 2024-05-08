@@ -139,10 +139,12 @@
  programs = {
   steam = {
    enable = true;
+   gamescopeSession.enable = true;
    remotePlay.openFirewall = true; 
    dedicatedServer.openFirewall = true;
   };
 
+  gamemode.enable = true;
   light.enable = true;
   
   zsh = {
@@ -191,10 +193,12 @@
   };
 
   hardware = {
-    opengl.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
     nvidia.modesetting.enable = true;
-    # pulseaudio.enable = true;
-    # pulseaudio.support32Bit = true;
   };
 
   xdg.portal = {

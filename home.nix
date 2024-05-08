@@ -471,7 +471,7 @@
         
         # Themeing
         "editor.cursorSmoothCaretAnimation"= "on";
-        "workbench.colorTheme"= "Gruvbox Material Dark";
+        "workbench.colorTheme"= "Gruvbox Dark Medium";
         "workbench.iconTheme"= "material-icon-theme";
         "window.menuBarVisibility" = "toggle";
         "editor.fontFamily" = "FiraCode Nerd Font,FiraCode Nerd Font Ret";
