@@ -1,6 +1,6 @@
 # TODO
 
-WIKI : [link](https://wiki.nixos.org/wiki/PostgreSQL)
+WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 | Package | Installato | Configurato |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ WIKI : [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | SDDM | ✔ | ❌ |
 | Slurp / Grim | ✔ | ✔ |
 | Blueman | ❌ | ❌ |
-| Rofi | ✔ | ❌ |
+| Rofi | ✔ | ✔ |
 | Nitch | ✔ | ✔ |
 | Zathura | ✔ | ✔ |
 | Qdirstat | ✔ | ✔ |
