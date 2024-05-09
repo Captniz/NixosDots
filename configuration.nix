@@ -91,6 +91,10 @@
     
     # Languages
     jdk
+    (pkgs.python3.withPackages (python-pkgs: [
+      python-pkgs.pandas
+      python-pkgs.requests
+    ]))
 
     # Utility & QoL
     git-credential-oauth

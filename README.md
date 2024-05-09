@@ -1,5 +1,7 @@
 # TODO
 
+WIKI : [link](https://wiki.nixos.org/wiki/PostgreSQL)
+
 | Package | Installato | Configurato |
 | --- | --- | --- |
 | Hyprland | ✔ | ✔ |
