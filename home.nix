@@ -597,7 +597,8 @@
               "italic"= false;
           }
         ];
-        "java.jdt.ls.java.home"= "/usr/lib/jvm/default-runtime";
+        "java.home"= "/run/current-system/sw/lib/openjdk";
+        "java.jdt.ls.java.home" = "/run/current-system/sw/lib/openjdk";
         "java.configuration.runtimes"= [];
         "java.codeAction.sortMembers.avoidVolatileChanges"= false;
 

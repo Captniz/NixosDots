@@ -90,6 +90,7 @@
     slurp               # Region selector
     
     # Languages
+    jdk
 
     # Utility & QoL
     git-credential-oauth
@@ -171,6 +172,7 @@
     NIXPKGS_ALLOW_UNFREE="1";
     
     # Application vars
+    _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd";
 
     # Default applications
     DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
