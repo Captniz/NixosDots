@@ -452,6 +452,7 @@
         safe.directory = "/etc/nixos";
         credential.helper = "oauth";
         pull.rebase = false;
+        http.postBuffer = 524288000;
       };
     };
     

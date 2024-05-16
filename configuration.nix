@@ -107,6 +107,7 @@
     unzip          
     winetricks
     jc
+    protonup
     jq
     bat
     polkit
@@ -177,6 +178,7 @@
     
     # Application vars
     _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS="/home/user/.steam/root/compatibilitytools.d";
 
     # Default applications
     DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
