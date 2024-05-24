@@ -59,6 +59,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
+    permittedInsecurePackages = [ "the_electron_version"];
   #  pulseaudio = true;
   };
 
@@ -97,6 +98,7 @@
     ]))
 
     # Utility & QoL
+    (pkgs.wordlists.override { lists = with pkgs; [ rockyou ]; })
     git-credential-oauth
     xdg-utils
     xorg.xhost
@@ -119,6 +121,7 @@
     starship
       
     # Programs & Apps
+    balena-cli
     qdirstat
     gparted
     discord
@@ -133,6 +136,7 @@
     android-studio      
     vscode    
     obsidian 
+    john
 
     #Test
   ];
