@@ -561,6 +561,7 @@
             "markdown"= "true";
         };
         "github.copilot.advanced"= {};
+        "github.copilot.editor.enableAutoCompletions"= true;
 
         # Extensions
         "open-in-browser.default"= "firefox";
