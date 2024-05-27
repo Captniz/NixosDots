@@ -1,8 +1,11 @@
 { config, lib, pkgs, ...}:
 
 {
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [ "the_electron_version"];
+  };
+
   environment.systemPackages = with pkgs; [   
     # System
     hyprland            # Window manager

@@ -1,10 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [ 
     ./hardware-configuration.nix
-    ./System/Installs.nix
+    ./System/PkgMan.nix
     ./System/Locale.nix
+    ./System/Networking.nix
   ];
 
   # Bootloader.
@@ -13,16 +14,6 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.simo = {
@@ -35,12 +26,6 @@
   };
 
   sound.enable = true;
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [ "the_electron_version"];
-  #  pulseaudio = true;
-  };
 
   fonts.packages = with pkgs; [
     # Fonts
