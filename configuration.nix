@@ -6,6 +6,7 @@
     ./System/PkgMan.nix
     ./System/Locale.nix
     ./System/Networking.nix
+    ./System/Style.nix
   ];
 
   # Bootloader.
@@ -26,11 +27,6 @@
   };
 
   sound.enable = true;
-
-  fonts.packages = with pkgs; [
-    # Fonts
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  
-  ];
 
  programs = {
   #gnupg.agent = {
