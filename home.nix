@@ -5,6 +5,9 @@
     ./User/Settings/Style.nix
     ./User/App/Hyprland.nix
     ./User/App/Dunst.nix
+    ./User/App/Rofi.nix
+    ./User/App/Btop.nix
+    ./User/App/Zsh.nix
   ];
 
   # Home config
@@ -48,64 +51,9 @@
 
   gtk.enable = true;
   
+  programs.home-manager.enable = true;
+
   programs = {
-    home-manager= {
-      enable = true;
-    };
-
-    rofi = {
-      enable = true;
-      package = pkgs.rofi-wayland;
-      font = "FiraCode Nerd Font 12";
-      theme = "/etc/nixos/extConfigs/rofi/gruvbox-material.rasi";
-      extraConfig = {
-        "display-ssh"=    "";
-        "display-run"=    "";
-        "display-drun"=   "";
-        "display-window"= "";
-        "display-combi"=  "";
-        "show-icons"=     true;
-      };
-    };
-
-    btop = {
-      enable = true;
-      settings = {
-        color_theme = "gruvbox_material_dark";
-        theme_background = false;
-      };
-    } ;
-
-    starship = {
-      enable = true;
-      settings = {
-        format = "
-[┌](orange)[\\[](green) $all[\\]](green)
-[└─>](bold orange)$character$battery";
-
-        palette  = "custom";
-        palettes.custom = {
-          red =     "#cc241d";
-          orange =  "#d65d0e";
-          yellow =  "#d79921";
-          green =   "#98971a";
-          cyan =    "#689d6a";
-          blue =    "#458588";
-          purple =  "#b16286";
-          black =   "#282828";
-          white =   "#ebdbb2";
-        };
-
-        battery = {
-          disabled = false;
-        };
-
-        line_break = {
-          disabled = true;
-        };
-        add_newline = false;
-      };
-    };
 
     eww = {
       enable = true;

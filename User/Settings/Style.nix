@@ -4,7 +4,6 @@
   home.packages = with pkgs;  [
     (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })
     bibata-cursors
-    starship
   ];
   home.pointerCursor = {
     gtk.enable = true;
