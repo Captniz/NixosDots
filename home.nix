@@ -4,6 +4,7 @@
   imports = [ 
     ./User/Settings/Style.nix
     ./User/App/Hyprland.nix
+    ./User/App/Dunst.nix
   ];
 
   # Home config
