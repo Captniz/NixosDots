@@ -30,6 +30,7 @@
     description = "Simone";
     extraGroups = [ "networkmanager" "wheel" "kvm" "audio" "sound" "video"];
     packages = with pkgs; [];
+    #openssh.authorizedKeys.keys = ["AAAAC3NzaC1lZDI1NTE5AAAAIK1eVJW+B10QJrXyHsPmUHfFakEJK2XNu1gPuwA0qlH8"];
     shell = pkgs.zsh;
   };
 
@@ -47,6 +48,10 @@
   ];
 
  programs = {
+  #gnupg.agent = {
+  #  enable = true;
+  #  enableSSHSupport = true;
+  #};
   steam = {
    enable = true;
    gamescopeSession.enable = true;
@@ -141,7 +146,13 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = true;
+      };
+    };
     gnome.gnome-keyring.enable = true;
     displayManager.sddm = {
       enable = true;
@@ -180,10 +191,10 @@
   };
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  #networking.firewall.allowedTCPPorts = [ 22 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  #networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
