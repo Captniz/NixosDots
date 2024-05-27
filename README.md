@@ -5,7 +5,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Package | Installato | Configurato |
 | --- | --- | --- |
 | Hyprland | ✔ | ✔ |
-| Dunst | ✔ | ✔ |
+| Dunst | ✔ | ❌ |
 | Obsidian | ✔ | ✔ |
 | NeoVim | ✔ | ❌ |
 | LibreOffice | ✔ | ✔ |
@@ -32,7 +32,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Blueman | ❌ | ❌ |
 | Rofi | ✔ | ✔ |
 | Nitch | ✔ | ✔ |
-| Zathura | ✔ | ❌ |
+| Zathura | ✔ | ✔ |
 | Qdirstat | ✔ | ✔ |
 | Jetbrains-toolbox | ❌ | ❌ |
 | Postman | ❌ | ❌ |
