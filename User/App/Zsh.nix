@@ -47,9 +47,9 @@
       psqlogin = "sudo -u postgres psql";
       cat = "bat";
       gacp = "git add * ; git commit --all -m '.' ; git push --all";
-      flakeup = "nix flake update /etc/nixos";
+      flakeup = "nix flake lock --update-input nixpkgs /etc/nixos ; nix flake update /etc/nixos";
       homeup = "home-manager switch --flake /etc/nixos --impure";
-      nixup = "sudo nixos-rebuild switch";
+      nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
       nixconfigure = "code /etc/nixos";
       nixdeleteolder = "sudo nix-collect-garbage --delete-older-than";
       zip = "7z a -r -tzip";
