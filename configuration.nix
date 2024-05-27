@@ -9,6 +9,8 @@
     ./System/Style.nix
     ./System/Services.nix
     ./System/EnVars.nix
+    ./System/Hardware.nix
+    ./System/ProgramSettings.nix
   ];
 
   # Bootloader.
@@ -24,33 +26,11 @@
     description = "Simone";
     extraGroups = [ "networkmanager" "wheel" "kvm" "audio" "sound" "video"];
     packages = with pkgs; [];
-    #openssh.authorizedKeys.keys = ["AAAAC3NzaC1lZDI1NTE5AAAAIK1eVJW+B10QJrXyHsPmUHfFakEJK2XNu1gPuwA0qlH8"];
+    # openssh.authorizedKeys.keys = ["AAAAC3NzaC1lZDI1NTE5AAAAIK1eVJW+B10QJrXyHsPmUHfFakEJK2XNu1gPuwA0qlH8"];
     shell = pkgs.zsh;
   };
 
   sound.enable = true;
-
-  programs = {
-
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-      remotePlay.openFirewall = true; 
-      dedicatedServer.openFirewall = true;
-    };
-
-    gamemode.enable = true;
-    light.enable = true;
-    
-    zsh = {
-      enable = true;
-    };
-    
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-  };
 
   # Default applications
   xdg.mime = {
@@ -68,15 +48,6 @@
     };
   };
 
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-    nvidia.modesetting.enable = true;
-  };
-
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -85,11 +56,6 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-  };
-  
-  fileSystems."/mnt/Storage" = {
-    device = "/dev/disk/by-label/Storage";
-    fsType = "ext4";
   };
 
   # This value determines the NixOS release from which the default
