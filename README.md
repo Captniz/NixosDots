@@ -32,7 +32,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Blueman | ❌ | ❌ |
 | Rofi | ✔ | ✔ |
 | Nitch | ✔ | ✔ |
-| Zathura | ✔ | ✔ |
+| Zathura | ✔ | ❌ |
 | Qdirstat | ✔ | ✔ |
 | Jetbrains-toolbox | ❌ | ❌ |
 | Postman | ❌ | ❌ |
