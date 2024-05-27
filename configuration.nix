@@ -274,7 +274,7 @@
     };
   };
   
-  fileSystems."mnt/Storage" = {
+  fileSystems."/mnt/Storage" = {
     device = "/dev/disk/by-label/Storage";
     fsType = "ext4";
     #options = [ "uid=1000" "gid=1000" "dmask=007" "fmask=117" ];

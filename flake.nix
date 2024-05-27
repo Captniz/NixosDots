@@ -2,7 +2,7 @@
   description = "main flake";
 
   inputs = {
-    nixpkgs.url= "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url= "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";	
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -15,14 +15,14 @@
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
-	  inherit system;
+	        inherit system;
           modules = [ ./configuration.nix ];
         };
       };
       
       homeConfigurations = {
         simo = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+          inherit pkgs;
       	  modules = [ ./home.nix ];
       	};
       };
