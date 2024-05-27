@@ -51,3 +51,8 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | obs | ✔ | ✔ |
 | Android studio | ✔ | ✔ |
 | light | ✔ | ✔ |
+
+# GENERAL TODO
+
+- [ ] Installare Flatpack
+- [ ] Fix ranger config
