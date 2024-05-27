@@ -60,10 +60,6 @@
     polkit_gnome
     wineWowPackages.waylandFull
 
-    # Themes
-    bibata-cursors
-    starship
-      
     # Programs & Apps
     balena-cli
     qdirstat

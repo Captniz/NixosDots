@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ 
+    ./USer/Style.nix
+  ];
+
   # Home config
   home.username = "simo";
   home.homeDirectory = "/home/simo";
@@ -13,9 +17,7 @@
   
   home.stateVersion = "23.11"; # Please read the comment before changing.
   
-  home.packages = [
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
+  home.packages = with pkgs;  [
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })

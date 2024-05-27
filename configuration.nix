@@ -6,7 +6,6 @@
     ./System/PkgMan.nix
     ./System/Locale.nix
     ./System/Networking.nix
-    ./System/Style.nix
     ./System/Services.nix
     ./System/EnVars.nix
     ./System/Hardware.nix
