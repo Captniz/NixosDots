@@ -26,6 +26,7 @@
     btop                # System monitor     
     grim                # Screenshot tool
     slurp               # Region selector
+
     
     # Languages
     jdk
@@ -38,7 +39,9 @@
     (pkgs.wordlists.override { lists = with pkgs; [ rockyou ]; })
     git-credential-oauth
     xdg-utils
+    xdg-desktop-portal-hyprland
     xorg.xhost
+    hyprland-protocols
     bash-completion
     ueberzugpp
     poppler
