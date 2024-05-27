@@ -479,6 +479,7 @@
         nixup = "sudo nixos-rebuild switch";
         nixconfigure = "code /etc/nixos";
         nixdeleteolder = "sudo nix-collect-garbage --delete-older-than";
+        zip = "7z a -r -tzip";
       };
       oh-my-zsh = {
         enable = true;

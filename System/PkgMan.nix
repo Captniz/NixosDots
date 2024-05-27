@@ -38,7 +38,8 @@
       python-pkgs.requests
     ]))
 
-    # Utility & QoL
+    # Utility / Quality of Life 
+    p7zip
     (pkgs.wordlists.override { lists = with pkgs; [ rockyou ]; })
     git-credential-oauth
     xdg-utils
