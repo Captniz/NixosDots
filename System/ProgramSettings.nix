@@ -1,6 +1,29 @@
 { config, lib, pkgs, ...}:
 
 {
+  # Xdg portals
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland];
+  };
+
+  # Default applications
+  xdg.mime = {
+    enable =  true;
+    defaultApplications = {
+      "default-web-browser"           = [ "firefox.desktop" ];
+      "text/html"                     = [ "firefox.desktop" ];  # Browser
+      "x-scheme-handler/http"         = [ "firefox.desktop" ];
+      "x-scheme-handler/https"        = [ "firefox.desktop" ];
+      "x-scheme-handler/about"        = [ "firefox.desktop" ];
+      "x-scheme-handler/unknown"      = [ "firefox.desktop" ];
+      "image/jpeg"                    = [ "qimgv.desktop" ];    # Images
+      "image/jpg"                     = [ "qimgv.desktop" ];    # Images
+      "image/png"                     = [ "qimgv.desktop" ];    # Images
+    };
+  };
+
+  # Program configuration
   programs = {
     steam = {
       enable = true;

@@ -26,32 +26,16 @@
     description = "Simone";
     extraGroups = [ "networkmanager" "wheel" "kvm" "audio" "sound" "video"];
     packages = with pkgs; [];
-    # openssh.authorizedKeys.keys = ["AAAAC3NzaC1lZDI1NTE5AAAAIK1eVJW+B10QJrXyHsPmUHfFakEJK2XNu1gPuwA0qlH8"];
     shell = pkgs.zsh;
+  };
+  
+  #Enable experimental features
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    warn-dirty = false;
   };
 
   sound.enable = true;
-
-  # Default applications
-  xdg.mime = {
-    enable =  true;
-    defaultApplications = {
-      "default-web-browser"           = [ "firefox.desktop" ];
-      "text/html"                     = [ "firefox.desktop" ];  # Browser
-      "x-scheme-handler/http"         = [ "firefox.desktop" ];
-      "x-scheme-handler/https"        = [ "firefox.desktop" ];
-      "x-scheme-handler/about"        = [ "firefox.desktop" ];
-      "x-scheme-handler/unknown"      = [ "firefox.desktop" ];
-      "image/jpeg"                    = [ "qimgv.desktop" ];    # Images
-      "image/jpg"                     = [ "qimgv.desktop" ];    # Images
-      "image/png"                     = [ "qimgv.desktop" ];    # Images
-    };
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
 
   security = {
     rtkit.enable = true;
@@ -66,7 +50,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  #Enable experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.warn-dirty = false;
 }
