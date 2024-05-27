@@ -56,3 +56,4 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 - [ ] Installare Flatpack
 - [ ] Fix ranger config
+- [ ] Sorta PkgMan.nix negli altri file
