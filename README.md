@@ -1,4 +1,6 @@
-# TODO
+# TODOS
+
+## Packages
 
 WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
@@ -52,8 +54,9 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Android studio | ✔ | ✔ |
 | light | ✔ | ✔ |
 
-# GENERAL TODO
+## General
 
 - [ ] Installare Flatpack
 - [ ] Fix ranger config
 - [ ] Sorta PkgMan.nix negli altri file
+- [ ] Sorta extConfig in un modo migliore
