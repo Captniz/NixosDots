@@ -63,3 +63,4 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 - [ ] Add readmes to all folders
 - [ ] Put all theme-related configs in files in the theme folder    
 - [ ] Copia dal video di phoenix il setup del flake
+- [ ] Find a way to implement vs code extensions in the config
