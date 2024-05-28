@@ -46,6 +46,9 @@
     xdg-desktop-portal-hyprland
     xorg.xhost
     hyprland-protocols
+    tesseract
+    ocrmypdf
+    file
     bash-completion
     ueberzugpp
     poppler
