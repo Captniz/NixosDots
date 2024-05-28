@@ -7,7 +7,8 @@
   };
 
   environment.systemPackages = with pkgs; [   
-    # System
+    # Essentials
+
     hyprland            # Window manager
     zsh                 # Shell
     dunst               # Notification manager
@@ -15,8 +16,6 @@
     pipewire            # Audio server
     pavucontrol         # Audio control
     light               # Brightness control
-
-    # Essentials
     neovim              # Text editor
     alacritty           # Term. emulator
     ranger              # File manager
@@ -27,61 +26,68 @@
     libreoffice-qt-fresh# Office suite
     nitch               # System fetch
     btop                # System monitor     
-    grim                # Screenshot tool
-    slurp               # Region selector
-
+    p7zip               # Archive manager
+    unzip               # Archive manager      
     
     # Languages
-    jdk
-    (pkgs.python3.withPackages (python-pkgs: [
+    
+    jdk                # Java
+    (pkgs.python3.withPackages (python-pkgs: [  # Python
       python-pkgs.pandas
       python-pkgs.requests
     ]))
 
-    # Utility / Quality of Life 
-    p7zip
-    (pkgs.wordlists.override { lists = with pkgs; [ rockyou ]; })
-    git-credential-oauth
-    xdg-utils
-    xdg-desktop-portal-hyprland
-    xorg.xhost
-    hyprland-protocols
-    tesseract
-    wlroots
-    ocrmypdf
-    file
-    bash-completion
-    ueberzugpp
-    poppler
-    poppler_utils
-    unzip          
-    winetricks
-    jc
-    protonup
-    jq
-    bat
-    polkit
-    polkit_gnome
-    wineWowPackages.waylandFull
+    # Dependencies/Libraries/Single Use Programs
+
+    grim                # Screenshot tool
+    slurp               # Screen Region selector
+    jc                  # JSON parser
+    jq                  # JSON parser     
+    file                # File type checker
+    ueberzugpp          # Terminal Image viewer
+    git-credential-oauth# Git credential helper
+    polkit              # Authorization manager
+    polkit_gnome        # Authorization manager
+    xdg-utils           # Desktop utilities
+    xdg-desktop-portal-hyprland # Desktop utilities
+    (pkgs.wordlists.override { lists = with pkgs; [   # Wordlists
+      rockyou 
+    ];}) 
+    xorg.xhost          # Xorg utility
+    hyprland-protocols  # Hyprland protocols
+    wlroots             # Wayland compositor
+    poppler             # PDF library
+    poppler_utils       # PDF library
+    winetricks          # Wine utility
+    wineWowPackages.waylandFull # Wine utility
+
+
+    # Utility / Quality of Life / Useful Commands
+    
+    protonup            # Proton updater
+    bash-completion     # Terminal completion
+    bat                 # Cat clone
+    tesseract           # Image OCR
+    john                # Password cracker
+    ocrmypdf            # PDF OCR
 
     # Programs & Apps
-    balena-cli
-    qdirstat
-    gparted
-    discord
-    lutris
-    steam
-    dia
-    vlc
-    obs-studio
-    rofi-wayland      
-    eww  
-    zathura
-    android-studio      
-    vscode    
-    obsidian 
-    john
+    
+    balena-cli          # Balena CLI
+    qdirstat            # Disk usage analyzer
+    gparted             # Partition manager
+    discord             # Chat client
+    lutris              # Game client
+    steam               # Game client  
+    dia                 # Diagram editor
+    vlc                 # Media player
+    obs-studio          # Media creator / Streaming software
+    rofi-wayland        # App launcher
+    eww                 # Widget manager
+    zathura             # PDF viewer
+    android-studio      # Android IDE
+    vscode              # Code editor
+    obsidian            # Note taking app
 
-    #Test
   ];
 }

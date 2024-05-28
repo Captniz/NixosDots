@@ -2,8 +2,8 @@
 
 {
   home.packages = with pkgs;  [
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })
-    bibata-cursors
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  # Nerd Fonts
+    bibata-cursors                                              # Cursor theme         
   ];
   home.pointerCursor = {
     gtk.enable = true;
