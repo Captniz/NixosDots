@@ -56,10 +56,10 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 ## General
 
-- [ ] Installare Flatpack
-- [ ] Fix ranger config
-- [ ] Sorta PkgMan.nix negli altri file
-- [ ] Sorta extConfig in un modo migliore
+- [x] Fix ranger config
+- [ ] Fix eww config
+- [x] Sorta PkgMan.nix 
+- [x] Sorta extConfig in un modo migliore
 - [ ] Add readmes to all folders
 - [ ] Put all theme-related configs in files in the theme folder    
 - [ ] Copia dal video di phoenix il setup del flake
