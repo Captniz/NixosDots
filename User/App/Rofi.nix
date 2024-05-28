@@ -5,7 +5,7 @@
     enable = true;
     package = pkgs.rofi-wayland;
     font = "FiraCode Nerd Font 12";
-    theme = "/etc/nixos/extConfigs/rofi/gruvbox-material.rasi";
+    theme = "/etc/nixos/User/Themes/Rofi/gruvbox-material.rasi";
     extraConfig = {
       "display-ssh"=    "";
       "display-run"=    "";

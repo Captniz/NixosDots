@@ -150,7 +150,7 @@
 
 (defwidget wifiW []
   (button
-    :onclick "sh /usr/bin/CustomSystemUtils/WifiConnections.sh"
+    :onclick "sh /etc/nixos/User/Scripts/WifiConnections.sh"
     :timeout "30000ms"
     (box
       :space-evenly "false"

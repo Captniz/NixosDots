@@ -53,7 +53,7 @@
       nixconfigure = "code /etc/nixos";
       nixdeleteolder = "sudo nix-collect-garbage --delete-older-than";
       zip = "7z a -r -tzip";
-      ocr = "/etc/nixos/extConfigs/CustomSystemUtils/OcrTextExtractor.sh";
+      ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
     };
     oh-my-zsh = {
       enable = true;

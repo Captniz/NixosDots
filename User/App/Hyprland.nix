@@ -136,10 +136,10 @@
       
       binde = [
         # System settings controls
-        "$mod, F2, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- && sh /usr/bin/CustomSystemUtils/NotifyVolume.sh"
-        "$mod, F3, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ && sh /usr/bin/CustomSystemUtils/NotifyVolume.sh"
-        "$mod, F5, exec, light -U 5 && sh /usr/bin/CustomSystemUtils/NotifyBrightness.sh"
-        "$mod, F6, exec, light -A 5 && sh /usr/bin/CustomSystemUtils/NotifyBrightness.sh"
+        "$mod, F2, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
+        "$mod, F3, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
+        "$mod, F5, exec, light -U 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh"
+        "$mod, F6, exec, light -A 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh"
       ];
 
       bindm = [

@@ -3,6 +3,6 @@
 {
   programs.eww = {
     enable = true;
-    configDir = "/etc/nixos/extConfigs/eww";
+    configDir = "/etc/nixos/User/ExtraConfigs/eww";
   };
 }

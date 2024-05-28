@@ -16,6 +16,7 @@
     ./User/App/Git.nix
     ./User/App/Eww.nix
     ./User/App/Vscode.nix
+    ./User/App/Ranger.nix
   ];
 
   # Home config
