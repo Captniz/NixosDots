@@ -47,6 +47,7 @@
     xorg.xhost
     hyprland-protocols
     tesseract
+    wlroots
     ocrmypdf
     file
     bash-completion
