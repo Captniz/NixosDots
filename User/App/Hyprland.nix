@@ -28,7 +28,7 @@
 
       cursor = {
         inactive_timeout = 3;
-        no_hardware_cursors = true;
+        #no_hardware_cursors = true; # Causes smearing
         hide_on_touch = true;
       };
 

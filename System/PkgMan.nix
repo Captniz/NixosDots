@@ -88,6 +88,6 @@
     android-studio      # Android IDE
     vscode              # Code editor
     obsidian            # Note taking app
-
+    cider               # Apple Music client
   ];
 }
