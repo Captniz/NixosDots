@@ -54,7 +54,9 @@
           style = "Italic";
         };
         size = 12;
+        #draw_bold_text_with_bright_colors = false;
       };
+      env.TERM = "xterm-256color";
     };
   };
 }
