@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, userSettings, ...}:
 
 {
+  #imports = [
+  #  ../Themes/${userSettings.theme}
+  #];
   programs.alacritty = {
     enable = true;
     settings = {

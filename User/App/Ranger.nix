@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, userSettings, ...}:
 
 {
   home.file.".config/ranger/commands.py" = {
