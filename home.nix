@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   imports = [ 
@@ -20,9 +20,9 @@
   ];
 
   # Home config
-  home.username = "simo";
+  home.username = userSettings.username;
   home.homeDirectory = "/home/simo";
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "23.11";
   programs.home-manager.enable = true;
   
   nixpkgs = {
