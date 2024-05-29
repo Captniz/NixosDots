@@ -28,7 +28,7 @@
       # ----- USER SETTINGS ----- #
       userSettings = rec {
         username = "simo";            # username
-        theme = "Gruvbox-Dark";       # selcted theme from my themes directory (./themes/)
+        theme = "testing";       # selcted theme from my themes directory (./themes/)
         wm = "hyprland";              # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
         # window manager type (hyprland or x11) translator
         wmType = if (wm == "hyprland") then "wayland" else "x11";
