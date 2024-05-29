@@ -28,7 +28,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Starship | ✔ | ✔ |
 | SWWW | ✔ | ✔ |
 | Flatpack | ❌ | ❌ |
-| Ranger | ✔ | ✔ |
+| Ranger | ✔ | ❌ |
 | SDDM | ✔ | ❌ |
 | Slurp / Grim | ✔ | ✔ |
 | Blueman | ❌ | ❌ |
