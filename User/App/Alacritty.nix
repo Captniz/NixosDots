@@ -1,12 +1,6 @@
 { config, lib, pkgs, userSettings, ...}:
 
-let
-  colors = ../Themes/${userSettings.theme}/Colors.nix;
-in
 {
-  imports = [
-    ../Themes/${userSettings.theme}
-  ];
   programs.alacritty = {
     enable = true;
     settings = {
@@ -18,32 +12,32 @@ in
       };
       colors = {
         primary = {
-          background =   colors.bg0;
-          foreground =   colors.fg1;
+          background =   "#282828";
+          foreground =   "#ebdbb2";
         };
         cursor = {
-          cursor = colors.fg1;
-          text =   colors.fg1;
+          cursor =   "#ebdbb2";
+          text =   "#ebdbb2";
         };
         normal = {
-          red =     colors.red;
-          yellow =  colors.yellow;
-          green =   colors.green;
-          cyan =    colors.cyan;
-          blue =    colors.blue;
-          magenta = colors.magenta;
-          black =   colors.fg0;
-          white =   colors.bg1;
+          red =     "#cc241d";
+          yellow =  "#d79921";
+          green =   "#98971a";
+          cyan =    "#689d6a";
+          blue =    "#458588";
+          magenta = "#b16286";
+          black =   "#282828";
+          white =   "#ebdbb2";
         };
         bright = {
-          red =     colors.bright_red;
-          yellow =  colors.bright_yellow;
-          green =   colors.bright_green;
-          cyan =    colors.bright_cyan;
-          blue =    colors.bright_blue;
-          magenta = colors.bright_magenta;
-          black =   colors.fg2;
-          white =   colors.bg0;
+          red =     "#fb4934";
+          yellow =  "#fabd2f";
+          green =   "#b8bb26";
+          cyan =    "#8ec07c";
+          blue =    "#83a598";
+          magenta = "#d3869b";
+          black =   "#504945";
+          white =   "#fbf1c7";
         };
       };
       font = {
