@@ -1,12 +1,19 @@
 { config, lib, pkgs, userSettings, ...}:
 
+let
+  colors = import ../Themes/${userSettings.theme}/Colors.nix;
+in
 {
+  imports = [
+    ../Themes/${userSettings.theme}
+  ];
+  
   services.dunst = {
     enable = true;
     settings = {
       global = {
         # Color
-        frame_color = "#555555";
+        frame_color = colors.bg3;
         separator_color = "frame";
         transparency = 10;
 
@@ -36,23 +43,23 @@
       };
 
       urgency_low = {
-        background = "#1d1f21";
-        foreground = "#4da1af";
-        frame_color = "#4da1af";
+        background = colors.black;
+        foreground = colors.bright_blue;
+        frame_color = colors.bright_blue;
         timeout = 10;
       };
 
       urgency_normal = {
-        background = "#1d1f21";
-        foreground = "#70a040";
-        frame_color = "#70a040";
+        background = colors.black;
+        foreground = colors.bright_green;
+        frame_color = colors.bright_green;
         timeout = 15;
       };
 
       urgency_critical = {
-        background = "#1d1f21";
-        foreground = "#dd5633";
-        frame_color = "#dd5633";
+        background = colors.black;
+        foreground = colors.bright_red;
+        frame_color = colors.bright_red;
         timeout = 0;
       };
     };
