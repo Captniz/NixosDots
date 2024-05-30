@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ../Themes/${userSettings.theme}/Hyprland-override.nix
+    ../Themes/${userSettings.theme}/Vscode-override.nix
   ];
   programs.vscode= {
     enable = true;
