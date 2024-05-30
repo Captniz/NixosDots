@@ -26,7 +26,7 @@ in
       completion-bg           =    colors.bg2; # bg2
       completion-fg           =    colors.fg1; # fg
       completion-group-bg     =    colors.bg1; # bg1
-      completion-group-fg     =    colors.grey; # gray
+      completion-group-fg     =    colors.gray; # gray
       completion-highlight-bg =    colors.bright_blue; # bright:blue
       completion-highlight-fg =    colors.bg2; # bg2
 
