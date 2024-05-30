@@ -56,11 +56,11 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 ## General
 
-- [x] Fix ranger config
-- [ ] Fix eww config
-- [x] Sorta PkgMan.nix 
-- [x] Sorta extConfig in un modo migliore
-- [x] Add readmes to all folders
+- [ ] Modify config to adapt to theme changer, also fix them
+- - [ ] Fix ranger config
+- - [ ] Fix eww config
+- - [ ] Adapt rofi config
 - [ ] Put all theme-related configs in files in the theme folder    
 - [ ] Copia dal video di phoenix il setup del flake
 - [ ] Find a way to implement vs code extensions in the config
+- [ ] Possibile: elimina Style.nix

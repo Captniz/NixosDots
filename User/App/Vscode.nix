@@ -1,6 +1,12 @@
 { config, lib, pkgs, userSettings, ...}:
 
+let
+  colors = import ../Themes/${userSettings.theme}/Colors.nix;
+in
 {
+  imports = [
+    ../Themes/${userSettings.theme}/Hyprland-override.nix
+  ];
   programs.vscode= {
     enable = true;
     userSettings = {

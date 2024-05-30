@@ -1,6 +1,13 @@
 { config, lib, pkgs, userSettings, ...}:
 
+let
+  colors = import ../Themes/${userSettings.theme}/Colors.nix;
+in
 {
+  imports = [
+    ../Themes/${userSettings.theme}/Hyprland-override.nix
+  ];
+  
   # Programs & configs
   wayland.windowManager.hyprland = {
     enable = true;

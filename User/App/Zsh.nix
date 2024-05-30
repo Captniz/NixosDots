@@ -1,5 +1,8 @@
 { config, lib, pkgs, userSettings, ...}:
 
+let
+  colors = import ../Themes/${userSettings.theme}/Colors.nix;
+in
 {
   home.packages = with pkgs;  [
     starship
@@ -14,15 +17,15 @@
 
       palette  = "custom";
       palettes.custom = {
-        red =     "#cc241d";
-        orange =  "#d65d0e";
-        yellow =  "#d79921";
-        green =   "#98971a";
-        cyan =    "#689d6a";
-        blue =    "#458588";
-        purple =  "#b16286";
-        black =   "#282828";
-        white =   "#ebdbb2";
+        red =     colors.red;
+        orange =  colors.orange;
+        yellow =  colors.yellow;
+        green =   colors.green;
+        cyan =    colors.aqua;
+        blue =    colors.blue;
+        purple =  colors.purple;
+        black =   colors.black;
+        white =   colors.white;
       };
 
       battery = {
