@@ -4,9 +4,6 @@ let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
 in
 {
-  imports = [
-    ../Themes/${userSettings.theme}
-  ];
   
   services.dunst = {
     enable = true;
