@@ -32,8 +32,8 @@ in
           cyan =    colors.aqua;
           blue =    colors.blue;
           magenta = colors.purple;
-          black =   colors.fg0;
-          white =   colors.bg1;
+          black =   colors.black;
+          white =   colors.white;
         };
         bright = {
           red =     colors.bright_red;
@@ -42,8 +42,8 @@ in
           cyan =    colors.bright_aqua;
           blue =    colors.bright_blue;
           magenta = colors.bright_purple;
-          black =   colors.fg2;
-          white =   colors.bg0;
+          black =   colors.bright_black;
+          white =   colors.bright_white;
         };
       };
       font = {
