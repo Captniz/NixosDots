@@ -1,7 +1,7 @@
 { config, lib, pkgs, userSettings, ...}:
 
 let
-  colors = import ../Themes/${userSettings.theme}/Colors.nix;
+  colors = import ./Colors.nix;
 in
 {
     wayland.windowManager.hyprland.settings = { 
