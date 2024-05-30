@@ -7,9 +7,9 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Package | Installato | Configurato |
 | --- | --- | --- |
 | Hyprland | ✔ | ✔ |
-| Dunst | ✔ | ❌ |
+| Dunst | ✔ | ✔ |
 | Obsidian | ✔ | ✔ |
-| NeoVim | ✔ | ❌ |
+| NeoVim | ✔ | ✔ |
 | LibreOffice | ✔ | ✔ |
 | Wine | ✔ | ✔ |
 | Firefox (saved pssw and stting) | ✔ | ✔ |
@@ -38,7 +38,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Qdirstat | ✔ | ✔ |
 | Jetbrains-toolbox | ❌ | ❌ |
 | Postman | ❌ | ❌ |
-| Tesseract | ❌ | ❌ |
+| Tesseract | ✔ | ✔ |
 | Balena-etcher | ❌ | ❌ |
 | Gparted | ✔ | ✔ |
 | Docker | ❌ | ❌ |
@@ -60,7 +60,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 - - [ ] Fix ranger config
 - - [ ] Fix eww config
 - - [ ] Adapt rofi config
-- [ ] Put all theme-related configs in files in the theme folder    
-- [ ] Copia dal video di phoenix il setup del flake
+- [x] Put all theme-related configs in files in the theme folder    
+- [x] Copia dal video di phoenix il setup del flake
 - [ ] Find a way to implement vs code extensions in the config
-- [ ] Possibile: elimina Style.nix
+- [x] Possibile: elimina Style.nix
