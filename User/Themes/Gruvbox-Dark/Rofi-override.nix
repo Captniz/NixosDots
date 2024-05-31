@@ -1,7 +1,7 @@
 { config, lib, pkgs, userSettings, ...}:
 
 let
-  colors = import ../Themes/${userSettings.theme}/Colors.nix;
+  colors = import ./Colors.nix;
   inherit (config.lib.formats.rasi) mkLiteral; 
   rofi-theme = {
     "*" = {
@@ -17,7 +17,7 @@ let
       gruv7= mkLiteral colors.fg4;
       gruv8= mkLiteral colors.gray;
       gruv9= mkLiteral colors.bg4;
-      gruv10= mkLiteral colors.b2;
+      gruv10= mkLiteral colors.bg2;
 
       red= mkLiteral colors.red;
       orange= mkLiteral colors.orange;
@@ -92,7 +92,7 @@ let
 
     "element" ={
       padding= mkLiteral "5px";
-      vertical-align= 0.5;
+      vertical-align= mkLiteral "0.5";
       border-radius= mkLiteral "10px";
       color= mkLiteral "@foreground";
       text-color= mkLiteral "@gruv6";
@@ -127,7 +127,7 @@ let
     "element-text, element-icon"= {
       size= mkLiteral "3ch";
       margin= mkLiteral "0 10 0 0";
-      vertical-align= 0.5;
+      vertical-align= mkLiteral "0.5";
       background-color= mkLiteral "inherit";
       text-color= mkLiteral "@gruv6";
     };
@@ -135,7 +135,7 @@ let
     "button"= {
       padding= mkLiteral "6px";
       color= mkLiteral "@foreground";
-      horizontal-align= 0.5;
+      horizontal-align= mkLiteral "0.5";
 
       border= mkLiteral "2px 0px 2px 2px";
       border-radius= mkLiteral "10px";
@@ -152,5 +152,5 @@ in
   programs.rofi = {
     font = lib.mkForce "FiraCode Nerd Font 12";
     theme = lib.mkForce rofi-theme;
-  }
+  };
 }
