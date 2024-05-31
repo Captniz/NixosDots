@@ -24,7 +24,7 @@ in
       $border: ${colors.bg1};
 
       $font: "Iosevka NFM";
-    "
+    ";
   };
   home.file."/etc/nixos/User/ExtraConfigs/eww/eww.scss" = {
     enable = true;
@@ -150,7 +150,7 @@ in
         font-size: 23px;
         color: $orange;
       }
-    "
+    ";
   };
   programs.eww = {
     enable = true;

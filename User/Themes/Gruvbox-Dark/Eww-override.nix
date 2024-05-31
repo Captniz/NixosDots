@@ -20,6 +20,6 @@ in
       $border: ${colors.bg1};
 
       $font: "Iosevka NFM";
-    "
+    ";
   };
 }
