@@ -33,6 +33,7 @@
     };
 
     gamemode.enable = true;
+    
     light.enable = true;
     
     zsh = {

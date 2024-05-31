@@ -58,7 +58,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 - [ ] Modify config to adapt to theme changer, also fix them
 - - [ ] Fix ranger config
-- - [ ] Fix eww config
+- - [x] Fix eww config
 - - [ ] Adapt rofi config
 - [x] Put all theme-related configs in files in the theme folder    
 - [x] Copia dal video di phoenix il setup del flake

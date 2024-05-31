@@ -8,7 +8,18 @@ in
     ../Themes/${userSettings.theme}/Eww-override.nix
   ];
 
-  home.file."../../etc/nixos/User/ExtraConfigs/eww/colors.scss" = {
+  home.file.".config/eww/Scripts" = {
+    enable = true;
+    source = "/etc/nixos/User/ExtraConfigs/eww/Scripts";
+    recursive = true;
+  };
+
+  home.file.".config/eww/eww.yuck" = {
+    enable = true;
+    source = "/etc/nixos/User/ExtraConfigs/eww/eww.yuck";
+  };
+
+  home.file.".config/eww/colors.scss" = {
     enable = true;
     text = "
       $bg: ${colors.bg0};
@@ -26,7 +37,7 @@ in
       $font: \"Iosevka NFM\";
     ";
   };
-  home.file."../../etc/nixos/User/ExtraConfigs/eww/eww.scss" = {
+  home.file.".config/eww/eww.scss" = {
     enable = true;
     text = "
       @import \"colors\";
@@ -154,6 +165,6 @@ in
   };
   programs.eww = {
     enable = true;
-    configDir = "/etc/nixos/User/ExtraConfigs/eww";
+    configDir = "${config.home.homeDirectory}/.config/eww";
   };
 }
