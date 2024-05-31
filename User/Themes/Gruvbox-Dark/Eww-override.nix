@@ -4,7 +4,7 @@ let
   colors = import ./Colors.nix;
 in
 {
-  home.file."/etc/nixos/User/ExtraConfigs/eww/colors.scss" = lib.mkForce {
+  home.file."../../etc/nixos/User/ExtraConfigs/eww/colors.scss" = lib.mkForce {
     enable = true;
     text = "
       $bg: ${colors.bg0_hard};
@@ -15,7 +15,7 @@ in
       $orange: ${colors.orange};
       $yellow: ${colors.yellow};
       $green: ${colors.green};
-      $blue: ${colors.blue};
+      $blue: ${colors.red};
       $aqua: ${colors.aqua};
       $border: ${colors.bg1};
 

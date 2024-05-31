@@ -8,7 +8,7 @@ in
     ../Themes/${userSettings.theme}/Eww-override.nix
   ];
 
-  home.file."/etc/nixos/User/ExtraConfigs/eww/colors.scss" = {
+  home.file."../../etc/nixos/User/ExtraConfigs/eww/colors.scss" = {
     enable = true;
     text = "
       $bg: ${colors.bg0};
@@ -26,7 +26,7 @@ in
       $font: \"Iosevka NFM\";
     ";
   };
-  home.file."/etc/nixos/User/ExtraConfigs/eww/eww.scss" = {
+  home.file."../../etc/nixos/User/ExtraConfigs/eww/eww.scss" = {
     enable = true;
     text = "
       @import \"colors\";
