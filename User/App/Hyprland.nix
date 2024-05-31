@@ -16,7 +16,7 @@ in
     settings = {  
       # Vars
       "$mod" = "SUPER";
-      "$wallpaper" = "99.png";
+      "$wallpaper" = "~/Images/Wallpapers/99.png";
       "$activeBorder" = "rgba(8DA101dd)";
       "$inactiveBorder" = "rgba(c5c9aaff)";
       "$shadow" = "rgba(1a1a1aee)";
@@ -169,7 +169,7 @@ in
       ];
 
       exec-once = [
-        "swww init & swww img ~/Images/Wallpapers/$wallpaper"
+        "swww init & swww img $wallpaper"
         "eww open bar"
         "polkit-agent-helper-1" 
         "systemctl start --user polkit-gnome-authentication-agent-1" 
