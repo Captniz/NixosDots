@@ -23,13 +23,13 @@ in
       $aqua: ${colors.aqua};
       $border: ${colors.bg1};
 
-      $font: "Iosevka NFM";
+      $font: \"Iosevka NFM\";
     ";
   };
   home.file."/etc/nixos/User/ExtraConfigs/eww/eww.scss" = {
     enable = true;
     text = "
-      @import "colors";
+      @import \"colors\";
 
       * {
           all: unset; 

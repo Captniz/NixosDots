@@ -19,7 +19,7 @@ in
       $aqua: ${colors.aqua};
       $border: ${colors.bg1};
 
-      $font: "Iosevka NFM";
+      $font: \"Iosevka NFM\";
     ";
   };
 }
