@@ -149,6 +149,8 @@ let
   };
 in
 {
+  programs.rofi = {
     font = lib.mkForce "FiraCode Nerd Font 12";
     theme = lib.mkForce rofi-theme;
+  }
 }
