@@ -56,10 +56,10 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 ## General
 
-- [ ] Modify config to adapt to theme changer, also fix them
-- - [ ] Fix ranger config
+- [x] Modify config to adapt to theme changer, also fix them
+- - [ ] Adapt ranger config
 - - [x] Fix eww config
-- - [ ] Adapt rofi config
+- - [x] Adapt rofi config
 - [x] Put all theme-related configs in files in the theme folder    
 - [x] Copia dal video di phoenix il setup del flake
 - [ ] Find a way to implement vs code extensions in the config
