@@ -29,16 +29,16 @@ in
         border_size = 2;
         no_border_on_floating = true;
         layout = "dwindle";
-        cursor_inactive_timeout = 3;
+        #cursor_inactive_timeout = 3;
         "col.active_border" = "$activeBorder";
         "col.inactive_border" = "$inactiveBorder";
       };
 
-      #cursor = {
-      #  inactive_timeout = 3;
-      #  #no_hardware_cursors = true; # Causes smearing
-      #  hide_on_touch = true;
-      #};
+      cursor = {
+        inactive_timeout = 3;
+        #no_hardware_cursors = true; # Causes smearing
+        hide_on_touch = true;
+      };
 
       misc = {
         disable_hyprland_logo = true;
