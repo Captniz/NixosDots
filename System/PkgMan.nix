@@ -77,7 +77,7 @@
     gparted             # Partition manager
 
     # Programs & Apps
-    
+  
     docker              # Container manager
     balena-cli          # Balena CLI
     discord             # Chat client

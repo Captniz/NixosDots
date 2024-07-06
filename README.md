@@ -39,7 +39,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Tesseract | ✔ | ✔ |
 | Balena-etcher | ✔ | ✔ |
 | Gparted | ✔ | ✔ |
-| Docker | ❌ | ❌ |
+| Docker | ✔ | ❌ |
 | Lutris | ✔ | ❌ |
 | Steam | ✔ | ✔ |
 | Discord | ✔ | ✔ |
