@@ -73,12 +73,13 @@
     tesseract           # Image OCR
     john                # Password cracker
     ocrmypdf            # PDF OCR
+    qdirstat            # Disk usage analyzer
+    gparted             # Partition manager
 
     # Programs & Apps
     
+    docker              # Container manager
     balena-cli          # Balena CLI
-    qdirstat            # Disk usage analyzer
-    gparted             # Partition manager
     discord             # Chat client
     lutris              # Game client
     steam               # Game client  
