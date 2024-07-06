@@ -66,6 +66,7 @@
 
     # Utility / Quality of Life / Useful Commands
     
+    fontforge           # Font editor
     protonup            # Proton updater
     bash-completion     # Terminal completion
     bat                 # Cat clone

@@ -28,8 +28,8 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Starship | ✔ | ✔ |
 | SWWW | ✔ | ✔ |
 | Flatpack | ❌ | ❌ |
-| Ranger | ✔ | ❌ |
-| SDDM | ✔ | ❌ |
+| Ranger | ✔ | ✔ |
+| SDDM | ✔ | ✔ |
 | Slurp / Grim | ✔ | ✔ |
 | Blueman | ❌ | ❌ |
 | Rofi | ✔ | ✔ |
@@ -56,11 +56,4 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 ## General
 
-- [x] Modify config to adapt to theme changer, also fix them
-- - [ ] Adapt ranger config
-- - [x] Fix eww config
-- - [x] Adapt rofi config
-- [x] Put all theme-related configs in files in the theme folder    
-- [x] Copia dal video di phoenix il setup del flake
 - [ ] Find a way to implement vs code extensions in the config
-- [x] Possibile: elimina Style.nix

@@ -1,10 +1,10 @@
 { pkgs }:
 let
-    imgLink = "https://github.com/Captniz/Wallpapers/45.jpg";
+    imgLink = "https://raw.githubusercontent.com/Captniz/Wallpapers/main/45-b.jpg";
 
     image = pkgs.fetchurl {
         url = imgLink;
-        sha256 = "sha256-1vbk9rspqaxpjlrm57wkban7jvsxzlagal4w1yw890h38k92wqz3";
+        sha256 = "1258wyz6cxc5wsrivdj0jly9cqr09bc6w3f6f42ycxmmghfdqbcv";
     };
 in
 pkgs.stdenv.mkDerivation {
@@ -20,7 +20,7 @@ pkgs.stdenv.mkDerivation {
         mkdir -p $out
         cp -R ./* $out/
         cd $out/
-        rm Background.jpg
-        cp -r ${image} $out/Background.jpg
+        rm Backgrounds/Mountain.jpg
+        cp -r ${image} $out/Backgrounds/Mountain.jpg
     '';
 }    
