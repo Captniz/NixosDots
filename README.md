@@ -36,18 +36,15 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Nitch | ✔ | ✔ |
 | Zathura | ✔ | ✔ |
 | Qdirstat | ✔ | ✔ |
-| Jetbrains-toolbox | ❌ | ❌ |
-| Postman | ❌ | ❌ |
 | Tesseract | ✔ | ✔ |
-| Balena-etcher | ❌ | ❌ |
+| Balena-etcher | ✔ | ✔ |
 | Gparted | ✔ | ✔ |
 | Docker | ❌ | ❌ |
 | Lutris | ✔ | ❌ |
 | Steam | ✔ | ✔ |
-| Xampp | ❌ | ❌ |
 | Discord | ✔ | ✔ |
 | Qimgv | ✔ | ✔ |
-| fontforge | ❌ | ❌ |
+| fontforge | ✔ | ✔ |
 | Dia | ✔ | ✔ |
 | vlc | ✔ | ✔ |
 | obs | ✔ | ✔ |
@@ -56,4 +53,5 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 ## General
 
+- [ ] Create some usable themes, and do the last fixes in the theme-switcher
 - [ ] Find a way to implement vs code extensions in the config
