@@ -23,7 +23,7 @@
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "${import ./App/sddm-theme.nix { inherit pkgs; }}";
+      theme = "${import ./App/Sddm.nix { inherit pkgs; }}";
     };
     
     postgresql = {

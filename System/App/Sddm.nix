@@ -1,8 +1,8 @@
-{ config, lib, pkgs, systemSettings, ...}:
+{ pkgs }:
 
 pkgs.stdenv.mkDerivation {
     name = "sddm-theme";
-    src = pkgs.fetchFromGithub {
+    src = pkgs.fetchFromGitHub {
         owner = "Kangie";
         repo = "sddm-sugar-candy";
         rev = "a1fae5159c8f7e44f0d8de124b14bae583edb5b8";
