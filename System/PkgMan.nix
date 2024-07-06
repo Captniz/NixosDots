@@ -39,6 +39,8 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    libsForQt5.qt5.qtquickcontrols # Qt5 libraries
+    ibsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     grim                # Screenshot tool
     slurp               # Screen Region selector
     jc                  # JSON parser
