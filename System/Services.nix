@@ -8,7 +8,17 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      wireplumber.enable = true;
+      wireplumber = {
+        enable = true;
+        extraConfig = {
+          "monitor.bluez.properties" = {
+            "bluez5.enable-sbc-xq" = true;
+            "bluez5.enable-msbc" = true;
+            "bluez5.enable-hw-volume" = true;
+            "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+          };
+        };
+      };
     };
     
     openssh = {
@@ -38,13 +48,12 @@
 
     blueman = {
       enable = true;
-      #packages = [ pkgs.blueman ];
     };
   };
 
 
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
+  systemd.user.services = {
+    polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
       wantedBy = [ "graphical-session.target" ];
       wants = [ "graphical-session.target" ];
@@ -56,6 +65,13 @@
         RestartSec = 1;
         TimeoutStopSec = 10;
       };
+    };
+
+    mpris-proxy = {
+      description = "Mpris proxy";
+      after = [ "network.target" "sound.target" ];
+      wantedBy = [ "default.target" ];
+      serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
     };
   };
 }

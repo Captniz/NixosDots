@@ -2,19 +2,23 @@
 
 {
   hardware = {
+    
     graphics = {
       enable = true;
       #driSupport = true;
       enable32Bit = true;
     };
+    
     bluetooth = {
       enable = true;
       powerOnBoot = true;
-      #bluez = {
-      #  enable = true;
-      #  plugins = [ pkgs.bluez5.plugins.bluez5 ];
-      #};
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+        };
+      };
     };
+    
     nvidia.modesetting.enable = true;
   };
   
