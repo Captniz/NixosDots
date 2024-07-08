@@ -40,21 +40,21 @@ in
       };
 
       urgency_low = {
-        background = colors.black;
+        background = colors.bg0;
         foreground = colors.bright_blue;
         frame_color = colors.bright_blue;
         timeout = 10;
       };
 
       urgency_normal = {
-        background = colors.black;
+        background = colors.bg0;
         foreground = colors.bright_green;
         frame_color = colors.bright_green;
         timeout = 15;
       };
 
       urgency_critical = {
-        background = colors.black;
+        background = colors.bg0;
         foreground = colors.bright_red;
         frame_color = colors.bright_red;
         timeout = 0;

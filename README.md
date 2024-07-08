@@ -31,7 +31,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Ranger | ✔ | ✔ |
 | SDDM | ✔ | ✔ |
 | Slurp / Grim | ✔ | ✔ |
-| Blueman | ❌ | ❌ |
+| Bluetooth | ✔ | ✔ |
 | Rofi | ✔ | ✔ |
 | Nitch | ✔ | ✔ |
 | Zathura | ✔ | ✔ |
