@@ -21,7 +21,7 @@ in
       "$inactiveBorder" = "rgba(c5c9aaff)";
       "$shadow" = "rgba(1a1a1aee)";
       
-      monitor = ",preferred,auto,1";
+      monitor = ",preferred,auto,1,bitdepth,10";
 
       general = {
         gaps_in = 5;
@@ -166,6 +166,7 @@ in
         "suppressevent maximize,class:^(notion-snap-reborn)$"
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
         "fakefullscreen,class:^(jetbrains-[A-Za-z0-9]+)$"
+        "fakefullscreen,class:^(WebCord)$"
       ];
 
       exec-once = [
@@ -173,6 +174,7 @@ in
         "eww open bar"
         "polkit-agent-helper-1" 
         "systemctl start --user polkit-gnome-authentication-agent-1" 
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
     };
   };

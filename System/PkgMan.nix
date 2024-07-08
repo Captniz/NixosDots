@@ -14,6 +14,7 @@
     dunst               # Notification manager
     sddm                # Display manager
     pipewire            # Audio server
+    wireplumber         # Audio server
     pavucontrol         # Audio control
     light               # Brightness control
     neovim              # Text editor
@@ -50,7 +51,9 @@
     git-credential-oauth# Git credential helper
     polkit              # Authorization manager
     polkit_gnome        # Authorization manager
+    xwaylandvideobridge # Xwayland bridge
     xdg-utils           # Desktop utilities
+    xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities
     (pkgs.wordlists.override { lists = with pkgs; [   # Wordlists
       rockyou 
@@ -80,7 +83,8 @@
   
     docker              # Container manager
     balena-cli          # Balena CLI
-    discord             # Chat client
+    #vesktop             # Chat client
+    webcord             # Discord client
     lutris              # Game client
     steam               # Game client  
     dia                 # Diagram editor
