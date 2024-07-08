@@ -7,6 +7,14 @@
       #driSupport = true;
       enable32Bit = true;
     };
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      #bluez = {
+      #  enable = true;
+      #  plugins = [ pkgs.bluez5.plugins.bluez5 ];
+      #};
+    };
     nvidia.modesetting.enable = true;
   };
   

@@ -35,7 +35,13 @@
         local all       all     trust
       '';
     };
+
+    blueman = {
+      enable = true;
+      #packages = [ pkgs.blueman ];
+    };
   };
+
 
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
