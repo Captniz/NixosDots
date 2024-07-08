@@ -55,3 +55,4 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 - [ ] Create some usable themes, and do the last fixes in the theme-switcher
 - [ ] Find a way to implement vs code extensions in the config
+- [ ] Theme firefox
