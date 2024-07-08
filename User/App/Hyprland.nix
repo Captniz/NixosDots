@@ -49,7 +49,7 @@ in
       };
       
       input = {
-        kb_layout = "it";
+        kb_layout = userSettings.keyboard;
         follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
