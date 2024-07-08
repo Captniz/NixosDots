@@ -5,7 +5,7 @@ let
 in
 {
     programs.vscode.userSettings = {
-      "workbench.colorTheme"= lib.mkForce "Gruvbox Light Medium";
+      "workbench.colorTheme"= lib.mkForce "Gruvbox Light Hard";
       "material-icon-theme.folders.color"= lib.mkForce colors.blue;
     };
 }

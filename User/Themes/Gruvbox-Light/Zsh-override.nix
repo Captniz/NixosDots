@@ -4,29 +4,16 @@ let
   colors = import ./Colors.nix;
 in
 {
-    programs.starship = lib.mkForce {
-    enable = true;
-    settings = {
-      format = "
-[┌](orange)[\\[](purple) $all[\\]](purple)
-[└─>](bold orange)$character(bold purple)$battery";
+    programs.starship = {
+        settings = {
+        format = lib.mkForce "
+[┌](bold cyan)[\\[](purple) $all[\\]](purple)
+[└─>](bold cyan)$character$battery";
 
-      palette  = "custom";
-      palettes.custom = {
-        red =     colors.red;
-        orange =  colors.orange;
-        yellow =  colors.yellow;
-        green =   colors.green;
-        cyan =    colors.aqua;
-        blue =    colors.blue;
-        purple =  colors.purple;
-        black =   colors.black;
-        white =   colors.white;
-      };
-
-      character = {
-
-      };
-    };
+        character = lib.mkForce {
+            success_symbol = "[❯](bold purple)";
+            error_symbol = "[!](bold red)[❯](bold red)";
+        };
+        };
     };
 }

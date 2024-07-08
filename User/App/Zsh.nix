@@ -7,7 +7,6 @@ in
   imports = [
     ../Themes/${userSettings.theme}/Zsh-override.nix
   ];
-
   home.packages = with pkgs;  [
     starship
   ];
@@ -37,6 +36,9 @@ in
       };
       line_break = {
         disabled = true;
+      };
+      character = {
+        success_symbol = "[❯](bold green)";          error_symbol = "[!](bold red)[❯](bold red)";
       };
       add_newline = false;
     };

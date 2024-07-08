@@ -8,7 +8,7 @@ in
     enable = true;
     text = "
       $bg: ${colors.bg0};
-      $hbg: ${colors.bg3};
+      $hbg: ${colors.bg1};
       $fg: ${colors.fg0};
       $purple: ${colors.purple};
       $red: ${colors.red};
@@ -17,7 +17,7 @@ in
       $green: ${colors.green};
       $blue: ${colors.blue};
       $aqua: ${colors.aqua};
-      $border: ${colors.bg1};
+      $border: ${colors.bg3};
 
       $font: \"Iosevka NFM\";
     ";
