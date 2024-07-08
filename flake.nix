@@ -30,7 +30,7 @@
       userSettings = rec {
         keyboard = systemSettings.keyboard;              # select keyboard layout
         username = "simo";            # username
-        theme = "Gruvbox-Light";       # selcted theme from my themes directory (./themes/)
+        theme = "Gruvbox-Dark";       # selcted theme from my themes directory (./themes/)
         wm = "hyprland";              # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
         # window manager type (hyprland or x11) translator
         wmType = if (wm == "hyprland") then "wayland" else "x11";
