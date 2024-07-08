@@ -5,17 +5,17 @@ let
   inherit (config.lib.formats.rasi) mkLiteral; 
   rofi-theme = {
     "*" = {
-      gruv0 = mkLiteral colors.black;
-      gruv1 = mkLiteral colors.bg0_soft;
-      gruv2 = mkLiteral colors.bg2;
-      gruv3 = mkLiteral colors.bg3;
+      gruv0 = mkLiteral colors.bg0_hard;
+      gruv1 = mkLiteral colors.bg0;
+      gruv2 = mkLiteral colors.bg0_soft;
+      gruv3 = mkLiteral colors.bg1;
 
       gruv4= mkLiteral colors.fg0;
       gruv5= mkLiteral colors.fg0_soft;
       gruv6= mkLiteral colors.fg1;
 
       gruv7= mkLiteral colors.fg4;
-      gruv8= mkLiteral colors.gray;
+      gruv8= mkLiteral colors.bg3;
       gruv9= mkLiteral colors.bg4;
       gruv10= mkLiteral colors.bg2;
 

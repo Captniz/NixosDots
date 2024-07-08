@@ -4,6 +4,9 @@ let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
 in
 {
+  imports = [
+    ../Themes/${userSettings.theme}/Zathura-override.nix
+  ];
   programs.zathura = {
     enable = true;
     options = {
