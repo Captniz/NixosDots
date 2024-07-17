@@ -10,35 +10,15 @@
     ./System/EnVars.nix
     ./System/Hardware.nix
     ./System/ProgramSettings.nix
+    ./System/Users.nix
+    ./System/Security.nix
+    ./System/Boot.nix
   ];
-
-  # Bootloader.
-  boot = {
-    supportedFilesystems = [ "ntfs" ];
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.simo = {
-    isNormalUser = true;
-    description = "Simone";
-    extraGroups = [ "networkmanager" "wheel" "kvm" "audio" "sound" "video"];
-    packages = with pkgs; [];
-    shell = pkgs.zsh;
-  };
   
   #Enable experimental features
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     warn-dirty = false;
-  };
-
-  #sound.enable = true;
-
-  security = {
-    rtkit.enable = true;
-    polkit.enable = true;
   };
 
   # This value determines the NixOS release from which the default
