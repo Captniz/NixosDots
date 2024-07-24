@@ -61,6 +61,7 @@ in
           style = "Italic";
         };
         size = 12;
+        builtin_box_drawing = false;
       };
       env.TERM = "xterm-256color";
     };

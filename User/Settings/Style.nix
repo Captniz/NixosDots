@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs;  [
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })  # Nerd Fonts
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "Meslo" ]; })  # Nerd Fonts
     bibata-cursors                                              # Cursor theme         
   ];
   home.pointerCursor = {

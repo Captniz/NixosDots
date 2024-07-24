@@ -36,6 +36,7 @@
     (pkgs.python3.withPackages (python-pkgs: [  # Python
       python-pkgs.pandas
       python-pkgs.requests
+      python-pkgs.setuptools
     ]))
 
     # Dependencies/Libraries/Single Use Programs
@@ -69,7 +70,6 @@
 
     # Utility / Quality of Life / Useful Commands
     
-    fontforge           # Font editor
     protonup            # Proton updater
     bash-completion     # Terminal completion
     bat                 # Cat clone
@@ -97,5 +97,6 @@
     vscode              # Code editor
     obsidian            # Note taking app
     cider               # Apple Music client
+    unityhub            # Unity IDE
   ];
 }

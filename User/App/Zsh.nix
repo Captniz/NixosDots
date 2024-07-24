@@ -15,8 +15,8 @@ in
     enable = true;
     settings = {
       format = "
-[┌](orange)[\\[](green) $all[\\]](green)
-[└─>](bold orange)$character$battery";
+[╭──](orange)[•](green) $all[•](green)
+[╰─>](bold orange)$character$battery";
 
       palette  = "custom";
       palettes.custom = {
