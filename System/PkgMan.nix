@@ -70,6 +70,7 @@
 
     # Utility / Quality of Life / Useful Commands
     
+    fzf                 # Fuzzy File Finder
     protonup            # Proton updater
     bash-completion     # Terminal completion
     bat                 # Cat clone
