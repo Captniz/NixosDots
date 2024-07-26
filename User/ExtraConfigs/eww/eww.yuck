@@ -10,6 +10,8 @@
 `sh ./Scripts/getWorkspaces.sh`)
 (defpoll wifi :interval "2s"
 `sh ./Scripts/getWifiStatus.sh`)
+(defpoll bt :interval "2s"
+`sh ./Scripts/getBluetoothStatus.sh`)
 (defvar show-powermenu false)
 
 (defwindow bar
@@ -65,6 +67,8 @@
     :halign "end"
     
     (wifiW)
+    "|"
+    (bluetoothW)
     "|"
     (metersW)
     "|"
@@ -157,12 +161,30 @@
       :halign "center"
       :spacing "5"
       (label
+        :style "font-size: 28px;"
         :class {wifi == "No connection" ? "no-wifi" : "yes-wifi" }
         :text "${wifi == "No connection" ? "󰤮" : "󰤨" }"
       )
       (label
         :class {wifi == "No connection" ? "no-wifi-text" : "yes-wifi-text" }
         :text "${wifi}"
+      )
+    )
+  )
+)
+
+(defwidget bluetoothW []
+  (button
+    :onclick "sh /etc/nixos/User/Scripts/BluetoothConnections.sh"
+    :timeout "30000ms"
+    (box
+      :space-evenly "false"
+      :halign "center"
+      :spacing "5"
+      (label
+        :style "font-size: 20px;"
+        :class {bt == "no" ? "no-wifi" : "yes-wifi" }
+        :text "${wifi == "no" ? "󰂲" : "󰂯" }"
       )
     )
   )

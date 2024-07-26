@@ -41,6 +41,7 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    wev
     libsForQt5.qt5.qtquickcontrols # Qt5 libraries
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     grim                # Screenshot tool

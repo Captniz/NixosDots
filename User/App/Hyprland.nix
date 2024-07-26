@@ -101,6 +101,8 @@ in
         "$mod, S, exec, grim -g \"$(slurp)\""
         "$mod, E, exec, alacritty -e ranger"
         "$mod, W, exec, alacritty -e btop"
+        "$mod, code:60, exec, rofi -show emoji"
+        "$mod, N, exec, rofi -show calc"
 
         # Window managment
         "$mod, J, togglesplit,"
