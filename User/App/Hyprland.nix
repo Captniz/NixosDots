@@ -167,6 +167,7 @@ in
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
         "fakefullscreen,class:^(jetbrains-[A-Za-z0-9]+)$"
         "fakefullscreen,class:^(WebCord)$"
+        "float,class:^(Rofi)$"
       ];
 
       exec-once = [

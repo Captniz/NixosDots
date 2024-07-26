@@ -10,8 +10,8 @@ in
 
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
-    #plugins = [ pkgs.rofi-calc pkgs.rofi-file-browser ];
+    package = pkgs.rofi;
+    plugins = [ pkgs.rofi-calc pkgs.rofi-emoji ];
     font = "FiraCode Nerd Font 12";
     extraConfig = {
       "display-ssh"=    "";
@@ -20,6 +20,7 @@ in
       "display-window"= "";
       "display-combi"=  "";
       "display-calc"=  " ";
+      "display-emoji"= " ";
       "show-icons"=     true;
     };
   };

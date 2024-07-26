@@ -40,7 +40,6 @@ let
     "window" = {
       location= mkLiteral "center";
       anchor= mkLiteral   "center";
-      border-radius= mkLiteral "10px";
       height= mkLiteral "560px";
       width= mkLiteral "600px";
 
@@ -69,7 +68,6 @@ let
       border-color= mkLiteral "@gruv0";
 
       border= mkLiteral "1px";
-      border-radius= mkLiteral "10px 10px 0px 0px";
     };
 
     "entry, prompt, case-indicator"= {
@@ -83,7 +81,6 @@ let
 
     "listview"= {
       padding= mkLiteral "8px";
-      border-radius= mkLiteral "0px 0px 10px 10px";
       border= mkLiteral "2px 2px 2px 2px";
       border-color= mkLiteral "@gruv0";
       background-color= mkLiteral "@gruv0";
