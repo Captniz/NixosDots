@@ -170,6 +170,7 @@ in
         "fakefullscreen,class:^(jetbrains-[A-Za-z0-9]+)$"
         "fakefullscreen,class:^(WebCord)$"
         "float,class:^(Rofi)$"
+        "stayfocused,class:^(Rofi)$"
       ];
 
       exec-once = [
