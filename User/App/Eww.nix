@@ -157,6 +157,24 @@ in
         color: $purple;
       }
 
+      .yes-bt{
+        font-size: 21px;
+        color: $aqua;
+      }
+
+      .yes-bt-text{
+        color: $purple;
+      }
+
+      .no-bt{
+        font-size: 21px;
+        color: $red;
+      }
+
+      .no-bt-text{
+        color: $red;
+      }
+
       .power-icons{
         font-size: 23px;
         color: $orange;

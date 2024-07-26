@@ -163,7 +163,7 @@
       (label
         :style "font-size: 28px;"
         :class {wifi == "No connection" ? "no-wifi" : "yes-wifi" }
-        :text "${wifi == "No connection" ? "󰤮" : "󰤨" }"
+        :text "${wifi == "No connection" ? "󰤮 " : "󰤨 " }"
       )
       (label
         :class {wifi == "No connection" ? "no-wifi-text" : "yes-wifi-text" }
@@ -182,9 +182,12 @@
       :halign "center"
       :spacing "5"
       (label
-        :style "font-size: 20px;"
-        :class {bt == "no" ? "no-wifi" : "yes-wifi" }
-        :text "${wifi == "no" ? "󰂲" : "󰂯" }"
+        :class {bt == "no" ? "no-bt" : "yes-bt" }
+        :text "${bt == "no" ? "󰂲 " : "󰂯 " }"
+      )
+      (label
+        :class {bt == "no" ? "no-bt-text" : "yes-bt-text" }
+        :text "${bt == "no" ? "Off" : "On" }"
       )
     )
   )
