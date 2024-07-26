@@ -11,6 +11,7 @@ in
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
+    #plugins = [ pkgs.rofi-calc pkgs.rofi-file-browser ];
     font = "FiraCode Nerd Font 12";
     extraConfig = {
       "display-ssh"=    "";
@@ -18,6 +19,7 @@ in
       "display-drun"=   "";
       "display-window"= "";
       "display-combi"=  "";
+      "display-calc"=  " ";
       "show-icons"=     true;
     };
   };
