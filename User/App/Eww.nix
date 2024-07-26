@@ -167,7 +167,7 @@ in
       }
 
       .no-bt{
-        font-size: 21px;
+        font-size: 24px;
         color: $red;
       }
 
