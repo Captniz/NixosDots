@@ -13,10 +13,14 @@ in
 
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
     settings = {
       format = "
 [╭──](orange)[•](green) $all[•](green)
-[╰─>](bold orange)$character$battery";
+[╰─>](bold orange)$character";
+
+      right_format = "$battery";
 
       palette  = "custom";
       palettes.custom = {
