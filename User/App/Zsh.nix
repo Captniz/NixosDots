@@ -16,14 +16,14 @@ in
     enableZshIntegration = true;
     enableBashIntegration = true;
     settings = {
-      format = "
-[╭──](orange)[•](green) $all[•](green)
-[╰─>](bold orange)$character";
+      format = "[╭─](gray)[](bg:red fg:dim_red)$os$username[](bg:orange fg:red)$directory[](fg:orange bg:yellow)$git_branch$git_status$docker_context[](fg:yellow bg:green)$all[](fg:green bg:cyan)$battery[](fg:cyan bg:blue)$time[ ](fg:blue)$line_break$character
+";
+      right_format = "$status";
 
-      right_format = "$battery";
 
       palette  = "custom";
       palettes.custom = {
+        dim_red = colors.faded_red;
         red =     colors.red;
         orange =  colors.orange;
         yellow =  colors.yellow;
@@ -32,19 +32,76 @@ in
         blue =    colors.blue;
         purple =  colors.purple;
         black =   colors.black;
+        gray =    colors.gray;
         white =   colors.white;
       };
 
-      battery = {
+      username = {
+        show_always = true;
+        style_user = "bold bg:red";
+        style_root = "bold bg:red";
+        format = "[ $user ]($style)";
         disabled = false;
       };
-      line_break = {
-        disabled = true;
+
+      directory={
+        style = "bold bg:orange";
+        format = "[ $path ]($style)";
+        truncation_length = 3;
+        truncation_symbol = "…/";
       };
+  
+      directory.substitutions ={
+        "Documents" = "󰈙 ";
+        "Downloads" = " ";
+        "Music" = " ";
+        "Images" = " ";
+      };
+
+      git_branch= {
+        symbol = "";
+        style = "bold bg:yellow";
+        format = "[ $symbol $branch]($style)";
+      };
+
+      git_status={
+        style = "bold bg:yellow";
+        format = "[$all_status$ahead_behind ]($style)";
+      };
+
+      time={
+        disabled = false;
+        time_format = "%R";
+        style = "bold bg:blue";
+        format = "[  $time ]($style)";
+      };
+      battery = {
+        disabled = false;
+        format = "[ $symbol$percentage ]($style)";
+      };
+
+      battery.display = [{ threshold = 100; style = "bold bg:cyan fg:white";}];
+
       character = {
-        success_symbol = "[❯](bold green)";          error_symbol = "[!](bold red)[❯](bold red)";
+        format = "$symbol ";
+        success_symbol="[╰─](gray)[](red)[](yellow)[](green)";
+        error_symbol="[╰─](gray)[](red)[](red)[](red)";
       };
-      add_newline = false;
+
+      cmd_duration = {
+        format = "[ took ]($style)[$duration ](bold $style)";
+        style = "bg:green fg:white";
+      };
+
+      status = {
+        style = "white";
+        success_symbol = "[✔](green) ";
+        symbol = "[❌](red) ";
+        map_symbol = true;
+        disabled = false;      
+      };
+
+      add_newline = true;
     };
   };
 
@@ -68,6 +125,7 @@ in
       zip = "7z a -r -tzip";
       ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
       search = "ranger $(fzf)";
+      jump = "z";
     };
     oh-my-zsh = {
       enable = true;
