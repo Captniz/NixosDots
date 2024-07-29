@@ -10,6 +10,8 @@ in
   programs.zathura = {
     enable = true;
     options = {
+      database = "sqlite";
+
       adjust-open = "best-fit";
       pages-per-row = 1;
       scroll-page-aware = true;

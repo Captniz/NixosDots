@@ -41,6 +41,9 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    mupdf
+    alsa-ucm-conf
+    sof-firmware
     wev
     libsForQt5.qt5.qtquickcontrols # Qt5 libraries
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
@@ -85,7 +88,6 @@
   
     docker              # Container manager
     balena-cli          # Balena CLI
-    #vesktop             # Chat client
     webcord             # Discord client
     lutris              # Game client
     steam               # Game client  

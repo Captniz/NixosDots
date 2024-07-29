@@ -11,7 +11,7 @@
     
     bluetooth = {
       enable = true;
-      powerOnBoot = false;
+      powerOnBoot = true;
       settings = {
         General = {
           Experimental = true;
