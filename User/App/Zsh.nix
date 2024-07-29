@@ -13,13 +13,15 @@ in
 
   programs.starship = {
     enable = true;
+    
     enableZshIntegration = true;
+    
     enableBashIntegration = true;
+
     settings = {
       format = "[╭─](gray)[](bg:red fg:dim_red)$os$username[](bg:orange fg:red)$directory[](fg:orange bg:yellow)$git_branch$git_status$docker_context[](fg:yellow bg:green)$all[](fg:green bg:cyan)$battery[](fg:cyan bg:blue)$time[ ](fg:blue)$line_break$character
 ";
       right_format = "$status";
-
 
       palette  = "custom";
       palettes.custom = {
@@ -75,6 +77,7 @@ in
         style = "bold bg:blue";
         format = "[  $time ]($style)";
       };
+
       battery = {
         disabled = false;
         format = "[ $symbol$percentage ]($style)";
