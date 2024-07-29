@@ -12,6 +12,7 @@ in
     options = {
       database = "sqlite";
 
+      selection-clipboard ="clipboard";
       adjust-open = "best-fit";
       pages-per-row = 1;
       scroll-page-aware = true;
