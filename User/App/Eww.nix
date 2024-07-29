@@ -73,12 +73,12 @@ in
       .moduleR{
         @extend .module;
         padding-right: 10px;
-
       }
 
       .moduleL{
         @extend .module;
-        padding-left: 4px;
+        padding-left: 16px;
+        padding-right: 20px;
       }
 
       .workspace{
@@ -178,6 +178,10 @@ in
       .power-icons{
         font-size: 23px;
         color: $orange;
+      }
+
+      .active-window{
+        color: $yellow;
       }
     ";
   };

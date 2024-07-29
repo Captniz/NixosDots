@@ -6,6 +6,8 @@
 `light -G`)
 (defpoll volume :interval "0.25s"
 `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 }'`)
+(defpoll window :interval "0.5s"
+`hyprctl -j activewindow | jq -r '.initialTitle' | sed 's/./\&/'`)
 (defpoll ws :interval "0.15s"
 `sh ./Scripts/getWorkspaces.sh`)
 (defpoll wifi :interval "2s"
@@ -45,6 +47,8 @@
     :halign "start"
     
     (workspaceW)
+    "|"
+    (windowW)
   )
 )
 
@@ -148,6 +152,17 @@
         :class {entry == "" ? "empty-workspace" : entry == "" ? "used-workspace" : "active-workspace"}
         :text "${entry}"
       )
+    )
+  )
+)
+
+(defwidget windowW []
+  (box
+    :spacing "10"
+    :halign "center"
+    (label
+      :class "active-window"
+      :text "${window == "null" ? "Desktop" : "${window}" }"
     )
   )
 )
