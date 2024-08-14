@@ -41,6 +41,7 @@ in
       };
 
       misc = {
+        new_window_takes_over_fullscreen = 2;
         disable_hyprland_logo = true;
       };
 
