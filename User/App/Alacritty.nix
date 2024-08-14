@@ -13,8 +13,8 @@ in
     settings = {
       window = {
         padding = {
-          x = 4;
-          y = 0;
+          x = 10;
+          y = 10;
         };
       };
       colors = {
