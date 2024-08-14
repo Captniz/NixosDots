@@ -128,6 +128,7 @@ in
       zip = "7z a -r -tzip";
       ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
       search = "ranger $(fzf)";
+      searchall = "cd /;ranger $(fzf)";
       jump = "z";
     };
     oh-my-zsh = {

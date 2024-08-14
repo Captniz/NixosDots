@@ -49,8 +49,6 @@
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     grim                # Screenshot tool
     slurp               # Screen Region selector
-    jc                  # JSON parser
-    jq                  # JSON parser     
     file                # File type checker
     ueberzugpp          # Terminal Image viewer
     git-credential-oauth# Git credential helper
@@ -73,7 +71,10 @@
 
 
     # Utility / Quality of Life / Useful Commands
-    
+
+    entr                # Code runner 
+    jc                  # JSON parser
+    jq                  # JSON parser     
     fzf                 # Fuzzy File Finder
     protonup            # Proton updater
     bash-completion     # Terminal completion
