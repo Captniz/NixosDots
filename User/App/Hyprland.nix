@@ -168,8 +168,6 @@ in
         "tile,class:^(notion-snap-reborn)$"
         "suppressevent maximize,class:^(notion-snap-reborn)$"
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
-        "fakefullscreen,class:^(jetbrains-[A-Za-z0-9]+)$"
-        "fakefullscreen,class:^(WebCord)$"
         "float,class:^(Rofi)$"
         "stayfocused,class:^(Rofi)$"
       ];
