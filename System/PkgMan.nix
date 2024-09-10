@@ -32,6 +32,19 @@
     
     # Languages
     
+    gcc
+    libgcc
+    clang-tools
+    cmake
+    codespell
+    conan
+    cppcheck
+    doxygen
+    gtest
+    lcov
+    vcpkg
+    vcpkg-tool
+    php
     jdk                # Java
     (pkgs.python3.withPackages (python-pkgs: [  # Python
       python-pkgs.pandas
