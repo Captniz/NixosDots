@@ -178,6 +178,7 @@ in
         "polkit-agent-helper-1" 
         "systemctl start --user polkit-gnome-authentication-agent-1" 
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "sleep 2 && systemctl restart --user pipewire.service"
       ];
     };
   };
