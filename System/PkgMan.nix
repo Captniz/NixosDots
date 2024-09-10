@@ -7,6 +7,8 @@
   };
 
   environment.systemPackages = with pkgs; [   
+    # Testing
+
     # Essentials
 
     hyprland            # Window manager
