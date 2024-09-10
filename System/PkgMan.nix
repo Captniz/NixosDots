@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [   
     # Testing
 
+
     # Essentials
 
     hyprland            # Window manager
@@ -102,6 +103,7 @@
 
     # Programs & Apps
   
+    geogebra            # Math tool
     docker              # Container manager
     balena-cli          # Balena CLI
     webcord             # Discord client
