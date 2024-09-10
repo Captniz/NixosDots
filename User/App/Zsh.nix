@@ -130,6 +130,7 @@ in
       search = "ranger $(fzf)";
       searchall = "cd /;ranger $(fzf)";
       jump = "z";
+      fixaudio = "systemctl restart --user pipewire.service";
     };
     oh-my-zsh = {
       enable = true;
