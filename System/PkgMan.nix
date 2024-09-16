@@ -8,8 +8,8 @@
 
   environment.systemPackages = with pkgs; [   
     # Testing
-
-
+    
+    
     # Essentials
 
     hyprland            # Window manager
@@ -120,5 +120,6 @@
     obsidian            # Note taking app
     cider               # Apple Music client
     unityhub            # Unity IDE
+    zoom-us             # Video conferencing
   ];
 }
