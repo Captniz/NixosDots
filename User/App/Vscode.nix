@@ -146,6 +146,9 @@ in
       # Code runner
       "code-runner.clearPreviousOutput"= true;
       "code-runner.runInTerminal"= true;
+      "code-runner.executorMapByGlob"= {
+        "Cargo.toml"= "cd $dir && cargo run";
+      };
       "code-runner.executorMap"= {
         "javascript"= "node";
         "java"= "cd $dir && javac $fileName && java $fileNameWithoutExt";
