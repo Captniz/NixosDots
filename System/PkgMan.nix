@@ -35,6 +35,8 @@
     
     # Languages
     
+    #rust-analyzer       # Rust
+    #rustup              # Rust
     rustc               # Rust
     cargo               # Rust
     gcc                 # C

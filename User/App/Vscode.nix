@@ -87,6 +87,7 @@ in
       "github.copilot.editor.enableAutoCompletions"= true;
 
       # Extensions
+      "vsicons.dontShowNewVersionMessage" = true;
       "open-in-browser.default"= "firefox";
       "liveSassCompile.settings.showOutputWindowOn"= "None";
       "prettier.useTabs"= true;
