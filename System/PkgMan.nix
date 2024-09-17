@@ -35,20 +35,18 @@
     
     # Languages
     
-    gcc
-    libgcc
-    clang-tools
-    cmake
-    codespell
-    conan
-    cppcheck
-    doxygen
-    gtest
-    lcov
-    vcpkg
-    vcpkg-tool
-    php
-    jdk                # Java
+    rustc               # Rust
+    cargo               # Rust
+    gcc                 # C
+    libgcc              # C
+    clang-tools         # C++
+    cmake               # C++
+    conan               # C++ package manager
+    lcov                # C++ code coverage
+    vcpkg               # C++ package manager
+    vcpkg-tool          # C++ package manager
+    php                 # PHP  
+    jdk                 # Java
     (pkgs.python3.withPackages (python-pkgs: [  # Python
       python-pkgs.pandas
       python-pkgs.requests
@@ -57,6 +55,7 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    doxygen             # Documentation generator
     mupdf
     alsa-ucm-conf
     sof-firmware

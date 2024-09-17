@@ -96,6 +96,11 @@ in
         style = "bg:green fg:white";
       };
 
+      rust = {
+        format = "[ via ]($style)[$symbol ]($style)[$version ](bold $style)";
+        style = "bg:green fg:white";
+      };
+
       status = {
         style = "white";
         success_symbol = "[✔](green) ";
