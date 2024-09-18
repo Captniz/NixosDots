@@ -97,7 +97,12 @@ in
       };
 
       rust = {
-        format = "[ via ]($style)[$symbol ]($style)[$version ](bold $style)";
+        format = "[ via ]($style)[$symbol]($style)[$version ](bold $style)";
+        style = "bg:green fg:white";
+      };
+      
+      package = {
+        format = "[ is ]($style)[$symbol$version ](bold $style)";
         style = "bg:green fg:white";
       };
 
