@@ -21,7 +21,7 @@ in
       "$inactiveBorder" = "rgba(c5c9aaff)";
       "$shadow" = "rgba(1a1a1aee)";
       
-      monitor = ",preferred,auto,1,bitdepth,10";
+      monitor = "eDP-1,preferred,auto,1";
 
       general = {
         gaps_in = 5;
