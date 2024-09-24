@@ -23,6 +23,9 @@
     };
   };
 
+  # Virtualisation
+  virtualisation.docker.enable = true;
+
   # Program configuration
   programs = {
     steam = {

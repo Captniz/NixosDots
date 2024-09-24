@@ -28,8 +28,6 @@
       };
     };
     
-    virtualisation.docker.enable = true;
-    
     gnome.gnome-keyring.enable = true;
     
     displayManager.sddm = {
@@ -51,7 +49,6 @@
       enable = true;
     };
   };
-
 
   systemd.user.services = {
     polkit-gnome-authentication-agent-1 = {
