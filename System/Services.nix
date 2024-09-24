@@ -2,7 +2,6 @@
 
 {
   services = {
-
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -28,6 +27,8 @@
         PasswordAuthentication = true;
       };
     };
+    
+    virtualisation.docker.enable = true;
     
     gnome.gnome-keyring.enable = true;
     

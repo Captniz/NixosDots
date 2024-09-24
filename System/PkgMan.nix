@@ -35,6 +35,7 @@
     
     # Languages
     
+    nodejs_22           # Node.js
     rustfmt             # Rust
     rustc               # Rust
     cargo               # Rust
