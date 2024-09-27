@@ -31,6 +31,7 @@
     nitch               # System fetch
     btop                # System monitor     
     p7zip               # Archive manager
+    unrar
     unzip               # Archive manager      
     
     # Languages

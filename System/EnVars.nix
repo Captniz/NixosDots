@@ -15,7 +15,7 @@
     
     # Application vars
     _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd";
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS="/home/user/.steam/root/compatibilitytools.d";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS="/home/simo/.steam/root/compatibilitytools.d";
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
 
     # Default applications
