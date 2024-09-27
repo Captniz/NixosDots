@@ -141,6 +141,7 @@ in
       searchall = "cd /;ranger $(fzf)";
       jump = "z";
       fixaudio = "systemctl restart --user pipewire.service";
+      systemupdate = "cd /etc/nixos;flakeup;g;homeup;nixup";
     };
     oh-my-zsh = {
       enable = true;
