@@ -2,6 +2,7 @@
 
 {
   services = {
+    xserver.videoDrivers = [ "amdgpu" ];
     pipewire = {
       enable = true;
       alsa.enable = true;

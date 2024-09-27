@@ -58,6 +58,7 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    dxvk
     doxygen             # Documentation generator
     mupdf
     alsa-ucm-conf
