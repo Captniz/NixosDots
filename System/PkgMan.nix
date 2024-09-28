@@ -58,6 +58,7 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    webkitgtk           # Webkit
     dxvk
     doxygen             # Documentation generator
     mupdf
@@ -111,6 +112,7 @@
     balena-cli          # Balena CLI
     webcord             # Discord client
     lutris              # Game client
+    heroic              # Game client
     steam               # Game client  
     dia                 # Diagram editor
     vlc                 # Media player
