@@ -61,7 +61,7 @@ in
       recolor-lightcolor       =   colors.bg0; # bg
       recolor-darkcolor        =   colors.fg1; # fg
       recolor                  =   true;
-      #recolor-keephue          =   true      
+      recolor-keephue          =   true;      
 
       recolor-reverse-video = true;
     };
