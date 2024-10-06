@@ -88,7 +88,7 @@
     poppler_utils       # PDF library
     winetricks          # Wine utility
     wineWowPackages.waylandFull # Wine utility
-
+    tree                # Directory tree
 
     # Utility / Quality of Life / Useful Commands
 
