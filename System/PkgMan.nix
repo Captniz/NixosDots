@@ -92,6 +92,8 @@
 
     # Utility / Quality of Life / Useful Commands
 
+    hping               # DoS tool
+    nmap                # Network scanner
     entr                # Code runner 
     jc                  # JSON parser
     jq                  # JSON parser     

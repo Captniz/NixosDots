@@ -142,6 +142,7 @@ in
       jump = "z";
       fixaudio = "systemctl restart --user pipewire.service";
       systemupdate = "cd /etc/nixos;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";
+      DoS = "sudo hping3 --flood -S -V --rand-source";
     };
     oh-my-zsh = {
       enable = true;
