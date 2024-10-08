@@ -53,6 +53,14 @@ in
         border-radius: 10px;
       }
 
+      .menu{
+        color: $fg;
+        background-color: $bg;
+        font-family: $font;
+        border-radius: 10px;
+        border: 2px solid $border; 
+      }
+
       .module{
         background-color: $bg;
         color: $border;
@@ -182,6 +190,12 @@ in
 
       .active-window{
         color: $yellow;
+      }
+
+      .calendar{
+        border: 2px solid $green;
+        padding: 10px;
+        border-radius: 10px;
       }
     ";
   };

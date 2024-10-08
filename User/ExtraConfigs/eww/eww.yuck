@@ -16,6 +16,21 @@
 `sh ./Scripts/getBluetoothStatus.sh`)
 (defvar show-powermenu false)
 
+(defwindow menu
+  :monitor 0
+  :windowtype "desktop"
+  :stacking "overlay"
+  :exclusive true
+  :focusable false
+  :geometry (geometry
+    :width "20%"
+    :height "93.4%"
+    :x "10px"
+    :anchor "left center"
+  )
+  (menu)
+)
+
 (defwindow bar
   :monitor 0
   :windowtype "dock"
@@ -23,11 +38,22 @@
   :focusable false
   :geometry (geometry
     :width "99%"
-    :height "25px"
+    :height "3%"
     :y "10px"
     :anchor "top center"
   )
   (bar)
+)
+
+(defwidget menu[]
+  (box
+    :class "menu"
+    (calendar
+      :class "calendar"
+      :halign "center"
+      :valign "start"
+    )
+  )
 )
 
 (defwidget bar []
