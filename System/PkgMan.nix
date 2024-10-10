@@ -58,6 +58,7 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    alsa-utils          # Audio utilities
     webkitgtk           # Webkit
     dxvk
     doxygen             # Documentation generator
@@ -109,6 +110,8 @@
 
     # Programs & Apps
   
+    notion-app-enhanced # Note taking app
+    telegram-desktop    # Messaging app
     geogebra            # Math tool
     docker              # Container manager
     balena-cli          # Balena CLI
