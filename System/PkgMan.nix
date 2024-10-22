@@ -58,6 +58,7 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    owl
     alsa-utils          # Audio utilities
     webkitgtk           # Webkit
     dxvk
@@ -93,6 +94,7 @@
 
     # Utility / Quality of Life / Useful Commands
 
+    opendrop            # Airdrop compatibility
     hping               # DoS tool
     nmap                # Network scanner
     entr                # Code runner 
