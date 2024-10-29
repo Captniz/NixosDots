@@ -22,7 +22,7 @@ in
       "$shadow" = "rgba(1a1a1aee)";
       
       monitor = [
-        "eDP-1,preferred,auto,1"
+        "eDP-1,preferred,0x0,1"
         "HDMI-A-1,preferred,1920x0,1"  
       ];
 
@@ -98,7 +98,7 @@ in
       bind = [
         # Lauchers
         "$mod, RETURN, exec, alacritty"
-        "$mod, R, exec, rofi -show drun"
+        "$mod, R, exec, [float; center] rofi -show drun"
         "$mod, F, exec, firefox"
         "$mod, A, exec, code"
         "$mod, Q, exec, obsidian"
@@ -171,7 +171,6 @@ in
         "tile,class:^(notion-snap-reborn)$"
         "suppressevent maximize,class:^(notion-snap-reborn)$"
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
-        "float,class:^(Rofi)$"
         "stayfocused,class:^(Rofi)$"
       ];
 

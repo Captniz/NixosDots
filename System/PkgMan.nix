@@ -112,7 +112,7 @@
 
     # Programs & Apps
   
-    notion-app-enhanced # Note taking app
+    hakuneko            # Manga downloader
     telegram-desktop    # Messaging app
     geogebra            # Math tool
     docker              # Container manager
