@@ -130,7 +130,7 @@ in
       psqlogin = "sudo -u postgres psql";
       cat = "bat";
       gacp = "git add * ; git commit --all -m '.' ; git push --all";
-      flakeup = "nix flake lock --update-input nixpkgs /etc/nixos ; nix flake update /etc/nixos";
+      flakeup = "nix flake update --flake /etc/nixos";
       homeup = "home-manager switch --flake /etc/nixos --impure";
       nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
       nixconfigure = "code /etc/nixos";
