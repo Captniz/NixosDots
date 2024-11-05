@@ -16,7 +16,7 @@ in
     settings = {  
       # Vars
       "$mod" = "SUPER";
-      "$wallpaper" = "~/Images/gruvbox-wallpapers/wallpapers/anime/ghibli-japanese-walled-garden.png";
+      "$wallpaper" = "~/Images/gruvbox-wallpapers/wallpapers/anime/108948084_p0.png";
       "$activeBorder" = "rgba(8DA101dd)";
       "$inactiveBorder" = "rgba(c5c9aaff)";
       "$shadow" = "rgba(1a1a1aee)";
