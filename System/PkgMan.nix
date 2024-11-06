@@ -58,6 +58,7 @@
 
     # Dependencies/Libraries/Single Use Programs
 
+    libinput           # Input library
     owl
     alsa-utils          # Audio utilities
     webkitgtk           # Webkit
