@@ -23,20 +23,23 @@ in
       
       monitor = [
         "eDP-1,preferred,0x0,1"
+        "DP-1,preferred,1920x0,1"  
+        "DP-2,preferred,1920x0,1"  
         "HDMI-A-1,preferred,1920x0,1"  
+        " ,preferred,1920x0,1"  
       ];
 
       workspace = [
-        "1,monitor:HDMI-A-1, default:true"
-        "2,monitor:HDMI-A-1, default:true"
-        "3,monitor:HDMI-A-1, default:true"
-        "4,monitor:HDMI-A-1, default:true"
-        "5,monitor:HDMI-A-1, default:true"
-        "6,monitor:HDMI-A-1, default:true"
-        "7,monitor:HDMI-A-1, default:true"
-        "8,monitor:HDMI-A-1, default:true"
-        "9,monitor:HDMI-A-1, default:true"
-        "10,monitor:HDMI-A-1, default:true"
+        "1, monitor:DP-2, default:true"
+        "2, monitor:DP-2, default:true"
+        "3, monitor:DP-2, default:true"
+        "4, monitor:DP-2, default:true"
+        "5, monitor:DP-2, default:true"
+        "6, monitor:DP-2, default:true"
+        "7, monitor:DP-2, default:true"
+        "8, monitor:DP-2, default:true"
+        "9, monitor:DP-2, default:true"
+        "10, monitor:DP-2, default:true"
       ];
 
       general = {
@@ -173,6 +176,11 @@ in
         # Move/resize windows
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
+      ];
+
+      bindl = [
+        " , switch:on:Lid Switch, exec, dunstify -u critical 'Lid Closed' 'The lid has been closed'"
+        " , switch:off:Lid Switch, exec, dunstify -u low 'Lid Opened' 'The lid has been opened'"
       ];
 
 

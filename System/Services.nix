@@ -3,6 +3,7 @@
 {
   services = {
     xserver.videoDrivers = [ "amdgpu" ];
+    
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -37,6 +38,12 @@
       theme = "${import ./App/Sddm.nix { inherit pkgs; }}";
     };
     
+    logind = {
+      lidSwitch = "ignore";
+      lidSwitchDocked = "ignore";
+      lidSwitchExternalPower = "ignore";
+    };
+
     postgresql = {
       enable = true;
       ensureDatabases = [ "mydatabase" ];

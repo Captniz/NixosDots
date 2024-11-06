@@ -4,7 +4,7 @@
 POLL_INTERVAL=5
 
 # Memorizza lo stato precedente del numero di monitor
-previous_monitor_count=0
+previous_monitor_count=1
 
 # Funzione per spostare tutte le workspace esistenti e future sul nuovo monitor
 move_all_workspaces_to_new_monitor() {
@@ -21,9 +21,10 @@ move_all_workspaces_to_new_monitor() {
         hyprctl dispatch moveworkspacetomonitor "$workspace" "$new_monitor"
         echo "Workspace $workspace spostato sul monitor $new_monitor"
     done
+    hyprctl dispatch workspace 1
 
-    eww close bar
     sleep 10
+    eww close bar
     eww open bar --screen $(hyprctl activewindow -j | jq '.monitor')
 }
 
@@ -41,8 +42,9 @@ while true; do
         if [[ $current_monitor_count -ge 2 ]]; then
             move_all_workspaces_to_new_monitor
             else
-            eww close bar
+            hyprctl dispatch workspace 1
             sleep 10
+            eww close bar
             eww open bar --screen $(hyprctl activewindow -j | jq '.monitor')
         fi
     fi
