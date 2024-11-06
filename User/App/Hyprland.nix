@@ -26,6 +26,19 @@ in
         "HDMI-A-1,preferred,1920x0,1"  
       ];
 
+      workspace = [
+        "1,monitor:HDMI-A-1, default:true"
+        "2,monitor:HDMI-A-1, default:true"
+        "3,monitor:HDMI-A-1, default:true"
+        "4,monitor:HDMI-A-1, default:true"
+        "5,monitor:HDMI-A-1, default:true"
+        "6,monitor:HDMI-A-1, default:true"
+        "7,monitor:HDMI-A-1, default:true"
+        "8,monitor:HDMI-A-1, default:true"
+        "9,monitor:HDMI-A-1, default:true"
+        "10,monitor:HDMI-A-1, default:true"
+      ];
+
       general = {
         gaps_in = 5;
         gaps_out = 10;
@@ -182,6 +195,8 @@ in
         "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.00 && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "sleep 2 && systemctl restart --user pipewire.service"
+        "hyprctl dispatch workspace 1"
+        "sh /etc/nixos/User/Scripts/MonitorSwitcher.sh"
       ];
     };
   };
