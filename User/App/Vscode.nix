@@ -87,6 +87,7 @@ in
       "github.copilot.editor.enableAutoCompletions"= true;
 
       # Extensions
+      "leetcode.workspaceFolder"= "/home/simo/Documents/Repos/Uni_Code/LEETCODE_SOL";
       "vsicons.dontShowNewVersionMessage" = true;
       "open-in-browser.default"= "firefox";
       "liveSassCompile.settings.showOutputWindowOn"= "None";
