@@ -113,7 +113,7 @@
 
     # Programs & Apps
   
-    hakuneko            # Manga downloader
+    whatsapp-for-linux
     telegram-desktop    # Messaging app
     geogebra            # Math tool
     docker              # Container manager
