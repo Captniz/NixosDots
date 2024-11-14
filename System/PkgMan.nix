@@ -8,11 +8,13 @@
 
   environment.systemPackages = with pkgs; [   
     # Testing
-    yazi
-    imagemagick         # Image manipulation
-    ripgrep                 # Ripgrep
-    fd                 # Fd
-    xclip              # Clipboard manager
+ 
+    #yazi                # Terminal file manager
+    #imagemagick         # Image manipulation
+    #ripgrep             # Ripgrep
+    #fd                  # Fd
+    #xclip               # Clipboard manager
+    #glow                # Markdown previewer
     
     # Essentials
 
