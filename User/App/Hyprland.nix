@@ -81,6 +81,7 @@ in
       decoration = {
         active_opacity = 0.85;
         inactive_opacity = 0.85;
+        rounding = 5;
         drop_shadow = true;
         shadow_range = 5;
         shadow_render_power = 3;
@@ -189,9 +190,6 @@ in
         "opaque,class:^(firefox)$"
         "opaque,class:^(mirage)$"
         "float,class:^(Eww)$"
-        "tile,class:^(notion-snap-reborn)$"
-        "tile,class:^(notion-snap-reborn)$"
-        "suppressevent maximize,class:^(notion-snap-reborn)$"
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
         "stayfocused,class:^(Rofi)$"
       ];

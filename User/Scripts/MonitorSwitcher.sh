@@ -23,10 +23,10 @@ move_all_workspaces_to_new_monitor() {
     done
     hyprctl dispatch workspace 1
 
-    sleep 10
     eww close bar
-    eww open bar --screen $(hyprctl activewindow -j | jq '.monitor')
-}
+    dunstify -u low "Switching bar to new monitor"
+    sleep 10
+    eww open bar --screen $(hyprctl activeworkspace -j | jq '.monitorID')
 
 # Ciclo principale per il polling dei monitor
 while true; do
@@ -43,9 +43,10 @@ while true; do
             move_all_workspaces_to_new_monitor
             else
             hyprctl dispatch workspace 1
-            sleep 10
             eww close bar
-            eww open bar --screen $(hyprctl activewindow -j | jq '.monitor')
+            dunstify -u low "Switching bar to new monitor"
+            sleep 10
+            eww open bar --screen $(hyprctl activeworkspace -j | jq '.monitorID')
         fi
     fi
 
