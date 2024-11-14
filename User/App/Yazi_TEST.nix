@@ -6,8 +6,8 @@ let
 		owner = "yazi-rs";
 		repo = "plugins";
 		rev = "main";
+    hash = "sha256-LxWc0hFSj1cp9/aWmN2mmojcQnvFl3meZ96CIbTt2f0=";
   };
-
 in
 {
   #imports = [
@@ -32,13 +32,13 @@ in
 	  	  owner = "Reledia";
 	  	  repo = "hexyl.yazi";
 	  	  rev = "main";
-        hash = "sha256-ccc0a4a959bea14dbe8f2b243793aacd697e34e2";
+        hash = "sha256-9rPJcgMYtSY5lYnFQp3bAhaOBdNUkBaN1uMrjen6Z8g=";
       };
       command = pkgs.fetchFromGitHub {
 	  	  owner = "KKV9";
 	  	  repo = "command.yazi";
 	  	  rev = "main";
-        hash = "sha256-dc9b48381eb1478248cff09d068593f9d6bc6f1f";
+        hash = "sha256-nixvR8KhnidblEOWaOfww0BP4c9ZuQj/RS/GBCPLDQQ=";
       };
     };
     keymap = {

@@ -17,7 +17,7 @@
     ./User/App/Eww.nix
     ./User/App/Vscode.nix
     ./User/App/Ranger.nix
-    ./User/App/Yazi_TEST.nix
+    #./User/App/Yazi_TEST.nix
   ];
 
   # Home config
