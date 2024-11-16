@@ -139,7 +139,7 @@ in
       ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
       search = "ranger $(fzf)";
       searchall = "cd /;ranger $(fzf)";
-      jump = "z";
+      cd = "z";
       fixaudio = "systemctl restart --user pipewire.service";
       systemupdate = "cd /etc/nixos;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";
       DoS = "sudo hping3 --flood -S -V --rand-source";
@@ -148,8 +148,8 @@ in
       enable = true;
       theme = "robbyrussell";
       plugins = [
-        "z"
         "starship"
+        "zoxide"
       ];
     };
   };

@@ -15,6 +15,7 @@
     #fd                  # Fd
     #xclip               # Clipboard manager
     #glow                # Markdown previewer
+    #zoxide              # Directory jumper
     
     # Essentials
 
