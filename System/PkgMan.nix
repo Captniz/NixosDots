@@ -60,6 +60,7 @@
       python-pkgs.pandas
       python-pkgs.requests
       python-pkgs.setuptools
+      python-pkgs.toml
     ]))
 
     # Dependencies/Libraries/Single Use Programs
