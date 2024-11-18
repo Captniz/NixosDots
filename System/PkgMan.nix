@@ -9,13 +9,12 @@
   environment.systemPackages = with pkgs; [   
     # Testing
  
-    #yazi                # Terminal file manager
-    #imagemagick         # Image manipulation
-    #ripgrep             # Ripgrep
-    #fd                  # Fd
-    #xclip               # Clipboard manager
-    #glow                # Markdown previewer
-    #zoxide              # Directory jumper
+    yazi                # Terminal file manager
+    imagemagick         # Image manipulation
+    ripgrep             # Ripgrep
+    fd                  # Fd
+    xclip               # Clipboard manager
+    glow                # Markdown previewer
     
     # Essentials
 
@@ -102,6 +101,7 @@
 
     # Utility / Quality of Life / Useful Commands
 
+    zoxide              # Directory jumper
     opendrop            # Airdrop compatibility
     hping               # DoS tool
     nmap                # Network scanner
