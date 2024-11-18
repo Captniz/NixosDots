@@ -11,41 +11,41 @@ in
 
         manager = {
             cwd = {
-                fg = "cyan";
+                fg = "${colors.bright_blue}";
             };
             hovered = {
                 reversed = true;
             };
             preview_hovered = {
-                underline = true;
+                bold = true;
             };
             find_keyword = {
-                fg = "yellow";
+                fg = "${colors.yellow}";
                 bold = true;
                 italic = true;
                 underline = true;
             };
             find_position = {
-                fg = "magenta";
+                fg = "${colors.purple}";
                 bg = "reset";
                 bold = true;
                 italic = true;
             };
             marker_copied = {
-                fg = "lightgreen";
-                bg = "lightgreen";
+                fg = "${colors.bright_green}";
+                bg = "${colors.bright_green}";
             };
             marker_cut = {
-                fg = "lightred";
-                bg = "lightred";
+                fg = "${colors.bright_red}";
+                bg = "${colors.bright_red}";
             };
             marker_marked = {
-                fg = "lightcyan";
-                bg = "lightcyan";
+                fg = "${colors.bright_aqua}";
+                bg = "${colors.bright_aqua}";
             };
             marker_selected = {
-                fg = "lightyellow";
-                bg = "lightyellow";
+                fg = "${colors.bright_yellow}";
+                bg = "${colors.bright_yellow}";
             };
             tab_active = {
                 reversed = true;
@@ -53,20 +53,20 @@ in
             tab_inactive = {};
             tab_width = 1;
             count_copied = {
-                fg = "white";
-                bg = "green";
+                fg = "${colors.white}";
+                bg = "${colors.green}";
             };
             count_cut = {
-                fg = "white";
-                bg = "red";
+                fg = "${colors.white}";
+                bg = "${colors.red}";
             };
             count_selected = {
-                fg = "white";
-                bg = "yellow";
+                fg = "${colors.white}";
+                bg = "${colors.yellow}";
             };
             border_symbol = "│";
             border_style = {
-                fg = "gray";
+                fg = "${colors.bg2}";
             };
             syntect_theme = "";
         };
@@ -74,61 +74,61 @@ in
             separator_open = "";
             separator_close = "";
             separator_style = {
-                fg = "gray";
-                bg = "gray";
+                fg = "${colors.bg2}";
+                bg = "${colors.bg2}";
             };
             mode_normal = {
-                bg = "blue";
+                bg = "${colors.bright_blue}";
                 bold = true;
             };
             mode_select = {
-                bg = "red";
+                bg = "${colors.red}";
                 bold = true;
             };
             mode_unset = {
-                bg = "red";
+                bg = "${colors.red}";
                 bold = true;
             };
             progress_label = {
                 bold = true;
             };
             progress_normal = {
-                fg = "blue";
-                bg = "black";
+                fg = "${colors.bright_blue}";
+                bg = "${colors.black}";
             };
             progress_error = {
-                fg = "red";
-                bg = "black";
+                fg = "${colors.red}";
+                bg = "${colors.black}";
             };
             permissions_t = {
-                fg = "green";
+                fg = "${colors.green}";
             };
             permissions_r = {
-                fg = "yellow";
+                fg = "${colors.yellow}";
             };
             permissions_w = {
-                fg = "red";
+                fg = "${colors.red}";
             };
             permissions_x = {
-                fg = "cyan";
+                fg = "${colors.aqua}";
             };
             permissions_s = {
-                fg = "darkgray";
+                fg = "${colors.bg0}";
             };
         };
         pick = {
             border = {
-                fg = "blue";
+                fg = "${colors.bright_blue}";
             };
             active = {
-                fg = "magenta";
+                fg = "${colors.purple}";
                 bold = true;
             };
             inactive = {};
         };
         input = {
             border = {
-                fg = "blue";
+                fg = "${colors.bright_blue}";
             };
             title = {};
             value = {};
@@ -138,10 +138,10 @@ in
         };
         confirm = {
             border = {
-                fg = "blue";
+                fg = "${colors.bright_blue}";
             };
             title = {
-                fg = "blue";
+                fg = "${colors.bright_blue}";
             };
             content = {};
             list = {};
@@ -155,7 +155,7 @@ in
         };
         completion = {
             border = {
-                fg = "blue";
+                fg = "${colors.bright_blue}";
             };
             active = {
                 reversed = true;
@@ -167,11 +167,11 @@ in
         };
         tasks = {
             border = {
-                fg = "blue";
+                fg = "${colors.bright_blue}";
             };
             title = {};
             hovered = {
-                fg = "magenta";
+                fg = "${colors.purple}";
                 underline = true;
             };
         };
@@ -184,22 +184,22 @@ in
                 fg = "lightcyan";
             };
             rest = {
-                fg = "darkgray";
+                fg = "${colors.bg0}";
             };
             desc = {
-                fg = "lightmagenta";
+                fg = "${colors.bright_purple}";
             };
             separator = "  ";
             separator_style = {
-                fg = "darkgray";
+                fg = "${colors.bg0}";
             };
         };
         help = {
             on = {
-                fg = "cyan";
+                fg = "${colors.aqua}";
             };
             run = {
-                fg = "magenta";
+                fg = "${colors.purple}";
             };
             desc = {};
             hovered = {
@@ -207,19 +207,19 @@ in
                 bold = true;
             };
             footer = {
-                fg = "black";
-                bg = "white";
+                fg = "${colors.black}";
+                bg = "${colors.white}";
             };
         };
         notify = {
             title_info = {
-                fg = "green";
+                fg = "${colors.green}";
             };
             title_warn = {
-                fg = "yellow";
+                fg = "${colors.yellow}";
             };
             title_error = {
-                fg = "red";
+                fg = "${colors.red}";
             };
             icon_info = "";
             icon_warn = "";
@@ -228,38 +228,38 @@ in
         filetype = {
             rules = [{
                 mime = "image/*";
-                fg = "yellow";
+                fg = "${colors.yellow}";
             } {
                 mime = "{audio,video}/*";
-                fg = "magenta";
+                fg = "${colors.purple}";
             } {
                 mime = "application/{,g}zip";
-                fg = "red";
+                fg = "${colors.red}";
             } {
                 mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}";
-                fg = "red";
+                fg = "${colors.red}";
             } {
                 mime = "application/{pdf,doc,rtf,vnd.*}";
-                fg = "cyan";
+                fg = "${colors.aqua}";
             } {
                 name = "*";
                 is = "orphan";
-                bg = "red";
+                bg = "${colors.red}";
             } {
                 name = "*";
                 is = "exec";
-                fg = "green";
+                underline = true;
             } {
                 name = "*";
                 is = "dummy";
-                bg = "red";
+                bg = "${colors.red}";
             } {
                 name = "*/";
                 is = "dummy";
-                bg = "red";
+                bg = "${colors.red}";
             } {
                 name = "*/";
-                fg = "blue";
+                fg = "${colors.bright_blue}";
             }];
         };
         icon = {
@@ -293,6 +293,9 @@ in
                 text = "";
             } {
                 name = "Pictures";
+                text = "";
+            } {
+                name = "Images";
                 text = "";
             } {
                 name = "Public";
@@ -3025,8 +3028,8 @@ in
             } {
                 name = "zip";
                 text = "";
-                fg_dark = "#dddddd";
-                fg_light = "#dddddd";
+                fg_dark = "#f69a1b";
+                fg_light = "#7b4d0e";
             } {
                 name = "zsh";
                 text = "";
