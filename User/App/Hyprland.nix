@@ -82,9 +82,9 @@ in
         active_opacity = 0.85;
         inactive_opacity = 0.85;
         rounding = 5;
-        drop_shadow = true;
-        shadow_range = 5;
-        shadow_render_power = 3;
+        #drop_shadow = true;
+        #shadow_range = 5;
+        #shadow_render_power = 3;
         blur = {
           enabled = true;
           size = 9;
