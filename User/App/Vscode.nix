@@ -19,7 +19,7 @@ in
       # Themeing
       "editor.cursorSmoothCaretAnimation"= "on";
       "workbench.colorTheme"= "Gruvbox Dark Medium";
-      "workbench.iconTheme"= "material-icon-theme";
+      "workbench.iconTheme"= "gruvbox-material-icon-theme";
       "window.menuBarVisibility" = "toggle";
       "editor.fontFamily" = "FiraCode Nerd Font,FiraCode Nerd Font Ret";
       "editor.fontSize"= 16;
