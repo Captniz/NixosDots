@@ -1,11 +1,23 @@
-{ config, lib, pkgs, userSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 {
-  home.packages = with pkgs;  [
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "Meslo" ]; })  # Nerd Fonts
-    bibata-cursors                                                      # Cursor theme
-    papirus-icon-theme                                                  # Icon theme         
-    gruvbox-gtk-theme                                                   # Gtk theme
+  home.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "Iosevka"
+        "Meslo"
+      ];
+    }) # Nerd Fonts
+    bibata-cursors # Cursor theme
+    papirus-icon-theme # Icon theme
+    gruvbox-gtk-theme # Gtk theme
   ];
   home.pointerCursor = {
     gtk.enable = true;
@@ -14,7 +26,7 @@
     size = 12;
   };
 
-  gtk={ 
+  gtk = {
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus";

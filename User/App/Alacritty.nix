@@ -1,4 +1,10 @@
-{ config, lib, pkgs, userSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
@@ -19,32 +25,32 @@ in
       };
       colors = {
         primary = {
-          background =   colors.bg0;
-          foreground =   colors.fg1;
+          background = colors.bg0;
+          foreground = colors.fg1;
         };
         cursor = {
           cursor = colors.fg1;
-          text =   colors.fg1;
+          text = colors.fg1;
         };
         normal = {
-          red =     colors.red;
-          yellow =  colors.yellow;
-          green =   colors.green;
-          cyan =    colors.aqua;
-          blue =    colors.blue;
+          red = colors.red;
+          yellow = colors.yellow;
+          green = colors.green;
+          cyan = colors.aqua;
+          blue = colors.blue;
           magenta = colors.purple;
-          black =   colors.black;
-          white =   colors.white;
+          black = colors.black;
+          white = colors.white;
         };
         bright = {
-          red =     colors.bright_red;
-          yellow =  colors.bright_yellow;
-          green =   colors.bright_green;
-          cyan =    colors.bright_aqua;
-          blue =    colors.bright_blue;
+          red = colors.bright_red;
+          yellow = colors.bright_yellow;
+          green = colors.bright_green;
+          cyan = colors.bright_aqua;
+          blue = colors.bright_blue;
           magenta = colors.bright_purple;
-          black =   colors.bright_black;
-          white =   colors.bright_white;
+          black = colors.bright_black;
+          white = colors.bright_white;
         };
       };
       font = {

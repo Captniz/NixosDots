@@ -1,4 +1,10 @@
-{ config, lib, pkgs, userSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
@@ -7,15 +13,15 @@ in
   imports = [
     ../Themes/${userSettings.theme}/Zsh-override.nix
   ];
-  home.packages = with pkgs;  [
+  home.packages = with pkgs; [
     starship
   ];
 
   programs.starship = {
     enable = true;
-    
+
     enableZshIntegration = true;
-    
+
     enableBashIntegration = true;
 
     settings = {
@@ -23,19 +29,19 @@ in
 ";
       right_format = "$status";
 
-      palette  = "custom";
+      palette = "custom";
       palettes.custom = {
         dim_red = colors.faded_red;
-        red =     colors.red;
-        orange =  colors.orange;
-        yellow =  colors.yellow;
-        green =   colors.green;
-        cyan =    colors.aqua;
-        blue =    colors.blue;
-        purple =  colors.purple;
-        black =   colors.black;
-        gray =    colors.gray;
-        white =   colors.white;
+        red = colors.red;
+        orange = colors.orange;
+        yellow = colors.yellow;
+        green = colors.green;
+        cyan = colors.aqua;
+        blue = colors.blue;
+        purple = colors.purple;
+        black = colors.black;
+        gray = colors.gray;
+        white = colors.white;
       };
 
       username = {
@@ -46,32 +52,32 @@ in
         disabled = false;
       };
 
-      directory={
+      directory = {
         style = "bold bg:orange";
         format = "[ $path ]($style)";
         truncation_length = 3;
         truncation_symbol = "…/";
       };
-  
-      directory.substitutions ={
+
+      directory.substitutions = {
         "Documents" = "󰈙 ";
         "Downloads" = " ";
         "Music" = " ";
         "Images" = " ";
       };
 
-      git_branch= {
+      git_branch = {
         symbol = "";
         style = "bold bg:yellow";
         format = "[ $symbol $branch]($style)";
       };
 
-      git_status={
+      git_status = {
         style = "bold bg:yellow";
         format = "[$all_status$ahead_behind ]($style)";
       };
 
-      time={
+      time = {
         disabled = false;
         time_format = "%R";
         style = "bold bg:blue";
@@ -83,12 +89,17 @@ in
         format = "[ $symbol$percentage ]($style)";
       };
 
-      battery.display = [{ threshold = 100; style = "bold bg:cyan fg:white";}];
+      battery.display = [
+        {
+          threshold = 100;
+          style = "bold bg:cyan fg:white";
+        }
+      ];
 
       character = {
         format = "$symbol ";
-        success_symbol="[╰─](gray)[](red)[](yellow)[](green)";
-        error_symbol="[╰─](gray)[](red)[](red)[](red)";
+        success_symbol = "[╰─](gray)[](red)[](yellow)[](green)";
+        error_symbol = "[╰─](gray)[](red)[](red)[](red)";
       };
 
       cmd_duration = {
@@ -100,7 +111,7 @@ in
         format = "[ via ]($style)[$symbol]($style)[$version ](bold $style)";
         style = "bg:green fg:white";
       };
-      
+
       package = {
         format = "[ is ]($style)[$symbol$version ](bold $style)";
         style = "bg:green fg:white";
@@ -111,7 +122,7 @@ in
         success_symbol = "[✔](green) ";
         symbol = "[❌](red) ";
         map_symbol = true;
-        disabled = false;      
+        disabled = false;
       };
 
       add_newline = true;

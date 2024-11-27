@@ -1,4 +1,10 @@
-{ config, lib, pkgs, userSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 {
   programs.git = {

@@ -1,13 +1,19 @@
-{ config, lib, pkgs, systemSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  systemSettings,
+  ...
+}:
 
 {
   hardware = {
-    
+
     graphics = {
       enable = true;
       enable32Bit = true;
     };
-    
+
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -18,10 +24,10 @@
         };
       };
     };
-    
+
     nvidia.modesetting.enable = true;
   };
-  
+
   fileSystems."/mnt/Storage" = {
     device = "/dev/disk/by-label/Storage";
     fsType = "ext4";

@@ -1,7 +1,13 @@
-{ config, pkgs, systemSettings, userSettings, ... }:
+{
+  config,
+  pkgs,
+  systemSettings,
+  userSettings,
+  ...
+}:
 
 {
-  imports = [ 
+  imports = [
     ./hardware-configuration.nix
     ./System/PkgMan.nix
     ./System/Locale.nix
@@ -14,10 +20,13 @@
     ./System/Security.nix
     ./System/Boot.nix
   ];
-  
+
   #Enable experimental features
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     warn-dirty = false;
   };
   # This value determines the NixOS release from which the default

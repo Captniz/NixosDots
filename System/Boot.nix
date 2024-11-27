@@ -1,4 +1,10 @@
-{ config, lib, pkgs, systemSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  systemSettings,
+  ...
+}:
 
 {
   # Bootloader.
@@ -7,7 +13,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     extraModprobeConfig = ''
-    options hid_apple fnmode=2
-  '';
+      options hid_apple fnmode=2
+    '';
   };
 }

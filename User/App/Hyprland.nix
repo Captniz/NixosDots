@@ -1,4 +1,10 @@
-{ config, lib, pkgs, userSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
@@ -7,26 +13,26 @@ in
   imports = [
     ../Themes/${userSettings.theme}/Hyprland-override.nix
   ];
-  
+
   # Programs & configs
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    
-    settings = {  
+
+    settings = {
       # Vars
       "$mod" = "SUPER";
       "$wallpaper" = "~/Images/gruvbox-wallpapers/wallpapers/anime/108948084_p0.png";
       "$activeBorder" = "rgba(8DA101dd)";
       "$inactiveBorder" = "rgba(c5c9aaff)";
       "$shadow" = "rgba(1a1a1aee)";
-      
+
       monitor = [
         "eDP-1,preferred,0x0,1"
-        "DP-1,preferred,1920x0,1"  
-        "DP-2,preferred,1920x0,1"  
-        "HDMI-A-1,preferred,1920x0,1"  
-        " ,preferred,1920x0,1"  
+        "DP-1,preferred,1920x0,1"
+        "DP-2,preferred,1920x0,1"
+        "HDMI-A-1,preferred,1920x0,1"
+        " ,preferred,1920x0,1"
       ];
 
       workspace = [
@@ -67,14 +73,14 @@ in
       gestures = {
         workspace_swipe = true;
       };
-      
+
       input = {
         kb_layout = userSettings.keyboard;
         follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
           natural_scroll = "yes";
-		      middle_button_emulation = true;
+          middle_button_emulation = true;
         };
       };
 
@@ -148,7 +154,7 @@ in
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
         "$mod, 0, workspace, 10"
-  
+
         # Move active window to a workspace
         "$mod SHIFT, 1, movetoworkspace, 1"
         "$mod SHIFT, 2, movetoworkspace, 2"
@@ -165,7 +171,7 @@ in
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
       ];
-      
+
       binde = [
         # System settings controls
         "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
@@ -185,7 +191,6 @@ in
         " , switch:off:Lid Switch, exec, dunstify -u low 'Lid Opened' 'The lid has been opened'"
       ];
 
-
       windowrulev2 = [
         "opaque,class:^(firefox)$"
         "opaque,class:^(mirage)$"
@@ -197,8 +202,8 @@ in
       exec-once = [
         "swww init && swww img $wallpaper"
         "eww open bar"
-        "polkit-agent-helper-1" 
-        "systemctl start --user polkit-gnome-authentication-agent-1" 
+        "polkit-agent-helper-1"
+        "systemctl start --user polkit-gnome-authentication-agent-1"
         "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.00 && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "sleep 2 && systemctl restart --user pipewire.service"

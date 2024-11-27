@@ -1,10 +1,16 @@
-{ config, lib, pkgs, userSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
 in
 {
-  
+
   services.dunst = {
     enable = true;
     settings = {
@@ -17,15 +23,15 @@ in
         # Text
         word_wrap = true;
         markup = "full";
-        progress_bar= true;
-        
+        progress_bar = true;
+
         # Shape
         frame_width = 2;
         separator_height = 2;
         horizontal_padding = 8;
         padding = 8;
         geometry = "500x5-5+30";
-        
+
         # Position
         alignment = "center";
         origin = "top_right";
@@ -33,7 +39,7 @@ in
         sort = "update";
         stack_duplicates = true;
         show_indicators = true;
-        
+
         # Xwayland
         layer = "top";
         #force_xwayland = true;

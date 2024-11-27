@@ -1,9 +1,15 @@
-{ config, lib, pkgs, systemSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  systemSettings,
+  ...
+}:
 
 {
   services = {
     xserver.videoDrivers = [ "amdgpu" ];
-    
+
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -16,12 +22,17 @@
             "bluez5.enable-sbc-xq" = true;
             "bluez5.enable-msbc" = true;
             "bluez5.enable-hw-volume" = true;
-            "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+            "bluez5.roles" = [
+              "hsp_hs"
+              "hsp_ag"
+              "hfp_hf"
+              "hfp_ag"
+            ];
           };
         };
       };
     };
-    
+
     openssh = {
       enable = true;
       settings = {
@@ -29,15 +40,15 @@
         PasswordAuthentication = true;
       };
     };
-    
+
     gnome.gnome-keyring.enable = true;
-    
+
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
       theme = "${import ./App/Sddm.nix { inherit pkgs; }}";
     };
-    
+
     logind = {
       lidSwitch = "ignore";
       lidSwitchDocked = "ignore";
@@ -75,7 +86,10 @@
 
     mpris-proxy = {
       description = "Mpris proxy";
-      after = [ "network.target" "sound.target" ];
+      after = [
+        "network.target"
+        "sound.target"
+      ];
       wantedBy = [ "default.target" ];
       serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
     };

@@ -1,4 +1,10 @@
-{ config, lib, pkgs, userSettings, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
@@ -11,17 +17,20 @@ in
   programs.rofi = {
     enable = true;
     package = pkgs.rofi;
-    plugins = [ pkgs.rofi-calc pkgs.rofi-emoji ];
+    plugins = [
+      pkgs.rofi-calc
+      pkgs.rofi-emoji
+    ];
     font = "FiraCode Nerd Font 12";
     extraConfig = {
-      "display-ssh"=    "";
-      "display-run"=    "";
-      "display-drun"=   "";
-      "display-window"= "";
-      "display-combi"=  "";
-      "display-calc"=  " ";
-      "display-emoji"= " ";
-      "show-icons"=     true;
+      "display-ssh" = "";
+      "display-run" = "";
+      "display-drun" = "";
+      "display-window" = "";
+      "display-combi" = "";
+      "display-calc" = " ";
+      "display-emoji" = " ";
+      "show-icons" = true;
     };
   };
 }
