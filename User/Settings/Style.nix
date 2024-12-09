@@ -7,8 +7,11 @@
 }:
 
 {
+  fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    # If shit is brokey do "fc-cache -r"
     nerd-fonts.fira-code
+    nerd-fonts.fira-mono
     nerd-fonts.iosevka
     nerd-fonts.meslo-lg
     bibata-cursors # Cursor theme
