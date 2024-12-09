@@ -10,7 +10,7 @@
   home.packages = with pkgs; [
     nerd-fonts.fira-code
     nerd-fonts.iosevka
-    nerd-fonts.meslo
+    nerd-fonts.meslo-lg
     bibata-cursors # Cursor theme
     papirus-icon-theme # Icon theme
     gruvbox-gtk-theme # Gtk theme
