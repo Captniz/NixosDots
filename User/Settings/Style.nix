@@ -8,13 +8,9 @@
 
 {
   home.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "Iosevka"
-        "Meslo"
-      ];
-    }) # Nerd Fonts
+    nerd-fonts.fira-code
+    nerd-fonts.iosevka
+    nerd-fonts.meslo
     bibata-cursors # Cursor theme
     papirus-icon-theme # Icon theme
     gruvbox-gtk-theme # Gtk theme
