@@ -9,6 +9,7 @@
   imports = [
     # General Settings
     ./User/Settings/Style.nix
+    ./User/Settings/FlakePkg.nix
 
     # App settings
     ./User/App/Hyprland.nix

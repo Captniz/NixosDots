@@ -2,16 +2,24 @@
   description = "Flake of captniz (aka Simone), inspired by librephoenix";
 
   inputs = {
+    # Base
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Additional Packages
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
   };
 
   outputs =
     {
+      # Base
       self,
       nixpkgs,
       home-manager,
+
+      # Additional Packages
+      hyprland-qtutils,
       ...
     }@inputs:
     let
