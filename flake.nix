@@ -75,6 +75,7 @@
           modules = [ ./home.nix ];
           extraSpecialArgs = {
             inherit userSettings;
+            inherit inputs;
           };
         };
       };
