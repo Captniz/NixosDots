@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     # Testing
 
+    google-chrome
     #yazi                # Terminal file manager
     #imagemagick         # Image manipulation
     #ripgrep             # Ripgrep
