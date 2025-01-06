@@ -17,6 +17,9 @@ in
   programs.alacritty = {
     enable = true;
     settings = {
+      general = {
+        working_directory = "/home/${userSettings.username}";
+      };
       window = {
         padding = {
           x = 10;
