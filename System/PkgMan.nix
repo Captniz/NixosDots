@@ -22,6 +22,7 @@
     #fd                  # Fd
     #xclip               # Clipboard manager
     #glow                # Markdown previewer
+    google-chrome
 
     # Essentials
 
