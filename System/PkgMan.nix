@@ -113,6 +113,7 @@
 
     # Utility / Quality of Life / Useful Commands
 
+    testdisk # Data recovery
     nixfmt-rfc-style # Nix formatter
     zoxide # Directory jumper
     opendrop # Airdrop compatibility

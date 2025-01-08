@@ -21,6 +21,8 @@ in
       "editor.formatOnSave" = true;
       "editor.codeActionsOnSave" = { };
       "update.mode" = "none";
+      "editor.tabSize" = 4;
+      "editor.indentSize" = "tabSize";
 
       # Themeing
       "editor.cursorSmoothCaretAnimation" = "on";
@@ -162,7 +164,8 @@ in
         "c" = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
         "zig" = "zig run";
         "cpp" = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
-        "objective-c" = "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
+        "objective-c" =
+          "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
         "php" = "cd $dir && sh FileTransfer.sh";
         "python" = "python -u";
         "perl" = "perl";
@@ -204,9 +207,12 @@ in
         "sass" = "sass --style expanded";
         "scss" = "scss --style expanded";
         "less" = "cd $dir && lessc $fileName $fileNameWithoutExt.css";
-        "FortranFreeForm" = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
-        "fortran-modern" = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
-        "fortran_fixed-form" = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
+        "FortranFreeForm" =
+          "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
+        "fortran-modern" =
+          "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
+        "fortran_fixed-form" =
+          "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
         "fortran" = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
         "sml" = "cd $dir && sml $fileName";
         "sql" = "cd $dir && sh FileTransfer.sh";

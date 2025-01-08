@@ -37,7 +37,7 @@
         timezone = "Europe/Rome"; # select timezone
         locale = "it_IT.UTF-8"; # select locale
         bootMode = "uefi"; # uefi or bios
-        keyboard = "us"; # select keyboard layout
+        keyboard = "it"; # select keyboard layout
       };
 
       # ----- USER SETTINGS ----- #
