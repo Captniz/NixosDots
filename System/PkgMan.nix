@@ -138,7 +138,7 @@
     telegram-desktop # Messaging app
     geogebra # Math tool
     docker # Container manager
-    balena-cli # Balena CLI
+    #balena-cli # Balena CLI
     webcord # Discord client
     lutris # Game client
     heroic # Game client
