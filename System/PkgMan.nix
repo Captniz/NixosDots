@@ -22,7 +22,7 @@
     #fd                  # Fd
     #xclip               # Clipboard manager
     #glow                # Markdown previewer
-    google-chrome
+    #google-chrome
 
     # Essentials
 
@@ -152,7 +152,7 @@
     android-studio # Android IDE
     vscode # Code editor
     obsidian # Note taking app
-    cider # Apple Music client
+    #cider-2 # Apple Music client
     unityhub # Unity IDE
     zoom-us # Video conferencing
   ];

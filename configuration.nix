@@ -19,6 +19,7 @@
     ./System/Users.nix
     ./System/Security.nix
     ./System/Boot.nix
+    ./System/App/Cider.nix
   ];
 
   #Enable experimental features
