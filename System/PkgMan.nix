@@ -152,7 +152,7 @@
     android-studio # Android IDE
     vscode # Code editor
     obsidian # Note taking app
-    #cider-2 # Apple Music client
+    cider-2 # Apple Music client
     unityhub # Unity IDE
     zoom-us # Video conferencing
   ];

@@ -1,18 +1,22 @@
 {
-  pkgs ? import <nixpkgs> { system = builtins.currentSystem; },
-  appimageTools ? pkgs.appimageTools,
-  lib ? pkgs.lib,
-  fetchurl ? pkgs.fetchurl,
+  lib,
+  appimageTools,
+  fetchurl,
 }:
 
-appimageTools.wrapType2 rec {
-  pname = "cider";
+let
   version = "2.3.2";
+  pname = "cider";
 
   src = fetchurl {
     url = "file://${./Cider-${version}.AppImage}";
     sha256 = "0b12bd6f47f65f669d55dcdbe16c4164b9b4a32ff773fa73d393b98098f30ecd";
   };
+
+  appimageContents = appimageTools.extractType1 { inherit name src; };
+in
+appimageTools.wrapType2 rec {
+  inherit pname version src;
 
   extraInstallCommands =
     let
@@ -33,4 +37,5 @@ appimageTools.wrapType2 rec {
     maintainers = [ maintainers.nicolaivds ];
     platforms = [ "x86_64-linux" ];
   };
+
 }
