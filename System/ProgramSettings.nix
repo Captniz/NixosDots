@@ -56,5 +56,10 @@
       enable = true;
       xwayland.enable = true;
     };
+
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
   };
 }

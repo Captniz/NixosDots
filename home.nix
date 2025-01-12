@@ -24,6 +24,7 @@
     ./User/App/Vscode.nix
     ./User/App/Ranger.nix
     ./User/App/Yazi.nix
+    ./User/App/Cider.nix
   ];
 
   # Home config
