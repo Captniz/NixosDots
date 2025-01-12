@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     # Testing
 
+    #balena-cli # Balena CLI
     #yazi                # Terminal file manager
     #imagemagick         # Image manipulation
     #ripgrep             # Ripgrep
@@ -138,7 +139,6 @@
     telegram-desktop # Messaging app
     geogebra # Math tool
     docker # Container manager
-    #balena-cli # Balena CLI
     webcord # Discord client
     lutris # Game client
     heroic # Game client
