@@ -15,7 +15,7 @@ in
   ];
   programs.vscode = {
     enable = true;
-    userSettings = {
+    profiles.default.userSettings = {
       # General
       "files.autoSave" = "afterDelay";
       "editor.formatOnSave" = true;
