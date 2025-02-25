@@ -13,23 +13,27 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # Possible Fixes / Old Packages
+
+    #libsForQt5.xwaylandvideobridge   # Recently udpated, could fix some issues
+    #balena-cli # Balena CLI
+    #google-chrome
+
     # Testing
 
-    #balena-cli # Balena CLI
     #yazi                # Terminal file manager
     #imagemagick         # Image manipulation
     #ripgrep             # Ripgrep
     #fd                  # Fd
     #xclip               # Clipboard manager
     #glow                # Markdown previewer
-    #google-chrome
 
     # Essentials
 
     hyprland # Window manager
     zsh # Shell
     dunst # Notification manager
-    sddm # Display manager
+    libsForQt5.sddm # Display manager
     pipewire # Audio server
     wireplumber # Audio server
     pavucontrol # Audio control
@@ -93,16 +97,10 @@
     git-credential-oauth # Git credential helper
     polkit # Authorization manager
     polkit_gnome # Authorization manager
-    xwaylandvideobridge # Xwayland bridge
+    kdePackages.xwaylandvideobridge # Xwayland bridge
     xdg-utils # Desktop utilities
     xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities
-    (pkgs.wordlists.override {
-      lists = with pkgs; [
-        # Wordlists
-        rockyou
-      ];
-    })
     xorg.xhost # Xorg utility
     hyprland-protocols # Hyprland protocols
     wlroots # Wayland compositor
