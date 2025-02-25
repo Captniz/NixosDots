@@ -23,8 +23,8 @@ in
 
   programs.yazi = {
 
-    enable = true;
-
+    enable = false;   #!!! SET TO TRUE ON ENABLE !!!
+ 
     enableZshIntegration = true;
 
     plugins = {

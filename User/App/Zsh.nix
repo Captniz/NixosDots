@@ -25,7 +25,7 @@ in
     enableBashIntegration = true;
 
     settings = {
-      format = "[╭─](gray)[](bg:red fg:dim_red)$os$username[](bg:orange fg:red)$directory[](fg:orange bg:yellow)$git_branch$git_status$docker_context[](fg:yellow bg:green)$all[](fg:green bg:cyan)$battery[](fg:cyan bg:blue)$time[ ](fg:blue)$line_break$character
+      format = "[╭─](gray)[](bg:red fg:black)$os$username[](bg:orange fg:red)$directory[](fg:orange bg:yellow)$git_branch$git_status$docker_context[](fg:yellow bg:green)$all[](fg:green bg:cyan)$battery[](fg:cyan bg:blue)$time[ ](fg:blue)$line_break$character
 ";
       right_format = "$status";
 
@@ -98,8 +98,8 @@ in
 
       character = {
         format = "$symbol ";
-        success_symbol = "[╰─](gray)[](red)[](yellow)[](green)";
-        error_symbol = "[╰─](gray)[](red)[](red)[](red)";
+        success_symbol = "[╰─ ](gray)[](red)[](yellow)[](green)";
+        error_symbol = "[╰─ ](gray)[](red)[](red)[](red)";
       };
 
       cmd_duration = {
