@@ -19,6 +19,7 @@
       "sound"
       "video"
       "docker"
+      "pipewire"
     ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;

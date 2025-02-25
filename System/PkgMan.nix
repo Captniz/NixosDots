@@ -128,7 +128,7 @@
     bash-completion # Terminal completion
     bat # Cat clone
     tesseract # Image OCR
-    john # Password cracker
+    #john # Password cracker
     ocrmypdf # PDF OCR
     qdirstat # Disk usage analyzer
     gparted # Partition manager
