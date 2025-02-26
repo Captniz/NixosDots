@@ -23,7 +23,7 @@ in
 
   programs.yazi = {
 
-    enable = false;   #!!! SET TO TRUE ON ENABLE !!!
+    enable = enable;   #!!! SET TO TRUE ON ENABLE !!!
  
     enableZshIntegration = true;
 

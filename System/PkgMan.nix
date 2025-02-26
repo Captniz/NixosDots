@@ -75,6 +75,7 @@
       python-pkgs.setuptools
       python-pkgs.toml
     ]))
+    polyml # ML
 
     # Dependencies/Libraries/Single Use Programs
 
