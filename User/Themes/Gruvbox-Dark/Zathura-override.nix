@@ -10,5 +10,4 @@ let
   colors = import ./Colors.nix;
 in
 {
-
 }

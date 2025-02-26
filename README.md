@@ -88,7 +88,6 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | ZSH / OhMyZSH | ✔ | ✔ |
 | Starship | ✔ | ✔ |
 | SWWW | ✔ | ✔ |
-| Flatpack | ❌ | ❌ |
 | Ranger | ✔ | ✔ |
 | SDDM | ✔ | ✔ |
 | Slurp / Grim | ✔ | ✔ |
@@ -101,7 +100,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | Balena-etcher | ✔ | ✔ |
 | Gparted | ✔ | ✔ |
 | Docker | ✔ | ❌ |
-| Lutris | ✔ | ❌ |
+| Lutris | ✔ | ✔ |
 | Steam | ✔ | ✔ |
 | Discord | ✔ | ✔ |
 | Qimgv | ✔ | ✔ |
@@ -117,3 +116,5 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 - [ ] Create some usable themes
 - [ ] Find a way to implement vs code extensions in the config
 - [ ] Theme firefox
+- [ ] Theme obsidian
+- [ ] Theme ranger

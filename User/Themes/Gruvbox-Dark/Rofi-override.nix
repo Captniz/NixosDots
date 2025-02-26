@@ -11,35 +11,35 @@ let
   inherit (config.lib.formats.rasi) mkLiteral;
   rofi-theme = {
     "*" = {
-      gruv0 = mkLiteral colors.black;
-      gruv1 = mkLiteral colors.bg0_soft;
-      gruv2 = mkLiteral colors.bg2;
-      gruv3 = mkLiteral colors.bg3;
+      bg0 = mkLiteral colors.black;
+      bg1 = mkLiteral colors.bg0_soft;
+      bg2 = mkLiteral colors.bg2;
+      bg3 = mkLiteral colors.bg3;
 
-      gruv4 = mkLiteral colors.fg0;
-      gruv5 = mkLiteral colors.fg0_soft;
-      gruv6 = mkLiteral colors.fg1;
+      fg0 = mkLiteral colors.fg0;
+      fg1 = mkLiteral colors.fg0_soft;
+      fg2 = mkLiteral colors.fg1;
 
-      gruv7 = mkLiteral colors.fg4;
-      gruv8 = mkLiteral colors.gray;
-      gruv9 = mkLiteral colors.bg4;
-      gruv10 = mkLiteral colors.bg2;
+      hlg0 = mkLiteral colors.fg0;
+      hlg1 = mkLiteral colors.gray;
+      hlg2 = mkLiteral colors.bg4;
+      hlg3 = mkLiteral colors.bg2;
 
       red = mkLiteral colors.red;
+      blue = mkLiteral colors.bright_blue;
       orange = mkLiteral colors.orange;
       yellow = mkLiteral colors.yellow;
       green = mkLiteral colors.green;
       aqua = mkLiteral colors.aqua;
       purple = mkLiteral colors.purple;
+      white = mkLiteral colors.white;
+      black = mkLiteral colors.black;
 
-      reddark = mkLiteral "#c14a4a";
-      yellowdark = mkLiteral "#b47109";
+      reddark = mkLiteral colors.faded_red;
+      yellowdark = mkLiteral colors.faded_yellow;
 
-      foreground = mkLiteral "@gruv9";
       background-color = mkLiteral "transparent";
-
       highlight = mkLiteral "underline bold ${colors.fg1}";
-
       transparent = mkLiteral "rgba(46,52,64,0)";
     };
 
@@ -63,15 +63,15 @@ let
     "message" = {
       padding = mkLiteral "10px";
       border = mkLiteral "0px 2px 2px 2px";
-      border-color = mkLiteral "@gruv0";
-      background-color = mkLiteral "@gruv7";
+      border-color = mkLiteral "@bg0";
+      background-color = mkLiteral "@hlg0";
     };
 
     "inputbar" = {
-      color = mkLiteral "@gruv6";
+      color = mkLiteral "@fg2";
       padding = mkLiteral "14px";
-      background-color = mkLiteral "@gruv0";
-      border-color = mkLiteral "@gruv0";
+      background-color = mkLiteral "@bg0";
+      border-color = mkLiteral "@bg0";
 
       border = mkLiteral "1px";
     };
@@ -88,8 +88,8 @@ let
     "listview" = {
       padding = mkLiteral "8px";
       border = mkLiteral "2px 2px 2px 2px";
-      border-color = mkLiteral "@gruv0";
-      background-color = mkLiteral "@gruv0";
+      border-color = mkLiteral "@bg0";
+      background-color = mkLiteral "@bg0";
       dynamic = false;
     };
 
@@ -97,9 +97,9 @@ let
       padding = mkLiteral "5px";
       vertical-align = mkLiteral "0.5";
       border-radius = mkLiteral "10px";
-      color = mkLiteral "@foreground";
-      text-color = mkLiteral "@gruv6";
-      background-color = mkLiteral "@gruv1";
+      color = mkLiteral "@fg0";
+      text-color = mkLiteral "@fg2";
+      background-color = mkLiteral "@bg1";
     };
 
     "element.normal.active" = {
@@ -111,8 +111,8 @@ let
     };
 
     "element.selected.normal" = {
-      background-color = mkLiteral "@gruv7";
-      text-color = mkLiteral "@gruv0";
+      background-color = mkLiteral "@green";
+      text-color = mkLiteral "@bg0";
     };
 
     "element.selected.active" = {
@@ -132,22 +132,22 @@ let
       margin = mkLiteral "0 10 0 0";
       vertical-align = mkLiteral "0.5";
       background-color = mkLiteral "inherit";
-      text-color = mkLiteral "@gruv6";
+      text-color = mkLiteral "@fg2";
     };
 
     "button" = {
       padding = mkLiteral "6px";
-      color = mkLiteral "@foreground";
+      color = mkLiteral "@fg0";
       horizontal-align = mkLiteral "0.5";
 
       border = mkLiteral "2px 0px 2px 2px";
       border-radius = mkLiteral "10px";
-      border-color = mkLiteral "@foreground";
+      border-color = mkLiteral "@fg0";
     };
 
     "button.selected.normal" = {
       border = mkLiteral "2px 0px 2px 2px";
-      border-color = mkLiteral "@foreground";
+      border-color = mkLiteral "@fg0";
     };
   };
 in

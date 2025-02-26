@@ -28,7 +28,7 @@ in
       blue = colors.blue;
       magenta = colors.purple;
       black = colors.black;
-      white = colors.white;
+      white = colors.faded_white;
     };
     bright = {
       red = colors.bright_red;
