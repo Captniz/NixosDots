@@ -117,3 +117,4 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 - [ ] Find a way to implement vs code extensions in the config
 - [ ] Theme firefox
 - [ ] Theme obsidian
+- [ ] Theme hyprlock

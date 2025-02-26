@@ -27,6 +27,7 @@
     #fd                  # Fd
     #xclip               # Clipboard manager
     #glow                # Markdown previewer
+    hyprlock # Screen locker
 
     # Essentials
 
