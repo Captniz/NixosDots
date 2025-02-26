@@ -23,7 +23,6 @@
     ./User/App/Eww.nix
     ./User/App/Vscode.nix
     ./User/App/Ranger.nix
-    ./User/App/Obsidian.nix
     #./User/App/Yazi.nix
   ];
 

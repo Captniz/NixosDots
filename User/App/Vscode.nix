@@ -160,7 +160,7 @@ in
       };
       "code-runner.executorMap" = {
         "javascript" = "node";
-        "java" = "cd $dir && javac $fileName && java $fileNameWithoutExt";
+        "java" = "cd $dir && javac 2>/dev/null $fileName && java 2>/dev/null $fileNameWithoutExt";
         "c" = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
         "zig" = "zig run";
         "cpp" = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";

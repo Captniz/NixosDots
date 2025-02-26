@@ -51,6 +51,7 @@
     p7zip # Archive manager
     unrar
     unzip # Archive manager
+    qbittorrent # Torrent client
 
     # Languages
 
