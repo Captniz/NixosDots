@@ -12,7 +12,7 @@ in
 {
   programs.hyprlock.settings = {
     background = lib.mkForce {
-      path = "~/Images/gruvbox-wallpapers/wallpapers/mix/galaxy.png";
+      path = "~/Images/gruvbox-wallpapers/wallpapers/anime/gruvbox_girl.png";
       blur_passes = 2;
       contrast = 0.8916;
       brightness = 0.8172;
