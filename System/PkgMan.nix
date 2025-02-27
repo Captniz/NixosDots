@@ -27,10 +27,11 @@
     #fd                  # Fd
     #xclip               # Clipboard manager
     #glow                # Markdown previewer
-    hyprlock # Screen locker
 
     # Essentials
 
+    firefox # Browser
+    hyprlock # Screen locker
     hyprland # Window manager
     zsh # Shell
     dunst # Notification manager
@@ -42,7 +43,6 @@
     neovim # Text editor
     alacritty # Term. emulator
     ranger # File manager
-    firefox # Browser
     git # Version manager
     swww # Wallpaper manager
     qimgv # Image viewer

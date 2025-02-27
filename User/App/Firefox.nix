@@ -3,97 +3,33 @@
   lib,
   pkgs,
   userSettings,
+  inputs,
   ...
 }:
-
-let
-  colors = import ../Themes/${userSettings.theme}/Colors.nix;
-
-  lock-false = {
-    Value = false;
-    Status = "locked";
-  };
-  lock-true = {
-    Value = true;
-    Status = "locked";
-  };
-
-in
 {
   programs.firefox = {
-
-    # Config credit:
-    #
-    # [sleepy]:
-    # https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265/7
-
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
       extraPolicies = {
         DisableTelemetry = true;
         DisableAppUpdate = true;
         # add policies here...
-
-        # ---- EXTENSIONS ----
-        ExtensionSettings = {
-          "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
-
-          # Mozzilla Add-ons Search Detection:
-          "addons-search-detection@mozilla.com".installation_mode = "force_installed";
-
-          # Default Theme
-          "default-theme@mozilla.org".installation_mode = "force_installed";
-
-          # uBlock Origin:
-          "uBlock0@raymondhill.net" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-            installation_mode = "force_installed";
-          };
-
-          # adGuard:
-          "adguardadblocker@adguard.com" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/adguard-adblocker/latest.xpi";
-            installation_mode = "force_installed";
-          };
-
-          # treeStyleTab:
-          "treestyletab@piro.sakura.ne.jp" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/tree-style-tab/latest.xpi";
-            installation_mode = "force_installed";
-          };
-
-          # add extensions here...
-        };
-
-        # ---- PREFERENCES ----
-        # Set preferences shared by all profiles.
-        Preferences = {
-          "browser.contentblocking.category" = {
-            Value = "strict";
-            Status = "locked";
-          };
-          "extensions.pocket.enabled" = lock-false;
-          "extensions.screenshots.disabled" = lock-true;
-          "fission.autostart.session" = lock-true;
-          "browser.search.region" = "IT";
-          "doh-rollout.home-region" = "IT";
-          # add global preferences here...
-        };
       };
     };
 
-    # ---- PROFILES ----
-    # Switch profiles via about:profiles page.
-    # For options that are available in Home-Manager see
-    # https://nix-community.github.io/home-manager/options.html#opt-programs.firefox.profiles
     profiles = {
       simo = {
-        # choose a profile name; directory is /home/<user>/.mozilla/firefox/profile_0
         id = 0; # 0 is the default profile; see also option "isDefault"
         name = "simo"; # name as listed in about:profiles
         isDefault = true; # can be omitted; true if profile ID is 0
         settings = {
-          # specify profile-specific preferences here; check about:config for options
+          "browser.contentblocking.category" = "strict";
+          "extensions.pocket.enabled" = false;
+          "extensions.screenshots.disabled" = true;
+          "fission.autostart.session" = true;
+          "browser.search.region" = "IT";
+          "doh-rollout.home-region" = "IT";
+          "browser.startup.page" = 3;
           "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
           "accessibility.typeaheadfind.flashBar" = 0;
@@ -108,16 +44,83 @@ in
           "services.sync.engine.prefs" = false;
           "services.sync.engine.prefs.modified" = false;
           "extensions.autoDisableScopes" = 0;
-          # add preferences for profile here...
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "extensions.activeThemeID" = "{eb8c4a94-e603-49ef-8e81-73d3c4cc04ff}";
         };
+        extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+          ublock-origin
+          tree-style-tab
+          youtube-shorts-block
+          gruvbox-dark-theme
+        ];
+
+        search.engines = {
+          "Nix Packages" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@np" ];
+          };
+
+          "MyNixos" = {
+            urls = [
+              {
+                template = "https://mynixos.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@mn" ];
+          };
+        };
+
+        search.force = true;
+
+        userChrome = ''
+          /* Source: https://gist.github.com/teksisto/d6b4d37219e957d9cdcdb3ec88952c15 */
+
+          /*@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+          /* Hide main tabs toolbar */
+          #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar {
+            visibility: collapse;
+            pointer-events: none;
+          }
+          #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+            visibility: collapse !important;
+          }
+
+          /* Hide sidebar header, when using Tree Style Tab. */
+          #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+            visibility: collapse;
+          }
+        '';
+
       };
 
       old_default = {
         id = 1;
         name = "old_default";
-        path = "/home/simo/.mozilla/firefox/old_default";
+        path = "old_default";
       };
-      # add profiles here...
     };
   };
 }
