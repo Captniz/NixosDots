@@ -24,6 +24,7 @@
     ./User/App/Vscode.nix
     ./User/App/Ranger.nix
     ./User/App/Hyprlock.nix
+    ./User/App/Firefox.nix
     #./User/App/Yazi.nix
   ];
 
