@@ -3,14 +3,19 @@
 
 ## Table of Contents <!-- omit in toc -->
 
-- [System Info](#system-info)
-- [Directory Structure](#directory-structure)
 - [Description](#description)
+- [Directory Structure](#directory-structure)
 - [TODOS](#todos)
   - [Pending Packages](#pending-packages)
   - [Reminders](#reminders)
 
-## System Info
+## Description
+
+This is my personal configuration for NixOS, designed specifically for my university laptop.  
+I'm trying to keep the configuration as clean and bloa-free as possible, while still being able to manage all the software I need.
+
+I'm also trying to avoid using performance-heavy or purely aesthetic software, to avoid being distracter or performace-impaired by it while working.
+
 
 ## Directory Structure
 
@@ -22,7 +27,6 @@
 ├── home.nix                    # Main home configuration file 
 ├── flake.nix                   # Flake file 
 ├── flake.lock                  # Lock file for the flake
-├── README.md                   # This file
 │
 ├── System                      # System general configuration files || Mainly managed by NixOS config
 │   ├── App                     # System applications configuration
@@ -40,24 +44,23 @@
 │   ├── Users.nix               # Users definitions and configuration
 │   └── README.md               # README
 │
-└── User                        # User general configuration files || Mainly managed by Home Manager
-    ├── App                     # User applications configuration    
-    │   └── ...
-    ├── ExtraConfigs            # Configurations for apps that can't be managed by Home Manager options
-    │   └── ...
-    ├── README.md               # README
-    ├── Scripts                 # Custom scripts used by the configuration
-    │   └── ...
-    ├── Settings                # Other user specific settings
-    │   └── ...
-    └── Themes                  # User themes || Managed by Home Manager and flakes
-        └── ... 
+├── User                        # User general configuration files || Mainly managed by Home Manager
+│   ├── App                     # User applications configuration    
+│   │   └── ...
+│   ├── ExtraConfigs            # Configurations for apps that can't be managed by Home Manager options
+│   │   └── ...
+│   ├── Scripts                 # Custom scripts used by the configuration
+│   │   └── ...
+│   ├── Settings                # Other user specific settings for home configuration
+│   │   ├── HomePkg.nix         # HomeManager installed packages 
+│   │   ├── Style.nix           # User style configuration
+│   │   └   ...
+│   ├── Themes                  # User themes || Managed by Home Manager and flakes
+│   │   └── ... 
+│   └── README.md               # README
+│
+└── README.md                   # This file
 ```
-
-## Description
-
-This is my personal configuration for NixOS, set up for my student laptop.  
-I'm trying to keep the configuration as ordered as possible for my own taste, even tough it's not the best way to do it.
 
 ## TODOS
 
@@ -73,7 +76,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | NeoVim | ✔ | ✔ |
 | LibreOffice | ✔ | ✔ |
 | Wine | ✔ | ✔ |
-| Firefox (saved pssw and stting) | ✔ | ✔ |
+| Firefox | ✔ | ✔ |
 | Alacritty | ✔ | ✔ |
 | VScode | ✔ | ✔ |
 | Git | ✔ | ✔ |
@@ -113,7 +116,5 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 ### Reminders
 
-- [ ] Create some usable themes
 - [ ] Find a way to implement vs code extensions in the config
-- [ ] Theme firefox
 - [ ] Theme obsidian

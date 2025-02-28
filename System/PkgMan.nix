@@ -12,14 +12,13 @@
     permittedInsecurePackages = [ "the_electron_version" ];
   };
 
+  # System packages
   environment.systemPackages = with pkgs; [
-    # Possible Fixes / Old Packages
+    ########### Possible Fixes / Old Packages
 
     #libsForQt5.xwaylandvideobridge   # Recently udpated, could fix some issues
-    #balena-cli # Balena CLI
-    #google-chrome
 
-    # Testing
+    ########### Testing
 
     #yazi                # Terminal file manager
     #imagemagick         # Image manipulation
@@ -28,9 +27,8 @@
     #xclip               # Clipboard manager
     #glow                # Markdown previewer
 
-    # Essentials
+    ########### Essentials
 
-    firefox # Browser
     hyprlock # Screen locker
     hyprland # Window manager
     zsh # Shell
@@ -46,15 +44,13 @@
     git # Version manager
     swww # Wallpaper manager
     qimgv # Image viewer
-    libreoffice-qt-fresh # Office suite
     nitch # System fetch
     btop # System monitor
     p7zip # Archive manager
-    unrar
+    unrar # Archive manager
     unzip # Archive manager
-    qbittorrent # Torrent client
 
-    # Languages
+    ########### Languages
 
     nodejs_22 # Node.js
     rustfmt # Rust
@@ -79,7 +75,7 @@
     ]))
     polyml # ML
 
-    # Dependencies/Libraries/Single Use Programs
+    ########### Dependencies/Libraries/Single Use Programs
 
     libinput # Input library
     owl
@@ -113,7 +109,7 @@
     wineWowPackages.waylandFull # Wine utility
     tree # Directory tree
 
-    # Utility / Quality of Life / Useful Commands
+    ########### Utility / Quality of Life / Useful Commands
 
     testdisk # Data recovery
     nixfmt-rfc-style # Nix formatter
@@ -129,14 +125,12 @@
     bash-completion # Terminal completion
     bat # Cat clone
     tesseract # Image OCR
-    #john # Password cracker
     ocrmypdf # PDF OCR
     qdirstat # Disk usage analyzer
     gparted # Partition manager
 
-    # Programs & Apps
+    ########### Programs & Apps
 
-    whatsapp-for-linux
     telegram-desktop # Messaging app
     geogebra # Math tool
     docker # Container manager
@@ -144,6 +138,7 @@
     lutris # Game client
     heroic # Game client
     steam # Game client
+    firefox # Browser
     dia # Diagram editor
     vlc # Media player
     obs-studio # Media creator / Streaming software
@@ -155,6 +150,8 @@
     obsidian # Note taking app
     cider-2 # Apple Music client
     unityhub # Unity IDE
+    libreoffice-qt-fresh # Office suite
+    qbittorrent # Torrent client
     zoom-us # Video conferencing
   ];
 }

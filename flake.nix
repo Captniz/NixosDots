@@ -1,8 +1,8 @@
 {
-  description = "Flake of captniz (aka Simone), inspired by librephoenix";
+  description = "Flake of Captniz (aka Simone), inspired by librephoenix";
 
   inputs = {
-    # Base
+    # Base Inputs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -21,7 +21,7 @@
 
   outputs =
     {
-      # Base
+      # Base Inputs
       self,
       nixpkgs,
       home-manager,
