@@ -26,7 +26,7 @@
     ./User/App/Ranger.nix
     ./User/App/Hyprlock.nix
     ./User/App/Firefox.nix
-    #./User/App/Yazi.nix
+    ./User/App/Yazi.nix
   ];
 
   # Home config

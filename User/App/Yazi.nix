@@ -8,13 +8,13 @@
 
 let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
+
   yazi-plugins = pkgs.fetchFromGitHub {
     owner = "yazi-rs";
     repo = "plugins";
     rev = "main";
-    hash = "sha256-LxWc0hFSj1cp9/aWmN2mmojcQnvFl3meZ96CIbTt2f0=";
+    hash = "sha256-Vvq7uau+UNcriuLE7YMK5rSOXvVaD0ElT59q+09WwdQ=";
   };
-
 in
 {
   imports = [
@@ -23,9 +23,16 @@ in
 
   programs.yazi = {
 
-    enable = enable;   #!!! SET TO TRUE ON ENABLE !!!
- 
+    enable = true;
+
     enableZshIntegration = true;
+
+    initLua = ''
+      require("full-border"):setup {
+            	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
+            	type = ui.Border.ROUNDED,
+      }
+    '';
 
     plugins = {
 
@@ -39,16 +46,35 @@ in
         owner = "Reledia";
         repo = "glow.yazi";
         rev = "main";
-        hash = "sha256-fKJ5ld5xc6HsM/h5j73GABB5i3nmcwWCs+QSdDPA9cU=";
+        hash = "sha256-DPud1Mfagl2z490f5L69ZPnZmVCa0ROXtFeDbEegBBU=";
       };
 
       hexyl = pkgs.fetchFromGitHub {
         owner = "Reledia";
         repo = "hexyl.yazi";
         rev = "main";
-        hash = "sha256-9rPJcgMYtSY5lYnFQp3bAhaOBdNUkBaN1uMrjen6Z8g=";
+        hash = "sha256-Xv1rfrwMNNDTgAuFLzpVrxytA2yX/CCexFt5QngaYDg=";
       };
 
+      compress = pkgs.fetchFromGitHub {
+        owner = "KKV9";
+        repo = "compress.yazi";
+        rev = "main";
+        hash = "sha256-Yf5R3H8t6cJBMan8FSpK3BDSG5UnGlypKSMOi0ZFqzE=";
+      };
+    };
+
+    keymap = {
+      manager.prepend_keymap = [
+        {
+          on = [
+            "c"
+            "a"
+          ];
+          run = "plugin compress";
+          desc = "Archive selected files";
+        }
+      ];
     };
 
     settings = {
@@ -97,68 +123,42 @@ in
         edit = [
           {
             run = "\$\{EDITOR:-vi\} \"$@\"";
-            desc = "$EDITOR";
+            desc = "Edit";
             block = true;
             for = "unix";
           }
-
-          {
-            run = "code %*";
-            orphan = true;
-            desc = "code";
-            for = "windows";
-          }
-
-          {
-            run = "code -w %*";
-            block = true;
-            desc = "code (block)";
-            for = "windows";
-          }
         ];
-        open = [
-
+        compress = [
           {
-            run = "xdg-open \"$1\"";
-            desc = "Open";
+            run = "zip -r \"$@.zip\" \"$@\"";
+            desc = "Compress here";
+            for = "unix";
+          }
+          {
+            run = "zip -r \"$@.zip\" \"$@\"";
+            desc = "Compress here";
             for = "linux";
-          }
-
-          {
-            run = "open \"$@\"";
-            desc = "Open";
-            for = "macos";
-          }
-
-          {
-            run = "start \"\" \"%1\"";
-            orphan = true;
-            desc = "Open";
-            for = "windows";
           }
         ];
         reveal = [
           {
-            run = "xdg-open \"$(dirname \"$1\")\"";
+            run = "alacritty --working-directory \"$(dirname \"$1\")\"";
             desc = "Reveal";
             for = "linux";
           }
+        ];
+        xdg-open = [
           {
-            run = "open -R \"$1\"";
-            desc = "Reveal";
-            for = "macos";
+            run = "xdg-open \"$1\"";
+            desc = "Open with default XDG";
+            for = "linux";
           }
+        ];
+        open-pdf = [
           {
-            run = "explorer /select,\"%1\"";
-            orphan = true;
-            desc = "Reveal";
-            for = "windows";
-          }
-          {
-            run = "exiftool \"$1\"; echo \"Press enter to exit\"; read _";
-            block = true;
-            desc = "Show EXIF";
-            for = "unix";
+            run = "zathura \"$1\"";
+            desc = "Open";
+            for = "linux";
           }
         ];
         extract = [
@@ -180,15 +180,17 @@ in
             for = "unix";
           }
           {
-            run = "mpv --force-window %*";
-            orphan = true;
-            for = "windows";
-          }
-          {
             run = "mediainfo \"$1\"; echo \"Press enter to exit\"; read _";
             block = true;
             desc = "Show media info";
             for = "unix";
+          }
+        ];
+        code = [
+          {
+            run = "code \"$1\"";
+            desc = "Code";
+            for = "linux";
           }
         ];
       };
@@ -200,8 +202,19 @@ in
             name = "*/";
             use = [
               "edit"
-              "open"
               "reveal"
+              "compress"
+              "xdg-open"
+            ];
+          }
+          # Programming Language
+          {
+            mime = "text/{c,c++,c-header,c++-header,csharp,go,java,javascript,lua,markdown,objective-c,python,ruby,shellscript,sql,yaml}";
+            use = [
+              "code"
+              "edit"
+              "reveal"
+              "xdg-open"
             ];
           }
           # Text
@@ -210,13 +223,14 @@ in
             use = [
               "edit"
               "reveal"
+              "xdg-open"
             ];
           }
           # Image
           {
             mime = "image/*";
             use = [
-              "open"
+              "xdg-open"
               "reveal"
             ];
           }
@@ -225,6 +239,15 @@ in
             mime = "{audio,video}/*";
             use = [
               "play"
+              "reveal"
+            ];
+          }
+          # PDF - Ebook
+          {
+            mime = "application/{pdf,epub+zip}";
+            use = [
+              "open-pdf"
+              "xdg-open"
               "reveal"
             ];
           }
@@ -237,7 +260,7 @@ in
             ];
           }
           {
-            mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}";
+            mime = "application/{tar,bzip*,7z-compressed,xz,rar}";
             use = [
               "extract"
               "reveal"
@@ -251,16 +274,9 @@ in
               "reveal"
             ];
           }
-          {
-            mime = "*/javascript";
-            use = [
-              "edit"
-              "reveal"
-            ];
-          }
           # Empty file
           {
-            mime = "inode/x-empty";
+            mime = "inode/empty";
             use = [
               "edit"
               "reveal"
@@ -423,7 +439,10 @@ in
         ];
 
         # create
-        create_title = "Create:";
+        create_title = [
+          "Create:"
+          "Create Directory:"
+        ];
         create_origin = "top-center";
         create_offset = [
           0
@@ -557,6 +576,5 @@ in
         enabled = false;
       };
     };
-
   };
 }

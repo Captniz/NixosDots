@@ -22,13 +22,18 @@
     defaultApplications = {
       "default-web-browser" = [ "firefox.desktop" ];
       "text/html" = [ "firefox.desktop" ]; # Browser
+      "text/xml" = [ "firefox.desktop" ]; # Browser
       "x-scheme-handler/http" = [ "firefox.desktop" ];
       "x-scheme-handler/https" = [ "firefox.desktop" ];
       "x-scheme-handler/about" = [ "firefox.desktop" ];
       "x-scheme-handler/unknown" = [ "firefox.desktop" ];
+
+      # MIME types
       "image/jpeg" = [ "qimgv.desktop" ]; # Images
       "image/jpg" = [ "qimgv.desktop" ]; # Images
       "image/png" = [ "qimgv.desktop" ]; # Images
+      "application/pdf" = [ "zathura.desktop" ]; # PDF
+      "application/epub+zip" = [ "zathura.desktop" ]; # Epub
     };
   };
 

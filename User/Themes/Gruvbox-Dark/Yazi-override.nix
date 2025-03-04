@@ -8,13 +8,39 @@
 
 let
   colors = import ./Colors.nix;
+  yazi-flavors = pkgs.fetchFromGitHub {
+    owner = "yazi-rs";
+    repo = "flavors";
+    rev = "main";
+    hash = "sha256-xYEVdDv0AzPYGwANiP1V5JEKg6k1JXEBeH5tHbPPFl4=";
+  };
 in
 {
-  programs.yazi.theme = lib.mkForce {
-    flavor = {
-      use = "";
+  programs.yazi.flavors = lib.mkForce {
+    dracula = "${yazi-flavors}/dracula.yazi";
+    flexoki-dark = pkgs.fetchFromGitHub {
+      owner = "gosxrgxx";
+      repo = "flexoki-dark.yazi";
+      rev = "main";
+      hash = "sha256-VQJIqUNklPDiXBSYGWUp099LXytlETUwGj03o/9HP5I=";
     };
 
+    flexoki-light = pkgs.fetchFromGitHub {
+      owner = "gosxrgxx";
+      repo = "flexoki-dark.yazi";
+      rev = "main";
+      hash = "sha256-VQJIqUNklPDiXBSYGWUp099LXytlETUwGj03o/9HP5I=";
+    };
+
+    gruv-dark = pkgs.fetchFromGitHub {
+      owner = "bennyyip";
+      repo = "gruvbox-dark.yazi";
+      rev = "main";
+      hash = "sha256-9ZZHXP0Junaj6r80nE8oDNEU5WIKVdtz4g72BFzcSAM=";
+    };
+  };
+
+  programs.yazi.theme = lib.mkForce {
     manager = {
       cwd = {
         fg = "${colors.bright_blue}";
@@ -57,7 +83,7 @@ in
         reversed = true;
       };
       tab_inactive = { };
-      tab_width = 1;
+      tab_width = 30;
       count_copied = {
         fg = "${colors.white}";
         bg = "${colors.green}";
@@ -160,7 +186,7 @@ in
         "  (N)o  "
       ];
     };
-    completion = {
+    cmp = {
       border = {
         fg = "${colors.bright_blue}";
       };
@@ -244,44 +270,58 @@ in
         }
         {
           mime = "application/{,g}zip";
-          fg = "${colors.red}";
+          fg = "${colors.bright_black}";
         }
         {
           mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}";
-          fg = "${colors.red}";
+          fg = "${colors.bright_black}";
         }
         {
           mime = "application/{pdf,doc,rtf,vnd.*}";
-          fg = "${colors.aqua}";
+          fg = "${colors.white}";
+        }
+        {
+          mime = "inode/empty";
+          fg = "${colors.bright_black}";
         }
         {
           name = "*";
           is = "orphan";
-          bg = "${colors.red}";
+          fg = "${colors.faded_green}";
         }
         {
           name = "*";
           is = "exec";
-          underline = true;
+          italic = true;
+          bold = true;
         }
         {
           name = "*";
           is = "dummy";
-          bg = "${colors.red}";
+          bg = "${colors.faded_green}";
         }
         {
           name = "*/";
           is = "dummy";
-          bg = "${colors.red}";
+          bg = "${colors.faded_green}";
+        }
+        {
+          name = "*";
+          is = "link";
+          fg = "${colors.faded_green}";
         }
         {
           name = "*/";
-          fg = "${colors.bright_blue}";
+          is = "link";
+          fg = "${colors.faded_green}";
+        }
+        {
+          name = "*/";
+          fg = "${colors.faded_white}";
         }
       ];
     };
     icon = {
-      globs = [ ];
       dirs = [
         {
           name = ".config";
@@ -340,3286 +380,3278 @@ in
         {
           name = ".babelrc";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
         }
         {
           name = ".bash_profile";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
         }
         {
           name = ".bashrc";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
         }
         {
           name = ".dockerignore";
           text = "󰡨";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
         }
         {
           name = ".ds_store";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.bright_blue}";
+          fg = "${colors.bright_blue}";
         }
         {
           name = ".editorconfig";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
         }
         {
           name = ".env";
           text = "";
-          fg_dark = "${colors.bright_yellow}";
-          fg_light = "${colors.faded_yellow}";
+          fg = "${colors.bright_yellow}";
         }
         {
           name = ".eslintignore";
           text = "";
-          fg_dark = "${colors.faded_purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.faded_purple}";
+
         }
         {
           name = ".eslintrc";
           text = "";
-          fg_dark = "${colors.faded_purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.faded_purple}";
+
         }
         {
           name = ".gitattributes";
           text = "";
-          fg_dark = "${colors.bright_red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.bright_red}";
+
         }
         {
           name = ".gitconfig";
           text = "";
-          fg_dark = "${colors.bright_red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.bright_red}";
+
         }
         {
           name = ".gitignore";
           text = "";
-          fg_dark = "${colors.bright_red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.bright_red}";
         }
         {
           name = ".gitlab-ci.yml";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = ".gitmodules";
           text = "";
-          fg_dark = "${colors.bright_red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.bright_red}";
+
         }
         {
           name = ".gtkrc-2.0";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = ".gvimrc";
           text = "";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = ".luaurc";
           text = "";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = ".mailmap";
           text = "󰊢";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.bright_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = ".npmignore";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = ".npmrc";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = ".prettierrc";
           text = "";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = ".settings.json";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = ".SRCINFO";
           text = "󰣇";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = ".vimrc";
           text = "";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = ".Xauthority";
           text = "";
-          fg_dark = "${colors.orange}";
-          fg_light = "${colors.faded_orange}";
+          fg = "${colors.orange}";
+
         }
         {
           name = ".xinitrc";
           text = "";
-          fg_dark = "${colors.orange}";
-          fg_light = "${colors.faded_orange}";
+          fg = "${colors.orange}";
+
         }
         {
           name = ".Xresources";
           text = "";
-          fg_dark = "${colors.orange}";
-          fg_light = "${colors.faded_orange}";
+          fg = "${colors.orange}";
+
         }
         {
           name = ".xsession";
           text = "";
-          fg_dark = "${colors.orange}";
-          fg_light = "${colors.faded_orange}";
+          fg = "${colors.orange}";
+
         }
         {
           name = ".zprofile";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = ".zshenv";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = ".zshrc";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "_gvimrc";
           text = "";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "_vimrc";
           text = "";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "avif";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "brewfile";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "bspwmrc";
           text = "";
-          fg_dark = "${colors.faded_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.faded_black}";
+
         }
         {
           name = "build";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "build.gradle";
           text = "";
-          fg_dark = "${colors.faded_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.faded_blue}";
+
         }
         {
           name = "build.zig.zon";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "cantorrc";
           text = "";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "checkhealth";
           text = "󰓙";
-          fg_dark = "#${colors.bright_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "cmakelists.txt";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "commit_editmsg";
           text = "";
-          fg_dark = "${colors.bright_red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.bright_red}";
+
         }
         {
           name = "compose.yaml";
           text = "󰡨";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "compose.yml";
           text = "󰡨";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "config";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "containerfile";
           text = "󰡨";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "copying";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "copying.lesser";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "docker-compose.yaml";
           text = "󰡨";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "docker-compose.yml";
           text = "󰡨";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "dockerfile";
           text = "󰡨";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "ext_typoscript_setup.txt";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "favicon.ico";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "fp-info-cache";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "fp-lib-table";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "FreeCAD.conf";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "gemfile$";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "gnumakefile";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "gradle-wrapper.properties";
           text = "";
-          fg_dark = "${colors.faded_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.faded_blue}";
+
         }
         {
           name = "gradle.properties";
           text = "";
-          fg_dark = "${colors.faded_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.faded_blue}";
+
         }
         {
           name = "gradlew";
           text = "";
-          fg_dark = "${colors.faded_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.faded_blue}";
+
         }
         {
           name = "groovy";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.bright_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "gruntfile.babel.js";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "gruntfile.coffee";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "gruntfile.js";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "gruntfile.ts";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "gtkrc";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "gulpfile.babel.js";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "gulpfile.coffee";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "gulpfile.js";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "gulpfile.ts";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "hyprland.conf";
           text = "";
-          fg_dark = "${colors.bright_aqua}";
-          fg_light = "${colors.aqua}";
+          fg = "${colors.bright_aqua}";
+
         }
         {
           name = "i3blocks.conf";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "i3status.conf";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "kalgebrarc";
           text = "";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "kdeglobals";
           text = "";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "kdenlive-layoutsrc";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "kdenliverc";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "kritadisplayrc";
           text = "";
-          fg_dark = "${colors.bright_purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.bright_purple}";
+
         }
         {
           name = "kritarc";
           text = "";
-          fg_dark = "${colors.bright_purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.bright_purple}";
+
         }
         {
           name = "license";
           text = "";
-          fg_dark = "${colors.bright_yellow}";
-          fg_light = "${colors.faded_yellow}";
+          fg = "${colors.bright_yellow}";
+
         }
         {
           name = "lxde-rc.xml";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "lxqt.conf";
           text = "";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "makefile";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "mix.lock";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "mpv.conf";
           text = "";
-          fg_dark = "${colors.faded_purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.faded_purple}";
+
         }
         {
           name = "node_modules";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "package-lock.json";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "package.json";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "PKGBUILD";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "platformio.ini";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "pom.xml";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "procfile";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "PrusaSlicer.ini";
           text = "";
-          fg_dark = "${colors.orange}";
-          fg_light = "${colors.faded_orange}";
+          fg = "${colors.orange}";
+
         }
         {
           name = "PrusaSlicerGcodeViewer.ini";
           text = "";
-          fg_dark = "${colors.orange}";
-          fg_light = "${colors.faded_orange}";
+          fg = "${colors.orange}";
+
         }
         {
           name = "py.typed";
           text = "";
-          fg_dark = "#ffbc03";
-          fg_light = "#805e02";
+          fg = "#ffbc03";
+
         }
         {
           name = "QtProject.conf";
           text = "";
-          fg_dark = "#40cd52";
-          fg_light = "#2b8937";
+          fg = "#40cd52";
+
         }
         {
           name = "R";
           text = "󰟔";
-          fg_dark = "#2266ba";
-          fg_light = "#1a4c8c";
+          fg = "#2266ba";
+
         }
         {
           name = "r";
           text = "󰟔";
-          fg_dark = "#2266ba";
-          fg_light = "#1a4c8c";
+          fg = "#2266ba";
+
         }
         {
           name = "rakefile";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "rmd";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "settings.gradle";
           text = "";
-          fg_dark = "${colors.faded_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.faded_blue}";
+
         }
         {
           name = "svelte.config.js";
           text = "";
-          fg_dark = "#ff3e00";
-          fg_light = "#bf2e00";
+          fg = "#ff3e00";
+
         }
         {
           name = "sxhkdrc";
           text = "";
-          fg_dark = "${colors.faded_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.faded_black}";
+
         }
         {
           name = "sym-lib-table";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "tailwind.config.js";
           text = "󱏿";
-          fg_dark = "#20c2e3";
-          fg_light = "#158197";
+          fg = "#20c2e3";
+
         }
         {
           name = "tailwind.config.mjs";
           text = "󱏿";
-          fg_dark = "#20c2e3";
-          fg_light = "#158197";
+          fg = "#20c2e3";
+
         }
         {
           name = "tailwind.config.ts";
           text = "󱏿";
-          fg_dark = "#20c2e3";
-          fg_light = "#158197";
+          fg = "#20c2e3";
+
         }
         {
           name = "tmux.conf";
           text = "";
-          fg_dark = "#14ba19";
-          fg_light = "#0f8c13";
+          fg = "#14ba19";
+
         }
         {
           name = "tmux.conf.local";
           text = "";
-          fg_dark = "#14ba19";
-          fg_light = "#0f8c13";
+          fg = "#14ba19";
+
         }
         {
           name = "tsconfig.json";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "unlicense";
           text = "";
-          fg_dark = "${colors.bright_yellow}";
-          fg_light = "${colors.faded_yellow}";
+          fg = "${colors.bright_yellow}";
+
         }
         {
           name = "vagrantfile$";
           text = "";
-          fg_dark = "#1563ff";
-          fg_light = "#104abf";
+          fg = "#1563ff";
+
         }
         {
           name = "vlcrc";
           text = "󰕼";
-          fg_dark = "#ee7a00";
-          fg_light = "#9f5100";
+          fg = "#ee7a00";
+
         }
         {
           name = "webpack";
           text = "󰜫";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "weston.ini";
           text = "";
-          fg_dark = "#ffbb01";
-          fg_light = "#805e00";
+          fg = "#ffbb01";
+
         }
         {
           name = "workspace";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "xmobarrc";
           text = "";
-          fg_dark = "#fd4d5d";
-          fg_light = "#a9333e";
+          fg = "#fd4d5d";
+
         }
         {
           name = "xmobarrc.hs";
           text = "";
-          fg_dark = "#fd4d5d";
-          fg_light = "#a9333e";
+          fg = "#fd4d5d";
+
         }
         {
           name = "xmonad.hs";
           text = "";
-          fg_dark = "#fd4d5d";
-          fg_light = "#a9333e";
+          fg = "#fd4d5d";
+
         }
         {
           name = "xorg.conf";
           text = "";
-          fg_dark = "${colors.orange}";
-          fg_light = "${colors.faded_orange}";
+          fg = "${colors.orange}";
+
         }
         {
           name = "xsettingsd.conf";
           text = "";
-          fg_dark = "${colors.orange}";
-          fg_light = "${colors.faded_orange}";
+          fg = "${colors.orange}";
+
         }
       ];
       exts = [
         {
           name = "3gp";
           text = "";
-          fg_dark = "#fd971f";
-          fg_light = "#7e4c10";
+          fg = "#fd971f";
+
         }
         {
           name = "3mf";
           text = "󰆧";
-          fg_dark = "#888888";
-          fg_light = "#5b5b5b";
+          fg = "#888888";
+
         }
         {
           name = "7z";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "a";
           text = "";
-          fg_dark = "#dcddd6";
-          fg_light = "#494a47";
+          fg = "#dcddd6";
+
         }
         {
           name = "aac";
           text = "";
-          fg_dark = "#00afff";
-          fg_light = "#0075aa";
+          fg = "#00afff";
+
         }
         {
           name = "ai";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "aif";
           text = "";
-          fg_dark = "#00afff";
-          fg_light = "#0075aa";
+          fg = "#00afff";
+
         }
         {
           name = "aiff";
           text = "";
-          fg_dark = "#00afff";
-          fg_light = "#0075aa";
+          fg = "#00afff";
+
         }
         {
           name = "android";
           text = "";
-          fg_dark = "#34a853";
-          fg_light = "#277e3e";
+          fg = "#34a853";
+
         }
         {
           name = "ape";
           text = "";
-          fg_dark = "#00afff";
-          fg_light = "#0075aa";
+          fg = "#00afff";
+
         }
         {
           name = "apk";
           text = "";
-          fg_dark = "#34a853";
-          fg_light = "#277e3e";
+          fg = "#34a853";
+
         }
         {
           name = "app";
           text = "";
-          fg_dark = "#9f0500";
-          fg_light = "#9f0500";
+          fg = "#9f0500";
+
         }
         {
           name = "applescript";
           text = "";
-          fg_dark = "#6d8085";
-          fg_light = "${colors.faded_black}";
+          fg = "#6d8085";
+
         }
         {
           name = "asc";
           text = "󰦝";
-          fg_dark = "#576d7f";
-          fg_light = "#41525f";
+          fg = "#576d7f";
+
         }
         {
           name = "ass";
           text = "󰨖";
-          fg_dark = "#ffb713";
-          fg_light = "#805c0a";
+          fg = "#ffb713";
+
         }
         {
           name = "astro";
           text = "";
-          fg_dark = "#e23f67";
-          fg_light = "#aa2f4d";
+          fg = "#e23f67";
+
         }
         {
           name = "awk";
           text = "";
-          fg_dark = "#4d5a5e";
-          fg_light = "#3a4446";
+          fg = "#4d5a5e";
+
         }
         {
           name = "azcli";
           text = "";
-          fg_dark = "#0078d4";
-          fg_light = "#005a9f";
+          fg = "#0078d4";
+
         }
         {
           name = "bak";
           text = "󰁯";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "bash";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "bat";
           text = "";
-          fg_dark = "#c1f12e";
-          fg_light = "#40500f";
+          fg = "#c1f12e";
+
         }
         {
           name = "bazel";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "bib";
           text = "󱉟";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "bicep";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "bicepparam";
           text = "";
-          fg_dark = "#9f74b3";
-          fg_light = "#6a4d77";
+          fg = "#9f74b3";
+
         }
         {
           name = "bin";
           text = "";
-          fg_dark = "#9f0500";
-          fg_light = "#9f0500";
+          fg = "#9f0500";
+
         }
         {
           name = "blade.php";
           text = "";
-          fg_dark = "#f05340";
-          fg_light = "#a0372b";
+          fg = "#f05340";
+
         }
         {
           name = "blend";
           text = "󰂫";
-          fg_dark = "#ea7600";
-          fg_light = "#9c4f00";
+          fg = "#ea7600";
+
         }
         {
           name = "blp";
           text = "󰺾";
-          fg_dark = "#5796e2";
-          fg_light = "#3a6497";
+          fg = "#5796e2";
+
         }
         {
           name = "bmp";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "brep";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "bz";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
         {
           name = "bz2";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
         {
           name = "bz3";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
         {
           name = "bzl";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "c";
           text = "";
-          fg_dark = "#599eff";
-          fg_light = "#3b69aa";
+          fg = "#599eff";
+
         }
         {
           name = "c++";
           text = "";
-          fg_dark = "#f34b7d";
-          fg_light = "#a23253";
+          fg = "#f34b7d";
+
         }
         {
           name = "cache";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "cast";
           text = "";
-          fg_dark = "#fd971f";
-          fg_light = "#7e4c10";
+          fg = "#fd971f";
+
         }
         {
           name = "cbl";
           text = "⚙";
-          fg_dark = "#005ca5";
-          fg_light = "#005ca5";
+          fg = "#005ca5";
+
         }
         {
           name = "cc";
           text = "";
-          fg_dark = "#f34b7d";
-          fg_light = "#a23253";
+          fg = "#f34b7d";
+
         }
         {
           name = "ccm";
           text = "";
-          fg_dark = "#f34b7d";
-          fg_light = "#a23253";
+          fg = "#f34b7d";
+
         }
         {
           name = "cfg";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "cjs";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "clj";
           text = "";
-          fg_dark = "#8dc149";
-          fg_light = "#466024";
+          fg = "#8dc149";
+
         }
         {
           name = "cljc";
           text = "";
-          fg_dark = "#8dc149";
-          fg_light = "#466024";
+          fg = "#8dc149";
+
         }
         {
           name = "cljd";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "cljs";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "cmake";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "cob";
           text = "⚙";
-          fg_dark = "#005ca5";
-          fg_light = "#005ca5";
+          fg = "#005ca5";
+
         }
         {
           name = "cobol";
           text = "⚙";
-          fg_dark = "#005ca5";
-          fg_light = "#005ca5";
+          fg = "#005ca5";
+
         }
         {
           name = "coffee";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "conf";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "config.ru";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "cp";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "cpp";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "cppm";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "cpy";
           text = "⚙";
-          fg_dark = "#005ca5";
-          fg_light = "#005ca5";
+          fg = "#005ca5";
+
         }
         {
           name = "cr";
           text = "";
-          fg_dark = "#c8c8c8";
-          fg_light = "#434343";
+          fg = "#c8c8c8";
+
         }
         {
           name = "crdownload";
           text = "";
-          fg_dark = "#44cda8";
-          fg_light = "#226654";
+          fg = "#44cda8";
+
         }
         {
           name = "cs";
           text = "󰌛";
-          fg_dark = "#596706";
-          fg_light = "#434d04";
+          fg = "#596706";
+
         }
         {
           name = "csh";
           text = "";
-          fg_dark = "#4d5a5e";
-          fg_light = "#3a4446";
+          fg = "#4d5a5e";
+
         }
         {
           name = "cshtml";
           text = "󱦗";
-          fg_dark = "#512bd4";
-          fg_light = "#512bd4";
+          fg = "#512bd4";
+
         }
         {
           name = "cson";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "csproj";
           text = "󰪮";
-          fg_dark = "#512bd4";
-          fg_light = "#512bd4";
+          fg = "#512bd4";
+
         }
         {
           name = "css";
           text = "";
-          fg_dark = "#42a5f5";
-          fg_light = "#2c6ea3";
+          fg = "#42a5f5";
+
         }
         {
           name = "csv";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "cts";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "cu";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "cue";
           text = "󰲹";
-          fg_dark = "#ed95ae";
-          fg_light = "#764a57";
+          fg = "#ed95ae";
+
         }
         {
           name = "cuh";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "cxx";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "cxxm";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "d";
           text = "";
-          fg_dark = "#427819";
-          fg_light = "#325a13";
+          fg = "#427819";
+
         }
         {
           name = "d.ts";
           text = "";
-          fg_dark = "#d59855";
-          fg_light = "#6a4c2a";
+          fg = "#d59855";
+
         }
         {
           name = "dart";
           text = "";
-          fg_dark = "#03589c";
-          fg_light = "#03589c";
+          fg = "#03589c";
+
         }
         {
           name = "db";
           text = "";
-          fg_dark = "#dad8d8";
-          fg_light = "#494848";
+          fg = "#dad8d8";
+
         }
         {
           name = "dconf";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "desktop";
           text = "";
-          fg_dark = "#563d7c";
-          fg_light = "#563d7c";
+          fg = "#563d7c";
+
         }
         {
           name = "diff";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.bright_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "dll";
           text = "";
-          fg_dark = "#4d2c0b";
-          fg_light = "#4d2c0b";
+          fg = "#4d2c0b";
+
         }
         {
           name = "doc";
           text = "󰈬";
-          fg_dark = "#185abd";
-          fg_light = "#185abd";
+          fg = "${colors.faded_blue}";
+
         }
         {
           name = "Dockerfile";
           text = "󰡨";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "docx";
           text = "󰈬";
-          fg_dark = "#185abd";
-          fg_light = "#185abd";
+          fg = "${colors.faded_blue}";
+
         }
         {
           name = "dot";
           text = "󱁉";
-          fg_dark = "#30638e";
-          fg_light = "#244a6a";
+          fg = "#30638e";
+
         }
         {
           name = "download";
           text = "";
-          fg_dark = "#44cda8";
-          fg_light = "#226654";
+          fg = "#44cda8";
+
         }
         {
           name = "drl";
           text = "";
-          fg_dark = "#ffafaf";
-          fg_light = "#553a3a";
+          fg = "#ffafaf";
+
         }
         {
           name = "dropbox";
           text = "";
-          fg_dark = "#0061fe";
-          fg_light = "#0049be";
+          fg = "#0061fe";
+
         }
         {
           name = "dump";
           text = "";
-          fg_dark = "#dad8d8";
-          fg_light = "#494848";
+          fg = "#dad8d8";
+
         }
         {
           name = "dwg";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "dxf";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "ebook";
           text = "";
-          fg_dark = "#eab16d";
-          fg_light = "#755836";
+          fg = "#eab16d";
+
         }
         {
           name = "edn";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "eex";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "ejs";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "el";
           text = "";
-          fg_dark = "#8172be";
-          fg_light = "#61568e";
+          fg = "#8172be";
+
         }
         {
           name = "elc";
           text = "";
-          fg_dark = "#8172be";
-          fg_light = "#61568e";
+          fg = "#8172be";
+
         }
         {
           name = "elf";
           text = "";
-          fg_dark = "#9f0500";
-          fg_light = "#9f0500";
+          fg = "#9f0500";
+
         }
         {
           name = "elm";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "eln";
           text = "";
-          fg_dark = "#8172be";
-          fg_light = "#61568e";
+          fg = "#8172be";
+
         }
         {
           name = "env";
           text = "";
-          fg_dark = "${colors.bright_yellow}";
-          fg_light = "${colors.faded_yellow}";
+          fg = "${colors.bright_yellow}";
+
         }
         {
           name = "eot";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "epp";
           text = "";
-          fg_dark = "#ffa61a";
-          fg_light = "#80530d";
+          fg = "#ffa61a";
+
         }
         {
           name = "epub";
           text = "";
-          fg_dark = "#eab16d";
-          fg_light = "#755836";
+          fg = "#eab16d";
+
         }
         {
           name = "erb";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "erl";
           text = "";
-          fg_dark = "#b83998";
-          fg_light = "#8a2b72";
+          fg = "#b83998";
+
         }
         {
           name = "ex";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "exe";
           text = "";
-          fg_dark = "#9f0500";
-          fg_light = "#9f0500";
+          fg = "#9f0500";
+
         }
         {
           name = "exs";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "f#";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "f3d";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "f90";
           text = "󱈚";
-          fg_dark = "#734f96";
-          fg_light = "#563b70";
+          fg = "#734f96";
+
         }
         {
           name = "fbx";
           text = "󰆧";
-          fg_dark = "#888888";
-          fg_light = "#5b5b5b";
+          fg = "#888888";
+
         }
         {
           name = "fcbak";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fcmacro";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fcmat";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fcparam";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fcscript";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fcstd";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fcstd1";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fctb";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fctl";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "fdmdownload";
           text = "";
-          fg_dark = "#44cda8";
-          fg_light = "#226654";
+          fg = "#44cda8";
+
         }
         {
           name = "fish";
           text = "";
-          fg_dark = "#4d5a5e";
-          fg_light = "#3a4446";
+          fg = "#4d5a5e";
+
         }
         {
           name = "flac";
           text = "";
-          fg_dark = "#0075aa";
-          fg_light = "#005880";
+          fg = "#0075aa";
+
         }
         {
           name = "flc";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "flf";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "fnl";
           text = "";
-          fg_dark = "#fff3d7";
-          fg_light = "#33312b";
+          fg = "#fff3d7";
+
         }
         {
           name = "fs";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "fsi";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "fsscript";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "fsx";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "gcode";
           text = "󰐫";
-          fg_dark = "#1471ad";
-          fg_light = "#0f5582";
+          fg = "#1471ad";
+
         }
         {
           name = "gd";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "gemspec";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "gif";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "git";
           text = "";
-          fg_dark = "#f14c28";
-          fg_light = "#b5391e";
+          fg = "#f14c28";
+
         }
         {
           name = "glb";
           text = "";
-          fg_dark = "#ffb13b";
-          fg_light = "#80581e";
+          fg = "#ffb13b";
+
         }
         {
           name = "gnumakefile";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "go";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "godot";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "gql";
           text = "";
-          fg_dark = "#e535ab";
-          fg_light = "#ac2880";
+          fg = "#e535ab";
+
         }
         {
           name = "graphql";
           text = "";
-          fg_dark = "#e535ab";
-          fg_light = "#ac2880";
+          fg = "#e535ab";
+
         }
         {
           name = "gresource";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "gv";
           text = "󱁉";
-          fg_dark = "#30638e";
-          fg_light = "#244a6a";
+          fg = "#30638e";
+
         }
         {
           name = "gz";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
         {
           name = "h";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "haml";
           text = "";
-          fg_dark = "#eaeae1";
-          fg_light = "#2f2f2d";
+          fg = "#eaeae1";
+
         }
         {
           name = "hbs";
           text = "";
-          fg_dark = "#f0772b";
-          fg_light = "#a04f1d";
+          fg = "#f0772b";
+
         }
         {
           name = "heex";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "hex";
           text = "";
-          fg_dark = "#2e63ff";
-          fg_light = "#224abf";
+          fg = "#2e63ff";
+
         }
         {
           name = "hh";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "hpp";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "hrl";
           text = "";
-          fg_dark = "#b83998";
-          fg_light = "#8a2b72";
+          fg = "#b83998";
+
         }
         {
           name = "hs";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "htm";
           text = "";
-          fg_dark = "#e34c26";
-          fg_light = "#aa391c";
+          fg = "#e34c26";
+
         }
         {
           name = "html";
           text = "";
-          fg_dark = "#e44d26";
-          fg_light = "#ab3a1c";
+          fg = "#e44d26";
+
         }
         {
           name = "huff";
           text = "󰡘";
-          fg_dark = "#4242c7";
-          fg_light = "#4242c7";
+          fg = "#4242c7";
+
         }
         {
           name = "hurl";
           text = "";
-          fg_dark = "#ff0288";
-          fg_light = "#bf0266";
+          fg = "#ff0288";
+
         }
         {
           name = "hx";
           text = "";
-          fg_dark = "#ea8220";
-          fg_light = "#9c5715";
+          fg = "#ea8220";
+
         }
         {
           name = "hxx";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "ical";
           text = "";
-          fg_dark = "#2b2e83";
-          fg_light = "#2b2e83";
+          fg = "#2b2e83";
+
         }
         {
           name = "icalendar";
           text = "";
-          fg_dark = "#2b2e83";
-          fg_light = "#2b2e83";
+          fg = "#2b2e83";
+
         }
         {
           name = "ico";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "ics";
           text = "";
-          fg_dark = "#2b2e83";
-          fg_light = "#2b2e83";
+          fg = "#2b2e83";
+
         }
         {
           name = "ifb";
           text = "";
-          fg_dark = "#2b2e83";
-          fg_light = "#2b2e83";
+          fg = "#2b2e83";
+
         }
         {
           name = "ifc";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "ige";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "iges";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "igs";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "image";
           text = "";
-          fg_dark = "#d0bec8";
-          fg_light = "#453f43";
+          fg = "#d0bec8";
+
         }
         {
           name = "img";
           text = "";
-          fg_dark = "#d0bec8";
-          fg_light = "#453f43";
+          fg = "#d0bec8";
+
         }
         {
           name = "import";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "info";
           text = "";
-          fg_dark = "#ffffcd";
-          fg_light = "#333329";
+          fg = "#ffffcd";
+
         }
         {
           name = "ini";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "ino";
           text = "";
-          fg_dark = "#56b6c2";
-          fg_light = "#397981";
+          fg = "#56b6c2";
+
         }
         {
           name = "ipynb";
           text = "";
-          fg_dark = "#51a0cf";
-          fg_light = "#366b8a";
+          fg = "#51a0cf";
+
         }
         {
           name = "iso";
           text = "";
-          fg_dark = "#d0bec8";
-          fg_light = "#453f43";
+          fg = "#d0bec8";
+
         }
         {
           name = "ixx";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "java";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "jl";
           text = "";
-          fg_dark = "#a270ba";
-          fg_light = "#6c4b7c";
+          fg = "#a270ba";
+
         }
         {
           name = "jpeg";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "jpg";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "js";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "json";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "json5";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "jsonc";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "jsx";
           text = "";
-          fg_dark = "#20c2e3";
-          fg_light = "#158197";
+          fg = "#20c2e3";
+
         }
         {
           name = "jwmrc";
           text = "";
-          fg_dark = "#0078cd";
-          fg_light = "#005a9a";
+          fg = "#0078cd";
+
         }
         {
           name = "jxl";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "kbx";
           text = "󰯄";
-          fg_dark = "#737672";
-          fg_light = "#565856";
+          fg = "#737672";
+
         }
         {
           name = "kdb";
           text = "";
-          fg_dark = "#529b34";
-          fg_light = "#3e7427";
+          fg = "#529b34";
+
         }
         {
           name = "kdbx";
           text = "";
-          fg_dark = "#529b34";
-          fg_light = "#3e7427";
+          fg = "#529b34";
+
         }
         {
           name = "kdenlive";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "kdenlivetitle";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.faded_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "kicad_dru";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "kicad_mod";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "kicad_pcb";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "kicad_prl";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "kicad_pro";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "kicad_sch";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "kicad_sym";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "kicad_wks";
           text = "";
-          fg_dark = "${colors.bright_white}";
-          fg_light = "${colors.bright_black}";
+          fg = "${colors.bright_white}";
+
         }
         {
           name = "ko";
           text = "";
-          fg_dark = "#dcddd6";
-          fg_light = "#494a47";
+          fg = "#dcddd6";
+
         }
         {
           name = "kpp";
           text = "";
-          fg_dark = "${colors.bright_purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.bright_purple}";
+
         }
         {
           name = "kra";
           text = "";
-          fg_dark = "${colors.bright_purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.bright_purple}";
+
         }
         {
           name = "krz";
           text = "";
-          fg_dark = "${colors.bright_purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.bright_purple}";
+
         }
         {
           name = "ksh";
           text = "";
-          fg_dark = "#4d5a5e";
-          fg_light = "#3a4446";
+          fg = "#4d5a5e";
+
         }
         {
           name = "kt";
           text = "";
-          fg_dark = "#7f52ff";
-          fg_light = "#5f3ebf";
+          fg = "#7f52ff";
+
         }
         {
           name = "kts";
           text = "";
-          fg_dark = "#7f52ff";
-          fg_light = "#5f3ebf";
+          fg = "#7f52ff";
+
         }
         {
           name = "lck";
           text = "";
-          fg_dark = "#bbbbbb";
-          fg_light = "#5e5e5e";
+          fg = "#bbbbbb";
+
         }
         {
           name = "leex";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "less";
           text = "";
-          fg_dark = "#563d7c";
-          fg_light = "#563d7c";
+          fg = "#563d7c";
+
         }
         {
           name = "lff";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "lhs";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "lib";
           text = "";
-          fg_dark = "#4d2c0b";
-          fg_light = "#4d2c0b";
+          fg = "#4d2c0b";
+
         }
         {
           name = "license";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "liquid";
           text = "";
-          fg_dark = "#95bf47";
-          fg_light = "#4a6024";
+          fg = "#95bf47";
+
         }
         {
           name = "lock";
           text = "";
-          fg_dark = "#bbbbbb";
-          fg_light = "#5e5e5e";
+          fg = "#bbbbbb";
+
         }
         {
           name = "log";
           text = "󰌱";
-          fg_dark = "#dddddd";
-          fg_light = "#4a4a4a";
+          fg = "#dddddd";
+
         }
         {
           name = "lrc";
           text = "󰨖";
-          fg_dark = "#ffb713";
-          fg_light = "#805c0a";
+          fg = "#ffb713";
+
         }
         {
           name = "lua";
           text = "";
-          fg_dark = "#51a0cf";
-          fg_light = "#366b8a";
+          fg = "#51a0cf";
+
         }
         {
           name = "luac";
           text = "";
-          fg_dark = "#51a0cf";
-          fg_light = "#366b8a";
+          fg = "#51a0cf";
+
         }
         {
           name = "luau";
           text = "";
-          fg_dark = "${colors.blue}";
-          fg_light = "${colors.blue}";
+          fg = "${colors.blue}";
+
         }
         {
           name = "m";
           text = "";
-          fg_dark = "#599eff";
-          fg_light = "#3b69aa";
+          fg = "#599eff";
+
         }
         {
           name = "m3u";
           text = "󰲹";
-          fg_dark = "#ed95ae";
-          fg_light = "#764a57";
+          fg = "#ed95ae";
+
         }
         {
           name = "m3u8";
           text = "󰲹";
-          fg_dark = "#ed95ae";
-          fg_light = "#764a57";
+          fg = "#ed95ae";
+
         }
         {
           name = "m4a";
           text = "";
-          fg_dark = "#00afff";
-          fg_light = "#0075aa";
+          fg = "#00afff";
+
         }
         {
           name = "m4v";
           text = "";
-          fg_dark = "#fd971f";
-          fg_light = "#7e4c10";
+          fg = "#fd971f";
+
         }
         {
           name = "magnet";
           text = "";
-          fg_dark = "#a51b16";
-          fg_light = "#a51b16";
+          fg = "#a51b16";
+
         }
         {
           name = "makefile";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "markdown";
           text = "";
-          fg_dark = "#dddddd";
-          fg_light = "#4a4a4a";
+          fg = "#dddddd";
+
         }
         {
           name = "material";
           text = "󰔉";
-          fg_dark = "#b83998";
-          fg_light = "#8a2b72";
+          fg = "#b83998";
+
         }
         {
           name = "md";
           text = "";
-          fg_dark = "#dddddd";
-          fg_light = "#4a4a4a";
+          fg = "#dddddd";
+
         }
         {
           name = "md5";
           text = "󰕥";
-          fg_dark = "#8c86af";
-          fg_light = "#5d5975";
+          fg = "#8c86af";
+
         }
         {
           name = "mdx";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "mint";
           text = "󰌪";
-          fg_dark = "#87c095";
-          fg_light = "#44604a";
+          fg = "#87c095";
+
         }
         {
           name = "mjs";
           text = "";
-          fg_dark = "#f1e05a";
-          fg_light = "#504b1e";
+          fg = "#f1e05a";
+
         }
         {
           name = "mk";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "mkv";
           text = "";
-          fg_dark = "#fd971f";
-          fg_light = "#7e4c10";
+          fg = "#fd971f";
+
         }
         {
           name = "ml";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "mli";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "mm";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "mo";
           text = "∞";
-          fg_dark = "#9772fb";
-          fg_light = "#654ca7";
+          fg = "#9772fb";
+
         }
         {
           name = "mobi";
           text = "";
-          fg_dark = "#eab16d";
-          fg_light = "#755836";
+          fg = "#eab16d";
+
         }
         {
           name = "mov";
           text = "";
-          fg_dark = "#fd971f";
-          fg_light = "#7e4c10";
+          fg = "#fd971f";
+
         }
         {
           name = "mp3";
           text = "";
-          fg_dark = "#00afff";
-          fg_light = "#0075aa";
+          fg = "#00afff";
+
         }
         {
           name = "mp4";
           text = "";
-          fg_dark = "#fd971f";
-          fg_light = "#7e4c10";
+          fg = "#fd971f";
+
         }
         {
           name = "mpp";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "msf";
           text = "";
-          fg_dark = "#137be1";
-          fg_light = "#0e5ca9";
+          fg = "#137be1";
+
         }
         {
           name = "mts";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "mustache";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "nfo";
           text = "";
-          fg_dark = "#ffffcd";
-          fg_light = "#333329";
+          fg = "#ffffcd";
+
         }
         {
           name = "nim";
           text = "";
-          fg_dark = "#f3d400";
-          fg_light = "#514700";
+          fg = "#f3d400";
+
         }
         {
           name = "nix";
           text = "";
-          fg_dark = "#7ebae4";
-          fg_light = "#3f5d72";
+          fg = "#7ebae4";
+
         }
         {
           name = "nswag";
           text = "";
-          fg_dark = "#85ea2d";
-          fg_light = "#427516";
+          fg = "#85ea2d";
+
         }
         {
           name = "nu";
           text = ">";
-          fg_dark = "#3aa675";
-          fg_light = "#276f4e";
+          fg = "#3aa675";
+
         }
         {
           name = "o";
           text = "";
-          fg_dark = "#9f0500";
-          fg_light = "#9f0500";
+          fg = "#9f0500";
+
         }
         {
           name = "obj";
           text = "󰆧";
-          fg_dark = "#888888";
-          fg_light = "#5b5b5b";
+          fg = "#888888";
+
         }
         {
           name = "ogg";
           text = "";
-          fg_dark = "#0075aa";
-          fg_light = "#005880";
+          fg = "#0075aa";
+
         }
         {
           name = "opus";
           text = "";
-          fg_dark = "#0075aa";
-          fg_light = "#005880";
+          fg = "#0075aa";
+
         }
         {
           name = "org";
           text = "";
-          fg_dark = "#77aa99";
-          fg_light = "#4f7166";
+          fg = "#77aa99";
+
         }
         {
           name = "otf";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "out";
           text = "";
-          fg_dark = "#9f0500";
-          fg_light = "#9f0500";
+          fg = "#9f0500";
+
         }
         {
           name = "part";
           text = "";
-          fg_dark = "#44cda8";
-          fg_light = "#226654";
+          fg = "#44cda8";
+
         }
         {
           name = "patch";
           text = "";
-          fg_dark = "${colors.bright_blue}";
-          fg_light = "${colors.bright_blue}";
+          fg = "${colors.bright_blue}";
+
         }
         {
           name = "pck";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "pcm";
           text = "";
-          fg_dark = "#0075aa";
-          fg_light = "#005880";
+          fg = "#0075aa";
+
         }
         {
           name = "pdf";
           text = "";
-          fg_dark = "#b30b00";
-          fg_light = "#b30b00";
+          fg = "${colors.bright_red}";
+
         }
         {
           name = "php";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "pl";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "pls";
           text = "󰲹";
-          fg_dark = "#ed95ae";
-          fg_light = "#764a57";
+          fg = "#ed95ae";
+
         }
         {
           name = "ply";
           text = "󰆧";
-          fg_dark = "#888888";
-          fg_light = "#5b5b5b";
+          fg = "#888888";
+
         }
         {
           name = "pm";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "png";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "po";
           text = "";
-          fg_dark = "#2596be";
-          fg_light = "#1c708e";
+          fg = "#2596be";
+
         }
         {
           name = "pot";
           text = "";
-          fg_dark = "#2596be";
-          fg_light = "#1c708e";
+          fg = "#2596be";
+
         }
         {
           name = "pp";
           text = "";
-          fg_dark = "#ffa61a";
-          fg_light = "#80530d";
+          fg = "#ffa61a";
+
         }
         {
           name = "ppt";
           text = "󰈧";
-          fg_dark = "#cb4a32";
-          fg_light = "#983826";
+          fg = "${colors.bright_red}";
+
         }
         {
           name = "prisma";
           text = "";
-          fg_dark = "#5a67d8";
-          fg_light = "#444da2";
+          fg = "#5a67d8";
+
         }
         {
           name = "pro";
           text = "";
-          fg_dark = "#e4b854";
-          fg_light = "#725c2a";
+          fg = "#e4b854";
+
         }
         {
           name = "ps1";
           text = "󰨊";
-          fg_dark = "#4273ca";
-          fg_light = "#325698";
+          fg = "#4273ca";
+
         }
         {
           name = "psb";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "psd";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "psd1";
           text = "󰨊";
-          fg_dark = "#6975c4";
-          fg_light = "#4f5893";
+          fg = "#6975c4";
+
         }
         {
           name = "psm1";
           text = "󰨊";
-          fg_dark = "#6975c4";
-          fg_light = "#4f5893";
+          fg = "#6975c4";
+
         }
         {
           name = "pub";
           text = "󰷖";
-          fg_dark = "#e3c58e";
-          fg_light = "#4c422f";
+          fg = "#e3c58e";
+
         }
         {
           name = "pxd";
           text = "";
-          fg_dark = "#5aa7e4";
-          fg_light = "#3c6f98";
+          fg = "#5aa7e4";
+
         }
         {
           name = "pxi";
           text = "";
-          fg_dark = "#5aa7e4";
-          fg_light = "#3c6f98";
+          fg = "#5aa7e4";
+
         }
         {
           name = "py";
           text = "";
-          fg_dark = "#ffbc03";
-          fg_light = "#805e02";
+          fg = "#ffbc03";
+
         }
         {
           name = "pyc";
           text = "";
-          fg_dark = "#ffe291";
-          fg_light = "#332d1d";
+          fg = "#ffe291";
+
         }
         {
           name = "pyd";
           text = "";
-          fg_dark = "#ffe291";
-          fg_light = "#332d1d";
+          fg = "#ffe291";
+
         }
         {
           name = "pyi";
           text = "";
-          fg_dark = "#ffbc03";
-          fg_light = "#805e02";
+          fg = "#ffbc03";
+
         }
         {
           name = "pyo";
           text = "";
-          fg_dark = "#ffe291";
-          fg_light = "#332d1d";
+          fg = "#ffe291";
+
         }
         {
           name = "pyx";
           text = "";
-          fg_dark = "#5aa7e4";
-          fg_light = "#3c6f98";
+          fg = "#5aa7e4";
+
         }
         {
           name = "qm";
           text = "";
-          fg_dark = "#2596be";
-          fg_light = "#1c708e";
+          fg = "#2596be";
+
         }
         {
           name = "qml";
           text = "";
-          fg_dark = "#40cd52";
-          fg_light = "#2b8937";
+          fg = "#40cd52";
+
         }
         {
           name = "qrc";
           text = "";
-          fg_dark = "#40cd52";
-          fg_light = "#2b8937";
+          fg = "#40cd52";
+
         }
         {
           name = "qss";
           text = "";
-          fg_dark = "#40cd52";
-          fg_light = "#2b8937";
+          fg = "#40cd52";
+
         }
         {
           name = "query";
           text = "";
-          fg_dark = "#90a850";
-          fg_light = "#607035";
+          fg = "#90a850";
+
         }
         {
           name = "r";
           text = "󰟔";
-          fg_dark = "#2266ba";
-          fg_light = "#1a4c8c";
+          fg = "#2266ba";
+
         }
         {
           name = "rake";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "rar";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
         {
           name = "razor";
           text = "󱦘";
-          fg_dark = "#512bd4";
-          fg_light = "#512bd4";
+          fg = "#512bd4";
+
         }
         {
           name = "rb";
           text = "";
-          fg_dark = "${colors.faded_red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.faded_red}";
+
         }
         {
           name = "res";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "resi";
           text = "";
-          fg_dark = "#f55385";
-          fg_light = "#a33759";
+          fg = "#f55385";
+
         }
         {
           name = "rlib";
           text = "";
-          fg_dark = "#dea584";
-          fg_light = "#6f5242";
+          fg = "#dea584";
+
         }
         {
           name = "rmd";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "rproj";
           text = "󰗆";
-          fg_dark = "#358a5b";
-          fg_light = "#286844";
+          fg = "#358a5b";
+
         }
         {
           name = "rs";
           text = "";
-          fg_dark = "#dea584";
-          fg_light = "#6f5242";
+          fg = "#dea584";
+
         }
         {
           name = "rss";
           text = "";
-          fg_dark = "#fb9d3b";
-          fg_light = "#7e4e1e";
+          fg = "#fb9d3b";
+
         }
         {
           name = "sass";
           text = "";
-          fg_dark = "#f55385";
-          fg_light = "#a33759";
+          fg = "#f55385";
+
         }
         {
           name = "sbt";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "sc";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "scad";
           text = "";
-          fg_dark = "#f9d72c";
-          fg_light = "#53480f";
+          fg = "#f9d72c";
+
         }
         {
           name = "scala";
           text = "";
-          fg_dark = "${colors.red}";
-          fg_light = "${colors.faded_red}";
+          fg = "${colors.red}";
+
         }
         {
           name = "scm";
           text = "󰘧";
-          fg_dark = "#eeeeee";
-          fg_light = "#303030";
+          fg = "#eeeeee";
+
         }
         {
           name = "scss";
           text = "";
-          fg_dark = "#f55385";
-          fg_light = "#a33759";
+          fg = "#f55385";
+
         }
         {
           name = "sh";
           text = "";
-          fg_dark = "#4d5a5e";
-          fg_light = "#3a4446";
+          fg = "#4d5a5e";
+
         }
         {
           name = "sha1";
           text = "󰕥";
-          fg_dark = "#8c86af";
-          fg_light = "#5d5975";
+          fg = "#8c86af";
+
         }
         {
           name = "sha224";
           text = "󰕥";
-          fg_dark = "#8c86af";
-          fg_light = "#5d5975";
+          fg = "#8c86af";
+
         }
         {
           name = "sha256";
           text = "󰕥";
-          fg_dark = "#8c86af";
-          fg_light = "#5d5975";
+          fg = "#8c86af";
+
         }
         {
           name = "sha384";
           text = "󰕥";
-          fg_dark = "#8c86af";
-          fg_light = "#5d5975";
+          fg = "#8c86af";
+
         }
         {
           name = "sha512";
           text = "󰕥";
-          fg_dark = "#8c86af";
-          fg_light = "#5d5975";
+          fg = "#8c86af";
+
         }
         {
           name = "sig";
           text = "λ";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "signature";
           text = "λ";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "skp";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "sldasm";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "sldprt";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "slim";
           text = "";
-          fg_dark = "#e34c26";
-          fg_light = "#aa391c";
+          fg = "#e34c26";
+
         }
         {
           name = "sln";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "slvs";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "sml";
           text = "λ";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "so";
           text = "";
-          fg_dark = "#dcddd6";
-          fg_light = "#494a47";
+          fg = "#dcddd6";
+
         }
         {
           name = "sol";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "spec.js";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "spec.jsx";
           text = "";
-          fg_dark = "#20c2e3";
-          fg_light = "#158197";
+          fg = "#20c2e3";
+
         }
         {
           name = "spec.ts";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "spec.tsx";
           text = "";
-          fg_dark = "#1354bf";
-          fg_light = "#1354bf";
+          fg = "#1354bf";
+
         }
         {
           name = "sql";
           text = "";
-          fg_dark = "#dad8d8";
-          fg_light = "#494848";
+          fg = "#dad8d8";
+
         }
         {
           name = "sqlite";
           text = "";
-          fg_dark = "#dad8d8";
-          fg_light = "#494848";
+          fg = "#dad8d8";
+
         }
         {
           name = "sqlite3";
           text = "";
-          fg_dark = "#dad8d8";
-          fg_light = "#494848";
+          fg = "#dad8d8";
+
         }
         {
           name = "srt";
           text = "󰨖";
-          fg_dark = "#ffb713";
-          fg_light = "#805c0a";
+          fg = "#ffb713";
+
         }
         {
           name = "ssa";
           text = "󰨖";
-          fg_dark = "#ffb713";
-          fg_light = "#805c0a";
+          fg = "#ffb713";
+
         }
         {
           name = "ste";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "step";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "stl";
           text = "󰆧";
-          fg_dark = "#888888";
-          fg_light = "#5b5b5b";
+          fg = "#888888";
+
         }
         {
           name = "stp";
           text = "󰻫";
-          fg_dark = "#839463";
-          fg_light = "#576342";
+          fg = "#839463";
+
         }
         {
           name = "strings";
           text = "";
-          fg_dark = "#2596be";
-          fg_light = "#1c708e";
+          fg = "#2596be";
+
         }
         {
           name = "styl";
           text = "";
-          fg_dark = "#8dc149";
-          fg_light = "#466024";
+          fg = "#8dc149";
+
         }
         {
           name = "sub";
           text = "󰨖";
-          fg_dark = "#ffb713";
-          fg_light = "#805c0a";
+          fg = "#ffb713";
+
         }
         {
           name = "sublime";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "suo";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "sv";
           text = "󰍛";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "svelte";
           text = "";
-          fg_dark = "#ff3e00";
-          fg_light = "#bf2e00";
+          fg = "#ff3e00";
+
         }
         {
           name = "svg";
           text = "󰜡";
-          fg_dark = "#ffb13b";
-          fg_light = "#80581e";
+          fg = "#ffb13b";
+
         }
         {
           name = "svh";
           text = "󰍛";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "swift";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "t";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "tbc";
           text = "󰛓";
-          fg_dark = "#1e5cb3";
-          fg_light = "#1e5cb3";
+          fg = "#1e5cb3";
+
         }
         {
           name = "tcl";
           text = "󰛓";
-          fg_dark = "#1e5cb3";
-          fg_light = "#1e5cb3";
+          fg = "#1e5cb3";
+
         }
         {
           name = "templ";
           text = "";
-          fg_dark = "#dbbd30";
-          fg_light = "#6e5e18";
+          fg = "#dbbd30";
+
         }
         {
           name = "terminal";
           text = "";
-          fg_dark = "#31b53e";
-          fg_light = "#217929";
+          fg = "#31b53e";
+
         }
         {
           name = "test.js";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "test.jsx";
           text = "";
-          fg_dark = "#20c2e3";
-          fg_light = "#158197";
+          fg = "#20c2e3";
+
         }
         {
           name = "test.ts";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "test.tsx";
           text = "";
-          fg_dark = "#1354bf";
-          fg_light = "#1354bf";
+          fg = "#1354bf";
+
         }
         {
           name = "tex";
           text = "";
-          fg_dark = "#3d6117";
-          fg_light = "#3d6117";
+          fg = "#3d6117";
+
         }
         {
           name = "tf";
           text = "";
-          fg_dark = "#5f43e9";
-          fg_light = "#4732af";
+          fg = "#5f43e9";
+
         }
         {
           name = "tfvars";
           text = "";
-          fg_dark = "#5f43e9";
-          fg_light = "#4732af";
+          fg = "#5f43e9";
+
         }
         {
           name = "tgz";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
         {
           name = "tmux";
           text = "";
-          fg_dark = "#14ba19";
-          fg_light = "#0f8c13";
+          fg = "#14ba19";
+
         }
         {
           name = "toml";
           text = "";
-          fg_dark = "#9c4221";
-          fg_light = "#753219";
+          fg = "#9c4221";
+
         }
         {
           name = "torrent";
           text = "";
-          fg_dark = "#44cda8";
-          fg_light = "#226654";
+          fg = "#44cda8";
+
         }
         {
           name = "tres";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "ts";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "tscn";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "tsconfig";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "tsx";
           text = "";
-          fg_dark = "#1354bf";
-          fg_light = "#1354bf";
+          fg = "#1354bf";
+
         }
         {
           name = "ttf";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "twig";
           text = "";
-          fg_dark = "#8dc149";
-          fg_light = "#466024";
+          fg = "#8dc149";
+
         }
         {
           name = "txt";
           text = "󰈙";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.fg3}";
+
         }
         {
           name = "txz";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
         {
           name = "typoscript";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "ui";
           text = "";
-          fg_dark = "#0c306e";
-          fg_light = "#0c306e";
+          fg = "#0c306e";
+
         }
         {
           name = "v";
           text = "󰍛";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "vala";
           text = "";
-          fg_dark = "#7239b3";
-          fg_light = "#562b86";
+          fg = "#7239b3";
+
         }
         {
           name = "vh";
           text = "󰍛";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "vhd";
           text = "󰍛";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "vhdl";
           text = "󰍛";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "vim";
           text = "";
-          fg_dark = "${colors.green}";
-          fg_light = "${colors.faded_green}";
+          fg = "${colors.green}";
+
         }
         {
           name = "vsh";
           text = "";
-          fg_dark = "#5d87bf";
-          fg_light = "#3e5a7f";
+          fg = "#5d87bf";
+
         }
         {
           name = "vsix";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "vue";
           text = "";
-          fg_dark = "#8dc149";
-          fg_light = "#466024";
+          fg = "#8dc149";
+
         }
         {
           name = "wasm";
           text = "";
-          fg_dark = "#5c4cdb";
-          fg_light = "#4539a4";
+          fg = "#5c4cdb";
+
         }
         {
           name = "wav";
           text = "";
-          fg_dark = "#00afff";
-          fg_light = "#0075aa";
+          fg = "#00afff";
+
         }
         {
           name = "webm";
           text = "";
-          fg_dark = "#fd971f";
-          fg_light = "#7e4c10";
+          fg = "#fd971f";
+
         }
         {
           name = "webmanifest";
           text = "";
-          fg_dark = "#f1e05a";
-          fg_light = "#504b1e";
+          fg = "#f1e05a";
+
         }
         {
           name = "webp";
           text = "";
-          fg_dark = "${colors.purple}";
-          fg_light = "${colors.faded_purple}";
+          fg = "${colors.purple}";
+
         }
         {
           name = "webpack";
           text = "󰜫";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "wma";
           text = "";
-          fg_dark = "#00afff";
-          fg_light = "#0075aa";
+          fg = "#00afff";
+
         }
         {
           name = "woff";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "woff2";
           text = "";
-          fg_dark = "#ececec";
-          fg_light = "${colors.faded_black}";
+          fg = "#ececec";
+
         }
         {
           name = "wrl";
           text = "󰆧";
-          fg_dark = "#888888";
-          fg_light = "#5b5b5b";
+          fg = "#888888";
+
         }
         {
           name = "wrz";
           text = "󰆧";
-          fg_dark = "#888888";
-          fg_light = "#5b5b5b";
+          fg = "#888888";
+
         }
         {
           name = "x";
           text = "";
-          fg_dark = "#599eff";
-          fg_light = "#3b69aa";
+          fg = "#599eff";
+
         }
         {
           name = "xaml";
           text = "󰙳";
-          fg_dark = "#512bd4";
-          fg_light = "#512bd4";
+          fg = "#512bd4";
+
         }
         {
           name = "xcf";
           text = "";
-          fg_dark = "#635b46";
-          fg_light = "#4a4434";
+          fg = "#635b46";
+
         }
         {
           name = "xcplayground";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "xcstrings";
           text = "";
-          fg_dark = "#2596be";
-          fg_light = "#1c708e";
+          fg = "#2596be";
+
         }
         {
           name = "xls";
           text = "󰈛";
-          fg_dark = "#207245";
-          fg_light = "#207245";
+          fg = "#207245";
+
         }
         {
           name = "xlsx";
           text = "󰈛";
-          fg_dark = "#207245";
-          fg_light = "#207245";
+          fg = "#207245";
+
         }
         {
           name = "xm";
           text = "";
-          fg_dark = "#519aba";
-          fg_light = "#36677c";
+          fg = "#519aba";
+
         }
         {
           name = "xml";
           text = "󰗀";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "xpi";
           text = "";
-          fg_dark = "#ff1b01";
-          fg_light = "#bf1401";
+          fg = "#ff1b01";
+
         }
         {
           name = "xul";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "xz";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
         {
           name = "yaml";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "yml";
           text = "";
-          fg_dark = "${colors.bright_black}";
-          fg_light = "${colors.faded_black}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "zig";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_orange}";
+
         }
         {
           name = "zip";
           text = "";
-          fg_dark = "${colors.bright_orange}";
-          fg_light = "${colors.orange}";
+          fg = "${colors.bright_black}";
+
         }
         {
           name = "zsh";
           text = "";
-          fg_dark = "${colors.bright_green}";
-          fg_light = "${colors.green}";
+          fg = "${colors.bright_green}";
+
         }
         {
           name = "zst";
           text = "";
-          fg_dark = "#eca517";
-          fg_light = "#76520c";
+          fg = "#eca517";
+
         }
       ];
       conds = [

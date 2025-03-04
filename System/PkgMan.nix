@@ -20,12 +20,13 @@
 
     ########### Testing
 
-    #yazi                # Terminal file manager
-    #imagemagick         # Image manipulation
-    #ripgrep             # Ripgrep
-    #fd                  # Fd
-    #xclip               # Clipboard manager
-    #glow                # Markdown previewer
+    yazi # Terminal file manager
+    imagemagick # Image manipulation
+    ripgrep # Ripgrep
+    fd # Fd
+    xclip # Clipboard manager
+    glow # Markdown previewer
+    zip # Archive manager
 
     ########### Essentials
 
