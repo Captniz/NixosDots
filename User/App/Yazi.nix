@@ -65,16 +65,44 @@ in
     };
 
     keymap = {
-      manager.prepend_keymap = [
-        {
-          on = [
-            "c"
-            "a"
-          ];
-          run = "plugin compress";
-          desc = "Archive selected files";
-        }
-      ];
+      manager = {
+        prepend_keymap = [
+          {
+            on = [
+              "A"
+              "a"
+            ];
+            run = "plugin compress";
+            desc = "Archive selected files";
+          }
+        ];
+        append_keymap = [
+          {
+            on = [
+              "g"
+              "r"
+            ];
+            run = "cd ~/Documents/Repos";
+            desc = "Goto repos";
+          }
+          {
+            on = [
+              "g"
+              "t"
+            ];
+            run = "cd ~/Documents";
+            desc = "Goto documents";
+          }
+          {
+            on = [
+              "g"
+              "n"
+            ];
+            run = "cd /etc/nixos";
+            desc = "Goto nix-config";
+          }
+        ];
+      };
     };
 
     settings = {

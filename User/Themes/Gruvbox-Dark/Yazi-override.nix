@@ -103,22 +103,16 @@ in
       syntect_theme = "";
     };
     status = {
-      separator_open = "";
-      separator_close = "";
-      separator_style = {
-        fg = "${colors.bg2}";
-        bg = "${colors.bg2}";
-      };
       mode_normal = {
         bg = "${colors.bright_blue}";
         bold = true;
       };
       mode_select = {
-        bg = "${colors.red}";
+        bg = "${colors.bright_purple}";
         bold = true;
       };
       mode_unset = {
-        bg = "${colors.red}";
+        bg = "${colors.bright_red}";
         bold = true;
       };
       progress_label = {
@@ -131,21 +125,6 @@ in
       progress_error = {
         fg = "${colors.red}";
         bg = "${colors.black}";
-      };
-      permissions_t = {
-        fg = "${colors.green}";
-      };
-      permissions_r = {
-        fg = "${colors.yellow}";
-      };
-      permissions_w = {
-        fg = "${colors.red}";
-      };
-      permissions_x = {
-        fg = "${colors.aqua}";
-      };
-      permissions_s = {
-        fg = "${colors.bg0}";
       };
     };
     pick = {
@@ -170,17 +149,22 @@ in
     };
     confirm = {
       border = {
-        fg = "${colors.bright_blue}";
+        fg = "${colors.bright_orange}";
       };
       title = {
-        fg = "${colors.bright_blue}";
+        fg = "${colors.bright_orange}";
+        bg = "${colors.bg1}";
       };
-      content = { };
-      list = { };
+      content = {
+      };
+      list = {
+        bold = true;
+      };
       btn_yes = {
         reversed = true;
       };
-      btn_no = { };
+      btn_no = {
+      };
       btn_labels = [
         "  [Y]es  "
         "  (N)o  "
@@ -209,30 +193,30 @@ in
       };
     };
     which = {
+      separator = " | ";
       cols = 3;
       mask = {
-        bg = "black";
+        bg = "${colors.bg1}";
       };
       cand = {
-        fg = "lightcyan";
+        fg = "${colors.bright_red}";
       };
       rest = {
-        fg = "${colors.bg0}";
-      };
-      desc = {
         fg = "${colors.bright_purple}";
       };
-      separator = "  ";
+      desc = {
+        fg = "${colors.fg2}";
+      };
       separator_style = {
-        fg = "${colors.bg0}";
+        fg = "${colors.fg4}";
       };
     };
     help = {
       on = {
-        fg = "${colors.aqua}";
+        fg = "${colors.blue}";
       };
       run = {
-        fg = "${colors.purple}";
+        fg = "${colors.bright_orange}";
       };
       desc = { };
       hovered = {
@@ -240,8 +224,8 @@ in
         bold = true;
       };
       footer = {
-        fg = "${colors.black}";
-        bg = "${colors.white}";
+        fg = "${colors.fg0}";
+        bg = "${colors.bg2}";
       };
     };
     notify = {
