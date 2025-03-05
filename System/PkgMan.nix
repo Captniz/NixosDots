@@ -24,8 +24,9 @@
 
     zip # Archive manager
     udisks # Disk manager
+    wl-clip-persist #Clipboard manager
     wl-clipboard # Clipboard manager
-    clipman # Clipboard manager
+    copyq # Clipboard manager
     hyprlock # Screen locker
     hyprland # Window manager
     zsh # Shell
