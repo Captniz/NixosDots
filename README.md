@@ -91,7 +91,7 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 | ZSH / OhMyZSH | ✔ | ✔ |
 | Starship | ✔ | ✔ |
 | SWWW | ✔ | ✔ |
-| Ranger | ✔ | ✔ |
+| Yazi | ✔ | ✔ |
 | SDDM | ✔ | ✔ |
 | Slurp / Grim | ✔ | ✔ |
 | Bluetooth | ✔ | ✔ |

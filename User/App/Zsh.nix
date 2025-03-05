@@ -148,8 +148,8 @@ in
       nixdeleteolder = "sudo nix-collect-garbage --delete-older-than";
       zip = "7z a -r -tzip";
       ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
-      search = "ranger $(fzf)";
-      searchall = "cd /;ranger $(fzf)";
+      search = "yazi $(fzf)";
+      searchall = "cd /;yazi $(fzf)";
       cd = "z";
       fixaudio = "systemctl restart --user pipewire.service";
       systemupdate = "cd /etc/nixos;cp flake.lock bu-flake.lock;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";

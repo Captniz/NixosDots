@@ -20,16 +20,12 @@
 
     ########### Testing
 
-    yazi # Terminal file manager
-    imagemagick # Image manipulation
-    ripgrep # Ripgrep
-    fd # Fd
-    xclip # Clipboard manager
-    glow # Markdown previewer
-    zip # Archive manager
-
     ########### Essentials
 
+    zip # Archive manager
+    udisks # Disk manager
+    wl-clipboard # Clipboard manager
+    clipman # Clipboard manager
     hyprlock # Screen locker
     hyprland # Window manager
     zsh # Shell
@@ -41,7 +37,6 @@
     light # Brightness control
     neovim # Text editor
     alacritty # Term. emulator
-    ranger # File manager
     git # Version manager
     swww # Wallpaper manager
     qimgv # Image viewer
@@ -91,6 +86,9 @@
     libsForQt5.qt5.qtquickcontrols # Qt5 libraries
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     grim # Screenshot tool
+    ripgrep # Ripgrep
+    fd # Fd
+    glow # Markdown previewer
     slurp # Screen Region selector
     file # File type checker
     ueberzugpp # Terminal Image viewer
@@ -133,6 +131,7 @@
     ########### Programs & Apps
 
     telegram-desktop # Messaging app
+    yazi # Terminal file manager
     geogebra # Math tool
     docker # Container manager
     webcord # Discord client

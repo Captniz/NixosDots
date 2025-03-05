@@ -28,6 +28,8 @@ in
     enableZshIntegration = true;
 
     initLua = ''
+      require("git"):setup()
+
       require("full-border"):setup {
             	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
             	type = ui.Border.ROUNDED,
@@ -35,6 +37,8 @@ in
     '';
 
     plugins = {
+
+      mount = "${yazi-plugins}/mount.yazi";
 
       full-border = "${yazi-plugins}/full-border.yazi";
 
@@ -68,12 +72,22 @@ in
       manager = {
         prepend_keymap = [
           {
+            on = "M";
+            run = "plugin mount";
+            desc = "Mount partitions";
+          }
+          {
             on = [
               "A"
               "a"
             ];
             run = "plugin compress";
             desc = "Archive selected files";
+          }
+          {
+            on = "F";
+            run = "plugin smart-filter";
+            desc = "Smart filter";
           }
         ];
         append_keymap = [
@@ -112,10 +126,10 @@ in
           4
           3
         ];
-        sort_by = "alphabetical";
+        sort_dir_first = true;
+        sort_by = "extension";
         sort_sensitive = false;
         sort_reverse = false;
-        sort_dir_first = true;
         sort_translit = false;
         linemode = "none";
         show_hidden = false;
@@ -338,6 +352,18 @@ in
           {
             name = "*.md";
             run = "glow";
+          }
+        ];
+        prepend_fetchers = [
+          {
+            id = "git";
+            name = "*";
+            run = "git";
+          }
+          {
+            id = "git";
+            name = "*/";
+            run = "git";
           }
         ];
 
