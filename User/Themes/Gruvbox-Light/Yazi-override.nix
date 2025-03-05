@@ -25,13 +25,6 @@ in
       hash = "sha256-VQJIqUNklPDiXBSYGWUp099LXytlETUwGj03o/9HP5I=";
     };
 
-    flexoki-light = pkgs.fetchFromGitHub {
-      owner = "gosxrgxx";
-      repo = "flexoki-dark.yazi";
-      rev = "main";
-      hash = "sha256-VQJIqUNklPDiXBSYGWUp099LXytlETUwGj03o/9HP5I=";
-    };
-
     gruv-dark = pkgs.fetchFromGitHub {
       owner = "bennyyip";
       repo = "gruvbox-dark.yazi";
@@ -119,12 +112,12 @@ in
         bold = true;
       };
       progress_normal = {
-        fg = "${colors.bright_blue}";
-        bg = "${colors.black}";
+        fg = "${colors.fg0}";
+        bg = "${colors.bright_blue}";
       };
       progress_error = {
-        fg = "${colors.red}";
-        bg = "${colors.black}";
+        fg = "${colors.fg0}";
+        bg = "${colors.red}";
       };
     };
     pick = {
@@ -199,7 +192,7 @@ in
         bg = "${colors.bg1}";
       };
       cand = {
-        fg = "${colors.bright_red}";
+        fg = "${colors.bright_green}";
       };
       rest = {
         fg = "${colors.bright_purple}";
@@ -254,19 +247,19 @@ in
         }
         {
           mime = "application/{,g}zip";
-          fg = "${colors.bright_black}";
+          fg = "${colors.bg2}";
         }
         {
           mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}";
-          fg = "${colors.bright_black}";
+          fg = "${colors.bg2}";
         }
         {
           mime = "application/{pdf,doc,rtf,vnd.*}";
-          fg = "${colors.white}";
+          fg = "${colors.fg0}";
         }
         {
           mime = "inode/empty";
-          fg = "${colors.bright_black}";
+          fg = "${colors.bg2}";
         }
         {
           name = "*";
@@ -301,7 +294,7 @@ in
         }
         {
           name = "*/";
-          fg = "${colors.faded_white}";
+          fg = "${colors.fg4}";
         }
       ];
     };
@@ -389,7 +382,7 @@ in
         {
           name = ".editorconfig";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
         }
         {
           name = ".env";
@@ -440,7 +433,7 @@ in
         {
           name = ".gtkrc-2.0";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -680,13 +673,13 @@ in
         {
           name = "fp-info-cache";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "fp-lib-table";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -758,7 +751,7 @@ in
         {
           name = "gtkrc";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -794,13 +787,13 @@ in
         {
           name = "i3blocks.conf";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "i3status.conf";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -986,7 +979,7 @@ in
         {
           name = "sym-lib-table";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -1108,7 +1101,7 @@ in
         {
           name = "7z";
           text = "";
-          fg = "${colors.bright_black}";
+          fg = "${colors.bg2}";
 
         }
         {
@@ -1318,7 +1311,7 @@ in
         {
           name = "cache";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -1558,7 +1551,7 @@ in
         {
           name = "dconf";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -1954,7 +1947,7 @@ in
         {
           name = "gresource";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -2266,49 +2259,49 @@ in
         {
           name = "kicad_dru";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "kicad_mod";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "kicad_pcb";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "kicad_prl";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "kicad_pro";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "kicad_sch";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "kicad_sym";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
           name = "kicad_wks";
           text = "";
-          fg = "${colors.bright_white}";
+          fg = "${colors.fg0}";
 
         }
         {
@@ -3622,7 +3615,7 @@ in
         {
           name = "zip";
           text = "";
-          fg = "${colors.bright_black}";
+          fg = "${colors.bg2}";
 
         }
         {
