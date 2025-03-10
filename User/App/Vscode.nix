@@ -158,6 +158,9 @@ in
       "code-runner.executorMapByGlob" = {
         "Cargo.toml" = "cd $dir && cargo run";
       };
+      "code-runner.executorMapByFileExtension" = {
+        ".poly" = "cd $dir && poly < $fileName"; # polyml
+      };
       "code-runner.executorMap" = {
         "javascript" = "node";
         "java" = "cd $dir && javac 2>/dev/null $fileName && java 2>/dev/null $fileNameWithoutExt";
