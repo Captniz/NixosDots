@@ -24,7 +24,7 @@
 
     zip # Archive manager
     udisks # Disk manager
-    wl-clip-persist #Clipboard manager
+    wl-clip-persist # Clipboard manager
     wl-clipboard # Clipboard manager
     copyq # Clipboard manager
     hyprlock # Screen locker
@@ -140,7 +140,7 @@
     heroic # Game client
     steam # Game client
     firefox # Browser
-    dia # Diagram editor
+    drawio # Diagram editor
     vlc # Media player
     obs-studio # Media creator / Streaming software
     rofi-wayland # App launcher

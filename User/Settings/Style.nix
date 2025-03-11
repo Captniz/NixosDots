@@ -8,7 +8,7 @@
 
 {
   fonts.fontconfig.enable = true;
-  
+
   home.packages = with pkgs; [
 
     # Fonts
@@ -35,8 +35,8 @@
     enable = true;
 
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
       name = "Papirus";
+      package = pkgs.papirus-icon-theme;
     };
 
     theme = {
