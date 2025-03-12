@@ -100,6 +100,11 @@ in
       style = "bg:purple fg:white";
     };
 
+    java = {
+      format = "[ via ]($style)[$symbol]($style)[$version ](bold $style)";
+      style = "bg:purple fg:white";
+    };
+
     package = {
       format = "[ is ]($style)[$symbol$version ](bold $style)";
       style = "bg:purple fg:white";

@@ -246,6 +246,7 @@ in
               "edit"
               "reveal"
               "compress"
+              "code"
               "xdg-open"
             ];
           }

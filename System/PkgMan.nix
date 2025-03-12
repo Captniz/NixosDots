@@ -62,7 +62,7 @@
     vcpkg # C++ package manager
     vcpkg-tool # C++ package manager
     php # PHP
-    jdk # Java
+    (pkgs.jdk.override { enableJavaFX = true; }) # Java
     (pkgs.python3.withPackages (python-pkgs: [
       # Python
       python-pkgs.pandas

@@ -11,7 +11,7 @@ let
 in
 {
   wayland.windowManager.hyprland.settings = {
-    "$wallpaper" = lib.mkForce "~/Images/gruvbox-wallpapers/wallpapers/anime/ghibli-japanese-walled-garden.png";
+    "$wallpaper" = lib.mkForce "~/Images/gruvbox-wallpapers/wallpapers/mix/gruvb99810.png";
     "$activeBorder" = lib.mkForce "rgba(${lib.strings.removePrefix "#" colors.green}dd)";
   };
 }
