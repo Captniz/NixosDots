@@ -69,6 +69,11 @@
     blueman = {
       enable = true;
     };
+
+    mongodb = {
+      enable = true;
+      package = pkgs.mongodb-ce;
+    };
   };
 
   systemd.user.services = {

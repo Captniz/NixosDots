@@ -20,6 +20,8 @@
 
     ########### Testing
 
+    mongosh
+
     ########### Essentials
 
     zip # Archive manager
@@ -49,6 +51,7 @@
 
     ########### Languages
 
+    R # R language
     nodejs_22 # Node.js
     rustfmt # Rust
     rustc # Rust
@@ -131,6 +134,7 @@
 
     ########### Programs & Apps
 
+    rpi-imager # Raspberry Pi image writer
     telegram-desktop # Messaging app
     yazi # Terminal file manager
     geogebra # Math tool
