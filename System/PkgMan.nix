@@ -20,8 +20,6 @@
 
     ########### Testing
 
-    mongosh
-
     ########### Essentials
 
     zip # Archive manager
@@ -73,6 +71,8 @@
       python-pkgs.setuptools
       python-pkgs.toml
     ]))
+    typescript
+    typescript-language-server
     polyml # ML
 
     ########### Dependencies/Libraries/Single Use Programs
@@ -129,11 +129,13 @@
     bat # Cat clone
     tesseract # Image OCR
     ocrmypdf # PDF OCR
-    qdirstat # Disk usage analyzer
-    gparted # Partition manager
+    exfatprogs # Exfat utilities
+    exfat # Exfat utilities
 
     ########### Programs & Apps
 
+    qdirstat # Disk usage analyzer
+    gparted # Partition manager
     rpi-imager # Raspberry Pi image writer
     telegram-desktop # Messaging app
     yazi # Terminal file manager
@@ -147,6 +149,7 @@
     drawio # Diagram editor
     vlc # Media player
     obs-studio # Media creator / Streaming software
+    mongosh # MongoDB shell
     rofi-wayland # App launcher
     eww # Widget manager
     zathura # PDF viewer
@@ -158,5 +161,6 @@
     libreoffice-qt-fresh # Office suite
     qbittorrent # Torrent client
     zoom-us # Video conferencing
+    postman # API client
   ];
 }
