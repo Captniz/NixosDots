@@ -217,7 +217,7 @@ in
         "fortran_fixed-form" =
           "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
         "fortran" = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt";
-        "sml" = "cd $dir && sml $fileName";
+        "sml" = "cd $dir && poly < $fileName";
         "sql" = "cd $dir && sh FileTransfer.sh";
       };
     };

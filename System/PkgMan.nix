@@ -136,7 +136,6 @@
 
     qdirstat # Disk usage analyzer
     gparted # Partition manager
-    rpi-imager # Raspberry Pi image writer
     telegram-desktop # Messaging app
     yazi # Terminal file manager
     geogebra # Math tool
