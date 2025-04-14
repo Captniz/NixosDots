@@ -95,6 +95,7 @@ in
       "github.copilot.editor.enableAutoCompletions" = true;
 
       # Extensions
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "leetcode.workspaceFolder" = "/home/simo/Documents/Repos/Uni_Code/LEETCODE_SOL";
       "vsicons.dontShowNewVersionMessage" = true;
       "open-in-browser.default" = "firefox";

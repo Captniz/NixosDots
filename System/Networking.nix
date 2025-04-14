@@ -22,6 +22,6 @@
   # Enable networking
   
   #Uncomment to enable the port
-  #networking.firewall.allowedTCPPorts = [ 3000 ];
+  networking.firewall.allowedTCPPorts = [ 3000 ];
   networking.networkmanager.enable = true;
 }

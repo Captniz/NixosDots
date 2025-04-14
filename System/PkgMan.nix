@@ -103,6 +103,8 @@
     xdg-utils # Desktop utilities
     xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities
+    xdg-desktop-portal-wlr  # Desktop utilities
+    xdg-desktop-portal   # Desktop utilities
     xorg.xhost # Xorg utility
     hyprland-protocols # Hyprland protocols
     wlroots # Wayland compositor

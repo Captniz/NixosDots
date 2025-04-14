@@ -55,7 +55,7 @@
         ];
 
         search.engines = {
-          "Nix Packages" = {
+          "nix_packages" = {
             urls = [
               {
                 template = "https://search.nixos.org/packages";
@@ -89,7 +89,7 @@
             definedAliases = [ "@mn" ];
           };
 
-          "YouTube" = {
+          "youtube" = {
             urls = [
               {
                 template = "https://www.youtube.com/results?";
