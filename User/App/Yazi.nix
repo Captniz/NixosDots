@@ -13,7 +13,7 @@ let
     owner = "yazi-rs";
     repo = "plugins";
     rev = "main";
-    hash = "sha256-Vvq7uau+UNcriuLE7YMK5rSOXvVaD0ElT59q+09WwdQ=";
+    hash ="sha256-m3709h7/AHJAtoJ3ebDA40c77D+5dCycpecprjVqj/k=";
   };
 in
 {
@@ -28,12 +28,14 @@ in
     enableZshIntegration = true;
 
     initLua = ''
-      require("git"):setup()
 
       require("full-border"):setup {
             	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
             	type = ui.Border.ROUNDED,
+      
       }
+      
+      require("git"):setup()
     '';
 
     plugins = {
