@@ -23,5 +23,11 @@
   
   #Uncomment to enable the port
   networking.firewall.allowedTCPPorts = [ 3000 ];
+  #networking.extraHosts =
+  #''
+  #  127.0.0.1 localhost
+  #  ::1 localhost
+  #  127.0.0.2 YOUR_HOSTNAME
+  #'';
   networking.networkmanager.enable = true;
 }
