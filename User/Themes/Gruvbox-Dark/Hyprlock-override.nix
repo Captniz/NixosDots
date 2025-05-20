@@ -55,7 +55,7 @@ in
 
       # USER
       {
-        text = "Spacca tutto $USER";
+        text = "La rosi sotto 6 metri di terra";
         color = "rgba(255, 255, 255, .65)";
         font_size = 25;
         font_family = "Iosevka NFM Bold";
