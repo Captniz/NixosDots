@@ -95,6 +95,9 @@ in
       "github.copilot.editor.enableAutoCompletions" = true;
 
       # Extensions
+      "[java]"= {
+		    "editor.defaultFormatter"= "redhat.java";
+	    };
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "leetcode.workspaceFolder" = "/home/simo/Documents/Repos/Uni_Code/LEETCODE_SOL";
       "vsicons.dontShowNewVersionMessage" = true;
@@ -152,6 +155,7 @@ in
       "java.jdt.ls.java.home" = "/run/current-system/sw/lib/openjdk";
       "java.configuration.runtimes" = [ ];
       "java.codeAction.sortMembers.avoidVolatileChanges" = false;
+      "java.project.outputPath"= "out";
 
       # Code runner
       "code-runner.clearPreviousOutput" = true;

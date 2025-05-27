@@ -154,7 +154,6 @@
     rofi-wayland # App launcher
     eww # Widget manager
     zathura # PDF viewer
-    android-studio # Android IDE
     vscode # Code editor
     obsidian # Note taking app
     cider-2 # Apple Music client
@@ -163,5 +162,10 @@
     qbittorrent # Torrent client
     zoom-us # Video conferencing
     postman # API client
+    jetbrains.idea-ultimate # IDE
+
+    ############ Disabled programs ( Mostly for gaining space )
+    
+    # android-studio # Android IDE
   ];
 }
