@@ -147,7 +147,7 @@
     heroic # Game client
     steam # Game client
     firefox # Browser
-    drawio # Diagram editor
+    #drawio # Diagram editor
     vlc # Media player
     obs-studio # Media creator / Streaming software
     mongosh # MongoDB shell
