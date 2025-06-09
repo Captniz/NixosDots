@@ -23,6 +23,9 @@ in
       "update.mode" = "none";
       "editor.tabSize" = 4;
       "editor.indentSize" = "tabSize";
+      "python.pythonPath"= "/run/current-system/sw/bin/python";
+      "python.defaultInterpreterPath"= "/run/current-system/sw/bin/python";
+      "pylint.interpreter"= ["/run/current-system/sw/bin/python"];
 
       # Themeing
       "editor.cursorSmoothCaretAnimation" = "on";
