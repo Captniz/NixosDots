@@ -201,7 +201,7 @@ in
       ];
 
       exec-once = [
-        "swww init && swww img $wallpaper"
+        "swww-daemon && swww img $wallpaper"
         "eww open bar"
         "polkit-agent-helper-1"
         "systemctl start --user polkit-gnome-authentication-agent-1"
