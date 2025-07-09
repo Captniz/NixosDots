@@ -26,6 +26,7 @@ in
       "python.pythonPath"= "/run/current-system/sw/bin/python";
       "python.defaultInterpreterPath"= "/run/current-system/sw/bin/python";
       "pylint.interpreter"= ["/run/current-system/sw/bin/python"];
+      "[qml]"= {"editor.defaultFormatter"= "Delgan.qml-format";};
 
       # Themeing
       "editor.cursorSmoothCaretAnimation" = "on";

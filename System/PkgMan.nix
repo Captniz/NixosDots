@@ -3,6 +3,7 @@
   lib,
   pkgs,
   systemSettings,
+  inputs,
   ...
 }:
 
@@ -19,6 +20,12 @@
     #libsForQt5.xwaylandvideobridge   # Recently udpated, could fix some issues
 
     ########### Testing
+    
+    ###QuickShell testing
+    inputs.quickshell.packages.${systemSettings.system}.default # Quick shell for Hyprland
+    libsForQt5.qt5.qtdeclarative
+    
+    #drawio # Diagram editor # Disabled due to error 
 
     ########### Essentials
 
@@ -136,6 +143,7 @@
 
     ########### Programs & Apps
 
+    hakuneko # Manga Downloader
     qdirstat # Disk usage analyzer
     gparted # Partition manager
     telegram-desktop # Messaging app
@@ -147,7 +155,6 @@
     heroic # Game client
     steam # Game client
     firefox # Browser
-    #drawio # Diagram editor
     vlc # Media player
     obs-studio # Media creator / Streaming software
     mongosh # MongoDB shell

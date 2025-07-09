@@ -15,6 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Additional Packages
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
   };
@@ -73,6 +78,7 @@
           specialArgs = {
             inherit systemSettings;
             inherit userSettings;
+            inherit inputs;
           };
         };
       };
