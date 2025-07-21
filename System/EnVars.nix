@@ -14,6 +14,7 @@
     XCURSOR_SIZE = "12";
     GDK_SCALE = "1";
     TERM = "xterm-256color";
+    QT_QPA_PLATFORM="wayland";
 
     # Nix vars
     NIXOS_OZONE_WL = "1";

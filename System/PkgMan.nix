@@ -17,14 +17,13 @@
   environment.systemPackages = with pkgs; [
     ########### Possible Fixes / Old Packages
 
-    #libsForQt5.xwaylandvideobridge   # Recently udpated, could fix some issues
 
     ########### Testing
+    libsForQt5.xwaylandvideobridge   # Enabled after being disabled for a while, check if it works
     
     ###QuickShell testing
     inputs.quickshell.packages.${systemSettings.system}.default # Quick shell for Hyprland
     libsForQt5.qt5.qtdeclarative
-    
 
     ########### Essentials
 
@@ -77,24 +76,25 @@
       python-pkgs.setuptools
       python-pkgs.toml
     ]))
-    typescript
-    typescript-language-server
+    typescript # TypeScript
+    typescript-language-server # TypeScript
     polyml # ML
 
     ########### Dependencies/Libraries/Single Use Programs
 
     libinput # Input library
-    owl
+    owl # Owl library
     alsa-utils # Audio utilities
     webkitgtk_6_0 # Webkit
-    dxvk
+    dxvk # DirectX to Vulkan translation layer
     doxygen # Documentation generator
-    mupdf
-    alsa-ucm-conf
-    sof-firmware
-    wev
+    mupdf # PDF viewer
+    alsa-ucm-conf # ALSA UCM configuration
+    sof-firmware # Sound Open Firmware
+    wev # Input event viewer
     libsForQt5.qt5.qtquickcontrols # Qt5 libraries
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
+    libsForQt5.qt5.qtwayland # Qt5 libraries
     grim # Screenshot tool
     ripgrep # Ripgrep
     fd # Fd
