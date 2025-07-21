@@ -25,7 +25,6 @@
     inputs.quickshell.packages.${systemSettings.system}.default # Quick shell for Hyprland
     libsForQt5.qt5.qtdeclarative
     
-    #drawio # Diagram editor # Disabled due to error 
 
     ########### Essentials
 
@@ -87,7 +86,7 @@
     libinput # Input library
     owl
     alsa-utils # Audio utilities
-    webkitgtk # Webkit
+    webkitgtk_6_0 # Webkit
     dxvk
     doxygen # Documentation generator
     mupdf
@@ -150,6 +149,7 @@
     yazi # Terminal file manager
     geogebra # Math tool
     docker # Container manager
+    drawio # Diagram editor # Disabled due to error 
     webcord # Discord client
     lutris # Game client
     heroic # Game client
@@ -169,10 +169,10 @@
     qbittorrent # Torrent client
     zoom-us # Video conferencing
     postman # API client
-    jetbrains.idea-ultimate # IDE
 
     ############ Disabled programs ( Mostly for gaining space )
     
     # android-studio # Android IDE
+    #jetbrains.idea-ultimate # IDE
   ];
 }
