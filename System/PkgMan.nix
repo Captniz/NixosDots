@@ -122,6 +122,8 @@
 
     ########### Utility / Quality of Life / Useful Commands
 
+    cifs-utils # CIFS utilities
+    valgrind # Memory debugging
     testdisk # Data recovery
     nixfmt-rfc-style # Nix formatter
     zoxide # Directory jumper
