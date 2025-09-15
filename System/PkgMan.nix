@@ -15,15 +15,13 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    ########### Possible Fixes / Old Packages
+    ########### Errored / Disabled
 
+    # drawio # Diagram editor  
 
     ########### Testing
-    libsForQt5.xwaylandvideobridge   # Enabled after being disabled for a while, check if it works
-    
-    ###QuickShell testing
+   
     inputs.quickshell.packages.${systemSettings.system}.default # Quick shell for Hyprland
-    libsForQt5.qt5.qtdeclarative
 
     ########### Essentials
 
@@ -51,6 +49,11 @@
     p7zip # Archive manager
     unrar # Archive manager
     unzip # Archive manager
+    ueberzugpp # Terminal Image viewer
+    wev # Input event viewer
+    mupdf # PDF viewer
+    polkit # Authorization manager
+    polkit_gnome # Authorization manager
 
     ########### Languages
 
@@ -80,33 +83,23 @@
     typescript-language-server # TypeScript
     polyml # ML
 
-    ########### Dependencies/Libraries/Single Use Programs
+    ########### Dependencies/Libraries
 
+    kdePackages.xwaylandvideobridge # Xwayland bridge
+    libsForQt5.qt5.qtdeclarative
     libinput # Input library
     owl # Owl library
     alsa-utils # Audio utilities
     webkitgtk_6_0 # Webkit
     dxvk # DirectX to Vulkan translation layer
     doxygen # Documentation generator
-    mupdf # PDF viewer
     alsa-ucm-conf # ALSA UCM configuration
     sof-firmware # Sound Open Firmware
-    wev # Input event viewer
     libsForQt5.qt5.qtquickcontrols # Qt5 libraries
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     libsForQt5.qt5.qtwayland # Qt5 libraries
-    grim # Screenshot tool
-    ripgrep # Ripgrep
-    fd # Fd
-    glow # Markdown previewer
-    slurp # Screen Region selector
-    file # File type checker
-    ueberzugpp # Terminal Image viewer
     git-credential-oauth # Git credential helper
-    polkit # Authorization manager
-    polkit_gnome # Authorization manager
     kdePackages.xwaylandvideobridge # Xwayland bridge
-    xdg-utils # Desktop utilities
     xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities
     xdg-desktop-portal-wlr  # Desktop utilities
@@ -118,23 +111,28 @@
     poppler_utils # PDF library
     winetricks # Wine utility
     wineWowPackages.waylandFull # Wine utility
-    tree # Directory tree
 
     ########### Utility / Quality of Life / Useful Commands
 
+    xdg-utils # Desktop utilities
+    grim # Screenshot tool
+    ripgrep # Text searcher
+    fd # Find utility
+    glow # Markdown previewer
+    slurp # Screen Region selector
+    file # File type checker
+    tree # Directory tree
     cifs-utils # CIFS utilities
     valgrind # Memory debugging
     testdisk # Data recovery
     nixfmt-rfc-style # Nix formatter
     zoxide # Directory jumper
-    opendrop # Airdrop compatibility
-    hping # DoS tool
-    nmap # Network scanner
     entr # Code runner
     jc # JSON parser
     jq # JSON parser
     fzf # Fuzzy File Finder
     protonup # Proton updater
+    nmap # Network scanner
     bash-completion # Terminal completion
     bat # Cat clone
     tesseract # Image OCR
@@ -144,6 +142,7 @@
 
     ########### Programs & Apps
 
+    calibre # Ebook manager
     hakuneko # Manga Downloader
     qdirstat # Disk usage analyzer
     gparted # Partition manager
@@ -151,7 +150,6 @@
     yazi # Terminal file manager
     geogebra # Math tool
     docker # Container manager
-    drawio # Diagram editor # Disabled due to error 
     webcord # Discord client
     lutris # Game client
     heroic # Game client
@@ -175,6 +173,8 @@
     ############ Disabled programs ( Mostly for gaining space )
     
     # android-studio # Android IDE
-    #jetbrains.idea-ultimate # IDE
+    # jetbrains.idea-ultimate # IDE
+    # opendrop # Airdrop compatibility
+    # hping # DoS tool
   ];
 }

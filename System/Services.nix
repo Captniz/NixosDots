@@ -51,10 +51,10 @@
       theme = "${import ./App/Sddm.nix { inherit pkgs; }}";
     };
 
-    logind = {
-      lidSwitch = "ignore";
-      lidSwitchDocked = "ignore";
-      lidSwitchExternalPower = "ignore";
+    logind.settings = {
+      Login.HandleLidSwitchDocked = "ignore";
+      Login.HandleLidSwitchExternalPower = "ignore";
+      Login.HandleLidSwitch = "ignore";
     };
 
     postgresql = {
