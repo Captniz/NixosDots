@@ -117,8 +117,10 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 ### Reminders
 
 - [ ] Find a way to implement vs code extensions in the config
-- [ ] Theme obsidian
+- [ ] Theme obsidian | [Nuove settings](https://mynixos.com/search?q=obsidian)
 - [ ] Implementa meglio cider, metti i tasti multimedia, metti il titolo della cazone corrente
 - [ ] Risolvi i problemi legati al secondo monitor
 - [ ] Implementa una riproduuzione veloce di musica con rofi
-- [ ] implementa quickshell
+- [ ] implementa [quickshell](https://quickshell.org/docs/v0.2.0/types/)  
+- [ ] [Controlla AGS](https://aylur.github.io/ags/)  
+  
