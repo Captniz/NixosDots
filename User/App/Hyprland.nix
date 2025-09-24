@@ -130,7 +130,7 @@ in
         "$mod, W, exec, alacritty -e btop"
         "$mod, code:60, exec, rofi -show emoji"
         "$mod, N, exec, rofi -show calc"
-        "$mod, L, exec, hyprlock"
+        "$mod, L, exec, loginctl lock-session"
 
         # Window managment
         "$mod, J, togglesplit,"
@@ -213,6 +213,7 @@ in
         "sleep 2 && systemctl restart --user pipewire.service" # Fix pipewire
         "hyprctl dispatch workspace 1" # Go to workspace 1 on start
         "sh /etc/nixos/User/Scripts/MonitorSwitcher.sh" # Monitor setup
+        "sh /etc/nixos/User/Scripts/NotifyBattery.sh" # Battery notifications
       ];
     };
   };
