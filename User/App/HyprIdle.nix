@@ -15,7 +15,6 @@
           ignore_dbus_inhibit = false;
           lock_cmd = "hyprlock";
       };
-    };
 
     listener = [
       {
@@ -28,5 +27,6 @@
         on-resume = "hyprctl dispatch dpms on";
       }
     ];
+    };
   };
 }
