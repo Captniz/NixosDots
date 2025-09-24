@@ -7,6 +7,15 @@
 }:
 
 {
+  swapDevices = [ 
+    {
+     device = "/var/lib/swapfile";
+     size = 24*1024;
+
+    } 
+  ];
+
+
   hardware = {
 
     graphics = {
@@ -27,6 +36,17 @@
 
     nvidia.modesetting.enable = true;
   };
+
+  powerManagement.resumeCommands = ''
+    notify-send "Resuming from suspend;hyprctl dispatch dpms on"
+  '';
+
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=yes
+    AllowHibernation=yes
+    AllowHybridSleep=yes
+    AllowSuspendThenHibernate=yes
+  '';
 
   fileSystems."/mnt/Storage" = {
     device = "/dev/disk/by-label/Storage";
