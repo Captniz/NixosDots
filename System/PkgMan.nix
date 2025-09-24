@@ -163,7 +163,7 @@
     vlc # Media player
     obs-studio # Media creator / Streaming software
     mongosh # MongoDB shell
-    rofi-wayland # App launcher
+    rofi # App launcher
     eww # Widget manager
     zathura # PDF viewer
     vscode # Code editor
