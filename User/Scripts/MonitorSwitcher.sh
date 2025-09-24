@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# Non ho la minima idea se questo script funzioni, ma in teoria dovrebbe.
+# In pratica è 50/50 che funzioni, e di solito se funziona lo fa pure male.
+# Se qualcuno ha un fix o un alternativa migliore, sono tutto orecchie.
+
+# In pratica dovrebbe, quando viene collegato un secondo monitor,
+# spostare tutte le workspace sul nuovo monitor e aprire la barra lì.
+# Quando il secondo monitor viene scollegato, dovrebbe riportare tutto sul primo monitor.
+
+
 # Intervallo di polling in secondi
 POLL_INTERVAL=5
 
