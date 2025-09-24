@@ -42,7 +42,7 @@ in
 
         # Xwayland
         layer = "top";
-        #force_xwayland = true;
+        force_xwayland = true;
       };
 
       urgency_low = {
