@@ -201,18 +201,18 @@ in
       ];
 
       exec-once = [
-        "swww-daemon && swww img $wallpaper"
-        "eww open bar"
-        "polkit-agent-helper-1"
-        "systemctl start --user polkit-gnome-authentication-agent-1"
-        "systemctl start --user pipewire.service"
-        "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.00 && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
-        "copyq --start-server"
-        "wl-clip-persist --clipboard regular"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "sleep 2 && systemctl restart --user pipewire.service"
-        "hyprctl dispatch workspace 1"
-        "sh /etc/nixos/User/Scripts/MonitorSwitcher.sh"
+        "swww-daemon && swww img $wallpaper"  # Wallpaper
+        "eww open bar"  # Eww bar
+        "polkit-agent-helper-1" # Polkit
+        "systemctl start --user polkit-gnome-authentication-agent-1" # Polkit
+        "systemctl start --user pipewire.service" # Audio
+        "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.00 && sh /etc/nixos/User/Scripts/NotifyVolume.sh" # Set volume to 0 on start
+        "copyq --start-server" # Clipboard manager
+        "wl-clip-persist --clipboard regular" # Clipboard manager
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # Wayland env vars
+        "sleep 2 && systemctl restart --user pipewire.service" # Fix pipewire
+        "hyprctl dispatch workspace 1" # Go to workspace 1 on start
+        "sh /etc/nixos/User/Scripts/MonitorSwitcher.sh" # Monitor setup
       ];
     };
   };
