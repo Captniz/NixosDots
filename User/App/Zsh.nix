@@ -143,7 +143,8 @@ in
       gacp = "git add * ; git commit --all -m '.' ; git push --all";
       flakeup = "nix flake update --flake /etc/nixos";
       homeup = "home-manager switch --flake /etc/nixos --impure";
-      nixup = "nix-store --add-fixed sha256 /etc/nixos/User/ExtraConfigs/cider/cider-linux-x64.AppImage;sudo nixos-rebuild switch --flake /etc/nixos";
+      # nix-store --add-fixed sha256 /etc/nixos/User/ExtraConfigs/cider/cider-linux-x64.AppImage
+      nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
       nixconfigure = "code /etc/nixos";
       nixdeleteolder = "home-manager expire-generations '-14days';sudo nix-collect-garbage -d --delete-older-than";
       zip = "7z a -r -tzip";
