@@ -15,24 +15,19 @@ send_notification() {
 # Listen to DBus PropertiesChanged for the battery
 dbus-monitor --system "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',path='$BATTERY_PATH'" |
 while read -r line; do
-
     # When a property changes, get current values
-    if echo "$line" | grep -qE "percentage|state"; then
-        BATTERY_PERCENT=$(upower -i "$BATTERY_PATH" | awk '/percentage/ {gsub("%",""); print $2}')
+if echo "$line" | grep -q "Percentage"; then
+    BATTERY_PERCENT=$(upower -i "$BATTERY_PATH" | awk '/percentage:/ {gsub("%",""); printf "%d\n", $2}')
 
-        # Battery percentage notifications
-        if [ "$BATTERY_PERCENT" -eq 25 ]; 
-        then
-            send_notification "normal" "battery-caution-symbolic" "Battery Low" "$BATTERY_PERCENT% remaining"
+    if [ "$BATTERY_PERCENT" -eq 25 ]; then
+        send_notification "normal" "battery-caution-symbolic" "Battery Low" "$BATTERY_PERCENT% remaining"
 
-        elif [ "$BATTERY_PERCENT" -eq 10 ] ; 
-        then
-            send_notification "critical" "battery-caution-symbolic" "Battery Critical" "Only $BATTERY_PERCENT% remaining!"
-        
-        elif [ "$BATTERY_PERCENT" -eq 5 ];
-        then
-            send_notification "critical" "battery-empty" "Hibernation Imminent" "Only $BATTERY_PERCENT% remaining! Will soon hibernate!"
-        
-        fi
+    elif [ "$BATTERY_PERCENT" -eq 10 ]; then
+        send_notification "critical" "battery-caution-symbolic" "Battery Critical" "Only $BATTERY_PERCENT% remaining!"
+    
+    elif [ "$BATTERY_PERCENT" -eq 5 ]; then
+        send_notification "critical" "battery-empty" "Hibernation Imminent" "Only $BATTERY_PERCENT% remaining! Will soon hibernate!"
     fi
+fi
+
 done
