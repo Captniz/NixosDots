@@ -54,6 +54,7 @@
     mupdf # PDF viewer
     polkit # Authorization manager
     polkit_gnome # Authorization manager
+    upower # Power management
 
     ########### Languages
 

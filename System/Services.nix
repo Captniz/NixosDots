@@ -67,6 +67,10 @@
       '';
     };
 
+    upower={
+      enable = true;
+    };
+
     blueman = {
       enable = true;
     };
