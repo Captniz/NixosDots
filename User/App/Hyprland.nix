@@ -188,7 +188,7 @@ in
       ];
 
       bindl = [
-        " , switch:on:Lid Switch, exec, dunstify -u critical 'Lid Closed' 'The lid has been closed';hyprlock"
+        " , switch:on:Lid Switch, exec, dunstify -u critical 'Lid Closed' 'The lid has been closed';loginctl lock-session"
         " , switch:off:Lid Switch, exec, dunstify -u low 'Lid Opened' 'The lid has been opened'"
       ];
 
