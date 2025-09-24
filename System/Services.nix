@@ -70,7 +70,10 @@
     upower={
       enable = true;
       allowRiskyCriticalPowerAction = true;
+      percentageLow = 25;
+      percentageCritical = 10;
       percentageAction = 4;
+      usePercentageForPolicy = true;
       criticalPowerAction = "HybridSleep";
     };
 
