@@ -55,6 +55,7 @@
     polkit # Authorization manager
     polkit_gnome # Authorization manager
     upower # Power management
+    poweralertd # Power management for UPS
 
     ########### Languages
 
@@ -86,6 +87,8 @@
 
     ########### Dependencies/Libraries
 
+    libnotify # Notification library
+    glib # C library
     kdePackages.xwaylandvideobridge # Xwayland bridge
     libsForQt5.qt5.qtdeclarative
     libinput # Input library
