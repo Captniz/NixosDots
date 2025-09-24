@@ -15,7 +15,7 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    ########### Errored / Disabled
+    ########### Errored 
 
     # drawio # Diagram editor  
 
@@ -114,6 +114,7 @@
 
     ########### Utility / Quality of Life / Useful Commands
 
+    traceroute # Network diagnostic
     xdg-utils # Desktop utilities
     grim # Screenshot tool
     ripgrep # Text searcher
@@ -169,6 +170,7 @@
     qbittorrent # Torrent client
     zoom-us # Video conferencing
     postman # API client
+    dia # Diagram editor
 
     ############ Disabled programs ( Mostly for gaining space )
     
