@@ -145,15 +145,16 @@ in
       homeup = "home-manager switch --flake /etc/nixos --impure";
       nixup = "nix-store --add-fixed sha256 /etc/nixos/User/ExtraConfigs/cider/cider-linux-x64.AppImage;sudo nixos-rebuild switch --flake /etc/nixos";
       nixconfigure = "code /etc/nixos";
-      nixdeleteolder = "sudo nix-collect-garbage --delete-older-than";
+      nixdeleteolder = "home-manager expire-generations '-14days';sudo nix-collect-garbage -d --delete-older-than";
       zip = "7z a -r -tzip";
       ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
       search = "yazi $(fzf)";
       searchall = "cd /;yazi $(fzf)";
       cd = "z";
-      fixaudio = "systemctl restart --user pipewire.service";
+      
+      #! Hasn't been necessary recently 
+      # fixaudio = "systemctl restart --user pipewire.service";
       systemupdate = "cd /etc/nixos;cp flake.lock bu-flake.lock;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";
-      DoS = "sudo hping3 --flood -S -V --rand-source";
       unmount = "sudo umount -f /mnt/ExtDrive";
     };
     oh-my-zsh = {
