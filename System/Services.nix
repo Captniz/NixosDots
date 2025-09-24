@@ -56,6 +56,7 @@
       Login.HandleLidSwitchExternalPower = "ignore";
       Login.HandleLidSwitch = "ignore";
       Login.HandlePowerKey = "lock";
+      Login.HandlePowerKeyLongPress = "poweroff";
     };
 
     postgresql = {
