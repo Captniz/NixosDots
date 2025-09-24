@@ -6,7 +6,7 @@
 - [Description](#description)
 - [Directory Structure](#directory-structure)
 - [TODOS](#todos)
-  - [Pending Packages](#pending-packages)
+  - [Links](#links)
   - [Reminders](#reminders)
 
 ## Description
@@ -64,55 +64,12 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 
 ## TODOS
 
-### Pending Packages
+### Links
 
 WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
-| Package | Installato | Configurato |
-| --- | --- | --- |
-| Hyprland | ✔ | ✔ |
-| Dunst | ✔ | ✔ |
-| Obsidian | ✔ | ✔ |
-| NeoVim | ✔ | ✔ |
-| LibreOffice | ✔ | ✔ |
-| Wine | ✔ | ✔ |
-| Firefox | ✔ | ✔ |
-| Alacritty | ✔ | ✔ |
-| VScode | ✔ | ✔ |
-| Git | ✔ | ✔ |
-| GitCredentialManager | ✔ | ✔ |
-| NMCli | ✔ | ✔ |
-| Firacode / Nerdfonts | ✔ | ✔ |
-| EWW | ✔ | ✔ |
-| PavuControl | ✔ | ✔ |
-| Pipewire | ✔ | ✔ |
-| Nitch | ✔ | ✔ |
-| BTop | ✔ | ✔ |
-| ZSH / OhMyZSH | ✔ | ✔ |
-| Starship | ✔ | ✔ |
-| SWWW | ✔ | ✔ |
-| Yazi | ✔ | ✔ |
-| SDDM | ✔ | ✔ |
-| Slurp / Grim | ✔ | ✔ |
-| Bluetooth | ✔ | ✔ |
-| Rofi | ✔ | ✔ |
-| Nitch | ✔ | ✔ |
-| Zathura | ✔ | ✔ |
-| Qdirstat | ✔ | ✔ |
-| Tesseract | ✔ | ✔ |
-| Balena-etcher | ✔ | ✔ |
-| Gparted | ✔ | ✔ |
-| Docker | ✔ | ❌ |
-| Lutris | ✔ | ✔ |
-| Steam | ✔ | ✔ |
-| Discord | ✔ | ✔ |
-| Qimgv | ✔ | ✔ |
-| fontforge | ✔ | ✔ |
-| Dia | ✔ | ✔ |
-| vlc | ✔ | ✔ |
-| obs | ✔ | ✔ |
-| Android studio | ✔ | ✔ |
-| light | ✔ | ✔ |
+HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
+
 
 ### Reminders
 
@@ -120,7 +77,6 @@ WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 - [ ] Theme obsidian | [Nuove settings](https://mynixos.com/search?q=obsidian)
 - [ ] Implementa meglio cider, metti i tasti multimedia, metti il titolo della cazone corrente
 - [ ] Risolvi i problemi legati al secondo monitor
-- [ ] Implementa una riproduuzione veloce di musica con rofi
 - [ ] implementa [quickshell](https://quickshell.org/docs/v0.2.0/types/)  
 - [ ] [Controlla AGS](https://aylur.github.io/ags/)  
   

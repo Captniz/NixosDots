@@ -86,6 +86,7 @@
 
     ########### Dependencies/Libraries
 
+    hyprland-qt-support # Hyprland Qt support
     libnotify # Notification library
     glib # C library
     kdePackages.xwaylandvideobridge # Xwayland bridge
