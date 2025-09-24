@@ -26,6 +26,7 @@
     ./User/App/Hyprlock.nix
     ./User/App/Firefox.nix
     ./User/App/Yazi.nix
+    ./User/App/SwayIdle.nix
   ];
 
   # Home config

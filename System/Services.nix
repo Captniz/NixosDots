@@ -55,6 +55,7 @@
       Login.HandleLidSwitchDocked = "ignore";
       Login.HandleLidSwitchExternalPower = "ignore";
       Login.HandleLidSwitch = "ignore";
+      Login.HandlePowerKey = "lock";
     };
 
     postgresql = {
