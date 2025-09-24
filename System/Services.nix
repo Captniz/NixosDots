@@ -70,6 +70,7 @@
     upower={
       enable = true;
       allowRiskyCriticalPowerAction = true;
+      percentageAction = 4;
       criticalPowerAction = "HybridSleep";
     };
 
