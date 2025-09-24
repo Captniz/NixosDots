@@ -43,6 +43,9 @@ in
         # Xwayland
         layer = "overlay";
         #force_xwayland = true;
+
+        # Icons
+        icon_path = "${pkgs.papirus-icon-theme}/share/icons/breeze-dark/status/16";
       };
 
       urgency_low = {
