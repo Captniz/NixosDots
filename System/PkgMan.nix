@@ -55,7 +55,6 @@
     polkit # Authorization manager
     polkit_gnome # Authorization manager
     upower # Power management
-    poweralertd # Power management for UPS
 
     ########### Languages
 

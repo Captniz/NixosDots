@@ -69,6 +69,8 @@
 
     upower={
       enable = true;
+      allowRiskyCriticalPowerAction = true;
+      criticalPowerAction = "HybridSleep";
     };
 
     blueman = {
