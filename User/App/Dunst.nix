@@ -41,8 +41,8 @@ in
         show_indicators = true;
 
         # Xwayland
-        layer = "top";
-        force_xwayland = true;
+        layer = "overlay";
+        #force_xwayland = true;
       };
 
       urgency_low = {
