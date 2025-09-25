@@ -266,6 +266,18 @@
             (label
               :class "power-icons"
             :text ""))
+          (button
+          :timeout "6000ms"
+          :onclick "dunstify 'Hibernating...' -u critical; sleep 3s; systemctl hibernate"
+          (label
+            :class "power-icons"
+          :text ""))
+          (button
+          :timeout "6000ms"
+          :onclick "dunstify 'Sleeping...' -u critical; sleep 3s; systemctl hybrid-sleep"
+          (label
+            :class "power-icons"
+          :text "󰒲"))
         )
       )
     )
