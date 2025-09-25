@@ -102,6 +102,11 @@ in
       "[java]"= {
 		    "editor.defaultFormatter"= "redhat.java";
 	    };
+       "[nix]"= {
+		    "editor.defaultFormatter"= "brettm12345.nixfmt-vscode";
+        "editor.formatOnSave"= true;
+	    };
+      "nix.formatterPath"= "nixfmt";
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "leetcode.workspaceFolder" = "/home/simo/Documents/Repos/Uni_Code/LEETCODE_SOL";
       "vsicons.dontShowNewVersionMessage" = true;

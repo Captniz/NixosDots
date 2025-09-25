@@ -10,6 +10,9 @@ let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
 in
 {
+  imports = [
+    ../Themes/${userSettings.theme}/Dunst-override.nix
+  ];
 
   services.dunst = {
     enable = true;

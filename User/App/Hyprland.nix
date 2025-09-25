@@ -187,10 +187,10 @@ in
         "$mod, mouse:273, resizewindow"
       ];
 
-      bindl = [
-        " , switch:on:Lid Switch, exec, dunstify -u critical 'Lid Closed' 'The lid has been closed'"
-        " , switch:off:Lid Switch, exec, dunstify -u low 'Lid Opened' 'The lid has been opened'"
-      ];
+      # bindl = [
+      #   " , switch:on:Lid Switch, exec, dunstify -u critical 'Lid Closed' 'The lid has been closed'"
+      #   " , switch:off:Lid Switch, exec, dunstify -u low 'Lid Opened' 'The lid has been opened'"
+      # ];
 
       windowrulev2 = [
         "opaque,class:^(firefox)$"

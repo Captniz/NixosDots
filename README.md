@@ -79,4 +79,5 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Risolvi i problemi legati al secondo monitor (MonitorSwitcher.sh non funziona)
 - [ ] implementa [quickshell](https://quickshell.org/docs/v0.2.0/types/)  
 - [ ] [Controlla AGS](https://aylur.github.io/ags/)  
-  
+- [] Controlla gamemode
+- [] Finisci i temi

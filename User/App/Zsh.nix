@@ -13,6 +13,7 @@ in
   imports = [
     ../Themes/${userSettings.theme}/Zsh-override.nix
   ];
+  
   home.packages = with pkgs; [
     starship
   ];
