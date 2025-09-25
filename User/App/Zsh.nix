@@ -152,12 +152,13 @@ in
       search = "yazi $(fzf)";
       searchall = "cd /;yazi $(fzf)";
       cd = "z";
-      
+      systemupdate = "cd /etc/nixos;cp flake.lock bu-flake.lock;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";
+      unmount = "sudo umount -f /mnt/ExtDrive";
+      hybernate = "systemctl hibernate";
+      hybrid-sleep = "systemctl hybrid-sleep";
       #! Hasn't been necessary recently 
       # fixaudio = "systemctl restart --user pipewire.service";
       
-      systemupdate = "cd /etc/nixos;cp flake.lock bu-flake.lock;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";
-      unmount = "sudo umount -f /mnt/ExtDrive";
     };
     oh-my-zsh = {
       enable = true;
