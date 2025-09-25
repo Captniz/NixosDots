@@ -147,6 +147,7 @@
 
     ########### Programs & Apps
 
+    localsend # File transfer app
     calibre # Ebook manager
     hakuneko # Manga Downloader
     qdirstat # Disk usage analyzer
