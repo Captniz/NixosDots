@@ -15,6 +15,6 @@
 
   # Flake-Installed packages
   home.packages = [
-    inputs.hyprland-qtutils.packages."${pkgs.system}".default
+    #inputs.hyprland-qtutils.packages."${pkgs.system}".default
   ];
 }

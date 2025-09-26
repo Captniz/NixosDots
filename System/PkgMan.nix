@@ -20,7 +20,7 @@
     # drawio # Diagram editor  
 
     ########### Testing
-   
+    inputs.hyprland-qtutils.packages."${pkgs.system}".default
     inputs.quickshell.packages.${systemSettings.system}.default # Quick shell for Hyprland
 
     ########### Essentials

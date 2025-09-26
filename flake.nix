@@ -21,7 +21,10 @@
     };
 
     # Additional Packages
-    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+    hyprland-qtutils = {
+      url = "github:hyprwm/hyprland-qtutils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -31,8 +34,6 @@
       nixpkgs,
       home-manager,
 
-      # Additional Packages
-      hyprland-qtutils,
       ...
     }@inputs:
     let
