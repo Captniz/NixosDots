@@ -71,7 +71,7 @@ in
     };
 
     keymap = {
-      manager = {
+      mgr = {
         prepend_keymap = [
           {
             on = "M";
@@ -122,7 +122,7 @@ in
     };
 
     settings = {
-      manager = {
+      mgr = {
         ratio = [
           1
           4

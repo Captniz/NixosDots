@@ -41,7 +41,7 @@ in
   };
 
   programs.yazi.theme = lib.mkForce {
-    manager = {
+    mgr = {
       cwd = {
         fg = "${colors.bright_blue}";
       };
