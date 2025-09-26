@@ -20,9 +20,8 @@
     # drawio # Diagram editor  
 
     ########### Testing
-    inputs.hyprland-qtutils.packages."${pkgs.system}".default
-    inputs.quickshell.packages.${systemSettings.system}.default # Quick shell for Hyprland
-
+    quickshell # Quick shell utility
+    
     ########### Essentials
 
     zip # Archive manager
@@ -86,6 +85,7 @@
 
     ########### Dependencies/Libraries
 
+    hyprland-qtutils # Hyprland Qt support
     hyprland-qt-support # Hyprland Qt support
     libnotify # Notification library
     glib # C library
