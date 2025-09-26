@@ -20,24 +20,27 @@
 
   # Default applications
   xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "default-web-browser" = [ "firefox.desktop" ];
-      "text/html" = [ "firefox.desktop" ]; # Browser
-      "text/xml" = [ "firefox.desktop" ]; # Browser
-      "inode/directory" = [ "yazi.desktop" ]; # File manager
-      "x-scheme-handler/http" = [ "firefox.desktop" ];
-      "x-scheme-handler/https" = [ "firefox.desktop" ];
-      "x-scheme-handler/about" = [ "firefox.desktop" ];
-      "x-scheme-handler/unknown" = [ "firefox.desktop" ];
+    /*
+      enable = true;
+       defaultApplications = {
+        "default-web-browser" = [ "firefox.desktop" ];
+        "text/html" = [ "firefox.desktop" ]; # Browser
+        "text/xml" = [ "firefox.desktop" ]; # Browser
+        "inode/directory" = [ "yazi.desktop" ]; # File manager
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "x-scheme-handler/about" = [ "firefox.desktop" ];
+        "x-scheme-handler/unknown" = [ "firefox.desktop" ];
 
-      # MIME types
-      "image/jpeg" = [ "qimgv.desktop" ]; # Images
-      "image/jpg" = [ "qimgv.desktop" ]; # Images
-      "image/png" = [ "qimgv.desktop" ]; # Images
-      "application/pdf" = [ "org.pwmt.zathura.desktop" ]; # PDF
-      "application/epub+zip" = [ "org.pwmt.zathura.desktop" ]; # Epub
-    };
+        # MIME types
+        "text/plain" = [ "nvim.desktop" ]; # Text files
+        "image/jpeg" = [ "qimgv.desktop" ]; # Images
+        "image/jpg" = [ "qimgv.desktop" ]; # Images
+        "image/png" = [ "qimgv.desktop" ]; # Images
+        "application/pdf" = [ "org.pwmt.zathura.desktop" ]; # PDF
+        "application/epub+zip" = [ "org.pwmt.zathura.desktop" ]; # Epub
+      };
+    */
   };
 
   # Virtualisation
