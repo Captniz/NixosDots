@@ -81,3 +81,4 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] [Controlla AGS](https://aylur.github.io/ags/)  
 - [] Controlla gamemode
 - [] Finisci i temi
+- [] Sposta tutto quello che ha senso spostare in home manager al posto che in nixos (sistema -> user)
