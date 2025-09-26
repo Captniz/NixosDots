@@ -52,7 +52,7 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 │   ├── Scripts                 # Custom scripts used by the configuration
 │   │   └── ...
 │   ├── Settings                # Other user specific settings for home configuration
-│   │   ├── HomePkg.nix         # HomeManager installed packages 
+│   │   ├── XdgOptions.nix      # XDG options (e.g. default applications) 
 │   │   ├── Style.nix           # User style configuration
 │   │   └   ...
 │   ├── Themes                  # User themes || Managed by Home Manager and flakes

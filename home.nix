@@ -10,7 +10,7 @@
   imports = [
     # General Settings
     ./User/Settings/Style.nix
-    ./User/Settings/HomePkg.nix
+    ./User/Settings/XdgOptions.nix
 
     # App settings
     ./User/App/Hyprland.nix
