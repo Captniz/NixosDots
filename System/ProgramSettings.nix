@@ -25,6 +25,7 @@
       "default-web-browser" = [ "firefox.desktop" ];
       "text/html" = [ "firefox.desktop" ]; # Browser
       "text/xml" = [ "firefox.desktop" ]; # Browser
+      "inode/directory" = [ "yazi.desktop" ]; # File manager
       "x-scheme-handler/http" = [ "firefox.desktop" ];
       "x-scheme-handler/https" = [ "firefox.desktop" ];
       "x-scheme-handler/about" = [ "firefox.desktop" ];
@@ -34,8 +35,8 @@
       "image/jpeg" = [ "qimgv.desktop" ]; # Images
       "image/jpg" = [ "qimgv.desktop" ]; # Images
       "image/png" = [ "qimgv.desktop" ]; # Images
-      "application/pdf" = [ "zathura.desktop" ]; # PDF
-      "application/epub+zip" = [ "zathura.desktop" ]; # Epub
+      "application/pdf" = [ "org.pwmt.zathura.desktop" ]; # PDF
+      "application/epub+zip" = [ "org.pwmt.zathura.desktop" ]; # Epub
     };
   };
 
