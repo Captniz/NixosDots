@@ -15,13 +15,13 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    ########### Errored 
+    ########### Errored
 
-    # drawio # Diagram editor  
+    # drawio # Diagram editor
 
     ########### Testing
     quickshell # Quick shell utility
-    
+
     ########### Essentials
 
     zip # Archive manager
@@ -103,11 +103,11 @@
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     libsForQt5.qt5.qtwayland # Qt5 libraries
     git-credential-oauth # Git credential helper
-    kdePackages.xwaylandvideobridge # Xwayland bridge
     xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities
-    xdg-desktop-portal-wlr  # Desktop utilities
-    xdg-desktop-portal   # Desktop utilities
+    xdg-desktop-portal-wlr # Desktop utilities
+    xdg-desktop-portal # Desktop utilities
+    kdePackages.xdg-desktop-portal-kde # Desktop utilities
     xorg.xhost # Xorg utility
     hyprland-protocols # Hyprland protocols
     wlroots # Wayland compositor
@@ -178,7 +178,7 @@
     dia # Diagram editor
 
     ############ Disabled programs ( Mostly for gaining space )
-    
+
     # android-studio # Android IDE
     # jetbrains.idea-ultimate # IDE
     # opendrop # Airdrop compatibility
