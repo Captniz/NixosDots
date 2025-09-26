@@ -7,6 +7,10 @@
 }:
 
 {
+  imports = [
+    ../Themes/${userSettings.theme}/Style-override.nix
+  ];
+
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
