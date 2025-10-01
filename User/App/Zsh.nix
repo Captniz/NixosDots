@@ -148,6 +148,7 @@ in
       nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
       nixconfigure = "code /etc/nixos";
       nixdeleteolder = "home-manager expire-generations '-14days';sudo nix-collect-garbage -d --delete-older-than";
+      optimise-store = "sudo nix-store --optimise";
       zip = "7z a -r -tzip";
       ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
       search = "yazi $(fzf)";
@@ -157,10 +158,11 @@ in
       unmount = "sudo umount -f /mnt/ExtDrive";
       hybernate = "systemctl hibernate";
       hybrid-sleep = "systemctl hybrid-sleep";
+
       #! Hasn't been necessary recently 
       # fixaudio = "systemctl restart --user pipewire.service";
-      
     };
+    
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
