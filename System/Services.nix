@@ -67,7 +67,12 @@
       '';
     };
 
-    upower={
+    udev.extraRules = ''
+      # Kindle Paperwhite USB permissions
+      SUBSYSTEM=="usb", ATTR{idVendor}=="1949", MODE="0666"
+    '';
+
+    upower = {
       enable = true;
       allowRiskyCriticalPowerAction = true;
       percentageLow = 25;

@@ -85,6 +85,9 @@
 
     ########### Dependencies/Libraries
 
+    fuse 
+    libmtp # MTP support 
+    simple-mtpfs # MTP support
     hyprland-qtutils # Hyprland Qt support
     hyprland-qt-support # Hyprland Qt support
     libnotify # Notification library
@@ -147,6 +150,7 @@
 
     ########### Programs & Apps
 
+    gimp3
     localsend # File transfer app
     calibre # Ebook manager
     hakuneko # Manga Downloader

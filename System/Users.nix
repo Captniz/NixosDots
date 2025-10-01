@@ -20,6 +20,7 @@
       "video"
       "docker"
       "pipewire"
+      "fuse"
     ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
