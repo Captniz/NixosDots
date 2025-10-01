@@ -33,7 +33,7 @@
       self,
       nixpkgs,
       home-manager,
-
+      
       ...
     }@inputs:
     let
