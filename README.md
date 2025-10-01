@@ -73,6 +73,11 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 
 ### Reminders
 
+- [ ] Copia il readme da archDots
+- [ ] Cerca di rendere tutto dichiarativo e commentato
+  - [ ] Cartelle della home
+  - [ ] Sfondi
+  - [ ] Etc....
 - [ ] Find a way to implement vscode extensions in the config
 - [ ] Theme obsidian | [Nuove settings](https://mynixos.com/search?q=obsidian)
 - [ ] Implementa meglio cider, metti i tasti multimedia, metti il titolo della cazone corrente
