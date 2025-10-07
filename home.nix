@@ -27,8 +27,16 @@
     ./User/App/Firefox.nix
     ./User/App/Yazi.nix
     ./User/App/HyprIdle.nix
-    ./User/App/Nvim.nix
   ];
+
+  # Home files
+  home.file = {
+    "Trash" = {
+      source = "${config.home.homeDirectory}/.local/share/Trash";
+      target = "${config.home.homeDirectory}/Trash";
+      recursive = true;
+    };
+  };
 
   # Home config
   home.username = userSettings.username;
