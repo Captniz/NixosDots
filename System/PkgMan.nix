@@ -180,6 +180,7 @@
     zoom-us # Video conferencing
     postman # API client
     dia # Diagram editor
+    wireshark # Network protocol analyzer
 
     ############ Disabled programs ( Mostly for gaining space )
 
