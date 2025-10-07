@@ -21,6 +21,7 @@
       "docker"
       "pipewire"
       "fuse"
+      "wireshark"
     ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
