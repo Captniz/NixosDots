@@ -8,6 +8,8 @@
 }:
 
 {
+
+  # Custom .desktop entries, mainly needed to fix xdg-open fucking with terminal apps
   xdg.desktopEntries = {
     yazi = {
       name = "Yazi";
@@ -53,6 +55,13 @@
     };
   };
 
+  xdg.userDirs = {
+    enable = true;
+    download = "${config.home.homeDirectory}/Downloads";
+    pictures = "${config.home.homeDirectory}/Images";
+  };
+
+  # Set default applications for various mime types
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
