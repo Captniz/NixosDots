@@ -193,14 +193,14 @@ in
         ];
         xdg-open = [
           {
-            run = "xdg-open \"$1\"";
+            run = "xdg-open \"$1\" & disown";
             desc = "Open with default XDG";
             for = "linux";
           }
         ];
         open-pdf = [
           {
-            run = "zathura \"$1\"";
+            run = "zathura \"$1\" & disown";
             desc = "Open";
             for = "linux";
           }
