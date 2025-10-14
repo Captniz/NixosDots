@@ -27,6 +27,7 @@
     ./User/App/Firefox.nix
     ./User/App/Yazi.nix
     ./User/App/HyprIdle.nix
+    #./User/App/Obsidian.nix
   ];
 
   # Home files
