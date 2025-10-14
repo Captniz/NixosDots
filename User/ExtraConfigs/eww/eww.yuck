@@ -15,12 +15,37 @@
 (defpoll bt :interval "2s"
 `sh ./Scripts/getBluetoothStatus.sh`)
 (defvar show-powermenu false)
+(defvar show-sidemenu false)
+
+; ########################################################## SIDE MENU
+; ################################### Ver.1
+
+(defwindow hotzone
+  :monitor '["<primary>", 0, 1]'
+  :geometry (geometry 
+    :x "0px"
+    :y "0px"
+    :width "2px"
+    :height "100%"
+  )
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (eventbox 
+    :onhover "eww open menu"
+    :onhoverlost "eww close menu"
+    (box 
+      :class "hotzone"
+    )
+  )
+)
+
 
 (defwindow menu
-  :monitor 0
+  :monitor '["<primary>", 0, 1]'
   :windowtype "desktop"
   :stacking "overlay"
-  :exclusive true
+  :exclusive false
   :focusable false
   :geometry (geometry
     :width "20%"
@@ -31,8 +56,24 @@
   (menu)
 )
 
+
+(defwidget menu[]
+  (box
+    :class (if sidebar-open "menu open" "menu closed")
+    (calendar
+      :class "calendar"
+      :halign "center"
+      :valign "start"
+    )
+  )
+)
+
+
+; ########################################################## TOP BAR
+; ################################### Ver.1
+
 (defwindow bar
-  :monitor 0
+  :monitor '["<primary>", 0, 1]'
   :windowtype "dock"
   :exclusive true
   :focusable false
@@ -44,18 +85,6 @@
   )
   (bar)
 )
-
-(defwidget menu[]
-  (box
-    :class "menu"
-    (calendar
-      :class "calendar"
-      :halign "center"
-      :valign "start"
-    )
-  )
-)
-
 (defwidget bar []
   (box
     :class "barra"
