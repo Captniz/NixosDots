@@ -17,16 +17,16 @@ in
     enable = true;
     profiles.default.userSettings = {
       # General
+      "workbench.secondarySideBar.defaultVisibility" = "hidden";
       "files.autoSave" = "afterDelay";
       "editor.formatOnSave" = true;
       "editor.codeActionsOnSave" = { };
       "update.mode" = "none";
       "editor.tabSize" = 4;
       "editor.indentSize" = "tabSize";
-      "python.pythonPath"= "/run/current-system/sw/bin/python";
-      "python.defaultInterpreterPath"= "/run/current-system/sw/bin/python";
-      "pylint.interpreter"= ["/run/current-system/sw/bin/python"];
-      "[qml]"= {"editor.defaultFormatter"= "Delgan.qml-format";};
+      "python.pythonPath" = "/run/current-system/sw/bin/python";
+      "python.defaultInterpreterPath" = "/run/current-system/sw/bin/python";
+      "pylint.interpreter" = [ "/run/current-system/sw/bin/python" ];
 
       # Themeing
       "editor.cursorSmoothCaretAnimation" = "on";
@@ -99,14 +99,23 @@ in
       "github.copilot.editor.enableAutoCompletions" = true;
 
       # Extensions
-      "[java]"= {
-		    "editor.defaultFormatter"= "redhat.java";
-	    };
-       "[nix]"= {
-		    "editor.defaultFormatter"= "brettm12345.nixfmt-vscode";
-        "editor.formatOnSave"= true;
-	    };
-      "nix.formatterPath"= "nixfmt";
+      "[qml]" = {
+        "editor.defaultFormatter" = "Delgan.qml-format";
+        "editor.formatOnSave" = true;
+      };
+      "[java]" = {
+        "editor.defaultFormatter" = "redhat.java";
+        "editor.formatOnSave" = true;
+      };
+      "[nix]" = {
+        "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
+        "editor.formatOnSave" = true;
+      };
+      "[cpp]" = {
+        "editor.defaultFormatter" = "ms-vscode.cpptools";
+        "editor.formatOnSave" = true;
+      };
+      "nix.formatterPath" = "nixfmt";
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "leetcode.workspaceFolder" = "/home/simo/Documents/Repos/Uni_Code/LEETCODE_SOL";
       "vsicons.dontShowNewVersionMessage" = true;
@@ -164,7 +173,7 @@ in
       "java.jdt.ls.java.home" = "/run/current-system/sw/lib/openjdk";
       "java.configuration.runtimes" = [ ];
       "java.codeAction.sortMembers.avoidVolatileChanges" = false;
-      "java.project.outputPath"= "out";
+      "java.project.outputPath" = "out";
 
       # Code runner
       "code-runner.clearPreviousOutput" = true;
