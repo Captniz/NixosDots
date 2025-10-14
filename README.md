@@ -74,7 +74,7 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 ### Reminders
 
 - [ ] Copia il readme da archDots
-- [ ] Cerca di rendere tutto dichiarativo e commentato
+- [ ] Cerca di rendere tutto dichiarativo
   - [ ] Cartelle della home
   - [ ] Sfondi
   - [ ] Etc....
