@@ -57,6 +57,7 @@
 
     ########### Languages
 
+    pnpm
     R # R language
     nodejs_22 # Node.js
     rustfmt # Rust
