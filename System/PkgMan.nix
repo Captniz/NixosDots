@@ -33,7 +33,6 @@
     hyprland # Window manager
     zsh # Shell
     dunst # Notification manager
-    libsForQt5.sddm # Display manager
     pipewire # Audio server
     wireplumber # Audio server
     pavucontrol # Audio control

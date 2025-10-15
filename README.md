@@ -29,8 +29,6 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 ├── flake.lock                  # Lock file for the flake
 │
 ├── System                      # System general configuration files || Mainly managed by NixOS config
-│   ├── App                     # System applications configuration
-│   │   └── Sddm.nix            # ...
 │   │
 │   ├── Boot.nix                # Boot configuration
 │   ├── EnVars.nix              # Environment variables

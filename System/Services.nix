@@ -44,11 +44,24 @@
 
     gnome.gnome-keyring.enable = true;
 
-    displayManager.sddm = {
+    displayManager.ly = {
       enable = true;
-      package = pkgs.libsForQt5.sddm;
-      wayland.enable = true;
-      theme = "${import ./App/Sddm.nix { inherit pkgs; }}";
+      settings = {
+        animation = "colormix";
+        animation_timeout_sec = 0;
+        auth_fails = 3;
+        battery_id = "BAT1";
+        bigclock = "en";
+        bigclock_12hr = false;
+        bigclock_seconds = false;
+        clear_password = true;
+        clock = "%c";
+        full_color = true;
+        bg = "0x00111111";
+        colormix_col3 = "0x88aa99";
+        colormix_col1 = "0x448888";
+        colormix_col2 = "0x006677";
+      };
     };
 
     logind.settings = {
