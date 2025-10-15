@@ -46,7 +46,12 @@
 
     displayManager.sddm = {
       enable = true;
-      package = pkgs.libsForQt5.sddm;
+      package = pkgs.kdePackages.sddm;
+      extraPackages = with pkgs; [
+        pkgs.qt6.qt5compat
+        pkgs.qt6.qtdeclarative
+        pkgs.qt6.qtsvg
+      ];
       wayland.enable = true;
       theme = "${import ./App/Sddm.nix { inherit pkgs; }}";
     };

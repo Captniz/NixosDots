@@ -18,6 +18,7 @@
     ########### Errored
 
     # drawio # Diagram editor
+    # owl # Owl library
 
     ########### Testing
     quickshell # Quick shell utility
@@ -33,7 +34,7 @@
     hyprland # Window manager
     zsh # Shell
     dunst # Notification manager
-    libsForQt5.sddm # Display manager
+    kdePackages.sddm # Display manager
     pipewire # Audio server
     wireplumber # Audio server
     pavucontrol # Audio control
@@ -87,26 +88,37 @@
 
     ########### Dependencies/Libraries
 
-    fuse 
-    libmtp # MTP support 
+    fuse
+    libmtp # MTP support
     simple-mtpfs # MTP support
     hyprland-qtutils # Hyprland Qt support
     hyprland-qt-support # Hyprland Qt support
+    kdePackages.qtwayland
+    kdePackages.plasma5support
+    kdePackages.qt6gtk2
+    kdePackages.qtsvg # Qt5 libraries
+    kdePackages.qt5compat # Qt5 libraries
+    kdePackages.qtdeclarative
+    kdePackages.qtwayland # Qt5 libraries
+    libsForQt5.qt5.qtquickcontrols # Qt5 libraries
+    libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
+    libsForQt5.qt5.qtwayland
+    libsForQt5.qt5.qtsvg # Qt5 libraries
+    libsForQt5.qt5.qtdeclarative
+    libsForQt5.qt5.qtwayland # Qt5 libraries
+    qt6.qt5compat
+    qt6.qtdeclarative
+    qt6.qtsvg
     libnotify # Notification library
     glib # C library
     kdePackages.xwaylandvideobridge # Xwayland bridge
-    libsForQt5.qt5.qtdeclarative
     libinput # Input library
-    owl # Owl library
     alsa-utils # Audio utilities
     webkitgtk_6_0 # Webkit
     dxvk # DirectX to Vulkan translation layer
     doxygen # Documentation generator
     alsa-ucm-conf # ALSA UCM configuration
     sof-firmware # Sound Open Firmware
-    libsForQt5.qt5.qtquickcontrols # Qt5 libraries
-    libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
-    libsForQt5.qt5.qtwayland # Qt5 libraries
     git-credential-oauth # Git credential helper
     xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities

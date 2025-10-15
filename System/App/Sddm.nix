@@ -9,12 +9,22 @@ let
 in
 pkgs.stdenv.mkDerivation {
   name = "sddm-theme";
-  src = pkgs.fetchFromGitHub {
-    owner = "Kangie";
-    repo = "sddm-sugar-candy";
-    rev = "a1fae5159c8f7e44f0d8de124b14bae583edb5b8";
-    sha256 = "18wsl2p9zdq2jdmvxl4r56lir530n73z9skgd7dssgq18lipnrx7";
+  src = pkgs.fetchFromGitLab {
+    owner = "Matt.Jolly";
+    repo = "sddm-eucalyptus-drop";
+    rev = "v2.0.0";
+    sha256 = "wq6V3UOHteT6CsHyc7+KqclRMgyDXjajcQrX/y+rkA0=";
   };
+  dontWrapQtApps = true;
+  buildInputs = with pkgs; [
+    kdePackages.qt5compat
+    kdePackages.qtdeclarative
+    kdePackages.qtsvg
+    pkgs.qt6.qt5compat
+    pkgs.qt6.qtdeclarative
+    pkgs.qt6.qtsvg
+    kdePackages.sddm
+  ];
 
   installPhase = ''
     mkdir -p $out
