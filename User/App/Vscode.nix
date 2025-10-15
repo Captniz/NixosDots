@@ -115,8 +115,10 @@ in
         "editor.defaultFormatter" = "ms-vscode.cpptools";
         "editor.formatOnSave" = true;
       };
+
+      "biome.lsp.bin" = "/run/current-system/sw/bin/biome";
       "nix.formatterPath" = "nixfmt";
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.defaultFormatter" = "biomejs.biome";
       "leetcode.workspaceFolder" = "/home/simo/Documents/Repos/Uni_Code/LEETCODE_SOL";
       "vsicons.dontShowNewVersionMessage" = true;
       "open-in-browser.default" = "firefox";

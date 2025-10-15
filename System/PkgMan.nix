@@ -57,7 +57,8 @@
 
     ########### Languages
 
-    pnpm
+    biome # JavaScript/TypeScript linter
+    pnpm # Node.js package manager
     R # R language
     nodejs_22 # Node.js
     rustfmt # Rust
