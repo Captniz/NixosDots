@@ -61,6 +61,7 @@
         colormix_col3 = "0x88aa99";
         colormix_col1 = "0x448888";
         colormix_col2 = "0x006677";
+        session_log = "./.ly.log";
       };
     };
 
