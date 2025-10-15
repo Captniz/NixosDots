@@ -144,7 +144,6 @@ in
       gacp = "git add * ; git commit --all -m '.' ; git push --all";
       flakeup = "nix flake update --flake /etc/nixos";
       homeup = "home-manager switch --flake /etc/nixos --impure";
-      # nix-store --add-fixed sha256 /etc/nixos/User/ExtraConfigs/cider/cider-linux-x64.AppImage
       nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
       nixconfigure = "code /etc/nixos";
       nixdeleteolder = "home-manager expire-generations '-14days';sudo nix-collect-garbage -d --delete-older-than";
@@ -154,7 +153,7 @@ in
       search = "yazi $(fzf)";
       searchall = "cd /;yazi $(fzf)";
       cd = "z";
-      systemupdate = "cd /etc/nixos;cp flake.lock bu-flake.lock;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";
+      systemupdate = "cd /etc/nixos;git add *;git commit --all -m '!Pre-update Commit! Last commit before update';git push;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";
       unmount = "sudo umount -f /mnt/ExtDrive";
       hybernate = "systemctl hibernate";
       hybrid-sleep = "systemctl hybrid-sleep";
