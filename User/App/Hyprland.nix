@@ -130,7 +130,7 @@ in
         "$mod, W, exec, alacritty -e btop"
         "$mod, code:60, exec, rofi -show emoji"
         "$mod, N, exec, rofi -show calc"
-        "$mod, L, exec, loginctl lock-session"
+        "$mod, L, exec, hyprlock"
 
         # Window managment
         "$mod, J, togglesplit,"

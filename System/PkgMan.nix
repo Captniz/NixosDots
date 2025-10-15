@@ -113,6 +113,7 @@
     xdg-desktop-portal # Desktop utilities
     kdePackages.xdg-desktop-portal-kde # Desktop utilities
     xorg.xhost # Xorg utility
+    xorg.xauth
     hyprland-protocols # Hyprland protocols
     wlroots # Wayland compositor
     poppler # PDF library
