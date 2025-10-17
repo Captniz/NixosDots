@@ -115,6 +115,18 @@ in
         "editor.defaultFormatter" = "ms-vscode.cpptools";
         "editor.formatOnSave" = true;
       };
+      "[c]" = {
+        "editor.defaultFormatter" = "ms-vscode.cpptools";
+        "editor.formatOnSave" = true;
+      };
+      "[css]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.formatOnSave" = true;
+      };
+      "[scss]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.formatOnSave" = true;
+      };
 
       "biome.lsp.bin" = "/run/current-system/sw/bin/biome";
       "nix.formatterPath" = "nixfmt";
