@@ -13,6 +13,22 @@
     permittedInsecurePackages = [ "the_electron_version" ];
   };
 
+  nix = {
+    optimise = {
+      automatic = true;
+      dates = "weekly";
+      persistent = true;
+    };
+    /*
+      gc = {
+        automatic = true;
+        dates = "weekly";
+        persistent = true;
+        options = "--delete-older-than 7d";
+      };
+    */
+  };
+
   # System packages
   environment.systemPackages = with pkgs; [
     ########### Errored
@@ -87,8 +103,8 @@
 
     ########### Dependencies/Libraries
 
-    fuse 
-    libmtp # MTP support 
+    fuse
+    libmtp # MTP support
     simple-mtpfs # MTP support
     hyprland-qtutils # Hyprland Qt support
     hyprland-qt-support # Hyprland Qt support
