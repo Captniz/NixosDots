@@ -3,6 +3,7 @@
   lib,
   pkgs,
   systemSettings,
+  userSettings,
   ...
 }:
 
@@ -92,30 +93,75 @@
     };
   };
 
-  systemd.user.services = {
-    pipewire-pulse.path = [ pkgs.pulseaudio ];
-    polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
+  systemd = {
+    timers = {
+      "nix-full-gc" = {
+        description = "Weekly Nix full garbage collection";
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnCalendar = "weekly";
+          Persistent = true;
+          RandomizedDelaySec = "20m"; # spread load if multiple machines
+        };
+      };
+    };
+    services = {
+      "nix-full-gc" = {
+        description = "Full Nix garbage collection (Home Manager + user + system)";
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = pkgs.writeShellScript "nix-full-gc" ''
+            set -euo pipefail
+
+            echo "[Nix GC] Starting full cleanup..."
+
+            # --- 1️⃣ Expire Home Manager generations (for your user) ---
+            if command -v home-manager >/dev/null 2>&1; then
+              echo "[Nix GC] Expiring old Home Manager generations..."
+              sudo -u ${userSettings.username} home-manager expire-generations 7d || true
+            else
+              echo "[Nix GC] home-manager not found, skipping..."
+            fi
+
+            # --- 2️⃣ Run user-level GC ---
+            echo "[Nix GC] Running user-level GC..."
+            sudo -u ${userSettings.username} nix-collect-garbage --delete-older-than 7d || true
+
+            # --- 3️⃣ Run system-level GC ---
+            echo "[Nix GC] Running system-level GC..."
+            nix-collect-garbage --delete-older-than 7d || true
+
+            echo "[Nix GC] Done."
+          '';
+        };
       };
     };
 
-    mpris-proxy = {
-      description = "Mpris proxy";
-      after = [
-        "network.target"
-        "sound.target"
-      ];
-      wantedBy = [ "default.target" ];
-      serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+    user.services = {
+      pipewire-pulse.path = [ pkgs.pulseaudio ];
+      polkit-gnome-authentication-agent-1 = {
+        description = "polkit-gnome-authentication-agent-1";
+        wantedBy = [ "graphical-session.target" ];
+        wants = [ "graphical-session.target" ];
+        after = [ "graphical-session.target" ];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+      };
+
+      mpris-proxy = {
+        description = "Mpris proxy";
+        after = [
+          "network.target"
+          "sound.target"
+        ];
+        wantedBy = [ "default.target" ];
+        serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+      };
     };
   };
 }
