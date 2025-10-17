@@ -118,7 +118,7 @@
             # --- 1️⃣ Expire Home Manager generations (for your user) ---
             if command -v home-manager >/dev/null 2>&1; then
               echo "[Nix GC] Expiring old Home Manager generations..."
-              sudo -u ${userSettings.username} home-manager expire-generations 7d || true
+              sudo -u ${userSettings.username} home-manager expire-generations '-7d' || true
             else
               echo "[Nix GC] home-manager not found, skipping..."
             fi
