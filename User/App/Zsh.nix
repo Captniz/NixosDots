@@ -13,7 +13,7 @@ in
   imports = [
     ../Themes/${userSettings.theme}/Zsh-override.nix
   ];
-  
+
   home.packages = with pkgs; [
     starship
   ];
@@ -137,31 +137,38 @@ in
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
+      # General
       clr = "clear";
-      rcat = "cat";
       psqlogin = "sudo -u postgres psql";
       cat = "bat";
       gacp = "git add * ; git commit --all -m '.' ; git push --all";
-      flakeup = "nix flake update --flake /etc/nixos";
-      homeup = "home-manager switch --flake /etc/nixos --impure";
-      nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
-      nixconfigure = "code /etc/nixos";
-      nixdeleteolder = "home-manager expire-generations '-14days';sudo nix-collect-garbage -d --delete-older-than";
-      optimise-store = "sudo nix-store --optimise";
       zip = "7z a -r -tzip";
-      ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
       search = "yazi $(fzf)";
       searchall = "cd /;yazi $(fzf)";
       cd = "z";
-      systemupdate = "cd /etc/nixos;git add *;git commit --all -m '!Pre-update Commit! Last commit before update';git push;flakeup;git add *;git commit --all -m '!Breaking changes! System updated';git push;homeup;nixup";
+      ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
       unmount = "sudo umount -f /mnt/ExtDrive";
       hybernate = "systemctl hibernate";
       hybrid-sleep = "systemctl hybrid-sleep";
 
-      #! Hasn't been necessary recently 
+      # Nixos
+      update-showlog = "cat /var/log/nixos-update.log | less";
+      gc-showlog = "cat /var/log/nixos-gc.log | less";
+      home-listgen = "home-manager generations";
+      user-listgen = "nix-env --list-generations";
+      system-listgen = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
+      system-gc = "/etc/nixos/User/Scripts/GarbageCollector.sh";
+      system-update = "/etc/nixos/User/Scripts/SystemUpdate.sh";
+      flakeup = "nix flake update --flake /etc/nixos";
+      homeup = "home-manager switch --flake /etc/nixos --impure";
+      nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
+      nixconfigure = "code /etc/nixos";
+      optimise-store = "sudo nix-store --optimise";
+
+      #! Hasn't been necessary recently
       # fixaudio = "systemctl restart --user pipewire.service";
     };
-    
+
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
