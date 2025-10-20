@@ -2,6 +2,7 @@
 set -euo pipefail
 
 LOG_FILE="/var/log/nixos-update.log"
+: > "$LOG_FILE"
 ERROR_SECTION=""
 
 log() {
