@@ -175,6 +175,7 @@ in
 
       binde = [
         # System settings controls
+        "$mod, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
         "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
         "$mod, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
         "$mod, F5, exec, light -U 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh"
@@ -187,11 +188,6 @@ in
         "$mod, mouse:273, resizewindow"
       ];
 
-      # bindl = [
-      #   " , switch:on:Lid Switch, exec, dunstify -u critical 'Lid Closed' 'The lid has been closed'"
-      #   " , switch:off:Lid Switch, exec, dunstify -u low 'Lid Opened' 'The lid has been opened'"
-      # ];
-
       windowrulev2 = [
         "opaque,class:^(firefox)$"
         "opaque,class:^(mirage)$"
@@ -201,8 +197,8 @@ in
       ];
 
       exec-once = [
-        "swww-daemon && swww img $wallpaper"  # Wallpaper
-        "eww open bar"  # Eww bar
+        "swww-daemon && swww img $wallpaper" # Wallpaper
+        "eww open bar" # Eww bar
         "polkit-agent-helper-1" # Polkit
         "systemctl start --user polkit-gnome-authentication-agent-1" # Polkit
         "systemctl start --user pipewire.service" # Audio

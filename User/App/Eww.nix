@@ -115,6 +115,11 @@ in
         border-radius: 10px;
       }
 
+      .circ-values-disabled{
+        @extend .circ-values;
+        color: $border;
+      }
+
       .circ-values-1{
         @extend .circ-values;
         color: $blue;

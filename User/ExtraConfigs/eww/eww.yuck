@@ -6,6 +6,8 @@
 `light -G`)
 (defpoll volume :interval "0.25s"
 `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 }'`)
+(defpoll muted :interval "0.75s" 
+`wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q '\[MUTED\]' && echo true || echo false`)
 (defpoll window :interval "0.5s"
 `hyprctl -j activewindow | jq -r '.initialTitle' | sed 's/./\&/'`)
 (defpoll ws :interval "0.15s"
@@ -166,14 +168,15 @@
     :halign "end"
     :spacing "6"
     (circular-progress
-      :class "circ-values-1"
+      :class {muted == "true" ? "circ-values-disabled" : "circ-values-1" }
       :start-at "75"
       :thickness 4
       :value "${volume * 100}"
       (label
         :text ""
         :style "color: inherit"
-      :class "circle")
+        :class "circle"
+      )
     )
     (circular-progress
       :class "circ-values-2"
