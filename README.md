@@ -1,21 +1,19 @@
-
-# NixOS Configuration <!-- omit in toc -->
+<h1 align="center"><b>[Hyprland] NixOs dot files</b></h1>
 
 ## Table of Contents <!-- omit in toc -->
 
 - [Description](#description)
 - [Directory Structure](#directory-structure)
 - [TODOS](#todos)
-  - [Links](#links)
+  - [Resources](#resources)
   - [Reminders](#reminders)
 
 ## Description
 
 This is my personal configuration for NixOS, designed specifically for my university laptop.  
-I'm trying to keep the configuration as clean and bloa-free as possible, while still being able to manage all the software I need.
+I'm trying to keep the configuration as clean and bloat-free as possible, while still being able to manage all the software I need.
 
-I'm also trying to avoid using performance-heavy or purely aesthetic software, to avoid being distracter or performace-impaired by it while working.
-
+I'm also trying to avoid using performance-heavy or purely aesthetic software, to avoid being distracted or performace-impaired by it while working.
 
 ## Directory Structure
 
@@ -64,16 +62,14 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 
 ## TODOS
 
-### Links
+### Resources
 
 WIKI: [link](https://wiki.nixos.org/wiki/PostgreSQL)
 
 HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 
-
 ### Reminders
 
-- [ ] Copia il readme da archDots
 - [ ] Cerca di rendere tutto dichiarativo
   - [ ] Cartelle della home
   - [ ] Sfondi
@@ -84,6 +80,5 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Risolvi i problemi legati al secondo monitor (MonitorSwitcher.sh non funziona)
 - [ ] implementa [quickshell](https://quickshell.org/docs/v0.2.0/types/)  
 - [ ] [Controlla AGS](https://aylur.github.io/ags/)  
-- [] Controlla gamemode
-- [] Finisci i temi
+- [] Finisci i temi css
 - [] Sposta tutto quello che ha senso spostare in home manager al posto che in nixos (sistema -> user)
