@@ -19,14 +19,6 @@
       dates = "weekly";
       persistent = true;
     };
-    /*
-      gc = {
-        automatic = true;
-        dates = "weekly";
-        persistent = true;
-        options = "--delete-older-than 7d";
-      };
-    */
   };
 
   # System packages
@@ -103,6 +95,7 @@
 
     ########### Dependencies/Libraries
 
+    bind
     fuse
     libmtp # MTP support
     simple-mtpfs # MTP support
