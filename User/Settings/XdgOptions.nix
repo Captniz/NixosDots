@@ -53,6 +53,19 @@
       };
       mimeType = [ "text/plain" ];
     };
+
+    hakuneko-desktop = {
+      name = "HakuNeko Desktop";
+      exec = "hakuneko --no-sandbox";
+      icon = "hakuneko-desktop";
+      type = "Application";
+      genericName = "Manga & Anime Downloader";
+      terminal = false;
+      categories = [
+        "Network"
+        "FileTransfer"
+      ];
+    };
   };
 
   xdg.userDirs = {
