@@ -138,6 +138,7 @@ in
     syntaxHighlighting.enable = true;
     shellAliases = {
       # General
+      acp = "rsync -avh --progress";
       clr = "clear";
       psqlogin = "sudo -u postgres psql";
       cat = "bat";
