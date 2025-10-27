@@ -80,5 +80,12 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Risolvi i problemi legati al secondo monitor (MonitorSwitcher.sh non funziona)
 - [ ] implementa [quickshell](https://quickshell.org/docs/v0.2.0/types/)  
 - [ ] [Controlla AGS](https://aylur.github.io/ags/)  
-- [] Finisci i temi css
-- [] Sposta tutto quello che ha senso spostare in home manager al posto che in nixos (sistema -> user)
+- [ ] Finisci i temi css
+- [ ] Sposta tutto quello che ha senso spostare in home manager al posto che in nixos (sistema -> user)
+- [ ] Clipboard integration (anchedmenu+bash)
+- [ ] Crea un menu a lista con tasto destro per varie opzioni
+- [ ] Automount USB drives with udisks2 + udiskie
+  - [ ] Nel menu metti anche una serie di cheatsheets per le hotkey tipo Omarchy (yazi,zathura,hyprland,firefox,vim,zsh)
+- [ ] Aggiorna gli hash delle varie app con il flake 
+- [ ] Fai una history delle notifiche (dunst)
+- [ ] Aggiungi una scorciatoia per catturare screenshot di porzioni di schermo e editarle dopo / stessa osa per registrare lo schermo

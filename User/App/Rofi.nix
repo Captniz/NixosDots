@@ -21,6 +21,15 @@ in
       pkgs.rofi-calc
       pkgs.rofi-emoji
     ];
+    modes = [
+      "window"
+      "drun"
+      "run"
+      "ssh"
+      "calc"
+      "emoji"
+      "keys"
+    ];
     font = "FiraCode Nerd Font 12";
     extraConfig = {
       "display-ssh" = "";
