@@ -125,7 +125,7 @@ in
         "$mod, F, exec, firefox"
         "$mod, A, exec, code"
         "$mod, Q, exec, obsidian"
-        "$mod, S, exec, grim -g \"$(slurp)\""
+        "$mod, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
         "$mod, E, exec, alacritty -e yazi"
         "$mod, W, exec, alacritty -e btop"
         "$mod, code:60, exec, rofi -show emoji"

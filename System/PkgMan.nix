@@ -132,6 +132,7 @@
 
     ########### Utility / Quality of Life / Useful Commands
 
+    swappy # Screenshot annotation tool
     traceroute # Network diagnostic
     xdg-utils # Desktop utilities
     grim # Screenshot tool
@@ -158,12 +159,11 @@
     ocrmypdf # PDF OCR
     exfatprogs # Exfat utilities
     exfat # Exfat utilities
+    udisks # Disk management utility
+    dysk # Disk usage analyzer
 
     ########### Programs & Apps
 
-    udiskie # Automounting tool
-    udisks # Disk management utility
-    dysk # Disk usage analyzer
     gimp3 # Image editor
     localsend # File transfer app
     calibre # Ebook manager
