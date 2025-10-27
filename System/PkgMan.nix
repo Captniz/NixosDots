@@ -161,7 +161,10 @@
 
     ########### Programs & Apps
 
-    gimp3
+    udiskie # Automounting tool
+    udisks # Disk management utility
+    dysk # Disk usage analyzer
+    gimp3 # Image editor
     localsend # File transfer app
     calibre # Ebook manager
     hakuneko # Manga Downloader
@@ -191,6 +194,7 @@
     zoom-us # Video conferencing
     postman # API client
     dia # Diagram editor
+    kcc # Kindle Comic Converter
     wireshark # Network protocol analyzer
 
     ############ Disabled programs ( Mostly for gaining space )

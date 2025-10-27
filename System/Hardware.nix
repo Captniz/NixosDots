@@ -7,13 +7,12 @@
 }:
 
 {
-  swapDevices = [ 
+  swapDevices = [
     {
       device = "/var/lib/swapfile";
-      size = 24*1024;
-    } 
+      size = 24 * 1024;
+    }
   ];
-
 
   hardware = {
 
@@ -47,8 +46,10 @@
     AllowSuspendThenHibernate=yes
   '';
 
-  fileSystems."/mnt/Storage" = {
-    device = "/dev/disk/by-label/Storage";
-    fsType = "ext4";
+  fileSystems = {
+    "/mnt/Storage" = {
+      device = "/dev/disk/by-label/Storage";
+      fsType = "ext4";
+    };
   };
 }

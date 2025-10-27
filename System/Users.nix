@@ -22,6 +22,7 @@
       "pipewire"
       "fuse"
       "wireshark"
+      "storage"
     ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
