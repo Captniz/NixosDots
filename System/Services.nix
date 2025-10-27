@@ -10,7 +10,7 @@
 {
   services = {
     xserver.videoDrivers = [ "amdgpu" ];
-
+    udisks2.enable = true;
     pipewire = {
       enable = true;
       systemWide = true;

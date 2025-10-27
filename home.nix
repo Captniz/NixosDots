@@ -27,6 +27,7 @@
     ./User/App/Firefox.nix
     ./User/App/Yazi.nix
     ./User/App/HyprIdle.nix
+    ./User/App/Udiskie.nix
     #./User/App/Obsidian.nix
   ];
 
