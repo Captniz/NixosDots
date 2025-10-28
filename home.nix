@@ -14,6 +14,7 @@
     ./User/Settings/HomeFolder.nix
 
     # App settings
+    ./User/App/MonitorSwitcher.nix
     ./User/App/Hyprland.nix
     ./User/App/Dunst.nix
     ./User/App/Rofi.nix
