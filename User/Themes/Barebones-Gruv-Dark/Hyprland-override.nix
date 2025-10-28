@@ -11,7 +11,22 @@ let
 in
 {
   wayland.windowManager.hyprland.settings = {
-    "$wallpaper" = lib.mkForce "~/Images/gruvbox-wallpapers/wallpapers/mix/forest_castle.png";
     "$activeBorder" = lib.mkForce "rgba(${lib.strings.removePrefix "#" colors.blue}dd)";
+    general = {
+      gaps_in = lib.mkForce 5;
+      gaps_out = lib.mkForce 6;
+    };
+    decoration = lib.mkForce {
+      active_opacity = 0.85;
+      inactive_opacity = 0.85;
+      rounding = 0;
+      blur = {
+        enabled = true;
+        size = 9;
+        new_optimizations = true;
+        passes = 3;
+        ignore_opacity = true;
+      };
+    };
   };
 }
