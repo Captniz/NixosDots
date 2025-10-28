@@ -26,24 +26,26 @@
       Login.HandlePowerKey = "lock";
       Login.HandlePowerKeyLongPress = "poweroff";
 
-      upower = {
-        enable = true;
-        allowRiskyCriticalPowerAction = true;
-        percentageLow = 25;
-        percentageCritical = 10;
-        percentageAction = 4;
-        usePercentageForPolicy = true;
-        criticalPowerAction = "HybridSleep";
-      };
     };
+    upower = {
+      enable = true;
+      allowRiskyCriticalPowerAction = true;
+      percentageLow = 25;
+      percentageCritical = 10;
+      percentageAction = 4;
+      usePercentageForPolicy = true;
+      criticalPowerAction = "HybridSleep";
+    };
+  };
 
-    "battery-notify" = {
-      description = "Battery notifications ";
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/User/Scripts/NotifyBattery.sh";
-      };
+  systemd.services."battery-notify" = {
+    description = "Battery notifications ";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Environment = "PATH=/run/current-system/sw/bin:/run/current-system/sw/sbin:/usr/bin:/bin";
+      Type = "simple";
+      Restart = "always";
+      ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/User/Scripts/NotifyBattery.sh";
     };
   };
 }
