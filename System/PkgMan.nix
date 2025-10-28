@@ -28,6 +28,7 @@
     # drawio # Diagram editor
 
     ########### Testing
+    inputs.zen-browser.packages."${systemSettings.system}".default
     quickshell # Quick shell utility
 
     ########### Essentials
