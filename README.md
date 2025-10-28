@@ -96,3 +96,4 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Aggiungi una scorciatoia per catturare screenshot di porzioni di schermo e editarle dopo / stessa osa per registrare lo schermo
 - [ ] Utilizza le modalità di rofi
   - [ ] Window swither like alt-tab
+- [ ] Rendi meno una merda i vari bash script /Scripts

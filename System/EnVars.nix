@@ -14,8 +14,10 @@
     XCURSOR_SIZE = "12";
     GDK_SCALE = "1";
     TERM = "xterm-256color";
-    QT_QPA_PLATFORM="wayland";
-
+    QT_QPA_PLATFORM = "wayland";
+    WAYLAND_DISPLAY = "wayland-1";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    
     # Nix vars
     NIXOS_OZONE_WL = "1";
     NIXPKGS_ALLOW_INSECURE = "1";
@@ -30,6 +32,6 @@
     # Default applications
     DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
     EDITOR = "${pkgs.neovim}/bin/nvim";
-    BROWSER="xdg-open";
+    BROWSER = "xdg-open";
   };
 }

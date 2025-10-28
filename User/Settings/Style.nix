@@ -16,7 +16,7 @@
   home.packages = with pkgs; [
 
     # Fonts
-    #! If shit is brokey do "fc-cache -r"
+    #! If shit is broken do "fc-cache -r"
     nerd-fonts.fira-code
     nerd-fonts.fira-mono
     nerd-fonts.iosevka

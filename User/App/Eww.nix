@@ -10,6 +10,12 @@ let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
 in
 {
+  systemd.user.services.eww-bar = {
+    description = "Eww bar";
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig.ExecStart = "${pkgs.eww}/bin/eww open bar";
+  };
+
   imports = [
     ../Themes/${userSettings.theme}/Eww-override.nix
   ];

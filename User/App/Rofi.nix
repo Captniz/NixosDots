@@ -32,11 +32,11 @@ in
     ];
     font = "FiraCode Nerd Font 12";
     extraConfig = {
-      "display-ssh" = "";
-      "display-run" = "";
-      "display-drun" = "";
+      "display-ssh" = " ";
+      "display-run" = " ";
+      "display-drun" = " ";
       "display-window" = " ";
-      "display-combi" = "";
+      "display-combi" = " ";
       "display-calc" = " ";
       "display-emoji" = " ";
       "show-icons" = true;

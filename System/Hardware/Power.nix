@@ -36,5 +36,14 @@
         criticalPowerAction = "HybridSleep";
       };
     };
+
+    "battery-notify" = {
+      description = "Battery notifications ";
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/User/Scripts/NotifyBattery.sh";
+      };
+    };
   };
 }
