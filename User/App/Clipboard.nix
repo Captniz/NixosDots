@@ -7,16 +7,27 @@
 }:
 
 {
-  systemd.user.services.copyq = {
-    description = "CopyQ clipboard manager";
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig.ExecStart = "${pkgs.copyq}/bin/copyq --start-server";
+  systemd.user.services."copyq" = {
+    Unit = {
+      description = "CopyQ clipboard manager";
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.copyq}/bin/copyq --start-server";
+    };
   };
 
-  systemd.user.services.wl-clip-persist = {
-    description = "Persistent Wayland clipboard";
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig.ExecStart = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular";
+  systemd.user.services."wl-clip-persist" = {
+    Unit = {
+      Description = "Persistent Wayland clipboard";
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular";
+    };
   };
-
 }

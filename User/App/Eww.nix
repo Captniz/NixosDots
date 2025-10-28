@@ -10,10 +10,36 @@ let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
 in
 {
-  systemd.user.services.eww-bar = {
-    description = "Eww bar";
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig.ExecStart = "${pkgs.eww}/bin/eww open bar";
+  systemd.user.services."eww-daemon" = {
+    Unit = {
+      Description = "Eww daemon";
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+    Service = {
+      Restart = "on-failure";
+      Type = "exec";
+      ExecStart = "${pkgs.eww}/bin/eww daemon --no-daemonize";
+    };
+  };
+
+  systemd.user.services."eww-bar" = {
+    Unit = {
+      Description = "ElKowars wacky widgets - personal bar";
+      Documentation = "https://elkowar.github.io/eww/";
+      Requires = [ "eww-daemon.service" ];
+      After = [ "eww-daemon.service" ];
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+    Service = {
+      Type = "oneshot";
+      RemainAfterExit = "yes";
+      ExecStart = "${pkgs.eww}/bin/eww open bar";
+      ExecStop = "${pkgs.eww}/bin/eww close bar";
+    };
   };
 
   imports = [

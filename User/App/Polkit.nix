@@ -8,8 +8,8 @@
 
 {
   systemd.user.services.polkit-agent = {
-    description = "Polkit GNOME authentication agent";
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig.ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+    Unit.Description = "Polkit GNOME authentication agent";
+    Install.WantedBy = [ "graphical-session.target" ];
+    Service.ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   };
 }
