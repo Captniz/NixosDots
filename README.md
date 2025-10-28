@@ -101,3 +101,5 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Crea un odo veloce per cambiare i temi
 - [ ] Controlla la caterlla user perche sia rappresentata correttaamente in questo readme
 - [ ] monitor switcher non funziona come dovrebbe
+- [ ] implementa delle gestures per il touchpad con hyprland
+- [ ] migra a zen da firefox
