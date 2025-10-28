@@ -46,8 +46,7 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 │   ├── Networking.nix          # Networking configuration
 │   ├── PkgMan.nix              # Package manager configuration and insatlled packages
 │   ├── Security.nix            # Security configuration
-│   ├── Users.nix               # Users definitions and configuration
-│   └── README.md               # README
+│   └── Users.nix               # Users definitions and configuration
 │
 ├── User                        # User general configuration files || Mainly managed by Home Manager
 │   ├── App                     # User applications configuration    
@@ -60,9 +59,8 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 │   │   ├── XdgOptions.nix      # XDG options (e.g. default applications) 
 │   │   ├── Style.nix           # User style configuration
 │   │   └   ...
-│   ├── Themes                  # User themes || Managed by Home Manager and flakes
-│   │   └── ... 
-│   └── README.md               # README
+│   └── Themes                  # User themes || Managed by Home Manager and flakes
+│       └── ... 
 │
 └── README.md                   # This file
 ```
