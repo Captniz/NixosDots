@@ -15,8 +15,6 @@
     GDK_SCALE = "1";
     TERM = "xterm-256color";
     QT_QPA_PLATFORM = "wayland";
-    WAYLAND_DISPLAY = "wayland-1";
-    XDG_CURRENT_DESKTOP = "Hyprland";
     
     # Nix vars
     NIXOS_OZONE_WL = "1";
