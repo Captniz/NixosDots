@@ -8,6 +8,7 @@
 
 {
   # Basic graphics settings
+  services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
   hardware = {
     nvidia.modesetting.enable = true;

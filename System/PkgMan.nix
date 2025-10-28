@@ -29,10 +29,6 @@
     };
   };
 
-  # This avoids multiple instances of packages when using home-manager
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-
   # System packages
   environment.systemPackages = with pkgs; [
     ########### Errored
