@@ -89,3 +89,5 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Aggiorna gli hash delle varie app con il flake 
 - [ ] Fai una history delle notifiche (dunst)
 - [ ] Aggiungi una scorciatoia per catturare screenshot di porzioni di schermo e editarle dopo / stessa osa per registrare lo schermo
+- [ ] Utilizza le modalità di rofi
+  - [ ] Window swither like alt-tab
