@@ -197,7 +197,8 @@ in
       ];
 
       exec-once = [
-        "sh /etc/nixos/User/Scripts/MonitorSwitcher.sh" # Monitor setup
+        "hyprctl dispatch workspace 1"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # Wayland env for systemd services
       ];
     };
   };
