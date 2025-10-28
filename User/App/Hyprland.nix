@@ -22,7 +22,6 @@ in
     settings = {
       # Vars
       "$mod" = "SUPER";
-      "$wallpaper" = "~/Images/gruvbox-wallpapers/wallpapers/anime/108948084_p0.png";
       "$activeBorder" = "rgba(8DA101dd)";
       "$inactiveBorder" = "rgba(c5c9aaff)";
       "$shadow" = "rgba(1a1a1aee)";
@@ -54,14 +53,12 @@ in
         border_size = 2;
         no_border_on_floating = true;
         layout = "dwindle";
-        #cursor_inactive_timeout = 3;
         "col.active_border" = "$activeBorder";
         "col.inactive_border" = "$inactiveBorder";
       };
 
       cursor = {
         inactive_timeout = 3;
-        #no_hardware_cursors = true; # Causes smearing
         hide_on_touch = true;
       };
 
@@ -70,9 +67,12 @@ in
         disable_hyprland_logo = true;
       };
 
-      gestures = {
-        #workspace_swipe = true;
-      };
+      gesture = [
+        "3, horizontal, workspace"
+        "3, down, dispatcher, exec, [float; size 1100 500;animation slide top] alacritty -e btop"
+        "3, up, close"
+        "4, swipe, move"
+      ];
 
       input = {
         kb_layout = userSettings.keyboard;
@@ -88,9 +88,6 @@ in
         active_opacity = 0.85;
         inactive_opacity = 0.85;
         rounding = 5;
-        #drop_shadow = true;
-        #shadow_range = 5;
-        #shadow_render_power = 3;
         blur = {
           enabled = true;
           size = 9;
