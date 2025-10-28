@@ -8,11 +8,19 @@
 }:
 
 {
+  # Enable AppImage support
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
+  # Allow unfree packages and specific insecure packages
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [ "the_electron_version" ];
   };
 
+  # Nix store optimisations
   nix = {
     optimise = {
       automatic = true;
@@ -202,7 +210,5 @@
 
     # android-studio # Android IDE
     # jetbrains.idea-ultimate # IDE
-    # opendrop # Airdrop compatibility
-    # hping # DoS tool
   ];
 }

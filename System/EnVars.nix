@@ -31,6 +31,5 @@
     DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
     EDITOR = "${pkgs.neovim}/bin/nvim";
     BROWSER="xdg-open";
-
   };
 }

@@ -18,7 +18,7 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 ## Directory Structure
 
 ```plaintext
-.
+./
 │
 ├── hardware-configuration.nix  # Main hardware configuration file || Dont touch!
 ├── configuration.nix           # Main system configuration file
@@ -28,17 +28,24 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 │
 ├── System                      # System general configuration files || Mainly managed by NixOS config
 │   ├── App                     # System applications configuration
-│   │   └── Sddm.nix            # ...
+│   │   ├── App-settigs.nix     # File that imports all the app settings
+│   │   └── ...
+│   │
+│   ├── Hardware                # System hardware settings 
+│   │   ├── Hardware-sett...    # File that imports all the hardware settings
+│   │   ├── Audio.nix           # Audio hardware configuration
+│   │   ├── Video.nix           # Video and display hardware configuration
+│   │   ├── Power.nix           # Power management and sleep behaviour configuration
+│   │   ├── Bluetooth.nix       # Bluetooth configuration
+│   │   ├── Networking.nix      # Network and wifi hardware configuration
+│   │   └── FileSystem.nix      # File systems and mounts configuration
 │   │
 │   ├── Boot.nix                # Boot configuration
 │   ├── EnVars.nix              # Environment variables
-│   ├── Hardware.nix            # Hardware configuration
 │   ├── Locale.nix              # Locale configuration
 │   ├── Networking.nix          # Networking configuration
 │   ├── PkgMan.nix              # Package manager configuration and insatlled packages
-│   ├── ProgramSettings.nix     # Program settings and options
 │   ├── Security.nix            # Security configuration
-│   ├── Services.nix            # Services configuration
 │   ├── Users.nix               # Users definitions and configuration
 │   └── README.md               # README
 │
@@ -91,5 +98,3 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Aggiungi una scorciatoia per catturare screenshot di porzioni di schermo e editarle dopo / stessa osa per registrare lo schermo
 - [ ] Utilizza le modalità di rofi
   - [ ] Window swither like alt-tab
-
-test
