@@ -37,6 +37,6 @@ in
     enable = true;
     package = pkgs.libsForQt5.sddm;
     wayland.enable = true;
-    theme = sddmTheme;
+    theme = "${sddmTheme}";
   };
 }
