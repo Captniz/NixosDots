@@ -35,7 +35,7 @@ in
       "display-ssh" = "";
       "display-run" = "";
       "display-drun" = "";
-      "display-window" = "";
+      "display-window" = " ";
       "display-combi" = "";
       "display-calc" = " ";
       "display-emoji" = " ";
