@@ -97,3 +97,7 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Utilizza le modalità di rofi
   - [ ] Window swither like alt-tab
 - [ ] Rendi meno una merda i vari bash script /Scripts
+- [ ] Crea un modo veloce per accedere al package manager
+- [ ] Crea un odo veloce per cambiare i temi
+- [ ] Controlla la caterlla user perche sia rappresentata correttaamente in questo readme
+- [ ] monitor switcher non funziona come dovrebbe
