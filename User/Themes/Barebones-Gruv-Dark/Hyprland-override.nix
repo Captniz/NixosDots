@@ -11,7 +11,8 @@ let
 in
 {
   wayland.windowManager.hyprland.settings = {
-    "$activeBorder" = lib.mkForce "rgba(${lib.strings.removePrefix "#" colors.blue}dd)";
+    "$activeBorder" = lib.mkForce "rgba(${lib.strings.removePrefix "#" colors.blue}ff)";
+    "$inactiveBorder" = lib.mkForce "rgba(${lib.strings.removePrefix "#" colors.black}00)";
     general = {
       gaps_in = lib.mkForce 5;
       gaps_out = lib.mkForce 6;

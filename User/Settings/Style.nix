@@ -21,6 +21,7 @@
     nerd-fonts.fira-mono
     nerd-fonts.iosevka
     nerd-fonts.meslo-lg
+    victor-mono
 
     # Themes
     bibata-cursors # Cursor theme
