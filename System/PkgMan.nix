@@ -37,7 +37,7 @@
 
     ########### Testing
     inputs.zen-browser.packages."${systemSettings.system}".default
-    quickshell # Quick shell utility
+    inputs.quickshell.packages."${systemSettings.system}".default
 
     ########### Essentials
 
@@ -146,6 +146,7 @@
     xdg-utils # Desktop utilities
     grim # Screenshot tool
     ripgrep # Text searcher
+    woeusb
     fd # Find utility
     glow # Markdown previewer
     slurp # Screen Region selector
@@ -170,6 +171,7 @@
     exfat # Exfat utilities
     udisks # Disk management utility
     dysk # Disk usage analyzer
+    pastel # Color utility
 
     ########### Programs & Apps
 
