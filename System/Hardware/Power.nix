@@ -40,11 +40,11 @@
 
   systemd.user.services."battery-notify" = {
     description = "Battery notifications ";
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = [ "graphical-session.target" ];
     serviceConfig = {
       Environment = "PATH=/run/current-system/sw/bin:/run/current-system/sw/sbin:/usr/bin:/bin";
       Type = "simple";
-      Restart = "on-failure";
+      Restart = "always";
       ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/User/Scripts/NotifyBattery.sh";
     };
   };
