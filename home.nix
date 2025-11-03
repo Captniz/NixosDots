@@ -14,7 +14,6 @@
     ./User/Settings/HomeFolder.nix
 
     # App settings
-    ./User/App/MonitorSwitcher.nix
     ./User/App/Hyprland.nix
     ./User/App/Dunst.nix
     ./User/App/Rofi.nix
@@ -34,6 +33,7 @@
     ./User/App/Swww.nix
     ./User/App/Clipboard.nix
     ./User/App/Polkit.nix
+    #./User/App/MonitorSwitcher.nix
     #./User/App/Obsidian.nix
   ];
 
