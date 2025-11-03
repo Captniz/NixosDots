@@ -103,3 +103,6 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] monitor switcher non funziona come dovrebbe
 - [ ] implementa delle gestures per il touchpad con hyprland
 - [ ] migra a zen da firefox
+- [ ] crea un alt-tab con rofi window
+- [ ] crea un modo elegante per vedere sulla barra superiore le app delle workspaces
+- [ ] Crea un menu con rofi per le azioni di nix (gc,update,homeup,nixup)
