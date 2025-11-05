@@ -60,7 +60,7 @@
     git # Version manager
     swww # Wallpaper manager
     qimgv # Image viewer
-    nitch # System fetch
+    fastfetch # System fetch
     btop # System monitor
     p7zip # Archive manager
     unrar # Archive manager
