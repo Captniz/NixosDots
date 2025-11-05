@@ -33,6 +33,7 @@
     ./User/App/Swww.nix
     ./User/App/Clipboard.nix
     ./User/App/Polkit.nix
+    ./User/App/FastFetch.nix
     #./User/App/MonitorSwitcher.nix
     #./User/App/Obsidian.nix
   ];

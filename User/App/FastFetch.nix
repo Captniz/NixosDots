@@ -20,38 +20,38 @@ in
         "break"
         {
           "type" = "custom";
-          "format" = "\u001b[90m┌──────────────────────────Hardware──────────────────────────┐";
+          "format" = "┌──────────────────────────Hardware──────────────────────────┐";
         }
         {
           "type" = "host";
-          "key" = " PC";
+          "key" = "  PC";
           "keyColor" = "green";
         }
         {
           "type" = "cpu";
-          "key" = "  ├";
+          "key" = "  ├ ";
           "showPeCoreCount" = true;
           "keyColor" = "green";
         }
         {
           "type" = "gpu";
-          "key" = "  ├";
+          "key" = "  ├ ";
           "detectionMethod" = "pci";
           "keyColor" = "green";
         }
         {
           "type" = "display";
-          "key" = "  ├󱄄";
+          "key" = "  ├󱄄 ";
           "keyColor" = "green";
         }
         {
           "type" = "disk";
-          "key" = "  ├󰋊";
+          "key" = "  ├󰋊 ";
           "keyColor" = "green";
         }
         {
           "type" = "memory";
-          "key" = "  ├";
+          "key" = "  ├ ";
           "keyColor" = "green";
         }
         {
@@ -62,66 +62,67 @@ in
         "break"
         {
           "type" = "custom";
-          "format" = "\u001b[90m┌──────────────────────────Software──────────────────────────┐";
+          "format" = "┌──────────────────────────Software──────────────────────────┐";
         }
         {
           "type" = "command";
           "key" = "  OS";
           "keyColor" = "blue";
-          "text" = "version=$(omarchy-version); echo \"NixOS $version\"";
+          "text" = "system=$(nixos-version); echo \"NixOS $system\"";
         }
+        
         {
           "type" = "command";
-          "key" = "  ├󰘬";
+          "key" = "  ├󰘬 ";
           "keyColor" = "blue";
-          "text" = "branch=$(omarchy-version-branch); echo \"$branch\"";
+          "text" = "branch=$(cd/etc/nixos;git branch --show-current); echo \"$branch\"";
         }
         {
           "type" = "kernel";
-          "key" = "  ├";
+          "key" = "  ├ ";
           "keyColor" = "blue";
         }
         {
           "type" = "wm";
-          "key" = "  ├";
+          "key" = "  ├ ";
           "keyColor" = "blue";
         }
         {
           "type" = "de";
-          "key" = " DE";
+          "key" = " DE ";
           "keyColor" = "blue";
         }
         {
           "type" = "terminal";
-          "key" = "  ├";
+          "key" = "  ├ ";
           "keyColor" = "blue";
         }
         {
           "type" = "packages";
-          "key" = "  ├󰏖";
+          "key" = "  ├󰏖 ";
           "keyColor" = "blue";
         }
         {
           "type" = "wmtheme";
-          "key" = "  ├󰉼";
+          "key" = "  ├󰉼 ";
           "keyColor" = "blue";
         }
         {
           "type" = "command";
-          "key" = "  ├󰸌";
+          "key" = "  ├󰸌 ";
           "keyColor" = "blue";
           "text" =
             "theme=$(omarchy-theme-current); echo -e \"$theme \\e[38m●\\e[37m●\\e[36m●\\e[35m●\\e[34m●\\e[33m●\\e[32m●\\e[31m●\"";
         }
         {
           "type" = "terminalfont";
-          "key" = "  └";
+          "key" = "  └ ";
           "keyColor" = "blue";
         }
         "break"
         {
           "type" = "custom";
-          "format" = "\u001b[90m┌────────────────────────Uptime / Age────────────────────────┐";
+          "format" = "┌────────────────────────Uptime / Age────────────────────────┐";
         }
         {
           "type" = "command";
