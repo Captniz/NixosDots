@@ -130,6 +130,7 @@ in
         "$mod, L, exec, loginctl lock-session"
 
         # Window managment
+        "$mod, TAB, exec, rofi -show window"
         "$mod, J, togglesplit,"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
