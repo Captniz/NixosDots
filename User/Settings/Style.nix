@@ -22,6 +22,7 @@
     nerd-fonts.iosevka
     nerd-fonts.meslo-lg
     victor-mono
+    ibm-plex
 
     # Themes
     bibata-cursors # Cursor theme
