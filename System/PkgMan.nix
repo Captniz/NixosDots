@@ -17,7 +17,9 @@
   # Allow unfree packages and specific insecure packages
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [ "the_electron_version" ];
+    permittedInsecurePackages = [
+      "the_electron_version"
+    ];
   };
 
   # Nix store optimisations
@@ -38,6 +40,7 @@
     ########### Testing
     inputs.zen-browser.packages."${systemSettings.system}".default
     inputs.quickshell.packages."${systemSettings.system}".default
+    font-manager # Font viewer
 
     ########### Essentials
 

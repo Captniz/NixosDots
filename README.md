@@ -109,3 +109,7 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] guarda cosa può fare hyprctl per migliorare la configurazione
 - [ ] usa il font victor-mono
 - [ ] Guarda la wiki di hyprland (aggiornata spesso)
+- [ ] Usa quickshell
+- [ ] finisci il tema minimale
+- [ ] Sperimenta con rofi -> [Ideas](https://www.youtube.com/watch?v=4JWeU78A95c)
+- [ ] Implementa un miglior menu di SSH con rofi (rofi -show "ssh")
