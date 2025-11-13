@@ -20,6 +20,7 @@ in
     plugins = [
       pkgs.rofi-calc
       pkgs.rofi-emoji
+      pkgs.rofi-nerdy
     ];
     modes = [
       "window"
