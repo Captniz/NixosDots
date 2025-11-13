@@ -111,12 +111,15 @@
     fuse
     libmtp # MTP support
     simple-mtpfs # MTP support
+    #qt5.full
+    qt6.full
     hyprland-qtutils # Hyprland Qt support
     hyprland-qt-support # Hyprland Qt support
     libnotify # Notification library
     glib # C library
     kdePackages.xwaylandvideobridge # Xwayland bridge
     libsForQt5.qt5.qtdeclarative
+    kdePackages.qtdeclarative
     libinput # Input library
     owl # Owl library
     alsa-utils # Audio utilities
@@ -144,6 +147,7 @@
 
     ########### Utility / Quality of Life / Useful Commands
 
+    playerctl # Media controller
     swappy # Screenshot annotation tool
     traceroute # Network diagnostic
     xdg-utils # Desktop utilities
@@ -178,6 +182,7 @@
 
     ########### Programs & Apps
 
+    powertop # Power management
     gimp3 # Image editor
     localsend # File transfer app
     calibre # Ebook manager

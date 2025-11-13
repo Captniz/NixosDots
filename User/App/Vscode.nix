@@ -27,8 +27,25 @@ in
       "python.pythonPath" = "/run/current-system/sw/bin/python";
       "python.defaultInterpreterPath" = "/run/current-system/sw/bin/python";
       "pylint.interpreter" = [ "/run/current-system/sw/bin/python" ];
-      "qt-qml.qmlls.useQmlImportPathEnvVar"= "true";
-
+      "qt-core.additionalQtPaths" = [
+        {
+          "name" = "Qt-6.9.2";
+          "path" = "${pkgs.qt6.qtbase}/bin/qmake6";
+        }
+        {
+          "name" = "Qt-6.9.2-linux-g++";
+          "path" = "/run/current-system/sw/bin/qmake6";
+        }
+        {
+          "name" = "Qt-6.9.2-linux-g++_from_PATH";
+          "path" = "/run/current-system/sw/bin/qtpaths";
+        }
+      ];
+      #"qt-core.qtInstallationRoot" = "${pkgs.qt6.qtbase}/bin";
+      "qt-core.doNotAskForVCPKG" = true;
+      "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
+      "qt-qml.qmlls.customExePath" = "/run/current-system/sw/bin/qmlls";
+      "qmlFormat.extraArguments" = [ "-w 2 " ];
       # Themeing
       "editor.cursorSmoothCaretAnimation" = "on";
       "workbench.colorTheme" = "Gruvbox Dark Medium";

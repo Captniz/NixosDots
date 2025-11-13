@@ -128,6 +128,7 @@ in
         "$mod, code:60, exec, rofi -show emoji"
         "$mod, N, exec, rofi -show calc"
         "$mod, L, exec, loginctl lock-session"
+        "$mod, I, exec, rofi -show nerdy"
 
         # Window managment
         "$mod, TAB, exec, rofi -show window"
@@ -173,11 +174,11 @@ in
 
       binde = [
         # System settings controls
-        "$mod, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
-        "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
-        "$mod, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
-        "$mod, F5, exec, light -U 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh"
-        "$mod, F6, exec, light -A 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh"
+        "$mod, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh /etc/nixos/User/Scripts/NotifyVolume.sh && qs ipc volume updateMute"
+        "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh /etc/nixos/User/Scripts/NotifyVolume.sh && qs ipc volume update"
+        "$mod, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh /etc/nixos/User/Scripts/NotifyVolume.sh && qs ipc volume update"
+        "$mod, F5, exec, light -U 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh && qs ipc brightness update"
+        "$mod, F6, exec, light -A 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh && qs ipc brightness update"
       ];
 
       bindm = [
@@ -189,7 +190,6 @@ in
       windowrulev2 = [
         "opaque,class:^(firefox)$"
         "opaque,class:^(mirage)$"
-        "float,class:^(Eww)$"
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
         "stayfocused,class:^(Rofi)$"
       ];

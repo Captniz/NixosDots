@@ -22,7 +22,7 @@
     ./User/App/Alacritty.nix
     ./User/App/Zathura.nix
     ./User/App/Git.nix
-    ./User/App/Eww.nix
+    ./User/App/Quickshell.nix
     ./User/App/Vscode.nix
     ./User/App/Hyprlock.nix
     ./User/App/Firefox.nix

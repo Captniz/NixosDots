@@ -15,6 +15,7 @@
     GDK_SCALE = "1";
     TERM = "xterm-256color";
     QT_QPA_PLATFORM = "wayland";
+    QML_IMPORT_PATH = "/run/current-system/sw/lib/qt-6/qml";
 
     # Nix vars
     NIXOS_OZONE_WL = "1";
