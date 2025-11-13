@@ -37,7 +37,7 @@ in
   # Scripts location
   home.file.".config/quickshell" = {
     enable = true;
-    source = "/etc/nixos/User/Scripts/Themes/${userSettings.theme}/Quickshell";
+    source = "/etc/nixos/User/Themes/${userSettings.theme}/Quickshell";
     recursive = true;
   };
 
