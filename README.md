@@ -113,3 +113,5 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] finisci il tema minimale
 - [ ] Sperimenta con rofi -> [Ideas](https://www.youtube.com/watch?v=4JWeU78A95c)
 - [ ] Implementa un miglior menu di SSH con rofi (rofi -show "ssh")
+- [ ] Crea l'area notifiche con anche il powermenu
+- [ ] Nella barra o dove vuoi in quickshell implementa delle funzioni di nixos (gc,update,nixup,homeup)
