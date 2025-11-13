@@ -202,7 +202,6 @@
     obs-studio # Media creator / Streaming software
     mongosh # MongoDB shell
     rofi # App launcher
-    eww # Widget manager
     zathura # PDF viewer
     vscode # Code editor
     obsidian # Note taking app
