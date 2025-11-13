@@ -9,7 +9,7 @@ import "../"
 D_WidgetContainer {
   id: root
 
-  property real volumeLevel
+  property int volumeLevel
   property bool isMuted
   property string volumeColor: isMuted ? Globals.bright_black : Globals.blue
 
@@ -21,7 +21,7 @@ D_WidgetContainer {
     running: true
 
     stdout: StdioCollector {
-      onStreamFinished: volumeLevel = this.text
+      onStreamFinished: volumeLevel = this.text * 100
     }
   }
 
@@ -56,7 +56,7 @@ D_WidgetContainer {
     anchors.verticalCenter: root.verticalCenter
     color: volumeColor
     font.pointSize: 9
-    text: volumeLevel * 100
+    text: volumeLevel
     font.family: Globals.font_2
     font.italic: true
     font.weight: 600
