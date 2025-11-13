@@ -24,6 +24,12 @@
       "application/epub+zip" = [ "org.pwmt.zathura.desktop" ]; # Epub
       "application/json" = [ "nvim.desktop" ];
       "application/x-yaml" = [ "nvim.desktop" ];
+      "application/msword" = [ "writer.desktop" ]; # Word documents
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "writer.desktop" ]; # Word documents
+      "application/vnd.ms-excel" = [ "calc.desktop" ]; # Excel documents
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "calc.desktop" ]; # Excel documents
+      "application/vnd.ms-powerpoint" = [ "impress.desktop" ]; # PowerPoint documents
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [ "impress.desktop" ]; # PowerPoint documents
 
       # Web
       "default-web-browser" = [ "firefox.desktop" ];
