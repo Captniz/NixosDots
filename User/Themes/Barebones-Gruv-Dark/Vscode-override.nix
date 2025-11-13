@@ -11,7 +11,7 @@ let
 in
 {
   programs.vscode.profiles.default.userSettings = {
-    "workbench.colorTheme" = lib.mkForce "Gruvbox Dark Medium";
+    "workbench.colorTheme" = lib.mkForce "Gruvbox Dark Hard";
     "material-icon-theme.folders.color" = lib.mkForce colors.blue;
   };
 }

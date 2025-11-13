@@ -31,7 +31,6 @@ in
       "emoji"
       "keys"
     ];
-    font = "FiraCode Nerd Font 12";
     extraConfig = {
       "display-ssh" = " ";
       "display-run" = " ";

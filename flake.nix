@@ -63,7 +63,7 @@
       userSettings = rec {
         keyboard = systemSettings.keyboard; # select keyboard layout
         username = "simo"; # username
-        theme = "Gruvbox-Dark"; # selcted theme from my themes directory (./themes/)
+        theme = "Barebones-Gruv-Dark"; # selcted theme from my themes directory (./themes/)
         wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
         wmType = if (wm == "hyprland") then "wayland" else "x11";
         browser = "firefox"; # Default browser; must select one from ./user/app/browser/

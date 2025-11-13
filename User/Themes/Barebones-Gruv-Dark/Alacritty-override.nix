@@ -12,7 +12,7 @@ in
 {
   programs.alacritty.settings.colors = lib.mkForce {
     primary = {
-      background = colors.bg0;
+      background = colors.bg0_hard;
       foreground = colors.fg1;
     };
     cursor = {
