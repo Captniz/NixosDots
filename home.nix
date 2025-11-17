@@ -25,7 +25,6 @@
     ./User/App/Quickshell.nix
     ./User/App/Vscode.nix
     ./User/App/Hyprlock.nix
-    ./User/App/Firefox.nix
     ./User/App/Yazi.nix
     ./User/App/HyprIdle.nix
     ./User/App/Nvim.nix
@@ -34,6 +33,7 @@
     ./User/App/Clipboard.nix
     ./User/App/Polkit.nix
     ./User/App/FastFetch.nix
+    ./User/App/Zen.nix
     #./User/App/MonitorSwitcher.nix
     #./User/App/Obsidian.nix
   ];

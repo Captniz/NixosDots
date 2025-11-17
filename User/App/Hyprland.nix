@@ -119,7 +119,7 @@ in
         # Lauchers
         "$mod, RETURN, exec, alacritty"
         "$mod, R, exec, [float; center] rofi -show drun"
-        "$mod, F, exec, firefox"
+        "$mod, F, exec, zen-beta"
         "$mod, A, exec, code"
         "$mod, Q, exec, obsidian"
         "$mod, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
@@ -188,7 +188,7 @@ in
       ];
 
       windowrulev2 = [
-        "opaque,class:^(firefox)$"
+        "opaque,class:^(zen-beta)$"
         "opaque,class:^(mirage)$"
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
         "stayfocused,class:^(Rofi)$"

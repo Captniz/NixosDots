@@ -36,11 +36,9 @@
     ########### Errored
 
     # drawio # Diagram editor
+    inputs.zen-browser.packages."${systemSettings.system}".default # Browser
 
     ########### Testing
-    inputs.zen-browser.packages."${systemSettings.system}".default
-    inputs.quickshell.packages."${systemSettings.system}".default
-    font-manager # Font viewer
 
     ########### Essentials
 
@@ -153,7 +151,7 @@
     xdg-utils # Desktop utilities
     grim # Screenshot tool
     ripgrep # Text searcher
-    woeusb
+    woeusb # Windows USB creator
     fd # Find utility
     glow # Markdown previewer
     slurp # Screen Region selector
@@ -190,6 +188,8 @@
     qdirstat # Disk usage analyzer
     gparted # Partition manager
     telegram-desktop # Messaging app
+    inputs.quickshell.packages."${systemSettings.system}".default # Widgets and bar
+    font-manager # Font viewer
     yazi # Terminal file manager
     geogebra # Math tool
     docker # Container manager
@@ -197,7 +197,6 @@
     lutris # Game client
     heroic # Game client
     steam # Game client
-    firefox # Browser
     vlc # Media player
     obs-studio # Media creator / Streaming software
     mongosh # MongoDB shell
@@ -214,6 +213,7 @@
     dia # Diagram editor
     kcc # Kindle Comic Converter
     wireshark # Network protocol analyzer
+    zotero # Reference manager
 
     ############ Disabled programs ( Mostly for gaining space )
 

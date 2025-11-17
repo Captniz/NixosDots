@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   systemSettings,
   userSettings,
   ...
@@ -29,7 +30,7 @@
     WINEPREFIX = "/home/${userSettings.username}/.local/share/wineprefixes/wineprefix32";
 
     # Default applications
-    DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
+    #DEFAULT_BROWSER = "${pkgs.zen-browser.packages."${systemSettings.system}".default}/bin/zen-beta";
     EDITOR = "${pkgs.neovim}/bin/nvim";
     BROWSER = "xdg-open";
   };

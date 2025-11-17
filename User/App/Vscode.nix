@@ -151,7 +151,7 @@ in
       "editor.defaultFormatter" = "biomejs.biome";
       "leetcode.workspaceFolder" = "/home/simo/Documents/Repos/Uni_Code/LEETCODE_SOL";
       "vsicons.dontShowNewVersionMessage" = true;
-      "open-in-browser.default" = "firefox";
+      "open-in-browser.default" = "zen-beta";
       "liveSassCompile.settings.showOutputWindowOn" = "None";
       "prettier.useTabs" = true;
       "better-comments.tags" = [
