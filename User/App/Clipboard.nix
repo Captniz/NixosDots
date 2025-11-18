@@ -10,6 +10,12 @@
   services.cliphist = {
     enable = true;
     allowImages = true;
+    extraOptions = [
+      "-max-dedupe-search"
+      "8"
+      "-max-items"
+      "100"
+    ];
   };
 
   systemd.user.services."wl-clip-persist" = {
