@@ -10,7 +10,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.simo = {
     isNormalUser = true;
-    description = "Simone";
+    description = "Simone Tardiani";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -24,7 +24,6 @@
       "wireshark"
       "storage"
     ];
-    packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
 }

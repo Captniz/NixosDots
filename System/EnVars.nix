@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   systemSettings,
   userSettings,
   ...
@@ -14,7 +15,8 @@
     XCURSOR_SIZE = "12";
     GDK_SCALE = "1";
     TERM = "xterm-256color";
-    QT_QPA_PLATFORM="wayland";
+    QT_QPA_PLATFORM = "wayland";
+    QML_IMPORT_PATH = "/run/current-system/sw/lib/qt-6/qml";
 
     # Nix vars
     NIXOS_OZONE_WL = "1";
@@ -28,9 +30,8 @@
     WINEPREFIX = "/home/${userSettings.username}/.local/share/wineprefixes/wineprefix32";
 
     # Default applications
-    DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
+    #DEFAULT_BROWSER = "${pkgs.zen-browser.packages."${systemSettings.system}".default}/bin/zen-beta";
     EDITOR = "${pkgs.neovim}/bin/nvim";
-    BROWSER="xdg-open";
-
+    BROWSER = "xdg-open";
   };
 }

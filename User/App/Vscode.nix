@@ -27,7 +27,25 @@ in
       "python.pythonPath" = "/run/current-system/sw/bin/python";
       "python.defaultInterpreterPath" = "/run/current-system/sw/bin/python";
       "pylint.interpreter" = [ "/run/current-system/sw/bin/python" ];
-
+      "qt-core.additionalQtPaths" = [
+        {
+          "name" = "Qt-6.9.2";
+          "path" = "${pkgs.qt6.qtbase}/bin/qmake6";
+        }
+        {
+          "name" = "Qt-6.9.2-linux-g++";
+          "path" = "/run/current-system/sw/bin/qmake6";
+        }
+        {
+          "name" = "Qt-6.9.2-linux-g++_from_PATH";
+          "path" = "/run/current-system/sw/bin/qtpaths";
+        }
+      ];
+      #"qt-core.qtInstallationRoot" = "${pkgs.qt6.qtbase}/bin";
+      "qt-core.doNotAskForVCPKG" = true;
+      "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
+      "qt-qml.qmlls.customExePath" = "/run/current-system/sw/bin/qmlls";
+      "qmlFormat.extraArguments" = [ "-w 2 " ];
       # Themeing
       "editor.cursorSmoothCaretAnimation" = "on";
       "workbench.colorTheme" = "Gruvbox Dark Medium";
@@ -133,7 +151,7 @@ in
       "editor.defaultFormatter" = "biomejs.biome";
       "leetcode.workspaceFolder" = "/home/simo/Documents/Repos/Uni_Code/LEETCODE_SOL";
       "vsicons.dontShowNewVersionMessage" = true;
-      "open-in-browser.default" = "firefox";
+      "open-in-browser.default" = "zen-beta";
       "liveSassCompile.settings.showOutputWindowOn" = "None";
       "prettier.useTabs" = true;
       "better-comments.tags" = [

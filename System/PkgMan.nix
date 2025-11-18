@@ -8,11 +8,21 @@
 }:
 
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [ "the_electron_version" ];
+  # Enable AppImage support
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
   };
 
+  # Allow unfree packages and specific insecure packages
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "the_electron_version"
+    ];
+  };
+
+  # Nix store optimisations
   nix = {
     optimise = {
       automatic = true;
@@ -28,8 +38,6 @@
     # drawio # Diagram editor
 
     ########### Testing
-    inputs.zen-browser.packages."${systemSettings.system}".default
-    quickshell # Quick shell utility
 
     ########### Essentials
 
@@ -37,7 +45,7 @@
     udisks # Disk manager
     wl-clip-persist # Clipboard manager
     wl-clipboard # Clipboard manager
-    copyq # Clipboard manager
+    cliphist # Clipboard manager
     hyprlock # Screen locker
     hyprland # Window manager
     zsh # Shell
@@ -52,7 +60,7 @@
     git # Version manager
     swww # Wallpaper manager
     qimgv # Image viewer
-    nitch # System fetch
+    fastfetch # System fetch
     btop # System monitor
     p7zip # Archive manager
     unrar # Archive manager
@@ -96,16 +104,20 @@
 
     ########### Dependencies/Libraries
 
+
     bind
     fuse
     libmtp # MTP support
     simple-mtpfs # MTP support
+    #qt5.full
+    qt6.full
     hyprland-qtutils # Hyprland Qt support
     hyprland-qt-support # Hyprland Qt support
     libnotify # Notification library
     glib # C library
     kdePackages.xwaylandvideobridge # Xwayland bridge
     libsForQt5.qt5.qtdeclarative
+    kdePackages.qtdeclarative
     libinput # Input library
     owl # Owl library
     alsa-utils # Audio utilities
@@ -133,11 +145,13 @@
 
     ########### Utility / Quality of Life / Useful Commands
 
+    playerctl # Media controller
     swappy # Screenshot annotation tool
     traceroute # Network diagnostic
     xdg-utils # Desktop utilities
     grim # Screenshot tool
     ripgrep # Text searcher
+    woeusb # Windows USB creator
     fd # Find utility
     glow # Markdown previewer
     slurp # Screen Region selector
@@ -162,16 +176,21 @@
     exfat # Exfat utilities
     udisks # Disk management utility
     dysk # Disk usage analyzer
+    pastel # Color utility
 
     ########### Programs & Apps
 
+    powertop # Power management
     gimp3 # Image editor
     localsend # File transfer app
     calibre # Ebook manager
     hakuneko # Manga Downloader
+    inputs.zen-browser.packages."${systemSettings.system}".default # Browser
     qdirstat # Disk usage analyzer
     gparted # Partition manager
     telegram-desktop # Messaging app
+    inputs.quickshell.packages."${systemSettings.system}".default # Widgets and bar
+    font-manager # Font viewer
     yazi # Terminal file manager
     geogebra # Math tool
     docker # Container manager
@@ -179,12 +198,10 @@
     lutris # Game client
     heroic # Game client
     steam # Game client
-    firefox # Browser
     vlc # Media player
     obs-studio # Media creator / Streaming software
     mongosh # MongoDB shell
     rofi # App launcher
-    eww # Widget manager
     zathura # PDF viewer
     vscode # Code editor
     obsidian # Note taking app
@@ -197,12 +214,11 @@
     dia # Diagram editor
     kcc # Kindle Comic Converter
     wireshark # Network protocol analyzer
+    zotero # Reference manager
 
     ############ Disabled programs ( Mostly for gaining space )
 
     # android-studio # Android IDE
     # jetbrains.idea-ultimate # IDE
-    # opendrop # Airdrop compatibility
-    # hping # DoS tool
   ];
 }

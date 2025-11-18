@@ -10,7 +10,8 @@
   imports = [
     # General Settings
     ./User/Settings/Style.nix
-    ./User/Settings/XdgOptions.nix
+    ./User/Settings/MimeTypes.nix
+    ./User/Settings/HomeFolder.nix
 
     # App settings
     ./User/App/Hyprland.nix
@@ -21,23 +22,21 @@
     ./User/App/Alacritty.nix
     ./User/App/Zathura.nix
     ./User/App/Git.nix
-    ./User/App/Eww.nix
+    ./User/App/Quickshell.nix
     ./User/App/Vscode.nix
     ./User/App/Hyprlock.nix
-    ./User/App/Firefox.nix
     ./User/App/Yazi.nix
     ./User/App/HyprIdle.nix
+    ./User/App/Nvim.nix
+    ./User/App/Hakuneko.nix
+    ./User/App/Swww.nix
+    ./User/App/Clipboard.nix
+    ./User/App/Polkit.nix
+    ./User/App/FastFetch.nix
+    ./User/App/Zen.nix
+    #./User/App/MonitorSwitcher.nix
     #./User/App/Obsidian.nix
   ];
-
-  # Home files
-  home.file = {
-    "Trash" = {
-      source = "${config.home.homeDirectory}/.local/share/Trash";
-      target = "${config.home.homeDirectory}/Trash";
-      recursive = true;
-    };
-  };
 
   # Home config
   home.username = userSettings.username;

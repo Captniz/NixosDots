@@ -2,13 +2,20 @@
   description = "Flake of Captniz (aka Simone), inspired by librephoenix";
 
   inputs = {
-    # Base Inputs
+    # Nix Essentals
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Additional Repositories
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -20,7 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Additional Packages
     hyprland-qtutils = {
       url = "github:hyprwm/hyprland-qtutils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,12 +48,6 @@
       ...
     }@inputs:
     let
-
-      #? Took this configuration from librephoenix
-      #? Probably I will change it in the future.
-      #? For now ill just use it as a base and modify it as I need;
-      #? Not everything is needed, but I will keep it for now.
-
       # ----- SYSTEM SETTINGS ----- #
       systemSettings = rec {
         system = "x86_64-linux"; # system arch
@@ -63,13 +63,13 @@
       userSettings = rec {
         keyboard = systemSettings.keyboard; # select keyboard layout
         username = "simo"; # username
-        theme = "Gruvbox-Dark"; # selcted theme from my themes directory (./themes/)
+        theme = "Barebones-Gruv-Dark"; # selcted theme from my themes directory (./themes/)
         wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
-        # window manager type (hyprland or x11) translator
         wmType = if (wm == "hyprland") then "wayland" else "x11";
-        browser = "firefox"; # Default browser; must select one from ./user/app/browser/
+        browser = "zen"; # Default browser; must select one from ./user/app/browser/
         term = "alacritty"; # Default terminal command;
         editor = "nvim"; # Default editor;
+        scriptsPath = "/etc/nixos/User/Scripts"; # Path to user scripts
       };
 
       lib = nixpkgs.lib;

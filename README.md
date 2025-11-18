@@ -7,6 +7,10 @@
 - [TODOS](#todos)
   - [Resources](#resources)
   - [Reminders](#reminders)
+    - [Generali](#generali)
+    - [Da renedere dichiarativo](#da-renedere-dichiarativo)
+    - [Features](#features)
+    - [Temi](#temi)
 
 ## Description
 
@@ -18,7 +22,7 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 ## Directory Structure
 
 ```plaintext
-.
+./
 │
 ├── hardware-configuration.nix  # Main hardware configuration file || Dont touch!
 ├── configuration.nix           # Main system configuration file
@@ -28,34 +32,38 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 │
 ├── System                      # System general configuration files || Mainly managed by NixOS config
 │   ├── App                     # System applications configuration
-│   │   └── Sddm.nix            # ...
+│   │   ├── App-settigs.nix     # File that imports all the app settings
+│   │   └── ...
+│   │
+│   ├── Hardware                # System hardware settings 
+│   │   ├── Hardware-sett...    # File that imports all the hardware settings
+│   │   ├── Audio.nix           # Audio hardware configuration
+│   │   ├── Video.nix           # Video and display hardware configuration
+│   │   ├── Power.nix           # Power management and sleep behaviour configuration
+│   │   ├── Bluetooth.nix       # Bluetooth configuration
+│   │   ├── Networking.nix      # Network and wifi hardware configuration
+│   │   └── FileSystem.nix      # File systems and mounts configuration
 │   │
 │   ├── Boot.nix                # Boot configuration
 │   ├── EnVars.nix              # Environment variables
-│   ├── Hardware.nix            # Hardware configuration
 │   ├── Locale.nix              # Locale configuration
 │   ├── Networking.nix          # Networking configuration
 │   ├── PkgMan.nix              # Package manager configuration and insatlled packages
-│   ├── ProgramSettings.nix     # Program settings and options
 │   ├── Security.nix            # Security configuration
-│   ├── Services.nix            # Services configuration
-│   ├── Users.nix               # Users definitions and configuration
-│   └── README.md               # README
+│   └── Users.nix               # Users definitions and configuration
 │
 ├── User                        # User general configuration files || Mainly managed by Home Manager
 │   ├── App                     # User applications configuration    
 │   │   └── ...
-│   ├── ExtraConfigs            # Configurations for apps that can't be managed by Home Manager options
-│   │   └── ...
 │   ├── Scripts                 # Custom scripts used by the configuration
 │   │   └── ...
 │   ├── Settings                # Other user specific settings for home configuration
-│   │   ├── XdgOptions.nix      # XDG options (e.g. default applications) 
+│   │   ├── HomeFolder.nix      # User home folder configuration
+│   │   ├── MimeTypes.nix       # User mime types configuration  
 │   │   ├── Style.nix           # User style configuration
 │   │   └   ...
-│   ├── Themes                  # User themes || Managed by Home Manager and flakes
-│   │   └── ... 
-│   └── README.md               # README
+│   └── Themes                  # User themes || Managed by Home Manager and flakes
+│       └── ... 
 │
 └── README.md                   # This file
 ```
@@ -70,24 +78,31 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 
 ### Reminders
 
+#### Generali
+
 - [ ] Cerca di rendere tutto dichiarativo
   - [ ] Cartelle della home
-  - [ ] Sfondi
+  - [ ] Cartella Sfondi
   - [ ] Etc....
-- [ ] Find a way to implement vscode extensions in the config
-- [ ] Theme obsidian | [Nuove settings](https://mynixos.com/search?q=obsidian)
-- [ ] Implementa meglio cider, metti i tasti multimedia, metti il titolo della cazone corrente
+- [ ] Aggiorna gli hash delle varie app con il flake (aggiorna tutti gli hash che trovi sparsi nelle config)
+- [ ] Guarda la wiki di hyprland (aggiornata spesso)
+- [ ] Aggiorna il sistema
+- [ ] Merge con la branch main
+
+#### Da renedere dichiarativo
+
+- [ ] Obsidian | [Nuove settings](https://mynixos.com/search?q=obsidian)
+
+#### Features
+
+- [ ] Fai una history delle notifiche
+- [ ] Implementa meglio cider
+  - [ ] Implementa i tasti multimedia
+  - [ ] Crea menù multimedia
 - [ ] Risolvi i problemi legati al secondo monitor (MonitorSwitcher.sh non funziona)
-- [ ] implementa [quickshell](https://quickshell.org/docs/v0.2.0/types/)  
-- [ ] [Controlla AGS](https://aylur.github.io/ags/)  
-- [ ] Finisci i temi css
-- [ ] Sposta tutto quello che ha senso spostare in home manager al posto che in nixos (sistema -> user)
-- [ ] Clipboard integration (anchedmenu+bash)
-- [ ] Crea un menu a lista con tasto destro per varie opzioni
-- [ ] Automount USB drives with udisks2 + udiskie
-  - [ ] Nel menu metti anche una serie di cheatsheets per le hotkey tipo Omarchy (yazi,zathura,hyprland,firefox,vim,zsh)
-- [ ] Aggiorna gli hash delle varie app con il flake 
-- [ ] Fai una history delle notifiche (dunst)
-- [ ] Aggiungi una scorciatoia per catturare screenshot di porzioni di schermo e editarle dopo / stessa osa per registrare lo schermo
-- [ ] Utilizza le modalità di rofi
-  - [ ] Window swither like alt-tab
+- [ ] Crea un menu con Rofi che mostra una cheatsheets per le hotkey della finestra attiva tipo Omarchy (yazi,zathura,hyprland,firefox,vim,zsh)
+
+#### Temi
+
+- [ ] Finisci i temi
+- [ ] Crea un modo veloce per cambiare i temi (quantomento ligh/dark)

@@ -22,7 +22,6 @@ in
     settings = {
       # Vars
       "$mod" = "SUPER";
-      "$wallpaper" = "~/Images/gruvbox-wallpapers/wallpapers/anime/108948084_p0.png";
       "$activeBorder" = "rgba(8DA101dd)";
       "$inactiveBorder" = "rgba(c5c9aaff)";
       "$shadow" = "rgba(1a1a1aee)";
@@ -54,14 +53,12 @@ in
         border_size = 2;
         no_border_on_floating = true;
         layout = "dwindle";
-        #cursor_inactive_timeout = 3;
         "col.active_border" = "$activeBorder";
         "col.inactive_border" = "$inactiveBorder";
       };
 
       cursor = {
         inactive_timeout = 3;
-        #no_hardware_cursors = true; # Causes smearing
         hide_on_touch = true;
       };
 
@@ -70,9 +67,12 @@ in
         disable_hyprland_logo = true;
       };
 
-      gestures = {
-        #workspace_swipe = true;
-      };
+      gesture = [
+        "3, horizontal, workspace"
+        "3, down, dispatcher, exec, [float; size 1100 500;animation slide top] alacritty --class Btop -e btop"
+        "3, up, close"
+        "4, swipe, move"
+      ];
 
       input = {
         kb_layout = userSettings.keyboard;
@@ -88,9 +88,6 @@ in
         active_opacity = 0.85;
         inactive_opacity = 0.85;
         rounding = 5;
-        #drop_shadow = true;
-        #shadow_range = 5;
-        #shadow_render_power = 3;
         blur = {
           enabled = true;
           size = 9;
@@ -102,15 +99,7 @@ in
 
       animations = {
         enabled = "yes";
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-
-        animation = [
-          "windows, 1, 7, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
-        ];
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.01";
       };
 
       dwindle = {
@@ -120,26 +109,30 @@ in
 
       bind = [
         # Lauchers
-        "$mod, RETURN, exec, alacritty"
+        "$mod, RETURN, exec, alacritty --class Term"
         "$mod, R, exec, [float; center] rofi -show drun"
-        "$mod, F, exec, firefox"
+        "$mod, F, exec, zen-beta"
         "$mod, A, exec, code"
-        "$mod, Q, exec, obsidian"
+        "$mod, Q, exec, rofi -show obsidian"
         "$mod, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
-        "$mod, E, exec, alacritty -e yazi"
-        "$mod, W, exec, alacritty -e btop"
+        "$mod, E, exec, alacritty --class Yazi -e yazi "
+        "$mod, B, exec, alacritty --class Btop -e btop"
         "$mod, code:60, exec, rofi -show emoji"
         "$mod, N, exec, rofi -show calc"
-        "$mod, L, exec, loginctl lock-session"
+        "$mod, L, exec, rofi -show p -modi p:\'/usr/bin/env bash \"${userSettings.scriptsPath}/PowerMenu.sh\"\'"
+        "$mod, I, exec, rofi -show nerdy"
+        "$mod, W, exec, sh ${userSettings.scriptsPath}/NixActions.sh"
+        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         # Window managment
+        "$mod, TAB, exec, sh ${userSettings.scriptsPath}/WindowSwitcher.sh"
         "$mod, J, togglesplit,"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
         "$mod, C, killactive,"
-        "$mod, V, togglefloating,"
+        "$mod, X, togglefloating,"
         "$mod, P, pin,activewindow"
         "$mod, SPACE, fullscreen"
         "$mod, M, exit,"
@@ -175,11 +168,11 @@ in
 
       binde = [
         # System settings controls
-        "$mod, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
-        "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
-        "$mod, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh /etc/nixos/User/Scripts/NotifyVolume.sh"
-        "$mod, F5, exec, light -U 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh"
-        "$mod, F6, exec, light -A 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh"
+        "$mod, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume updateMute"
+        "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume update"
+        "$mod, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume update"
+        "$mod, F5, exec, light -U 5 && sh ${userSettings.scriptsPath}/NotifyBrightness.sh && qs ipc call brightness update"
+        "$mod, F6, exec, light -A 5 && sh ${userSettings.scriptsPath}/NotifyBrightness.sh && qs ipc call brightness update"
       ];
 
       bindm = [
@@ -189,27 +182,19 @@ in
       ];
 
       windowrulev2 = [
-        "opaque,class:^(firefox)$"
+        "opaque,class:^(zen-beta)$"
         "opaque,class:^(mirage)$"
-        "float,class:^(Eww)$"
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
-        "stayfocused,class:^(Rofi)$"
+      ];
+
+      layerrule = [
+        "noanim,^(swww-daemon)$"
+        "noanim,^(quickshell)$"
       ];
 
       exec-once = [
-        "swww-daemon && swww img $wallpaper" # Wallpaper
-        "eww open bar" # Eww bar
-        "polkit-agent-helper-1" # Polkit
-        "systemctl start --user polkit-gnome-authentication-agent-1" # Polkit
-        "systemctl start --user pipewire.service" # Audio
-        "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.00 && sh /etc/nixos/User/Scripts/NotifyVolume.sh" # Set volume to 0 on start
-        "copyq --start-server" # Clipboard manager
-        "wl-clip-persist --clipboard regular" # Clipboard manager
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # Wayland env vars
-        "sleep 2 && systemctl restart --user pipewire.service" # Fix pipewire
-        "hyprctl dispatch workspace 1" # Go to workspace 1 on start
-        "sh /etc/nixos/User/Scripts/MonitorSwitcher.sh" # Monitor setup
-        "sh /etc/nixos/User/Scripts/NotifyBattery.sh" # Battery notifications
+        "hyprctl dispatch workspace 1"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # Wayland env for systemd services
       ];
     };
   };

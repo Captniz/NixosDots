@@ -13,13 +13,36 @@ let
     owner = "yazi-rs";
     repo = "plugins";
     rev = "main";
-    hash ="sha256-7vsqHvdNimH/YVWegfAo7DfJ+InDr3a1aNU0f+gjcdw=";
+    hash = "sha256-7vsqHvdNimH/YVWegfAo7DfJ+InDr3a1aNU0f+gjcdw=";
   };
 in
 {
   imports = [
     ../Themes/${userSettings.theme}/Yazi-override.nix
   ];
+
+  # Fixes xdg-open for yazi and related errors
+  xdg.desktopEntries.yazi = {
+    name = "Yazi";
+    exec = "alacritty -e yazi %u"; # or alacritty -e yazi %u
+    icon = "yazi";
+    type = "Application";
+    comment = "Blazing fast terminal file manager written in Rust";
+    genericName = "File Manager";
+    terminal = false;
+    categories = [
+      "Utility"
+      "System"
+      "FileManager"
+      "Core"
+      "FileTools"
+      "ConsoleOnly"
+    ];
+    settings = {
+      Keywords = "File;Manager;Explorer;Browser;Launcher";
+    };
+    mimeType = [ "inode/directory" ];
+  };
 
   programs.yazi = {
 
@@ -32,9 +55,9 @@ in
       require("full-border"):setup {
             	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
             	type = ui.Border.ROUNDED,
-      
+
       }
-      
+
       require("git"):setup()
     '';
 
