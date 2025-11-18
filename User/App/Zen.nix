@@ -7,6 +7,7 @@
   ...
 }:
 {
+  # Flake from https://github.com/0xc000022070/zen-browser-flake
   imports = [
     ../Themes/${userSettings.theme}/Firefox-override.nix
     inputs.zen-browser.homeModules.beta
@@ -17,12 +18,6 @@
     nativeMessagingHosts = [ pkgs.firefoxpwa ];
     policies =
       let
-        mkExtensionSettings = builtins.mapAttrs (
-          _: pluginId: {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/${pluginId}/latest.xpi";
-            installation_mode = "force_installed";
-          }
-        );
         mkLockedAttrs = builtins.mapAttrs (
           _: value: {
             Value = value;
@@ -31,10 +26,18 @@
         );
       in
       {
-        ExtensionSettings = mkExtensionSettings {
-          "{85860b32-02a8-431a-b2b1-40fbd64c9c69}" = "github-file-icons";
-        };
         Preferences = mkLockedAttrs {
+          "browser.aboutConfig.showWarning" = false;
+          "media.videocontrols.picture-in-picture.video-toggle.enabled" = true;
+          "browser.tabs.hoverPreview.enabled" = true;
+          "browser.newtabpage.activity-stream.feeds.topsites" = false;
+          "browser.topsites.contile.enabled" = false;
+          "privacy.resistFingerprinting" = true;
+          "privacy.spoof_english" = 1;
+          "dom.battery.enabled" = false;
+          "gfx.webrender.all" = true;
+          "network.http.http3.enabled" = true;
+          "network.socket.ip_addr_any.disabled" = true;
           "browser.tabs.warnOnClose" = false;
           "browser.contentblocking.category" = "strict";
           "extensions.pocket.enabled" = false;
@@ -55,7 +58,9 @@
           "services.sync.engine.prefs" = false;
           "services.sync.engine.prefs.modified" = false;
           "extensions.autoDisableScopes" = 0;
-          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "accessibility.typeaheadfind" = true;
+          "browser.ctrlTab.sortByRecentlyUsed" = true;
+          "browser.engagement.ctrlTab.has-used" = true;
         };
         DisableTelemetry = true;
         DisableAppUpdate = true;
@@ -76,64 +81,96 @@
       name = "simo"; # name as listed in about:profiles
       isDefault = true; # can be omitted; true if profile ID is 0
       extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
-        ublock-origin
         zotero-connector
+        github-file-icons
         youtube-shorts-block
       ];
 
-      search.engines = {
-        "nix_packages" = {
-          urls = [
-            {
-              template = "https://search.nixos.org/packages";
-              params = [
-                {
-                  name = "type";
-                  value = "packages";
-                }
-                {
-                  name = "query";
-                  value = "{searchTerms}";
-                }
-              ];
-            }
-          ];
-          definedAliases = [ "@np" ];
-        };
-
-        "MyNixos" = {
-          urls = [
-            {
-              template = "https://mynixos.com/search";
-              params = [
-                {
-                  name = "q";
-                  value = "{searchTerms}";
-                }
-              ];
-            }
-          ];
-          definedAliases = [ "@mn" ];
-        };
-
-        "youtube" = {
-          urls = [
-            {
-              template = "https://www.youtube.com/results?";
-              params = [
-                {
-                  name = "search_query";
-                  value = "{searchTerms}";
-                }
-              ];
-            }
-          ];
-          definedAliases = [ "@yt" ];
-        };
+      settings = {
+        "zen.workspaces.continue-where-left-off" = true;
+        "zen.view.compact.hide-tabbar" = true;
+        "zen.view.compact.hide-toolbar" = true;
+        "zen.welcome-screen.seen" = true;
+        "zen.urlbar.behavior" = "float";
       };
 
-      search.force = true;
+      search = {
+        force = true;
+        engines =
+          let
+            nixSnowflakeIcon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          in
+          {
+            "Github" = {
+              urls = [
+                {
+                  template = "https://github.com/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "https://github.githubassets.com/favicons/favicon-dark.png";
+              definedAliases = [ "@gh" ];
+            };
 
+            "Youtube" = {
+              urls = [
+                {
+                  template = "https://www.youtube.com/results";
+                  params = [
+                    {
+                      name = "search_query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "https://www.youtube.com/favicon.ico";
+              definedAliases = [ "@yt" ];
+            };
+
+            "Nix_packages" = {
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = nixSnowflakeIcon;
+              definedAliases = [ "@np" ];
+            };
+
+            "MyNixos" = {
+              urls = [
+                {
+                  template = "https://mynixos.com/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = nixSnowflakeIcon;
+              definedAliases = [ "@mn" ];
+            };
+
+          };
+      };
     };
   };
 }
