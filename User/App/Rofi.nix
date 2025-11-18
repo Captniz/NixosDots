@@ -14,13 +14,21 @@ in
     ../Themes/${userSettings.theme}/Rofi-override.nix
   ];
 
+  # Other Rofi related packages/plugins
+  home.packages = with pkgs; [
+    rofi-obsidian
+    rofi-bluetooth
+    rofi-pulse-select
+    rofi-network-manager
+  ];
+
   programs.rofi = {
     enable = true;
     package = pkgs.rofi;
-    plugins = [
-      pkgs.rofi-calc
-      pkgs.rofi-emoji
-      pkgs.rofi-nerdy
+    plugins = with pkgs; [
+      rofi-calc
+      rofi-emoji
+      rofi-nerdy
     ];
     modes = [
       "window"
@@ -30,6 +38,8 @@ in
       "calc"
       "emoji"
       "keys"
+      "nerdy"
+      "obsidian:rofi-obsidian"
     ];
     extraConfig = {
       "display-ssh" = " ";

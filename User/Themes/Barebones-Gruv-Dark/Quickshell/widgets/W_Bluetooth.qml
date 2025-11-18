@@ -46,7 +46,7 @@ D_WidgetContainer {
 
     Process {
       id: btProcess
-      command: ["sh", "/etc/nixos/User/Scripts/BluetoothConnections.sh"]
+      command: ["rofi-bluetooth"]
     }
   }
 

@@ -51,8 +51,8 @@ Variants {
           spacing: 5
           rightPadding: 10
           layoutDirection: Qt.RightToLeft
-          W_PowerMenu {}
-          W_Sep {}
+          //W_PowerMenu {}
+          //W_Sep {}
           W_Clock {}
           W_Sep {}
           W_Battery {}

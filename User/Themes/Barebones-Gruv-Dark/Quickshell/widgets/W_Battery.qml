@@ -15,6 +15,21 @@ D_WidgetContainer {
   width: child.width + val.width
   height: 25
 
+  MouseArea {
+    anchors.fill: root
+    anchors.centerIn: root
+    hoverEnabled: true
+    cursorShape: Qt.PointingHandCursor
+    onClicked: {
+      examine.running = true;
+    }
+
+    Process {
+      id: examine
+      command: ["powertop"]
+    }
+  }
+
   Text {
     id: val
     leftPadding: 5

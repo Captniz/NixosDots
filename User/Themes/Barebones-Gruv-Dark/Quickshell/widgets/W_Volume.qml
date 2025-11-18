@@ -35,6 +35,22 @@ D_WidgetContainer {
     }
   }
 
+  MouseArea {
+    anchors.fill: root
+    anchors.centerIn: root
+    hoverEnabled: true
+    cursorShape: Qt.PointingHandCursor
+    onClicked: {
+      devSelect.running = true;
+    }
+
+    Process {
+      id: devSelect
+      command: ["sh", "/etc/nixos/User/Scripts/AudioDeviceSelect.sh"]
+      running: false
+    }
+  }
+
   IpcHandler {
     target: "volume"
     enabled: true

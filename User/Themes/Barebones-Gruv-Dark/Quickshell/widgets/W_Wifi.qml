@@ -53,7 +53,7 @@ D_WidgetContainer {
 
     Process {
       id: btProcess
-      command: ["sh", "/etc/nixos/User/Scripts/WifiConnections.sh"]
+      command: ["rofi-network-manager"]
       running: false
     }
   }

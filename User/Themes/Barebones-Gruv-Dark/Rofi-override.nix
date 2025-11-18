@@ -50,8 +50,8 @@ let
     };
 
     "window" = {
-      location = mkLiteral "center";
-      width = mkLiteral "480";
+      location = mkLiteral "south";
+      width = mkLiteral "1920";
       background-color = mkLiteral "@bg0";
     };
 

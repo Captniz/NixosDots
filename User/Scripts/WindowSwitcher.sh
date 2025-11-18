@@ -24,8 +24,6 @@ get_icon() {
 	echo "$icon" 
 }
 
-echo "$(get_icon Alacritty)"
-
 entries=""
 addresses=()
 
@@ -41,8 +39,11 @@ while IFS="|" read -r class title addr; do
     fi
 done <<< "$list"
 
+entries=${entries%\\n}  # Remove trailing newline
+
+
 # Display menu and get index of selection
-picked=$(echo -e "$entries" | rofi -dmenu -markup-rows -show-icons -p "Windows" -format i)
+picked=$(echo -e "$entries" | rofi -dmenu -markup-rows -show-icons -p "Windows" -format i )
 
 # Exit if nothing chosen
 [ -z "$picked" ] && exit 0

@@ -99,15 +99,7 @@ in
 
       animations = {
         enabled = "yes";
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-
-        animation = [
-          "windows, 1, 7, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
-        ];
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.01";
       };
 
       dwindle = {
@@ -121,13 +113,13 @@ in
         "$mod, R, exec, [float; center] rofi -show drun"
         "$mod, F, exec, zen-beta"
         "$mod, A, exec, code"
-        "$mod, Q, exec, obsidian"
+        "$mod, Q, exec, rofi -show obsidian"
         "$mod, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
         "$mod, E, exec, alacritty -e yazi"
         "$mod, W, exec, alacritty -e btop"
         "$mod, code:60, exec, rofi -show emoji"
         "$mod, N, exec, rofi -show calc"
-        "$mod, L, exec, loginctl lock-session"
+        "$mod, L, exec, rofi -show p -modi p:\'/usr/bin/env bash \"${userSettings.scriptsPath}/PowerMenu.sh\"\'"
         "$mod, I, exec, rofi -show nerdy"
 
         # Window managment
@@ -191,7 +183,11 @@ in
         "opaque,class:^(zen-beta)$"
         "opaque,class:^(mirage)$"
         "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
-        "stayfocused,class:^(Rofi)$"
+      ];
+
+      layerrule = [
+        "noanim,^(swww-daemon)$"
+        "noanim,^(quickshell)$"
       ];
 
       exec-once = [
