@@ -28,6 +28,7 @@
     bibata-cursors # Cursor theme
     papirus-icon-theme # Icon theme
     gruvbox-material-gtk-theme
+    nixos-icons
   ];
 
   home.pointerCursor = {
