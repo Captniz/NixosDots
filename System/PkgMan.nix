@@ -19,6 +19,7 @@
     allowUnfree = true;
     permittedInsecurePackages = [
       "the_electron_version"
+      "electron-36.9.5"
     ];
   };
 
@@ -35,7 +36,11 @@
   environment.systemPackages = with pkgs; [
     ########### Errored
 
-    # drawio # Diagram editor
+    #vcpkg # C++ package manager
+    #vcpkg-tool # C++ package manager
+    (pkgs.jdk.override { enableJavaFX = false; }) # Java
+    #drawio # Diagram editor
+    #kdePackages.xwaylandvideobridge # Xwayland bridge
 
     ########### Testing
 
@@ -50,7 +55,6 @@
     hyprland # Window manager
     zsh # Shell
     dunst # Notification manager
-    libsForQt5.sddm # Display manager
     pipewire # Audio server
     wireplumber # Audio server
     pavucontrol # Audio control
@@ -87,10 +91,7 @@
     cmake # C++
     conan # C++ package manager
     lcov # C++ code coverage
-    vcpkg # C++ package manager
-    vcpkg-tool # C++ package manager
     php # PHP
-    (pkgs.jdk.override { enableJavaFX = true; }) # Java
     (pkgs.python3.withPackages (python-pkgs: [
       # Python
       python-pkgs.pandas
@@ -104,19 +105,14 @@
 
     ########### Dependencies/Libraries
 
-
     bind
     fuse
     libmtp # MTP support
     simple-mtpfs # MTP support
-    #qt5.full
-    qt6.full
     hyprland-qtutils # Hyprland Qt support
     hyprland-qt-support # Hyprland Qt support
     libnotify # Notification library
     glib # C library
-    kdePackages.xwaylandvideobridge # Xwayland bridge
-    libsForQt5.qt5.qtdeclarative
     kdePackages.qtdeclarative
     libinput # Input library
     owl # Owl library
@@ -126,6 +122,9 @@
     doxygen # Documentation generator
     alsa-ucm-conf # ALSA UCM configuration
     sof-firmware # Sound Open Firmware
+    libsForQt5.qt5.qtdeclarative
+    libsForQt5.qt5.qtmultimedia
+    kdePackages.qtmultimedia
     libsForQt5.qt5.qtquickcontrols # Qt5 libraries
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     libsForQt5.qt5.qtwayland # Qt5 libraries
@@ -139,7 +138,7 @@
     hyprland-protocols # Hyprland protocols
     wlroots # Wayland compositor
     poppler # PDF library
-    poppler_utils # PDF library
+    poppler-utils # PDF library
     winetricks # Wine utility
     wineWowPackages.waylandFull # Wine utility
 
@@ -166,7 +165,7 @@
     jc # JSON parser
     jq # JSON parser
     fzf # Fuzzy File Finder
-    protonup # Proton updater
+    protonup-ng # Proton updater
     nmap # Network scanner
     bash-completion # Terminal completion
     bat # Cat clone
