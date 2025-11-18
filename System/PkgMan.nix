@@ -36,7 +36,6 @@
     ########### Errored
 
     # drawio # Diagram editor
-    inputs.zen-browser.packages."${systemSettings.system}".default # Browser
 
     ########### Testing
 
@@ -104,6 +103,7 @@
     polyml # ML
 
     ########### Dependencies/Libraries
+
 
     bind
     fuse
@@ -185,6 +185,7 @@
     localsend # File transfer app
     calibre # Ebook manager
     hakuneko # Manga Downloader
+    inputs.zen-browser.packages."${systemSettings.system}".default # Browser
     qdirstat # Disk usage analyzer
     gparted # Partition manager
     telegram-desktop # Messaging app
