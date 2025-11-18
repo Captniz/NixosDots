@@ -45,7 +45,7 @@
       Environment = "PATH=/run/current-system/sw/bin:/run/current-system/sw/sbin:/usr/bin:/bin";
       Type = "simple";
       Restart = "always";
-      ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/User/Scripts/NotifyBattery.sh";
+      ExecStart = "${pkgs.bash}/bin/bash ${userSettings.scriptsPath}/NotifyBattery.sh";
     };
   };
 }

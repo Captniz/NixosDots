@@ -131,7 +131,7 @@ in
         "$mod, I, exec, rofi -show nerdy"
 
         # Window managment
-        "$mod, TAB, exec, rofi -show window"
+        "$mod, TAB, exec, sh ${userSettings.scriptsPath}/WindowSwitcher.sh"
         "$mod, J, togglesplit,"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
@@ -174,11 +174,11 @@ in
 
       binde = [
         # System settings controls
-        "$mod, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh /etc/nixos/User/Scripts/NotifyVolume.sh && qs ipc call volume updateMute"
-        "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh /etc/nixos/User/Scripts/NotifyVolume.sh && qs ipc call volume update"
-        "$mod, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh /etc/nixos/User/Scripts/NotifyVolume.sh && qs ipc call volume update"
-        "$mod, F5, exec, light -U 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh && qs ipc call brightness update"
-        "$mod, F6, exec, light -A 5 && sh /etc/nixos/User/Scripts/NotifyBrightness.sh && qs ipc call brightness update"
+        "$mod, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume updateMute"
+        "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume update"
+        "$mod, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume update"
+        "$mod, F5, exec, light -U 5 && sh ${userSettings.scriptsPath}/NotifyBrightness.sh && qs ipc call brightness update"
+        "$mod, F6, exec, light -A 5 && sh ${userSettings.scriptsPath}/NotifyBrightness.sh && qs ipc call brightness update"
       ];
 
       bindm = [

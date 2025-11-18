@@ -14,7 +14,7 @@
     };
     Service = {
       Environment = "PATH=/run/current-system/sw/bin:/run/current-system/sw/sbin:/usr/bin:/bin";
-      ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/User/Scripts/MonitorSwitcher.sh";
+      ExecStart = "${pkgs.bash}/bin/bash ${userSettings.scriptsPath}/MonitorSwitcher.sh";
     };
   };
 }

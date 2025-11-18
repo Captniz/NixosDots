@@ -69,6 +69,7 @@
         browser = "zen"; # Default browser; must select one from ./user/app/browser/
         term = "alacritty"; # Default terminal command;
         editor = "nvim"; # Default editor;
+        scriptsPath = "/etc/nixos/User/Scripts"; # Path to user scripts
       };
 
       lib = nixpkgs.lib;

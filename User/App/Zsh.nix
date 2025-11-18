@@ -147,7 +147,7 @@ in
       search = "yazi $(fzf)";
       searchall = "cd /;yazi $(fzf)";
       cd = "z";
-      ocr = "/etc/nixos/User/Scripts/OcrTextExtractor.sh";
+      ocr = "${userSettings.scriptsPath}/OcrTextExtractor.sh";
       unmount = "sudo umount -f /mnt/ExtDrive";
       hybernate = "systemctl hibernate";
       hybrid-sleep = "systemctl hybrid-sleep";
@@ -158,8 +158,8 @@ in
       home-listgen = "home-manager generations";
       user-listgen = "nix-env --list-generations";
       system-listgen = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
-      system-gc = "/etc/nixos/User/Scripts/GarbageCollector.sh";
-      system-update = "/etc/nixos/User/Scripts/SystemUpdate.sh";
+      system-gc = "${userSettings.scriptsPath}/GarbageCollector.sh";
+      system-update = "${userSettings.scriptsPath}/SystemUpdate.sh";
       flakeup = "nix flake update --flake /etc/nixos";
       homeup = "home-manager switch --flake /etc/nixos --impure";
       nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
