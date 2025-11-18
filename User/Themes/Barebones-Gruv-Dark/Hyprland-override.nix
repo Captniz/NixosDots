@@ -29,5 +29,20 @@ in
         ignore_opacity = true;
       };
     };
+    animations.animation = lib.mkForce [
+      "windowsIn, 1, 6, myBezier, slide"
+      "windowsOut, 1, 6, myBezier, slide"
+      "windowsMove, 1, 6, myBezier, slide"
+      "border, 1, 10, default"
+      "fadeIn, 0"
+      "fadeOut, 1, 8, default"
+      "fadeLayersIn, 0"
+      "fadeLayersOut, 1, 8, default"
+      "fadePopupsIn, 0"
+      "fadePopupsOut, 1, 8, default"
+      "workspaces, 1, 4, myBezier, slide"
+      "layersIn, 1, 4, myBezier, slide"
+      "layersOut, 1, 2, myBezier, slide"
+    ];
   };
 }
