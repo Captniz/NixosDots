@@ -5,6 +5,9 @@ LOG_FILE="/var/log/nixos-update.log"
 : > "$LOG_FILE"
 ERROR_SECTION=""
 
+ORIG_USER=${SUDO_USER:-$USER}
+ORIG_HOME=$(getent passwd "$ORIG_USER" | cut -d: -f6)
+
 log() {
   echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
 }
@@ -29,9 +32,9 @@ log "🚀 Starting NixOS update process"
 echo "=== 󰆓 Pre-update commit 󰆓 ==="
 ERROR_SECTION="Pre-update Git commit"
 log "=== $ERROR_SECTION ==="
-git add . >>"$LOG_FILE" 2>&1
-git commit -am '!Pre-update Commit! Last commit before update' >>"$LOG_FILE" 2>&1 || log "No changes to commit."
-git push >>"$LOG_FILE" 2>&1
+sudo -u "$ORIG_USER" HOME="$ORIG_HOME" git add . >>"$LOG_FILE" 2>&1
+sudo -u "$ORIG_USER" HOME="$ORIG_HOME" git commit -am '!Pre-update Commit! Last commit before update' >>"$LOG_FILE" 2>&1 || log "No changes to commit."
+sudo -u "$ORIG_USER" HOME="$ORIG_HOME" git push >>"$LOG_FILE" 2>&1
 
 echo "=== 󰌾 Updating flake 󰌾 ==="
 ERROR_SECTION="Flake update"
