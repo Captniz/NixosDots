@@ -9,10 +9,12 @@
 {
   programs.git = {
     enable = true;
-    userName = "Simone Tardiani";
-    userEmail = "simone.tardiani.imp@gmail.com";
     lfs.enable = true;
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Simone Tardiani";
+        email = "simone.tardiani.imp@gmail.com";
+      };
       init.defaultBranch = "main";
       safe.directory = "/etc/nixos";
       pull.rebase = false;
