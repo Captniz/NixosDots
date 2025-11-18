@@ -7,6 +7,10 @@
 - [TODOS](#todos)
   - [Resources](#resources)
   - [Reminders](#reminders)
+    - [Generali](#generali)
+    - [Da renedere dichiarativo](#da-renedere-dichiarativo)
+    - [Features](#features)
+    - [Temi](#temi)
 
 ## Description
 
@@ -51,12 +55,11 @@ I'm also trying to avoid using performance-heavy or purely aesthetic software, t
 ├── User                        # User general configuration files || Mainly managed by Home Manager
 │   ├── App                     # User applications configuration    
 │   │   └── ...
-│   ├── ExtraConfigs            # Configurations for apps that can't be managed by Home Manager options
-│   │   └── ...
 │   ├── Scripts                 # Custom scripts used by the configuration
 │   │   └── ...
 │   ├── Settings                # Other user specific settings for home configuration
-│   │   ├── XdgOptions.nix      # XDG options (e.g. default applications) 
+│   │   ├── HomeFolder.nix      # User home folder configuration
+│   │   ├── MimeTypes.nix       # User mime types configuration  
 │   │   ├── Style.nix           # User style configuration
 │   │   └   ...
 │   └── Themes                  # User themes || Managed by Home Manager and flakes
@@ -75,44 +78,31 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 
 ### Reminders
 
+#### Generali
+
 - [ ] Cerca di rendere tutto dichiarativo
   - [ ] Cartelle della home
-  - [ ] Sfondi
+  - [ ] Cartella Sfondi
   - [ ] Etc....
-- [ ] Find a way to implement vscode extensions in the config
-- [ ] Theme obsidian | [Nuove settings](https://mynixos.com/search?q=obsidian)
-- [ ] Implementa meglio cider, metti i tasti multimedia, metti il titolo della cazone corrente
-- [ ] Risolvi i problemi legati al secondo monitor (MonitorSwitcher.sh non funziona)
-- [ ] implementa [quickshell](https://quickshell.org/docs/v0.2.0/types/)  
-- [ ] [Controlla AGS](https://aylur.github.io/ags/)  
-- [ ] Finisci i temi css
-- [ ] Sposta tutto quello che ha senso spostare in home manager al posto che in nixos (sistema -> user)
-- [ ] Clipboard integration (anchedmenu+bash)
-- [ ] Crea un menu a lista con tasto destro per varie opzioni
-- [ ] Automount USB drives with udisks2 + udiskie
-  - [ ] Nel menu metti anche una serie di cheatsheets per le hotkey tipo Omarchy (yazi,zathura,hyprland,firefox,vim,zsh)
-- [ ] Aggiorna gli hash delle varie app con il flake 
-- [ ] Fai una history delle notifiche (dunst)
-- [ ] Aggiungi una scorciatoia per catturare screenshot di porzioni di schermo e editarle dopo / stessa osa per registrare lo schermo
-- [ ] Utilizza le modalità di rofi
-  - [ ] Window swither like alt-tab
-- [ ] Rendi meno una merda i vari bash script /Scripts
-- [ ] Crea un modo veloce per accedere al package manager
-- [ ] Crea un odo veloce per cambiare i temi
-- [ ] Controlla la caterlla user perche sia rappresentata correttaamente in questo readme
-- [ ] monitor switcher non funziona come dovrebbe
-- [ ] implementa delle gestures per il touchpad con hyprland
-- [ ] migra a zen da firefox
-- [ ] crea un alt-tab con rofi window
-- [ ] crea un modo elegante per vedere sulla barra superiore le app delle workspaces
-- [ ] Crea un menu con rofi per le azioni di nix (gc,update,homeup,nixup)
-- [ ] guarda cosa può fare hyprctl per migliorare la configurazione
-- [ ] usa il font victor-mono
+- [ ] Aggiorna gli hash delle varie app con il flake (aggiorna tutti gli hash che trovi sparsi nelle config)
 - [ ] Guarda la wiki di hyprland (aggiornata spesso)
-- [ ] Usa quickshell
-- [ ] finisci il tema minimale
-- [ ] Sperimenta con rofi -> [Ideas](https://www.youtube.com/watch?v=4JWeU78A95c)
-- [ ] Implementa un miglior menu di SSH con rofi (rofi -show "ssh")
-- [ ] Crea l'area notifiche con anche il powermenu
-- [ ] Nella barra o dove vuoi in quickshell implementa delle funzioni di nixos (gc,update,nixup,homeup)
-- [ ] aggiorna il sistema
+- [ ] Aggiorna il sistema
+- [ ] Merge con la branch main
+
+#### Da renedere dichiarativo
+
+- [ ] Obsidian | [Nuove settings](https://mynixos.com/search?q=obsidian)
+
+#### Features
+
+- [ ] Fai una history delle notifiche
+- [ ] Implementa meglio cider
+  - [ ] Implementa i tasti multimedia
+  - [ ] Crea menù multimedia
+- [ ] Risolvi i problemi legati al secondo monitor (MonitorSwitcher.sh non funziona)
+- [ ] Crea un menu con Rofi che mostra una cheatsheets per le hotkey della finestra attiva tipo Omarchy (yazi,zathura,hyprland,firefox,vim,zsh)
+
+#### Temi
+
+- [ ] Finisci i temi
+- [ ] Crea un modo veloce per cambiare i temi (quantomento ligh/dark)
