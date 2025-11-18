@@ -122,6 +122,7 @@ in
         "$mod, L, exec, rofi -show p -modi p:\'/usr/bin/env bash \"${userSettings.scriptsPath}/PowerMenu.sh\"\'"
         "$mod, I, exec, rofi -show nerdy"
         "$mod, W, exec, sh ${userSettings.scriptsPath}/NixActions.sh"
+        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         # Window managment
         "$mod, TAB, exec, sh ${userSettings.scriptsPath}/WindowSwitcher.sh"
@@ -131,7 +132,7 @@ in
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
         "$mod, C, killactive,"
-        "$mod, V, togglefloating,"
+        "$mod, X, togglefloating,"
         "$mod, P, pin,activewindow"
         "$mod, SPACE, fullscreen"
         "$mod, M, exit,"

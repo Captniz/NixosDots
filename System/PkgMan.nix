@@ -45,7 +45,7 @@
     udisks # Disk manager
     wl-clip-persist # Clipboard manager
     wl-clipboard # Clipboard manager
-    copyq # Clipboard manager
+    cliphist # Clipboard manager
     hyprlock # Screen locker
     hyprland # Window manager
     zsh # Shell

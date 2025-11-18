@@ -7,16 +7,9 @@
 }:
 
 {
-  systemd.user.services."copyq" = {
-    Unit = {
-      description = "CopyQ clipboard manager";
-    };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-    Service = {
-      ExecStart = "${pkgs.copyq}/bin/copyq --start-server";
-    };
+  services.cliphist = {
+    enable = true;
+    allowImages = true;
   };
 
   systemd.user.services."wl-clip-persist" = {
