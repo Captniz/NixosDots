@@ -151,6 +151,7 @@ in
       unmount = "sudo umount -f /mnt/ExtDrive";
       hybernate = "systemctl hibernate";
       hybrid-sleep = "systemctl hybrid-sleep";
+      ssh-menu = "rofi -show 'ssh'";
 
       #! Hasn't been necessary recently
       # fixaudio = "systemctl restart --user pipewire.service";
