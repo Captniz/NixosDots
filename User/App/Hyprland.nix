@@ -69,7 +69,7 @@ in
 
       gesture = [
         "3, horizontal, workspace"
-        "3, down, dispatcher, exec, [float; size 1100 500;animation slide top] alacritty -e btop"
+        "3, down, dispatcher, exec, [float; size 1100 500;animation slide top] alacritty --class Btop -e btop"
         "3, up, close"
         "4, swipe, move"
       ];
@@ -109,18 +109,19 @@ in
 
       bind = [
         # Lauchers
-        "$mod, RETURN, exec, alacritty"
+        "$mod, RETURN, exec, alacritty --class Term"
         "$mod, R, exec, [float; center] rofi -show drun"
         "$mod, F, exec, zen-beta"
         "$mod, A, exec, code"
         "$mod, Q, exec, rofi -show obsidian"
         "$mod, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
-        "$mod, E, exec, alacritty -e yazi"
-        "$mod, W, exec, alacritty -e btop"
+        "$mod, E, exec, alacritty --class Yazi -e yazi "
+        "$mod, B, exec, alacritty --class Btop -e btop"
         "$mod, code:60, exec, rofi -show emoji"
         "$mod, N, exec, rofi -show calc"
         "$mod, L, exec, rofi -show p -modi p:\'/usr/bin/env bash \"${userSettings.scriptsPath}/PowerMenu.sh\"\'"
         "$mod, I, exec, rofi -show nerdy"
+        "$mod, W, exec, sh ${userSettings.scriptsPath}/NixActions.sh"
 
         # Window managment
         "$mod, TAB, exec, sh ${userSettings.scriptsPath}/WindowSwitcher.sh"

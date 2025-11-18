@@ -152,20 +152,6 @@ in
       hybernate = "systemctl hibernate";
       hybrid-sleep = "systemctl hybrid-sleep";
 
-      # Nixos
-      update-showlog = "cat /var/log/nixos-update.log | less";
-      gc-showlog = "cat /var/log/nixos-gc.log | less";
-      home-listgen = "home-manager generations";
-      user-listgen = "nix-env --list-generations";
-      system-listgen = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
-      system-gc = "${userSettings.scriptsPath}/GarbageCollector.sh";
-      system-update = "${userSettings.scriptsPath}/SystemUpdate.sh";
-      flakeup = "nix flake update --flake /etc/nixos";
-      homeup = "home-manager switch --flake /etc/nixos --impure";
-      nixup = "sudo nixos-rebuild switch --flake /etc/nixos";
-      nixconfigure = "code /etc/nixos";
-      optimise-store = "sudo nix-store --optimise";
-
       #! Hasn't been necessary recently
       # fixaudio = "systemctl restart --user pipewire.service";
     };

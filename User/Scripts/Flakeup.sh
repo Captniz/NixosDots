@@ -1,0 +1,1 @@
+nix flake update --flake /etc/nixos
