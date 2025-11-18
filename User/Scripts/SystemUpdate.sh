@@ -44,9 +44,10 @@ nix flake update --flake /etc/nixos >>"$LOG_FILE" 2>&1
 echo "===  Post-update commit  ==="
 ERROR_SECTION="Post-update Git commit"
 log "=== $ERROR_SECTION ==="
-git add . >>"$LOG_FILE" 2>&1
-git commit -am '!Breaking changes! System updated' >>"$LOG_FILE" 2>&1 || log "No changes to commit."
-git push >>"$LOG_FILE" 2>&1
+
+sudo -u "$ORIG_USER" HOME="$ORIG_HOME" git add . >>"$LOG_FILE" 2>&1
+sudo -u "$ORIG_USER" HOME="$ORIG_HOME" git commit -am '!Breaking changes! System updated' >>"$LOG_FILE" 2>&1 || log "No changes to commit."
+sudo -u "$ORIG_USER" HOME="$ORIG_HOME" git push >>"$LOG_FILE" 2>&1
 
 echo "===   Updating Home Manager configuration   ==="
 ERROR_SECTION="Home Manager update"
