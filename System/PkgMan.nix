@@ -39,11 +39,13 @@
     #vcpkg # C++ package manager
     #vcpkg-tool # C++ package manager
     (pkgs.jdk.override { enableJavaFX = false; }) # Java
-    #drawio # Diagram editor
-    #kdePackages.xwaylandvideobridge # Xwayland bridge
 
     ########### Testing
 
+    xwayland # Xwayland support
+    wayback-x11 # Xwayland support
+    #kdePackages.xwaylandvideobridge # Xwayland bridge
+    
     ########### Essentials
 
     zip # Archive manager
@@ -186,14 +188,14 @@
     hakuneko # Manga Downloader
     inputs.zen-browser.packages."${systemSettings.system}".default # Browser
     qdirstat # Disk usage analyzer
+    quickshell # Widget and bar application
     gparted # Partition manager
     telegram-desktop # Messaging app
-    inputs.quickshell.packages."${systemSettings.system}".default # Widgets and bar
     font-manager # Font viewer
     yazi # Terminal file manager
     geogebra # Math tool
     docker # Container manager
-    webcord # Discord client
+    discord # Discord client
     lutris # Game client
     heroic # Game client
     steam # Game client
@@ -214,7 +216,7 @@
     kcc # Kindle Comic Converter
     wireshark # Network protocol analyzer
     zotero # Reference manager
-
+    drawio # Diagram editor
     ############ Disabled programs ( Mostly for gaining space )
 
     # android-studio # Android IDE
