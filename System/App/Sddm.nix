@@ -13,7 +13,6 @@ let
     url = imgLink;
     sha256 = "1258wyz6cxc5wsrivdj0jly9cqr09bc6w3f6f42ycxmmghfdqbcv";
   };
-
 in
 {
   environment.systemPackages = with pkgs; [
