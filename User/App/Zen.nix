@@ -81,9 +81,12 @@
       name = "simo"; # name as listed in about:profiles
       isDefault = true; # can be omitted; true if profile ID is 0
       extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+        # Check https://nur.nix-community.org/repos/rycee/ for more addons
         zotero-connector
         github-file-icons
         youtube-shorts-block
+        adblocker-ultimate
+        #adnauseam
       ];
 
       settings = {
@@ -169,6 +172,37 @@
               definedAliases = [ "@mn" ];
             };
 
+            "NixOS_Wiki" = {
+              urls = [
+                {
+                  template = "https://nixos.wiki/wiki/Special:Search";
+                  params = [
+                    {
+                      name = "search";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = nixSnowflakeIcon;
+              definedAliases = [ "@nw" ];
+            };
+
+            "NixUserRepository" = {
+              urls = [
+                {
+                  template = "https://nur.nix-community.org/";
+                  params = [
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = nixSnowflakeIcon;
+              definedAliases = [ "@nur" ];
+            };
           };
       };
     };
