@@ -39,13 +39,13 @@
     #vcpkg # C++ package manager
     #vcpkg-tool # C++ package manager
     (pkgs.jdk.override { enableJavaFX = false; }) # Java
+    #kdePackages.xwaylandvideobridge # Xwayland bridge
 
     ########### Testing
 
     xwayland # Xwayland support
     wayback-x11 # Xwayland support
-    #kdePackages.xwaylandvideobridge # Xwayland bridge
-    
+
     ########### Essentials
 
     zip # Archive manager
@@ -175,7 +175,6 @@
     ocrmypdf # PDF OCR
     exfatprogs # Exfat utilities
     exfat # Exfat utilities
-    udisks # Disk management utility
     dysk # Disk usage analyzer
     pastel # Color utility
 
@@ -197,7 +196,6 @@
     docker # Container manager
     discord # Discord client
     lutris # Game client
-    heroic # Game client
     steam # Game client
     vlc # Media player
     obs-studio # Media creator / Streaming software
@@ -217,9 +215,11 @@
     wireshark # Network protocol analyzer
     zotero # Reference manager
     drawio # Diagram editor
+
     ############ Disabled programs ( Mostly for gaining space )
 
     # android-studio # Android IDE
     # jetbrains.idea-ultimate # IDE
+    #heroic # Game client
   ];
 }
