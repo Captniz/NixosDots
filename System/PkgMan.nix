@@ -153,6 +153,7 @@
     grim # Screenshot tool
     ripgrep # Text searcher
     woeusb # Windows USB creator
+    exiftool
     fd # Find utility
     glow # Markdown previewer
     slurp # Screen Region selector
@@ -166,6 +167,9 @@
     entr # Code runner
     jc # JSON parser
     jq # JSON parser
+    bc # Calculator
+    sipsak 
+    pjsip
     fzf # Fuzzy File Finder
     protonup-ng # Proton updater
     nmap # Network scanner
