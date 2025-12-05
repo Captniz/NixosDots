@@ -190,6 +190,7 @@ in
       layerrule = [
         "noanim,^(swww-daemon)$"
         "noanim,^(quickshell)$"
+        "noanim,^(selection)$"
       ];
 
       exec-once = [

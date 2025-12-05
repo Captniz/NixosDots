@@ -80,7 +80,6 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 
 #### Generali
 
-- [ ] Togli l'animazione della selezione degli screenshot che rompe swappy
 - [ ] Cerca di rendere tutto dichiarativo
   - [ ] Cartelle della home
   - [ ] Cartella Sfondi
