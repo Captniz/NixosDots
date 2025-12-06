@@ -43,9 +43,6 @@
 
     ########### Testing
 
-    xwayland # Xwayland support
-    wayback-x11 # Xwayland support
-
     ########### Essentials
 
     zip # Archive manager
@@ -128,6 +125,8 @@
     libsForQt5.qt5.qtmultimedia
     kdePackages.qtmultimedia
     libsForQt5.qt5.qtquickcontrols # Qt5 libraries
+    xwayland # Xwayland support
+    wayback-x11 # Xwayland support
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     libsForQt5.qt5.qtwayland # Qt5 libraries
     git-credential-oauth # Git credential helper
@@ -168,7 +167,7 @@
     jc # JSON parser
     jq # JSON parser
     bc # Calculator
-    sipsak 
+    sipsak
     pjsip
     fzf # Fuzzy File Finder
     protonup-ng # Proton updater
