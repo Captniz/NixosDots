@@ -21,7 +21,6 @@ in
 
     settings = {
       # Vars
-      "$mod" = "SUPER";
       "$activeBorder" = "rgba(8DA101dd)";
       "$inactiveBorder" = "rgba(c5c9aaff)";
       "$shadow" = "rgba(1a1a1aee)";
@@ -109,76 +108,79 @@ in
 
       bind = [
         # Lauchers
-        "$mod, RETURN, exec, alacritty --class Term"
-        "$mod, R, exec, [float; center] rofi -show drun"
-        "$mod, F, exec, zen-beta"
-        "$mod, A, exec, code"
-        "$mod, Q, exec, rofi -show obsidian"
-        "$mod, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
-        "$mod, E, exec, alacritty --class Yazi -e yazi "
-        "$mod, B, exec, alacritty --class Btop -e btop"
-        "$mod, code:60, exec, rofi -show emoji"
-        "$mod, N, exec, rofi -show calc"
-        "$mod, L, exec, rofi -show p -modi p:\'/usr/bin/env bash \"${userSettings.scriptsPath}/PowerMenu.sh\"\'"
-        "$mod, I, exec, rofi -show nerdy"
-        "$mod, W, exec, sh ${userSettings.scriptsPath}/NixActions.sh"
-        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        "SUPER, RETURN, exec, alacritty --class Term"
+        "SUPER, R, exec, [float; center] rofi -show drun"
+        "SUPER, F, exec, zen-beta"
+        "SUPER, A, exec, code"
+        "SUPER, Q, exec, rofi -show obsidian"
+        "SUPER, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
+        "SUPER, E, exec, alacritty --class Yazi -e yazi "
+        "SUPER, B, exec, alacritty --class Btop -e btop"
+        "SUPER, code:60, exec, rofi -show emoji"
+        "SUPER, N, exec, rofi -show calc"
+        "SUPER, L, exec, rofi -show p -modi p:\'/usr/bin/env bash \"${userSettings.scriptsPath}/PowerMenu.sh\"\'"
+        "SUPER, I, exec, rofi -show nerdy"
+        "SUPER, W, exec, sh ${userSettings.scriptsPath}/NixActions.sh"
+        "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         # Window managment
-        "$mod, TAB, exec, sh ${userSettings.scriptsPath}/WindowSwitcher.sh"
-        "$mod, J, togglesplit,"
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
-        "$mod, C, killactive,"
-        "$mod, X, togglefloating,"
-        "$mod, P, pin,activewindow"
-        "$mod, SPACE, fullscreen"
-        "$mod, M, exit,"
+        "SUPER, TAB, exec, sh ${userSettings.scriptsPath}/WindowSwitcher.sh"
+        "SUPER, J, togglesplit,"
+        "SUPER, left, movefocus, l"
+        "SUPER, right, movefocus, r"
+        "SUPER, up, movefocus, u"
+        "SUPER, down, movefocus, d"
+        "SUPER, C, killactive,"
+        "SUPER, X, togglefloating,"
+        "SUPER, P, pin,activewindow"
+        "SUPER, SPACE, fullscreen"
+        "SUPER, M, exit,"
 
         # Workspaces
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
+        "SUPER, 1, workspace, 1"
+        "SUPER, 2, workspace, 2"
+        "SUPER, 3, workspace, 3"
+        "SUPER, 4, workspace, 4"
+        "SUPER, 5, workspace, 5"
+        "SUPER, 6, workspace, 6"
+        "SUPER, 7, workspace, 7"
+        "SUPER, 8, workspace, 8"
+        "SUPER, 9, workspace, 9"
+        "SUPER, 0, workspace, 10"
 
         # Move active window to a workspace
-        "$mod SHIFT, 1, movetoworkspace, 1"
-        "$mod SHIFT, 2, movetoworkspace, 2"
-        "$mod SHIFT, 3, movetoworkspace, 3"
-        "$mod SHIFT, 4, movetoworkspace, 4"
-        "$mod SHIFT, 5, movetoworkspace, 5"
-        "$mod SHIFT, 6, movetoworkspace, 6"
-        "$mod SHIFT, 7, movetoworkspace, 7"
-        "$mod SHIFT, 8, movetoworkspace, 8"
-        "$mod SHIFT, 9, movetoworkspace, 9"
-        "$mod SHIFT, 0, movetoworkspace, 10"
+        "SUPER SHIFT, 1, movetoworkspace, 1"
+        "SUPER SHIFT, 2, movetoworkspace, 2"
+        "SUPER SHIFT, 3, movetoworkspace, 3"
+        "SUPER SHIFT, 4, movetoworkspace, 4"
+        "SUPER SHIFT, 5, movetoworkspace, 5"
+        "SUPER SHIFT, 6, movetoworkspace, 6"
+        "SUPER SHIFT, 7, movetoworkspace, 7"
+        "SUPER SHIFT, 8, movetoworkspace, 8"
+        "SUPER SHIFT, 9, movetoworkspace, 9"
+        "SUPER SHIFT, 0, movetoworkspace, 10"
 
         # Scroll through existing workspaces
-        "$mod, mouse_down, workspace, e+1"
-        "$mod, mouse_up, workspace, e-1"
+        "SUPER, mouse_down, workspace, e+1"
+        "SUPER, mouse_up, workspace, e-1"
       ];
 
       binde = [
         # System settings controls
-        "$mod, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume updateMute"
-        "$mod, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume update"
-        "$mod, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume update"
-        "$mod, F5, exec, light -U 5 && sh ${userSettings.scriptsPath}/NotifyBrightness.sh && qs ipc call brightness update"
-        "$mod, F6, exec, light -A 5 && sh ${userSettings.scriptsPath}/NotifyBrightness.sh && qs ipc call brightness update"
+        "SUPER, F1, exec, wpctl set-mute @DEFAULT_SINK@ toggle && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume updateMute"
+        "SUPER, F2, exec, wpctl set-volume @DEFAULT_SINK@ 0.05- && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume update"
+        "SUPER, F3, exec, wpctl set-volume @DEFAULT_SINK@ 0.05+ && sh ${userSettings.scriptsPath}/NotifyVolume.sh && qs ipc call volume update"
+        "SUPER, F5, exec, light -U 5 && sh ${userSettings.scriptsPath}/NotifyBrightness.sh && qs ipc call brightness update"
+        "SUPER, F6, exec, light -A 5 && sh ${userSettings.scriptsPath}/NotifyBrightness.sh && qs ipc call brightness update"
+        "SUPER, F7, exec, playerctl play-pause"
+        "SUPER, F8, exec, playerctl previous"
+        "SUPER, F9, exec, playerctl next"
       ];
 
       bindm = [
         # Move/resize windows
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
       ];
 
       windowrulev2 = [
