@@ -88,6 +88,7 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Guarda la wiki di hyprland (aggiornata spesso)
 - [ ] Aggiorna il sistema
 - [ ] Merge con la branch main
+- [ ] Aggiusta lo script di upgrade del sistema
 
 #### Da renedere dichiarativo
 
@@ -96,9 +97,6 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 #### Features
 
 - [ ] Fai una history delle notifiche
-- [ ] Implementa meglio cider
-  - [ ] Implementa i tasti multimedia
-  - [ ] Crea menù multimedia
 - [ ] Risolvi i problemi legati al secondo monitor (MonitorSwitcher.sh non funziona)
 - [ ] Crea un menu con Rofi che mostra una cheatsheets per le hotkey della finestra attiva tipo Omarchy (yazi,zathura,hyprland,firefox,vim,zsh)
 
