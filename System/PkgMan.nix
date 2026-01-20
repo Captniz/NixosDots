@@ -43,6 +43,9 @@
 
     ########### Testing
 
+    whatsapp-electron
+    prismlauncher # Game client
+
     ########### Essentials
 
     zip # Archive manager

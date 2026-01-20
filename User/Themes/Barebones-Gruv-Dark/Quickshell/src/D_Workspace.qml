@@ -40,7 +40,7 @@ Rectangle {
       id: title
       anchors.left: parent.left
       anchors.verticalCenter: parent.verticalCenter
-      text: ws.toplevels.values.length > 0 ? ws.toplevels.values[0].lastIpcObject.class : "Desktop"
+      text: ws.toplevels.values.length > 0 ? ((ws.toplevels.values[0].lastIpcObject.class.split(".")[0] === "org") ? ws.toplevels.values[0].lastIpcObject.class.split(".").pop() : ws.toplevels.values[0].lastIpcObject.class) : "Desktop"
       font.family: font_family
       font.weight: active_weight
       font.italic: active_italic

@@ -40,6 +40,7 @@
         OnCalendar = "weekly";
         Persistent = true;
         RandomizedDelaySec = "20m"; # spread load if multiple machines
+        Unit = "nix-full-gc.service";
       };
     };
     services."nix-full-gc" = {

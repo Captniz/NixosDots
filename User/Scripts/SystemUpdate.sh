@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 set -euo pipefail
 
 LOG_FILE="/var/log/nixos-update.log"
