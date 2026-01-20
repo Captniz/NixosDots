@@ -77,7 +77,7 @@ in
         };
 
         size = 12;
-        builtin_box_drawing = false;
+        builtin_box_drawing = true;
       };
 
       env.TERM = "xterm-256color";

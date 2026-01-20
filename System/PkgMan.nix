@@ -40,7 +40,6 @@
     #owl # Owl library
 
     ########### Testing
-
     ########### Essentials
 
     zip # Archive manager
@@ -103,10 +102,9 @@
 
     ########### Dependencies/Libraries
 
-
     vcpkg # C++ package manager
     vcpkg-tool # C++ package manager
-    bind 
+    bind
     fuse # Filesystem in Userspace
     libmtp # MTP support
     simple-mtpfs # MTP support
