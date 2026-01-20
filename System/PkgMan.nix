@@ -36,15 +36,10 @@
   environment.systemPackages = with pkgs; [
     ########### Errored
 
-    #vcpkg # C++ package manager
-    #vcpkg-tool # C++ package manager
-    (pkgs.jdk.override { enableJavaFX = false; }) # Java
     #kdePackages.xwaylandvideobridge # Xwayland bridge
+    #owl # Owl library
 
     ########### Testing
-
-    whatsapp-electron
-    prismlauncher # Game client
 
     ########### Essentials
 
@@ -80,6 +75,7 @@
 
     ########### Languages
 
+    (pkgs.jdk.override { enableJavaFX = true; }) # Java
     biome # JavaScript/TypeScript linter
     pnpm # Node.js package manager
     R # R language
@@ -107,8 +103,11 @@
 
     ########### Dependencies/Libraries
 
-    bind
-    fuse
+
+    vcpkg # C++ package manager
+    vcpkg-tool # C++ package manager
+    bind 
+    fuse # Filesystem in Userspace
     libmtp # MTP support
     simple-mtpfs # MTP support
     hyprland-qtutils # Hyprland Qt support
@@ -117,7 +116,6 @@
     glib # C library
     kdePackages.qtdeclarative
     libinput # Input library
-    owl # Owl library
     alsa-utils # Audio utilities
     webkitgtk_6_0 # Webkit
     dxvk # DirectX to Vulkan translation layer
@@ -164,7 +162,7 @@
     cifs-utils # CIFS utilities
     valgrind # Memory debugging
     testdisk # Data recovery
-    nixfmt-rfc-style # Nix formatter
+    nixfmt # Nix formatter
     zoxide # Directory jumper
     entr # Code runner
     jc # JSON parser
@@ -186,6 +184,8 @@
 
     ########### Programs & Apps
 
+    whatsapp-electron # WhatsApp client
+    prismlauncher # Game client
     powertop # Power management
     gimp3 # Image editor
     localsend # File transfer app
