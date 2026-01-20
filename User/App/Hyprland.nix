@@ -188,6 +188,13 @@ in
         "match:class ^(zen-beta)$, opaque on"
         "match:class ^(mirage)$, opaque on"
         "match:class ^(ueberzugpp_[A-Za-z0-9]+)$, no_anim on"
+        "match:class ^(ueberzugpp_[A-Za-z0-9]+)$, float on"
+        "match:class ^(ueberzugpp_[A-Za-z0-9]+)$, no_initial_focus on"
+        "match:class ^(ueberzugpp_[A-Za-z0-9]+)$, no_focus on"
+        "match:class ^(ueberzug_[A-Za-z0-9]+)$, no_focus on"
+        "match:class ^(ueberzug_[A-Za-z0-9]+)$, no_initial_focus on"
+        "match:class ^(ueberzug_[A-Za-z0-9]+)$, no_anim on"
+        "match:class ^(ueberzug_[A-Za-z0-9]+)$, float on"
       ];
 
       layerrule = [
