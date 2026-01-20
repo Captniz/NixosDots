@@ -50,6 +50,14 @@ in
 
     enableZshIntegration = true;
 
+    extraPackages = with pkgs; [
+      glow
+      ouch
+      ueberzug
+      imagemagick
+      wl-clipboard
+    ];
+
     initLua = ''
 
       require("full-border"):setup {
@@ -62,21 +70,11 @@ in
     '';
 
     plugins = {
-
-      mount = "${yazi-plugins}/mount.yazi";
-
-      full-border = "${yazi-plugins}/full-border.yazi";
-
-      git = "${yazi-plugins}/git.yazi";
-
-      smart-filter = "${yazi-plugins}/smart-filter.yazi";
-
-      glow = pkgs.fetchFromGitHub {
-        owner = "Reledia";
-        repo = "glow.yazi";
-        rev = "main";
-        hash = "sha256-DPud1Mfagl2z490f5L69ZPnZmVCa0ROXtFeDbEegBBU=";
-      };
+      git = pkgs.yaziPlugins.git;
+      glow = pkgs.yaziPlugins.glow;
+      mount = pkgs.yaziPlugins.mount;
+      full-border = pkgs.yaziPlugins.full-border;
+      smart-filter = pkgs.yaziPlugins.smart-filter;
 
       hexyl = pkgs.fetchFromGitHub {
         owner = "Reledia";
@@ -85,63 +83,56 @@ in
         hash = "sha256-Xv1rfrwMNNDTgAuFLzpVrxytA2yX/CCexFt5QngaYDg=";
       };
 
-      compress = pkgs.fetchFromGitHub {
-        owner = "KKV9";
-        repo = "compress.yazi";
-        rev = "main";
-        hash = "sha256-Yf5R3H8t6cJBMan8FSpK3BDSG5UnGlypKSMOi0ZFqzE=";
-      };
     };
 
-    keymap = {
-      mgr = {
-        prepend_keymap = [
-          {
-            on = "M";
-            run = "plugin mount";
-            desc = "Mount partitions";
-          }
-          {
-            on = [
-              "A"
-              "a"
-            ];
-            run = "plugin compress";
-            desc = "Archive selected files";
-          }
-          {
-            on = "F";
-            run = "plugin smart-filter";
-            desc = "Smart filter";
-          }
-        ];
-        append_keymap = [
-          {
-            on = [
-              "g"
-              "r"
-            ];
-            run = "cd ~/Documents/Repos";
-            desc = "Goto repos";
-          }
-          {
-            on = [
-              "g"
-              "t"
-            ];
-            run = "cd ~/Documents";
-            desc = "Goto documents";
-          }
-          {
-            on = [
-              "g"
-              "n"
-            ];
-            run = "cd /etc/nixos";
-            desc = "Goto nix-config";
-          }
-        ];
-      };
+    keymap.mgr = {
+      prepend_keymap = [
+        {
+          on = "M";
+          run = "plugin mount";
+          desc = "Mount partitions";
+        }
+        {
+          on = "F";
+          run = "plugin smart-filter";
+          desc = "Smart filter";
+        }
+        {
+          on = [
+            "c"
+            "y"
+          ];
+          run = "shell -- for path in %s; do echo \"file://$path\"; done | wl-copy -t text/uri-list";
+          desc = "Copy file to clipboard";
+        }
+      ];
+
+      append_keymap = [
+        {
+          on = [
+            "g"
+            "r"
+          ];
+          run = "cd ~/Documents/Repos";
+          desc = "Goto repos";
+        }
+        {
+          on = [
+            "g"
+            "t"
+          ];
+          run = "cd ~/Documents";
+          desc = "Goto documents";
+        }
+        {
+          on = [
+            "g"
+            "n"
+          ];
+          run = "cd /etc/nixos";
+          desc = "Goto nix-config";
+        }
+      ];
     };
 
     settings = {
@@ -174,9 +165,8 @@ in
         max_height = 900;
         cache_dir = "";
         image_delay = 30;
-        image_filter = "triangle";
+        image_filter = "catmull-rom";
         image_quality = 75;
-        sixel_fraction = 15;
         ueberzug_scale = 1;
         ueberzug_offset = [
           0
@@ -197,12 +187,7 @@ in
         ];
         compress = [
           {
-            run = "zip -r \"$@.zip\" \"$@\"";
-            desc = "Compress here";
-            for = "unix";
-          }
-          {
-            run = "zip -r \"$@.zip\" \"$@\"";
+            run = "7z -r -tzip a \"$1\"";
             desc = "Compress here";
             for = "linux";
           }
@@ -214,17 +199,10 @@ in
             for = "linux";
           }
         ];
-        xdg-open = [
+        open = [
           {
             run = "xdg-open \"$1\" & disown";
             desc = "Open with default XDG";
-            for = "linux";
-          }
-        ];
-        open-pdf = [
-          {
-            run = "zathura \"$1\" & disown";
-            desc = "Open";
             for = "linux";
           }
         ];
@@ -234,13 +212,14 @@ in
             desc = "Extract here";
             for = "unix";
           }
-          {
-            run = "ya pub extract --list %*";
-            desc = "Extract here";
-            for = "windows";
-          }
         ];
         play = [
+          {
+            run = "xdg-open \"$1\"";
+            desc = "Play";
+            for = "linux";
+            orphan = true;
+          }
           {
             run = "mpv --force-window \"$@\"";
             orphan = true;
@@ -266,39 +245,39 @@ in
         rules = [
           # Folder
           {
-            name = "*/";
+            url = "*/";
             use = [
+              "open"
               "edit"
               "reveal"
               "compress"
               "code"
-              "xdg-open"
             ];
           }
           # Programming Language
           {
             mime = "text/{c,c++,c-header,c++-header,csharp,go,java,javascript,lua,markdown,objective-c,python,ruby,shellscript,sql,yaml}";
             use = [
+              "open"
               "code"
               "edit"
               "reveal"
-              "xdg-open"
             ];
           }
           # Text
           {
             mime = "text/*";
             use = [
+              "open"
               "edit"
               "reveal"
-              "xdg-open"
             ];
           }
           # Image
           {
             mime = "image/*";
             use = [
-              "xdg-open"
+              "open"
               "reveal"
             ];
           }
@@ -307,6 +286,7 @@ in
             mime = "{audio,video}/*";
             use = [
               "play"
+              "open"
               "reveal"
             ];
           }
@@ -314,8 +294,7 @@ in
           {
             mime = "application/{pdf,epub+zip}";
             use = [
-              "open-pdf"
-              "xdg-open"
+              "open"
               "reveal"
             ];
           }
@@ -324,6 +303,7 @@ in
             mime = "application/{,g}zip";
             use = [
               "extract"
+              "open"
               "reveal"
             ];
           }
@@ -331,6 +311,7 @@ in
             mime = "application/{tar,bzip*,7z-compressed,xz,rar}";
             use = [
               "extract"
+              "open"
               "reveal"
             ];
           }
@@ -338,6 +319,8 @@ in
           {
             mime = "application/{json,x-ndjson}";
             use = [
+              "open"
+              "code"
               "edit"
               "reveal"
             ];
@@ -346,13 +329,14 @@ in
           {
             mime = "inode/empty";
             use = [
+              "open"
               "edit"
               "reveal"
             ];
           }
           # Fallback
           {
-            name = "*";
+            url = "*";
             use = [
               "open"
               "reveal"
@@ -383,12 +367,12 @@ in
         prepend_fetchers = [
           {
             id = "git";
-            name = "*";
+            url = "*";
             run = "git";
           }
           {
             id = "git";
-            name = "*/";
+            url = "*/";
             run = "git";
           }
         ];
@@ -397,10 +381,70 @@ in
           # Mimetype
           {
             id = "mime";
-            name = "*";
-            run = "mime";
-            "if" = "!mime";
+            url = "*/";
+            run = "mime.dir";
             prio = "high";
+          }
+          {
+            id = "mime";
+            url = "local://*";
+            run = "mime.local";
+            prio = "high";
+          }
+          {
+            id = "mime";
+            url = "remote://*";
+            run = "mime.remote";
+            prio = "high";
+          }
+        ];
+
+        spotters = [
+          {
+            url = "*/";
+            run = "folder";
+          }
+          # Code
+          {
+            mime = "text/*";
+            run = "code";
+          }
+          {
+            mime = "application/{mbox,javascript,wine-extension-ini}";
+            run = "code";
+          }
+          # Image
+          {
+            mime = "image/{avif,hei?,jxl}";
+            run = "magick";
+          }
+          {
+            mime = "image/svg+xml";
+            run = "svg";
+          }
+          {
+            mime = "image/*";
+            run = "image";
+          }
+          # Video
+          {
+            mime = "video/*";
+            run = "video";
+          }
+          # Virtual file system
+          {
+            mime = "vfs/*";
+            run = "vfs";
+          }
+          # Error
+          {
+            mime = "null/*";
+            run = "null";
+          }
+          # Fallback
+          {
+            url = "*";
+            run = "file";
           }
         ];
 
@@ -437,9 +481,8 @@ in
 
         previewers = [
           {
-            name = "*/";
+            url = "*/";
             run = "folder";
-            sync = true;
           }
           # Code
           {
@@ -452,13 +495,17 @@ in
           }
           # JSON
           {
-            mime = "application/{json,x-ndjson}";
+            mime = "application/{json,ndjson}";
             run = "json";
           }
           # Image
           {
-            mime = "image/{avif,hei?,jxl,svg+xml}";
+            mime = "image/{avif,hei?,jxl}";
             run = "magick";
+          }
+          {
+            mime = "image/svg+xml";
+            run = "svg";
           }
           {
             mime = "image/*";
@@ -476,11 +523,28 @@ in
           }
           # Archive
           {
-            mime = "application/{,g}zip";
+            mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}";
             run = "archive";
           }
           {
-            mime = "application/x-{tar,bzip*,7z-compressed,xz,rar,iso9660-image}";
+            mime = "application/{debian*-package,redhat-package-manager,rpm,android.package-archive}";
+            run = "archive";
+          }
+          {
+            url = "*.{AppImage,appimage}";
+            run = "archive";
+          }
+          # Virtual Disk / Disk Image
+          {
+            mime = "application/{iso9660-image,qemu-disk,ms-wim,apple-diskimage}";
+            run = "archive";
+          }
+          {
+            mime = "application/virtualbox-{vhd,vhdx}";
+            run = "archive";
+          }
+          {
+            url = "*.{img,fat,ext,ext2,ext3,ext4,squashfs,ntfs,hfs,hfsx}";
             run = "archive";
           }
           # Font
@@ -494,8 +558,18 @@ in
           }
           # Empty file
           {
-            mime = "inode/x-empty";
+            mime = "inode/empty";
             run = "empty";
+          }
+          # Virtual file system
+          {
+            mime = "vfs/*";
+            run = "vfs";
+          }
+          # Error
+          {
+            mime = "null/*";
+            run = "null";
           }
           # Fallback
           {
@@ -656,5 +730,6 @@ in
         enabled = false;
       };
     };
+
   };
 }

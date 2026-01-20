@@ -12,117 +12,151 @@ let
     owner = "yazi-rs";
     repo = "flavors";
     rev = "main";
-    hash = "sha256-xYEVdDv0AzPYGwANiP1V5JEKg6k1JXEBeH5tHbPPFl4=";
+    hash = "sha256-xGnebGuSOZpQl/QhuZkwgrjfAlfbEtruA9UVe030mZM=";
   };
 in
 {
+
   programs.yazi.flavors = lib.mkForce {
     dracula = "${yazi-flavors}/dracula.yazi";
     flexoki-dark = pkgs.fetchFromGitHub {
       owner = "gosxrgxx";
       repo = "flexoki-dark.yazi";
       rev = "main";
-      hash = "sha256-VQJIqUNklPDiXBSYGWUp099LXytlETUwGj03o/9HP5I=";
+      hash = "sha256-fEGAxeyeWD6HBKTmhAhKGNGb5LsYPR0Y2I4B5adpv9M=";
     };
 
     flexoki-light = pkgs.fetchFromGitHub {
       owner = "gosxrgxx";
-      repo = "flexoki-dark.yazi";
+      repo = "flexoki-light.yazi";
       rev = "main";
-      hash = "sha256-VQJIqUNklPDiXBSYGWUp099LXytlETUwGj03o/9HP5I=";
+      hash = "sha256-zGx/4lJH9Cko84qcgzXu2UNJUdc4cOXMVhHQT05hpSQ=";
     };
 
     gruv-dark = pkgs.fetchFromGitHub {
       owner = "bennyyip";
       repo = "gruvbox-dark.yazi";
       rev = "main";
-      hash = "sha256-9ZZHXP0Junaj6r80nE8oDNEU5WIKVdtz4g72BFzcSAM=";
+      hash = "sha256-Y/i+eS04T2+Sg/Z7/CGbuQHo5jxewXIgORTQm25uQb4=";
     };
   };
 
   programs.yazi.theme = lib.mkForce {
-    manager = {
-      cwd = {
-        fg = "${colors.bright_blue}";
-      };
-      hovered = {
+    indicator = {
+      current = {
         reversed = true;
       };
-      preview_hovered = {
+      preview = {
         bold = true;
       };
+      padding = {
+        open = "█";
+        close = "█";
+      };
+    };
+    tabs = {
+      active = {
+        bg = "${colors.bright_blue}";
+      };
+      sep_inner = {
+        open = "";
+        close = "";
+      };
+      sep_outer = {
+        open = "█";
+        close = "█";
+      };
+    };
+    mgr = {
+      cwd = {
+        # !
+        fg = "${colors.bright_blue}";
+      };
       find_keyword = {
+        # !
         fg = "${colors.yellow}";
         bold = true;
         italic = true;
         underline = true;
       };
       find_position = {
+        # !
         fg = "${colors.purple}";
         bg = "reset";
         bold = true;
         italic = true;
       };
       marker_copied = {
+        # !
         fg = "${colors.bright_green}";
         bg = "${colors.bright_green}";
       };
       marker_cut = {
+        # !
         fg = "${colors.bright_red}";
         bg = "${colors.bright_red}";
       };
       marker_marked = {
+        # !
         fg = "${colors.bright_aqua}";
         bg = "${colors.bright_aqua}";
       };
       marker_selected = {
+        # !
         fg = "${colors.bright_yellow}";
         bg = "${colors.bright_yellow}";
       };
-      tab_active = {
-        reversed = true;
-      };
-      tab_inactive = { };
-      tab_width = 30;
       count_copied = {
+        # !
         fg = "${colors.white}";
         bg = "${colors.green}";
       };
       count_cut = {
+        # !
         fg = "${colors.white}";
         bg = "${colors.red}";
       };
       count_selected = {
+        # !
         fg = "${colors.white}";
         bg = "${colors.yellow}";
       };
-      border_symbol = "│";
+      border_symbol = "│"; # !
       border_style = {
+        # !
         fg = "${colors.bg2}";
       };
-      syntect_theme = "";
+      syntect_theme = ""; # !
     };
-    status = {
-      mode_normal = {
+    mode = {
+      normal_main = {
+        # !
         bg = "${colors.bright_blue}";
         bold = true;
       };
-      mode_select = {
+      select_main = {
+        # !
         bg = "${colors.bright_purple}";
         bold = true;
       };
-      mode_unset = {
+      unset_main = {
+        # !
         bg = "${colors.bright_red}";
         bold = true;
       };
+    };
+    status = {
       progress_label = {
+        # !
         bold = true;
       };
       progress_normal = {
+        # !
         fg = "${colors.bright_blue}";
         bg = "${colors.black}";
       };
       progress_error = {
+        # !
         fg = "${colors.red}";
         bg = "${colors.black}";
       };
@@ -136,6 +170,17 @@ in
         bold = true;
       };
       inactive = { };
+    };
+    spot = {
+      border = {
+        fg = "${colors.bright_blue}";
+      };
+      title = {
+        fg = "${colors.bright_blue}";
+      };
+      tbl_cell={
+        reversed = true;
+      };
     };
     input = {
       border = {
@@ -154,8 +199,6 @@ in
       title = {
         fg = "${colors.bright_orange}";
         bg = "${colors.bg1}";
-      };
-      content = {
       };
       list = {
         bold = true;
@@ -216,7 +259,7 @@ in
         fg = "${colors.blue}";
       };
       run = {
-        fg = "${colors.bright_orange}";
+        fg = "${colors.bright_purple}";
       };
       desc = { };
       hovered = {
@@ -246,7 +289,7 @@ in
       rules = [
         {
           mime = "image/*";
-          fg = "${colors.yellow}";
+          fg = "${colors.purple}";
         }
         {
           mime = "{audio,video}/*";
@@ -262,16 +305,16 @@ in
         }
         {
           mime = "application/{pdf,doc,rtf,vnd.*}";
-          fg = "${colors.white}";
+          fg = "${colors.bright_red}";
         }
         {
           mime = "inode/empty";
           fg = "${colors.bright_black}";
         }
         {
-          name = "*";
+          url = "*";
           is = "orphan";
-          fg = "${colors.faded_green}";
+          fg = "${colors.bright_blue}";
         }
         {
           name = "*";
@@ -280,24 +323,24 @@ in
           bold = true;
         }
         {
-          name = "*";
+          url = "*";
           is = "dummy";
-          bg = "${colors.faded_green}";
+          bg = "${colors.bright_blue}";
         }
         {
-          name = "*/";
+          url = "*/";
           is = "dummy";
-          bg = "${colors.faded_green}";
+          bg = "${colors.bright_blue}";
         }
         {
-          name = "*";
+          url = "*";
           is = "link";
-          fg = "${colors.faded_green}";
+          fg = "${colors.bright_blue}";
         }
         {
-          name = "*/";
+          url = "*/";
           is = "link";
-          fg = "${colors.faded_green}";
+          fg = "${colors.bright_blue}";
         }
         {
           name = "*/";
