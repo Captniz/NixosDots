@@ -75,6 +75,7 @@ in
       mount = pkgs.yaziPlugins.mount;
       full-border = pkgs.yaziPlugins.full-border;
       smart-filter = pkgs.yaziPlugins.smart-filter;
+      compress = pkgs.yaziPlugins.compress;
 
       hexyl = pkgs.fetchFromGitHub {
         owner = "Reledia";
@@ -104,6 +105,11 @@ in
           ];
           run = "shell -- for path in %s; do echo \"file://$path\"; done | wl-copy -t text/uri-list";
           desc = "Copy file to clipboard";
+        }
+        {
+          on = "C";
+          run = "plugin compress";
+          desc = "Archive selected files";
         }
       ];
 
@@ -187,7 +193,7 @@ in
         ];
         compress = [
           {
-            run = "7z -r -tzip a \"$1\"";
+            run = "7z -r -tzip a \"compressed\" \"$1\"";
             desc = "Compress here";
             for = "linux";
           }
