@@ -50,7 +50,6 @@ in
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        no_border_on_floating = true;
         layout = "dwindle";
         "col.active_border" = "$activeBorder";
         "col.inactive_border" = "$inactiveBorder";
@@ -62,7 +61,6 @@ in
       };
 
       misc = {
-        new_window_takes_over_fullscreen = 2;
         disable_hyprland_logo = true;
       };
 
@@ -80,6 +78,7 @@ in
         touchpad = {
           natural_scroll = "yes";
           middle_button_emulation = true;
+          disable_while_typing = false;
         };
       };
 
@@ -93,6 +92,7 @@ in
           new_optimizations = true;
           passes = 3;
           ignore_opacity = true;
+          vibrancy = 0.5;
         };
       };
 
@@ -183,16 +183,17 @@ in
         "SUPER, mouse:273, resizewindow"
       ];
 
-      windowrulev2 = [
-        "opaque,class:^(zen-beta)$"
-        "opaque,class:^(mirage)$"
-        "noanim,class:^(ueberzugpp_[A-Za-z0-9]+)$"
+      windowrule = [
+        "match:float true, border_size 0"
+        "match:class ^(zen-beta)$, opaque on"
+        "match:class ^(mirage)$, opaque on"
+        "match:class ^(ueberzugpp_[A-Za-z0-9]+)$, no_anim on"
       ];
 
       layerrule = [
-        "noanim,^(swww-daemon)$"
-        "noanim,^(quickshell)$"
-        "noanim,^(selection)$"
+        "match:namespace ^(swww-daemon)$, no_anim on"
+        "match:namespace ^(quickshell)$, no_anim on"
+        "match:namespace ^(selection)$, no_anim on"
       ];
 
       exec-once = [
