@@ -50,7 +50,7 @@ sudo -u "$ORIG_USER" HOME="$ORIG_HOME" git push >>"$LOG_FILE" 2>&1
 echo "===   Updating Home Manager configuration   ==="
 ERROR_SECTION="Home Manager update"
 log "=== $ERROR_SECTION ==="
-home-manager switch --flake /etc/nixos --impure >>"$LOG_FILE" 2>&1
+sudo -u "$ORIG_USER" HOME="$ORIG_HOME" home-manager switch --flake /etc/nixos --impure
 
 echo "=== 󰍹  Updating System (NixOS) configuration 󰍹 ==="
 ERROR_SECTION="NixOS rebuild"
