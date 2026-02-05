@@ -56,13 +56,9 @@ in
     };
     tabs = {
       active = {
-        bg = "${colors.bright_blue}";
+        bg = "${colors.blue}";
       };
       sep_inner = {
-        open = "";
-        close = "";
-      };
-      sep_outer = {
         open = "█";
         close = "█";
       };
