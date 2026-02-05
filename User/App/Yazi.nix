@@ -107,6 +107,14 @@ in
           desc = "Copy file to clipboard";
         }
         {
+          on = [
+            "c"
+            "C"
+          ];
+          run = "shell -- for path in %s; do cat \"$path\"; done | wl-copy --trim-newline";
+          desc = "Copy file contents to clipboard";
+        }
+        {
           on = "C";
           run = "plugin compress";
           desc = "Archive selected files";
@@ -276,6 +284,7 @@ in
             use = [
               "open"
               "edit"
+              "code"
               "reveal"
             ];
           }
