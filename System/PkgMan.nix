@@ -40,6 +40,10 @@
     #owl # Owl library
 
     ########### Testing
+
+    hfst
+    hfsprogs
+
     ########### Essentials
 
     zip # Archive manager
