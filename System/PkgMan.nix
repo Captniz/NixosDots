@@ -134,6 +134,8 @@
     libsForQt5.qt5.qtwayland # Qt5 libraries
     git-credential-oauth # Git credential helper
     xdg-desktop-portal # Desktop utilities
+    xdg-desktop-portal-wlr # Desktop utilities
+    pkgs.kdePackages.xdg-desktop-portal-kde # Desktop utilities
     xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities
     xorg.xhost # Xorg utility
@@ -184,6 +186,7 @@
 
     ########### Programs & Apps
 
+    wf-recorder # Screen recorder
     whatsapp-electron # WhatsApp client
     prismlauncher # Game client
     powertop # Power management

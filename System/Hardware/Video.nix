@@ -8,8 +8,10 @@
 
 {
   # Basic graphics settings
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "amdgpu" ];
+  };
   hardware = {
     nvidia.modesetting.enable = true;
     graphics = {
@@ -21,15 +23,12 @@
   # Xdg portals
   xdg.portal = {
     enable = true;
-    wlr.enable = false;
-
-    config = {
-      common.default = "hyprland";
-    };
-
     extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal
       pkgs.xdg-desktop-portal-gtk
+      pkgs.kdePackages.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
@@ -37,7 +36,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    withUWSM = true;
   };
 
   # Enable backlight control
