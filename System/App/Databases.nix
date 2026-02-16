@@ -17,7 +17,7 @@
       '';
     };
     mongodb = {
-      enable = false;
+      enable = true;
       package = pkgs.mongodb-ce;
     };
   };

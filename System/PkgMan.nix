@@ -133,11 +133,9 @@
     libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
     libsForQt5.qt5.qtwayland # Qt5 libraries
     git-credential-oauth # Git credential helper
+    xdg-desktop-portal # Desktop utilities
     xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities
-    xdg-desktop-portal-wlr # Desktop utilities
-    xdg-desktop-portal # Desktop utilities
-    kdePackages.xdg-desktop-portal-kde # Desktop utilities
     xorg.xhost # Xorg utility
     hyprland-protocols # Hyprland protocols
     wlroots # Wayland compositor
@@ -202,7 +200,7 @@
     yazi # Terminal file manager
     geogebra # Math tool
     docker # Container manager
-    discord # Discord client
+    discord-canary # Discord client
     lutris # Game client
     steam # Game client
     vlc # Media player
