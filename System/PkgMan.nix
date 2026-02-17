@@ -203,7 +203,6 @@
     yazi # Terminal file manager
     geogebra # Math tool
     docker # Container manager
-    discord-canary # Discord client
     lutris # Game client
     steam # Game client
     vlc # Media player
@@ -224,11 +223,12 @@
     wireshark # Network protocol analyzer
     zotero # Reference manager
     drawio # Diagram editor
+    discord-canary # Discord client
 
     ############ Disabled programs ( Mostly for gaining space )
 
     # android-studio # Android IDE
     # jetbrains.idea-ultimate # IDE
-    #heroic # Game client
+    # heroic # Game client
   ];
 }

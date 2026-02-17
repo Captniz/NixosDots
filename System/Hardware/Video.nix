@@ -7,6 +7,8 @@
 }:
 
 {
+  #! IF PORTALS BRAKE WITH ERRORS LIKE "NOT FOUND" THEN CHECK JOURNALCTL AND VEIFY THAT THERE ARE NO BROKEN SYMLINKS IN ~/.config/systemd/user/
+
   # Basic graphics settings
   services.xserver = {
     enable = true;
