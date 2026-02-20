@@ -41,9 +41,6 @@
 
     ########### Testing
 
-    hfst
-    hfsprogs
-
     ########### Essentials
 
     zip # Archive manager
@@ -148,6 +145,8 @@
 
     ########### Utility / Quality of Life / Useful Commands
 
+    hfst # HFS+ support
+    hfsprogs # HFS+ support
     playerctl # Media controller
     swappy # Screenshot annotation tool
     traceroute # Network diagnostic
