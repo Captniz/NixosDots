@@ -119,6 +119,7 @@ in
         "SUPER, code:60, Open Emoji selector, exec,rofi -show emoji"
         "SUPER, N, Open calculator, exec ,rofi -show calc"
         "SUPER, L, Show Power-menu, exec,rofi -show p -modi p:\'/usr/bin/env bash \"${userSettings.scriptsPath}/PowerMenu.sh\"\'"
+        "SUPER SHIFT, L, Toggle HyprIdle, exec,sh ${userSettings.scriptsPath}/ToggleHypridle.sh"
         "SUPER, I, Open Icon selector, exec,rofi -show nerdy"
         "SUPER, W, Show System actions menu, exec,sh ${userSettings.scriptsPath}/NixActions.sh"
         "SUPER, V, Show Clipboard history, exec ,cliphist list | rofi -dmenu | cliphist decode | wl-copy"
