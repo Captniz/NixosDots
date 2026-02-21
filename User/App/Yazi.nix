@@ -47,7 +47,7 @@ in
   programs.yazi = {
 
     enable = true;
-
+    shellWrapperName = "yy";
     enableZshIntegration = true;
 
     extraPackages = with pkgs; [

@@ -41,6 +41,11 @@
 
     ########### Testing
 
+    musescore # Music notation software
+    kdenlive # Video editor
+    carla
+    jack2
+    
     ########### Essentials
 
     zip # Archive manager
