@@ -41,11 +41,6 @@
 
     ########### Testing
 
-    musescore # Music notation software
-    kdenlive # Video editor
-    carla
-    jack2
-    
     ########### Essentials
 
     zip # Archive manager
@@ -58,6 +53,8 @@
     zsh # Shell
     dunst # Notification manager
     pipewire # Audio server
+    jack2
+    pipewire.jack
     wireplumber # Audio server
     pavucontrol # Audio control
     light # Brightness control
@@ -140,13 +137,13 @@
     pkgs.kdePackages.xdg-desktop-portal-kde # Desktop utilities
     xdg-desktop-portal-gtk # Desktop utilities
     xdg-desktop-portal-hyprland # Desktop utilities
-    xorg.xhost # Xorg utility
+    xhost # Xorg utility
     hyprland-protocols # Hyprland protocols
     wlroots # Wayland compositor
     poppler # PDF library
     poppler-utils # PDF library
     winetricks # Wine utility
-    wineWowPackages.waylandFull # Wine utility
+    wineWow64Packages.waylandFull # Wine utility
 
     ########### Utility / Quality of Life / Useful Commands
 
@@ -228,6 +225,9 @@
     zotero # Reference manager
     drawio # Diagram editor
     discord-canary # Discord client
+    musescore # Music notation software
+    kdePackages.kdenlive # Video editor
+    carla # Audio plugin host
 
     ############ Disabled programs ( Mostly for gaining space )
 
