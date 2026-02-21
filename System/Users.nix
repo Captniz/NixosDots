@@ -23,6 +23,7 @@
       "fuse"
       "wireshark"
       "storage"
+      "rkit"
     ];
     shell = pkgs.zsh;
   };
