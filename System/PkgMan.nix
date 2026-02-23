@@ -53,8 +53,8 @@
     zsh # Shell
     dunst # Notification manager
     pipewire # Audio server
-    jack2
-    pipewire.jack
+    jack2 # Audio server
+    pipewire.jack # Audio server
     wireplumber # Audio server
     pavucontrol # Audio control
     light # Brightness control
