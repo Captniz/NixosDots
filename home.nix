@@ -34,7 +34,6 @@
     ./User/App/Polkit.nix
     ./User/App/FastFetch.nix
     ./User/App/Zen.nix
-    #./User/App/MonitorSwitcher.nix
     #./User/App/Obsidian.nix
   ];
 
