@@ -191,6 +191,14 @@ in
       };
 
       opener = {
+        run = [
+          {
+            run = "\"$1\"";
+            desc = "Run script";
+            block = true;
+            for = "linux";
+          }
+        ];
         edit = [
           {
             run = "\$\{EDITOR:-vi\} \"$@\"";
@@ -208,7 +216,7 @@ in
         ];
         reveal = [
           {
-            run = "alacritty --working-directory \"$(dirname \"$1\")\"";
+            run = "alacritty --working-directory \"$(dirname \"$1\")\" & disown";
             desc = "Reveal";
             for = "linux";
           }
@@ -229,13 +237,13 @@ in
         ];
         play = [
           {
-            run = "xdg-open \"$1\"";
+            run = "xdg-open \"$1\" & disown";
             desc = "Play";
             for = "linux";
             orphan = true;
           }
           {
-            run = "mpv --force-window \"$@\"";
+            run = "mpv --force-window \"$@\" & disown";
             orphan = true;
             for = "unix";
           }
@@ -270,11 +278,22 @@ in
           }
           # Programming Language
           {
-            mime = "text/{c,c++,c-header,c++-header,csharp,go,java,javascript,lua,markdown,objective-c,python,ruby,shellscript,sql,yaml}";
+            mime = "text/{c,c++,c-header,c++-header,csharp,go,java,javascript,lua,markdown,objective-c,python,ruby,sql,yaml}";
             use = [
               "open"
               "code"
               "edit"
+              "reveal"
+            ];
+          }
+          # Shell script
+          {
+            mime = "text/shellscript";
+            use = [
+              "open"
+              "run"
+              "edit"
+              "code"
               "reveal"
             ];
           }
