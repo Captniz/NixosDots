@@ -41,6 +41,7 @@
 
     ########### Testing
 
+
     ########### Essentials
 
     zip # Archive manager
@@ -202,6 +203,7 @@
     telegram-desktop # Messaging app
     font-manager # Font viewer
     yazi # Terminal file manager
+    muse-sounds-manager # Muse Sounds Manager
     geogebra # Math tool
     docker # Container manager
     lutris # Game client
