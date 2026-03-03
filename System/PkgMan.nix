@@ -39,8 +39,13 @@
     #kdePackages.xwaylandvideobridge # Xwayland bridge
     #owl # Owl library
 
-    ########### Testing
+    ############ Disabled programs ( Mostly for gaining space )
 
+    # android-studio # Android IDE
+    # jetbrains.idea-ultimate # IDE
+    # heroic # Game client
+
+    ########### Testing
 
     ########### Essentials
 
@@ -230,11 +235,6 @@
     musescore # Music notation software
     kdePackages.kdenlive # Video editor
     carla # Audio plugin host
-
-    ############ Disabled programs ( Mostly for gaining space )
-
-    # android-studio # Android IDE
-    # jetbrains.idea-ultimate # IDE
-    # heroic # Game client
+    pdfsam-basic # PDF editor
   ];
 }
