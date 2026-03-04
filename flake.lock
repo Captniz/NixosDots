@@ -43,6 +43,26 @@
         "type": "github"
       }
     },
+    "gruvbox_wallpapers": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772462838,
+        "narHash": "sha256-Dnhff/YNer5hMxIfwpF4SgM5sR0GFi6PBgHFq/S8jXk=",
+        "owner": "AngelJumbo",
+        "repo": "gruvbox-wallpapers",
+        "rev": "4482bbccba61d658bb5bf480c3944734c500d57b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AngelJumbo",
+        "repo": "gruvbox-wallpapers",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -234,10 +254,12 @@
     "root": {
       "inputs": {
         "firefox-addons": "firefox-addons",
+        "gruvbox_wallpapers": "gruvbox_wallpapers",
         "home-manager": "home-manager",
         "hyprland-qtutils": "hyprland-qtutils",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
+        "wallpapers": "wallpapers",
         "zen-browser": "zen-browser"
       }
     },
@@ -253,6 +275,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "wallpapers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721413144,
+        "narHash": "sha256-frPfaBlPhdySrezEye6Qy9UBmTRzL2mOvWYp/a9nRjw=",
+        "owner": "Captniz",
+        "repo": "Wallpapers",
+        "rev": "13bc2bee0bdd1f7926c846ef630d60145b014594",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Captniz",
+        "repo": "Wallpapers",
         "type": "github"
       }
     },

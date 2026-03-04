@@ -2,24 +2,21 @@
   config,
   lib,
   pkgs,
+  inputs,
   systemSettings,
   userSettings,
   ...
 }:
-let
-  imgLink = "https://raw.githubusercontent.com/Captniz/Wallpapers/main/45-b.jpg";
 
-  image = pkgs.fetchurl {
-    url = imgLink;
-    sha256 = "1258wyz6cxc5wsrivdj0jly9cqr09bc6w3f6f42ycxmmghfdqbcv";
-  };
+let
+  wallpaper = "${inputs.wallpapers}/45-b.jpg";
 in
 {
   environment.systemPackages = with pkgs; [
     (sddm-astronaut.override {
       themeConfig = {
         Font = "IosevkaTermSlab";
-        Background = "${image}";
+        Background = "${wallpaper}";
         Locale = "it_IT";
         HeaderText = "Il mattino ha le palle in bocca, o cose così.";
         FormPosition = "left";

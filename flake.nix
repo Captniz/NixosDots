@@ -31,6 +31,16 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    wallpapers = {
+      url = "github:Captniz/Wallpapers";
+      flake = false;
+    };
+
+    gruvbox_wallpapers = {
+      url = "github:AngelJumbo/gruvbox-wallpapers";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
