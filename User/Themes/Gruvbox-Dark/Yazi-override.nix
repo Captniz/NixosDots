@@ -8,38 +8,8 @@
 
 let
   colors = import ./Colors.nix;
-  yazi-flavors = pkgs.fetchFromGitHub {
-    owner = "yazi-rs";
-    repo = "flavors";
-    rev = "main";
-    hash = "sha256-xYEVdDv0AzPYGwANiP1V5JEKg6k1JXEBeH5tHbPPFl4=";
-  };
 in
 {
-  programs.yazi.flavors = lib.mkForce {
-    dracula = "${yazi-flavors}/dracula.yazi";
-    flexoki-dark = pkgs.fetchFromGitHub {
-      owner = "gosxrgxx";
-      repo = "flexoki-dark.yazi";
-      rev = "main";
-      hash = "sha256-VQJIqUNklPDiXBSYGWUp099LXytlETUwGj03o/9HP5I=";
-    };
-
-    flexoki-light = pkgs.fetchFromGitHub {
-      owner = "gosxrgxx";
-      repo = "flexoki-dark.yazi";
-      rev = "main";
-      hash = "sha256-VQJIqUNklPDiXBSYGWUp099LXytlETUwGj03o/9HP5I=";
-    };
-
-    gruv-dark = pkgs.fetchFromGitHub {
-      owner = "bennyyip";
-      repo = "gruvbox-dark.yazi";
-      rev = "main";
-      hash = "sha256-9ZZHXP0Junaj6r80nE8oDNEU5WIKVdtz4g72BFzcSAM=";
-    };
-  };
-
   programs.yazi.theme = lib.mkForce {
     mgr = {
       cwd = {
