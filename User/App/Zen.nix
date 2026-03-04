@@ -137,7 +137,7 @@
               definedAliases = [ "@yt" ];
             };
 
-            "Nix_packages" = {
+            "Nix Packages" = {
               urls = [
                 {
                   template = "https://search.nixos.org/packages";
@@ -173,7 +173,57 @@
               definedAliases = [ "@mn" ];
             };
 
-            "NixOS_Wiki" = {
+            "MyAnimeList Search User Manga" = {
+              urls = [
+                {
+                  template = "https://myanimelist.net/mangalist/captniz";
+                  params = [
+                    {
+                      name = "s";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@malum" ];
+            };
+
+
+            "MyAnimeList Search User Anime" = {
+              urls = [
+                {
+                  template = "https://myanimelist.net/animelist/captniz";
+                  params = [
+                    {
+                      name = "s";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@malua" ];
+            };
+            
+            "MyAnimeList Search" = {
+              urls = [
+                {
+                  template = "https://myanimelist.net/search/all";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                    {
+                      name = "cat";
+                      value = "all";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@mal" ];
+            };
+
+            "NixOS Wiki" = {
               urls = [
                 {
                   template = "https://nixos.wiki/wiki/Special:Search";
