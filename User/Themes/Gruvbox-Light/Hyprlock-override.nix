@@ -8,11 +8,12 @@
 
 let
   colors = import ./Colors.nix;
+  wallpaper = "${inputs.wallpapers}/115.png";
 in
 {
   programs.hyprlock.settings = {
     background = lib.mkForce {
-      path = "~/Images/Wallpapers/115.png";
+      path = "${wallpaper}";
       blur_passes = 2;
       contrast = 0.8916;
       brightness = 0.8172;

@@ -2,12 +2,14 @@
   config,
   lib,
   pkgs,
+  inputs,
   userSettings,
   ...
 }:
 
 let
   colors = import ../Themes/${userSettings.theme}/Colors.nix;
+  wallpaper = "${inputs.wallpapers}/115.png";
 in
 {
   imports = [
@@ -21,7 +23,7 @@ in
       #https://github.com/MrVivekRajan/Hypr-Dots
 
       background = {
-        path = "~/Images/Wallpapers/115.png";
+        path = "${wallpaper}";
         blur_passes = 2;
         contrast = 0.8916;
         brightness = 0.8172;

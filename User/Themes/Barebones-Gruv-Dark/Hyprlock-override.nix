@@ -2,17 +2,19 @@
   config,
   lib,
   pkgs,
+  inputs,
   userSettings,
   ...
 }:
 
 let
   colors = import ./Colors.nix;
+  wallpaper = "${inputs.gruvbox_wallpapers.packages."x86_64-linux".anime}/gruvbox_girl.png";
 in
 {
   programs.hyprlock.settings = {
     background = lib.mkForce {
-      path = "~/Images/gruvbox-wallpapers/wallpapers/anime/gruvbox_girl.png";
+      path = "${wallpaper}";
       blur_passes = 2;
       contrast = 0.8916;
       brightness = 0.8172;
