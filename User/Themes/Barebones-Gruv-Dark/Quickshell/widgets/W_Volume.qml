@@ -3,36 +3,43 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
 import Quickshell.Services.UPower
+import Quickshell.Services.Pipewire
 import "../src"
 import "../"
 
 D_WidgetContainer {
   id: root
 
-  property int volumeLevel
-  property bool isMuted
+  property PwNode audioSink: Pipewire.defaultAudioSink
+  property bool startupReady: Pipewire.ready && audioSink && audioSink.ready && audioSink.audio
+  property bool startupVolumeApplied: false
+  property int volumeLevel: startupReady ? Math.round(audioSink.audio.volume * 100) : 0
+  property bool isMuted: startupReady ? audioSink.audio.muted : false
   property string volumeColor: isMuted ? Globals.bright_black : Globals.blue
 
   width: child.width + val.width
   height: 25
-  Process {
-    id: volume
-    command: ["sh", "-c", "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 }'"]
-    running: true
 
-    stdout: StdioCollector {
-      onStreamFinished: volumeLevel = this.text * 100
+  function applyStartupVolumeZero(): void {
+    if (!startupVolumeApplied && startupReady) {
+      startupVolumeApplied = true;
+      zero_volume.running = true;
     }
   }
 
-  Process {
-    id: mute
-    command: ["sh", "-c", "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep '\[MUTED\]'"]
-    running: true
+  onStartupReadyChanged: applyStartupVolumeZero()
 
-    stdout: StdioCollector {
-      onStreamFinished: isMuted = this.text == "" ? false : true
-    }
+  Component.onCompleted: applyStartupVolumeZero()
+
+  PwObjectTracker {
+    id: sinkTracker
+    objects: [root.audioSink]
+  }
+
+  Process {
+    id: zero_volume
+    command: ["sh", "-c", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0"]
+    running: false
   }
 
   MouseArea {
@@ -56,11 +63,9 @@ D_WidgetContainer {
     enabled: true
 
     function update(): void {
-      volume.running = true;
     }
 
     function updateMute(): void {
-      mute.running = true;
     }
   }
 
