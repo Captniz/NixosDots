@@ -88,7 +88,9 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Guarda la wiki di hyprland (aggiornata spesso)
 - [ ] Aggiorna il sistema
 - [ ] Merge con la branch main
-- [ ] Aggiusta lo script di upgrade del sistema
+- [x] Aggiusta lo script di upgrade del sistema
+- [ ] Lo screenshot salva in home e non Images
+- [x] Sistema l'audio in quickshell
 
 #### Da renedere dichiarativo
 
