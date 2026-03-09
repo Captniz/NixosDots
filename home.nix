@@ -34,6 +34,7 @@
     ./User/App/Polkit.nix
     ./User/App/FastFetch.nix
     ./User/App/Zen.nix
+    ./User/App/Kathara.nix
     #./User/App/Obsidian.nix
   ];
 
