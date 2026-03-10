@@ -214,6 +214,26 @@
         "type": "github"
       }
     },
+    "kathara": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773139743,
+        "narHash": "sha256-9BU0Wicv2Z1cbsIrKF1pEUHXZut0oqG+MEQsxPl991E=",
+        "owner": "Captniz",
+        "repo": "Kathara",
+        "rev": "0afe0952ef72d2ed4f64b15066a03904c682b091",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Captniz",
+        "repo": "Kathara",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1771369470,
@@ -257,6 +277,7 @@
         "gruvbox_wallpapers": "gruvbox_wallpapers",
         "home-manager": "home-manager",
         "hyprland-qtutils": "hyprland-qtutils",
+        "kathara": "kathara",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
         "wallpapers": "wallpapers",

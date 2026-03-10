@@ -16,7 +16,7 @@
     enable = true;
     manager = "docker";
     image = "kathara/base";
-    terminal = "/usr/bin/xterm";
+    terminal = "/home/simo/.nix-profile/bin/alacritty";
     openTerminals = true;
     deviceShell = "/bin/bash";
     netPrefix = "kathara";
