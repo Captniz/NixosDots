@@ -44,8 +44,13 @@
     # android-studio # Android IDE
     # jetbrains.idea-ultimate # IDE
     # heroic # Game client
+    # dia # Diagram editor
 
     ########### Testing
+
+    #hledger
+    #asciinema
+    #tailscale
 
     ########### Essentials
 
@@ -202,6 +207,7 @@
     calibre # Ebook manager
     hakuneko # Manga Downloader
     inputs.zen-browser.packages."${systemSettings.system}".default # Browser
+    inputs.kathara.packages."${systemSettings.system}".default # Network emulator
     qdirstat # Disk usage analyzer
     quickshell # Widget and bar application
     gparted # Partition manager
@@ -226,7 +232,6 @@
     qbittorrent # Torrent client
     zoom-us # Video conferencing
     postman # API client
-    dia # Diagram editor
     kcc # Kindle Comic Converter
     wireshark # Network protocol analyzer
     zotero # Reference manager
