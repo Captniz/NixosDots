@@ -65,10 +65,16 @@ in
     })
   ];
 
+  # IF SDDM STUCK ON "REACHED GRAPHICAL SESSION" CHANGE THE SESSION (FROM IN SDDM) FROM "Hyprland (uwsm)" TO "Hyprland"
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm; # Display manager
     wayland.enable = true;
     theme = "sddm-astronaut-theme";
+    settings = {
+      General = {
+        Session = "Hyprland.desktop";
+      };
+    };
   };
 }
