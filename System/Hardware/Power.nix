@@ -11,12 +11,12 @@
     notify-send "Resuming from suspend;hyprctl dispatch dpms on"
   '';
 
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=yes
-    AllowHibernation=yes
-    AllowHybridSleep=yes
-    AllowSuspendThenHibernate=yes
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend="yes";
+    AllowHibernation="yes";
+    AllowHybridSleep="yes";
+    AllowSuspendThenHibernate="yes";
+  };
 
   services = {
     logind.settings = {
