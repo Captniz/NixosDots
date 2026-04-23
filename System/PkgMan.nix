@@ -48,7 +48,6 @@
 
     ########### Testing
 
-    inkscape # Vector graphics editor
     #hledger
     #asciinema
     #tailscale
@@ -69,7 +68,6 @@
     pipewire.jack # Audio server
     wireplumber # Audio server
     pavucontrol # Audio control
-    light # Brightness control
     neovim # Text editor
     alacritty # Term. emulator
     git # Version manager
@@ -86,6 +84,7 @@
     polkit # Authorization manager
     polkit_gnome # Authorization manager
     upower # Power management
+    brightnessctl # Brightness control
 
     ########### Languages
 
@@ -205,6 +204,7 @@
     powertop # Power management
     gimp3 # Image editor
     localsend # File transfer app
+    inkscape # Vector graphics editor
     calibre # Ebook manager
     hakuneko # Manga Downloader
     inputs.zen-browser.packages."${systemSettings.system}".default # Browser
