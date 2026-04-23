@@ -20,9 +20,12 @@
   # networking.firewall.enable = true;
 
   # Enable networking
-  
+
   #Uncomment to enable the port
-  networking.firewall.allowedTCPPorts = [ 3000 5173 ];
+  networking.firewall.allowedTCPPorts = [
+    3000
+    8000
+  ];
   #networking.extraHosts =
   #''
   #  127.0.0.1 localhost

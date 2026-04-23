@@ -48,6 +48,7 @@
 
     ########### Testing
 
+    inkscape # Vector graphics editor
     #hledger
     #asciinema
     #tailscale
