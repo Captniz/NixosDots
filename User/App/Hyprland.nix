@@ -195,7 +195,7 @@ in
       ];
 
       layerrule = [
-        "match:namespace ^(swww-daemon)$, no_anim on"
+        "match:namespace ^(awww-daemon)$, no_anim on"
         "match:namespace ^(quickshell)$, no_anim on"
         "match:namespace ^(selection)$, no_anim on"
       ];

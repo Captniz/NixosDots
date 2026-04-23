@@ -43,6 +43,7 @@
     gtk2.enable = true;
     gtk3.enable = true;
     gtk4.enable = true;
+    gtk4.theme = config.gtk.theme;
     colorScheme = "dark";
 
     iconTheme = {
