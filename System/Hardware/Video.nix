@@ -40,6 +40,4 @@
     xwayland.enable = true;
   };
 
-  # Enable backlight control
-  programs.light.enable = true;
 }

@@ -15,7 +15,7 @@ D_WidgetContainer {
   height: 25
   Process {
     id: brightness
-    command: ["light", "-G"]
+    command: ["sh", "-c", "brightnessctl -m | cut -d, -f4 | tr -d %"]
     running: true
 
     stdout: StdioCollector {
