@@ -29,7 +29,7 @@
     ./User/App/HyprIdle.nix
     ./User/App/Nvim.nix
     ./User/App/Hakuneko.nix
-    ./User/App/Swww.nix
+    ./User/App/Awww.nix
     ./User/App/Clipboard.nix
     ./User/App/Polkit.nix
     ./User/App/FastFetch.nix

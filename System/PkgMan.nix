@@ -73,7 +73,7 @@
     neovim # Text editor
     alacritty # Term. emulator
     git # Version manager
-    swww # Wallpaper manager
+    awww # Wallpaper manager
     qimgv # Image viewer
     fastfetch # System fetch
     btop # System monitor
