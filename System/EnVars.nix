@@ -16,6 +16,7 @@
     XDG_SESSION_DESKTOP = "Hyprland";
 
     # Common vars
+    LIBSEAT_BACKEND = "logind";
     WLR_NO_HARDWARE_CURSORS = "1";
     XCURSOR_SIZE = "12";
     GDK_SCALE = "1";
