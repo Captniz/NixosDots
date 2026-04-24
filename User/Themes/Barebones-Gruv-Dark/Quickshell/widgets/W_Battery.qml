@@ -27,7 +27,7 @@ D_WidgetContainer {
 
     Process {
       id: examine
-      command: ["powertop"]
+      command: ["alacritty", "-e", "sudo", "powertop"]
     }
   }
 
