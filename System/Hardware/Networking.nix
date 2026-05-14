@@ -26,6 +26,11 @@
     3000
     8000
   ];
+
+    services.tailscale = {
+    enable = true;
+    #authKeyFile = "/run/secrets/tailscale_key";
+  };
   #networking.extraHosts =
   #''
   #  127.0.0.1 localhost
