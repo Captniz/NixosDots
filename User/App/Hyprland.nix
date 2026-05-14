@@ -192,6 +192,7 @@ in
         "match:class ^(ueberzug_[A-Za-z0-9]+)$, no_initial_focus on"
         "match:class ^(ueberzug_[A-Za-z0-9]+)$, no_anim on"
         "match:class ^(ueberzug_[A-Za-z0-9]+)$, float on"
+        "match:class ^(jetbrains-[A-Za-z0-9]+)$, no_initial_focus on"
       ];
 
       layerrule = [
