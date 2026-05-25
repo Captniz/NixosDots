@@ -91,6 +91,13 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [x] Aggiusta lo script di upgrade del sistema
 - [ ] Lo screenshot salva in home e non Images
 - [x] Sistema l'audio in quickshell
+- [ ] Sistema il sistema di sfondi
+  - [ ] Sfondo del secondo monitor non funziona
+  - [ ] La cartella di sfondi nel flake non è efficente e richiede molto tempo per essere aggiornata
+- [ ] Aggiungi un modo per cambiare velocemente i temi (quantomeno light/dark)
+- [ ] Sistema una volta per tutte pipewire
+- [ ] Sistema il media player (Non funziona bene il tempo e il titolo cicla male)
+- [ ] 
 
 #### Da renedere dichiarativo
 
