@@ -42,15 +42,19 @@
     ############ Disabled programs ( Mostly for gaining space )
 
     # android-studio # Android IDE
-    # jetbrains.idea-ultimate # IDE
     # heroic # Game client
     # dia # Diagram editor
+    #lutris # Game client
 
     ########### Testing
 
+    #gvfs
     #hledger
     #asciinema
-    #tailscale
+
+    ########### Temporary
+
+    jetbrains.idea # IDE
 
     ########### Essentials
 
@@ -88,6 +92,7 @@
 
     ########### Languages
 
+    jdk25
     (pkgs.jdk.override { enableJavaFX = true; }) # Java
     biome # JavaScript/TypeScript linter
     pnpm # Node.js package manager
@@ -118,7 +123,7 @@
 
     vcpkg # C++ package manager
     vcpkg-tool # C++ package manager
-    bind
+    bind # DNS server
     fuse # Filesystem in Userspace
     libmtp # MTP support
     simple-mtpfs # MTP support
@@ -167,7 +172,7 @@
     grim # Screenshot tool
     ripgrep # Text searcher
     woeusb # Windows USB creator
-    exiftool
+    exiftool # EXIF metadata editor
     fd # Find utility
     glow # Markdown previewer
     slurp # Screen Region selector
@@ -182,8 +187,8 @@
     jc # JSON parser
     jq # JSON parser
     bc # Calculator
-    sipsak
-    pjsip
+    sipsak # SIP tester
+    pjsip # SIP library
     fzf # Fuzzy File Finder
     protonup-ng # Proton updater
     nmap # Network scanner
@@ -198,9 +203,10 @@
 
     ########### Programs & Apps
 
+    feishin # Navidrome client
     wf-recorder # Screen recorder
     whatsapp-electron # WhatsApp client
-    prismlauncher # Game client
+    prismlauncher # Minecraft client
     powertop # Power management
     gimp3 # Image editor
     localsend # File transfer app
@@ -218,7 +224,6 @@
     muse-sounds-manager # Muse Sounds Manager
     geogebra # Math tool
     docker # Container manager
-    lutris # Game client
     steam # Game client
     vlc # Media player
     obs-studio # Media creator / Streaming software
