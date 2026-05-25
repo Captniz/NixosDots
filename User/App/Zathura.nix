@@ -54,9 +54,10 @@ in
       statusbar-bg = colors.bg2; # bg2
       statusbar-fg = colors.fg1; # fg
 
-      highlight-color = colors.bright_yellow; # bright:yellow
-      highlight-active-color = colors.bright_orange; # bright:orange
-
+      highlight-color = "rgba(250, 189, 47, 0.5)"; # bright:yellow with 60% opacity
+      highlight-fg = colors.fg1; # fg
+      highlight-active-color = "rgba(254, 128, 25, 0.5)"; # bright:blue with 60% opacity
+      
       default-bg = colors.bg0; # bg
       default-fg = colors.fg1; # fg
       render-loading = true;
