@@ -9,7 +9,7 @@
 }:
 
 let
-  wallpaper = "${inputs.gruvbox_wallpapers.packages."x86_64-linux".anime}/light/my-neighbor-totoro-sunflowers.png";
+  wallpaper = "${inputs.wallpapers}/my-neighbor-totoro-sunflowers.png";
 in 
 {
   services.awww = {

@@ -55,6 +55,7 @@
     ########### Temporary
 
     jetbrains.idea # IDE
+    jdk25 # temporary Java version for IDEA proj
 
     ########### Essentials
 
@@ -92,7 +93,6 @@
 
     ########### Languages
 
-    jdk25
     (pkgs.jdk.override { enableJavaFX = true; }) # Java
     biome # JavaScript/TypeScript linter
     pnpm # Node.js package manager

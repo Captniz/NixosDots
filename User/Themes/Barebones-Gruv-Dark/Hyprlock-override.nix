@@ -9,7 +9,7 @@
 
 let
   colors = import ./Colors.nix;
-  wallpaper = "${inputs.gruvbox_wallpapers.packages."x86_64-linux".anime}/gruvbox_girl.png";
+  wallpaper = "${inputs.wallpapers}/gruvbox_girl.png";
 in
 {
   programs.hyprlock.settings = {

@@ -37,11 +37,6 @@
       flake = false;
     };
 
-    gruvbox_wallpapers = {
-      url = "github:AngelJumbo/gruvbox-wallpapers";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     kathara = {
       url = "github:Captniz/Kathara";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,6 +49,7 @@
       self,
       nixpkgs,
       home-manager,
+      wallpapers,
 
       ...
     }@inputs:
@@ -87,6 +83,7 @@
 
     in
     {
+      packages.x86_64-linux.wallpapers-path = builtins.toString wallpapers;
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           system = systemSettings.system;
