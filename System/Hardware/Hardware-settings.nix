@@ -14,5 +14,6 @@
     ./Video.nix
     ./Power.nix
     ./Networking.nix
+    ./Printing.nix
   ];
 }
