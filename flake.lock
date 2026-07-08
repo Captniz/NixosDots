@@ -281,11 +281,11 @@
     "wallpapers": {
       "flake": false,
       "locked": {
-        "lastModified": 1721413144,
-        "narHash": "sha256-frPfaBlPhdySrezEye6Qy9UBmTRzL2mOvWYp/a9nRjw=",
+        "lastModified": 1780238877,
+        "narHash": "sha256-OrKkxBv8CIZkiviqrfEMoJ6oSnySukD5BHMIjDmtNCE=",
         "owner": "Captniz",
         "repo": "Wallpapers",
-        "rev": "13bc2bee0bdd1f7926c846ef630d60145b014594",
+        "rev": "5c285ba02688294fa35c699cee404dcfd69ed8d3",
         "type": "github"
       },
       "original": {

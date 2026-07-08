@@ -24,6 +24,8 @@
       "wireshark"
       "storage"
       "rkit"
+      "lp"
+      "scanner"
     ];
     shell = pkgs.zsh;
   };

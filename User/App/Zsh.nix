@@ -148,7 +148,9 @@ in
       searchall = "cd /;yazi $(fzf)";
       cd = "z";
       ocr = "${userSettings.scriptsPath}/OcrTextExtractor.sh";
-      unmount = "sudo umount -f /mnt/ExtDrive";
+      unmount-ext = "sudo umount -f /mnt/ExtDrive";
+      mount-network = "${userSettings.scriptsPath}/MountNetwork.sh";
+      unmount-network = "sudo umount -f /mnt/Network";
       hybernate = "systemctl hibernate";
       hybrid-sleep = "systemctl hybrid-sleep";
       ssh-menu = "rofi -show 'ssh'";

@@ -45,6 +45,8 @@
     # heroic # Game client
     # dia # Diagram editor
     #lutris # Game client
+    # jetbrains.idea # IDE
+    # jdk25 # temporary Java version for IDEA proj
 
     ########### Testing
 
@@ -54,8 +56,8 @@
 
     ########### Temporary
 
-    jetbrains.idea # IDE
-    jdk25 # temporary Java version for IDEA proj
+    rustup
+    jetbrains.rust-rover # Rust IDE
 
     ########### Essentials
 

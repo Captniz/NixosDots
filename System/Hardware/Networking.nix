@@ -25,6 +25,7 @@
   networking.firewall.allowedTCPPorts = [
     3000
     8000
+    5353
   ];
 
     services.tailscale = {
