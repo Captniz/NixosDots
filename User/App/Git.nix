@@ -32,7 +32,7 @@
     enableDefaultConfig = false;
 
     # Define defaults yourself if you want them
-    matchBlocks = {
+    settings = {
       "*" = {
         forwardAgent = true;
         identityFile = "~/.ssh/id_ed25519";

@@ -47,7 +47,7 @@ in
         layer = "overlay";
 
         # Icons
-        icon_path = "${pkgs.papirus-icon-theme}/share/icons/breeze-dark/status/16";
+        icon_path = lib.mkForce "${pkgs.papirus-icon-theme}/share/icons/breeze-dark/status/16";
       };
 
       urgency_low = {

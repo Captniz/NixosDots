@@ -394,7 +394,7 @@ in
       plugin = {
         prepend_previewers = [
           {
-            name = "*.md";
+            url = "*.md";
             run = "glow";
           }
         ];
@@ -403,11 +403,13 @@ in
             id = "git";
             url = "*";
             run = "git";
+            group = "git";
           }
           {
             id = "git";
             url = "*/";
             run = "git";
+            group = "git_dir";
           }
         ];
 
@@ -418,18 +420,21 @@ in
             url = "*/";
             run = "mime.dir";
             prio = "high";
+            group = "dir";
           }
           {
             id = "mime";
             url = "local://*";
             run = "mime.local";
             prio = "high";
+            group = "local";
           }
           {
             id = "mime";
             url = "remote://*";
             run = "mime.remote";
             prio = "high";
+            group = "remote";
           }
         ];
 
@@ -607,7 +612,7 @@ in
           }
           # Fallback
           {
-            name = "*";
+            url = "*";
             run = "file";
           }
         ];

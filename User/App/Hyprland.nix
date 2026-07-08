@@ -17,6 +17,7 @@ in
   # Programs & configs
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang"; #!TODO CHANGE IN THE FUTURE TO LUA
     xwayland.enable = true;
 
     settings = {
@@ -102,7 +103,7 @@ in
       };
 
       dwindle = {
-        pseudotile = "yes";
+        #pseudotile = "yes";
         preserve_split = "yes";
       };
 
@@ -126,7 +127,7 @@ in
 
         # Window managment
         "SUPER, TAB, Show open Windows , exec, sh ${userSettings.scriptsPath}/WindowSwitcher.sh"
-        "SUPER, J, Toggle window Tile Splitting,togglesplit,"
+        #"SUPER, J, Toggle window Tile Splitting,togglesplit,"
         "SUPER, left,Move focus to the left, movefocus, l"
         "SUPER, right,Move focus to the right, movefocus, r"
         "SUPER, up,Move focus upward, movefocus, u"

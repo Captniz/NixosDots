@@ -117,6 +117,7 @@ in
       "github.copilot.editor.enableAutoCompletions" = true;
 
       # Extensions
+      "todo-tree.ripgrep.ripgrep" = "/run/current-system/sw/bin/rg";
       "[qml]" = {
         "editor.defaultFormatter" = "Delgan.qml-format";
         "editor.formatOnSave" = true;

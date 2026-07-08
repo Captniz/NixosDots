@@ -15,11 +15,16 @@
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
 
-    # Common vars
-    LIBSEAT_BACKEND = "logind";
-    WLR_NO_HARDWARE_CURSORS = "1";
+    # Style vars
+    XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "12";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    HYPRCURSOR_THEME = "Bibata-Modern-Ice";
+    HYPRCURSOR_SIZE = "12";
+
+    # Common vars
     GDK_SCALE = "1";
+    LIBSEAT_BACKEND = "logind";
     TERM = "xterm-256color";
     QT_QPA_PLATFORM = "wayland";
     QML_IMPORT_PATH = "/run/current-system/sw/lib/qt-6/qml";

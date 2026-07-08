@@ -282,7 +282,7 @@ in
           fg = "${colors.bright_blue}";
         }
         {
-          name = "*";
+          url = "*";
           is = "exec";
           italic = true;
           bold = true;
@@ -308,7 +308,7 @@ in
           fg = "${colors.bright_blue}";
         }
         {
-          name = "*/";
+          url = "*/";
           fg = "${colors.faded_white}";
         }
       ];

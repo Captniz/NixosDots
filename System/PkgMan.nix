@@ -53,10 +53,11 @@
     #gvfs
     #hledger
     #asciinema
+    ripgrep
+    rustup
 
     ########### Temporary
 
-    rustup
     jetbrains.rust-rover # Rust IDE
 
     ########### Essentials
@@ -141,14 +142,14 @@
     doxygen # Documentation generator
     alsa-ucm-conf # ALSA UCM configuration
     sof-firmware # Sound Open Firmware
-    libsForQt5.qt5.qtdeclarative
-    libsForQt5.qt5.qtmultimedia
+    qt5.qtdeclarative
+    qt5.qtmultimedia
     kdePackages.qtmultimedia
-    libsForQt5.qt5.qtquickcontrols # Qt5 libraries
+    qt5.qtquickcontrols # Qt5 libraries
     xwayland # Xwayland support
     wayback-x11 # Xwayland support
-    libsForQt5.qt5.qtgraphicaleffects # Qt5 libraries
-    libsForQt5.qt5.qtwayland # Qt5 libraries
+    qt5.qtgraphicaleffects # Qt5 libraries
+    qt5.qtwayland # Qt5 libraries
     git-credential-oauth # Git credential helper
     xdg-desktop-portal # Desktop utilities
     xdg-desktop-portal-wlr # Desktop utilities
