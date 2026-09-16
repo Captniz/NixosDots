@@ -10,6 +10,7 @@
 {
 
   # Set default applications for various mime types
+  xdg.mime.enable = true;
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
@@ -19,6 +20,8 @@
       # Documents
       "text/xml" = [ "zen-beta.desktop" ]; # Browser
       "text/plain" = [ "nvim.desktop" ]; # Text files
+      "text/csv" = [ "nvim.desktop" ]; # CSV files
+      "text/css" = [ "nvim.desktop" ]; # CSS files
       "text/markdown" = [ "nvim.desktop" ]; # Text files
       "application/pdf" = [ "org.pwmt.zathura.desktop" ]; # PDF
       "application/epub+zip" = [ "org.pwmt.zathura.desktop" ]; # Epub
