@@ -21,6 +21,10 @@
 
   # Enable networking
 
+
+  # Enable systemd-resolved to handle dynamic network DNS (Tailscale)
+  services.resolved.enable = true;
+
   #Uncomment to enable the port
   networking.firewall.allowedTCPPorts = [
     3000
@@ -28,8 +32,10 @@
     5353
   ];
 
-    services.tailscale = {
+  services.tailscale = {
     enable = true;
+    extraSetFlags = ["--accept-routes" "--accept-dns"];
+    
     #authKeyFile = "/run/secrets/tailscale_key";
   };
   #networking.extraHosts =
