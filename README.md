@@ -98,6 +98,7 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Sistema una volta per tutte pipewire
 - [ ] Sistema il media player (Non funziona bene il tempo e il titolo cicla male)
 - [ ] Aggiungi e estensioni di vscode alla configurazione (tipo quelle per il markdown e per il latex)  
+- [ ] Converti hyprland alla nuova config
 
 #### Da renedere dichiarativo
 
