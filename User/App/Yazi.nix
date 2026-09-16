@@ -193,7 +193,7 @@ in
       opener = {
         run = [
           {
-            run = "\"$1\"";
+            run = "\"%s1\"";
             desc = "Run script";
             block = true;
             for = "linux";
@@ -201,7 +201,7 @@ in
         ];
         edit = [
           {
-            run = "\$\{EDITOR:-vi\} \"$@\"";
+            run = "\$\{EDITOR:-vi\} \"%s\"";
             desc = "Edit";
             block = true;
             for = "unix";
@@ -209,46 +209,46 @@ in
         ];
         compress = [
           {
-            run = "7z -r -tzip a \"compressed\" \"$1\"";
+            run = "7z -r -tzip a \"compressed\" \"%s1\"";
             desc = "Compress here";
             for = "linux";
           }
         ];
         reveal = [
           {
-            run = "alacritty --working-directory \"$(dirname \"$1\")\" & disown";
+            run = "alacritty --working-directory \"$(dirname \"%s1\")\" & disown";
             desc = "Reveal";
             for = "linux";
           }
         ];
         open = [
           {
-            run = "xdg-open \"$1\" & disown";
+            run = "xdg-open \"%s1\" & disown";
             desc = "Open with default XDG";
             for = "linux";
           }
         ];
         extract = [
           {
-            run = "ya pub extract --list \"$@\"";
+            run = "ya pub extract --list \"%s\"";
             desc = "Extract here";
             for = "unix";
           }
         ];
         play = [
           {
-            run = "xdg-open \"$1\" & disown";
+            run = "xdg-open \"%s1\" & disown";
             desc = "Play";
             for = "linux";
             orphan = true;
           }
           {
-            run = "mpv --force-window \"$@\" & disown";
+            run = "mpv --force-window \"%s\" & disown";
             orphan = true;
             for = "unix";
           }
           {
-            run = "mediainfo \"$1\"; echo \"Press enter to exit\"; read _";
+            run = "mediainfo \"%s1\"; echo \"Press enter to exit\"; read _";
             block = true;
             desc = "Show media info";
             for = "unix";
@@ -256,7 +256,7 @@ in
         ];
         code = [
           {
-            run = "code \"$1\"";
+            run = "code \"%s1\"";
             desc = "Code";
             for = "linux";
           }
