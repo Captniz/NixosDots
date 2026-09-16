@@ -27,11 +27,12 @@
     # Themes
     bibata-cursors # Cursor theme
     papirus-icon-theme # Icon theme
-    gruvbox-material-gtk-theme
     nixos-icons
+    gruvterial-theme # GTK theme
   ];
 
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
@@ -40,20 +41,15 @@
 
   gtk = {
     enable = true;
-    gtk2.enable = true;
-    gtk3.enable = true;
-    gtk4.enable = true;
-    gtk4.theme = config.gtk.theme;
     colorScheme = "dark";
-
     iconTheme = {
       name = "Papirus"; # exact folder name
       package = pkgs.papirus-icon-theme;
     };
 
     theme = {
-      name = "Gruvbox-Material-Dark-HIDPI"; # exact folder name, not "Gruvbox theme"
-      package = pkgs.gruvbox-material-gtk-theme;
+      name = "gruvterial"; # exact folder name, not "Gruvbox theme"
+      package = pkgs.gruvterial-theme;
     };
   };
 }
