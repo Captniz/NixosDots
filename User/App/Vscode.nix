@@ -27,6 +27,7 @@ in
       "python.pythonPath" = "/run/current-system/sw/bin/python";
       "python.defaultInterpreterPath" = "/run/current-system/sw/bin/python";
       "pylint.interpreter" = [ "/run/current-system/sw/bin/python" ];
+      "qt-core.showWelcomePageOnActivation" = false;
       "qt-core.additionalQtPaths" = [
         {
           "name" = "Qt-6.9.2";
