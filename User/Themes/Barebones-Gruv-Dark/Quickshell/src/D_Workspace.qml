@@ -33,7 +33,7 @@ Rectangle {
     id: info
     anchors.right: root.right
     anchors.verticalCenter: root.verticalCenter
-    width: title.width + ctr.width + 5
+    width: title.width + ctr.width + 5 
     height: parent.height
 
     Text {
@@ -52,6 +52,7 @@ Rectangle {
 
     Text {
       id: ctr
+      width: ctr.implicitWidth + (ws.toplevels.values.length > 1 ? 5 : 0)
       anchors.right: parent.right
       anchors.verticalCenter: parent.verticalCenter
       text: ws.toplevels.values.length > 1 ? "[+" + (ws.toplevels.values.length - 1) + "]" : ""

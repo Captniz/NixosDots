@@ -20,7 +20,7 @@ D_WidgetContainer {
     Text {
       anchors.verticalCenter: parent.verticalCenter
       color: Globals.fg0
-      text: ""
+      text: "∕"
       font.bold: true
     }
 
@@ -39,7 +39,7 @@ D_WidgetContainer {
           anchors.verticalCenter: parent.verticalCenter
           anchors.right: parent.right
           color: Globals.fg0
-          text: ""
+          text: "∕"
           font.bold: true
         }
       }
