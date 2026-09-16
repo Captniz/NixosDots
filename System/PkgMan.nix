@@ -36,11 +36,13 @@
   environment.systemPackages = with pkgs; [
     ########### Errored
 
+    #inputs.kathara.packages."${systemSettings.system}".default # Network emulator
     #kdePackages.xwaylandvideobridge # Xwayland bridge
     #owl # Owl library
 
     ############ Disabled programs ( Mostly for gaining space )
 
+    #hakuneko # Manga Downloader
     # android-studio # Android IDE
     # heroic # Game client
     # dia # Diagram editor
@@ -217,9 +219,7 @@
     localsend # File transfer app
     inkscape # Vector graphics editor
     calibre # Ebook manager
-    hakuneko # Manga Downloader
     inputs.zen-browser.packages."${systemSettings.system}".default # Browser
-    inputs.kathara.packages."${systemSettings.system}".default # Network emulator
     qdirstat # Disk usage analyzer
     quickshell # Widget and bar application
     gparted # Partition manager
@@ -238,7 +238,7 @@
     obsidian # Note taking app
     cider-2 # Apple Music client
     unityhub # Unity IDE
-    libreoffice-qt-fresh # Office suite
+    libreoffice-qt-stable # Office suite
     qbittorrent # Torrent client
     zoom-us # Video conferencing
     postman # API client
