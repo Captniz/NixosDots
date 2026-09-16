@@ -50,18 +50,16 @@
 
     ########### Testing
 
-    #gvfs
-    #hledger
-    #asciinema
-    ripgrep
-    rustup
-
+    
     ########### Temporary
-
-    jetbrains.rust-rover # Rust IDE
 
     ########### Essentials
 
+    pkg-config # Package configuration
+    openssl # SSL library
+    cups # Printing support
+    cups-filters # Printing support
+    system-config-printer # Printing support
     zip # Archive manager
     udisks # Disk manager
     wl-clip-persist # Clipboard manager
@@ -103,6 +101,9 @@
     nodejs_22 # Node.js
     rustfmt # Rust
     rustc # Rust
+    rustup # Rust toolchain manager
+    rust-analyzer # Rust language server
+    leptosfmt # Leptos utility
     cargo # Rust
     gcc # C
     libgcc # C
@@ -206,6 +207,7 @@
 
     ########### Programs & Apps
 
+    z-library-desktop # Ebook downloader
     feishin # Navidrome client
     wf-recorder # Screen recorder
     whatsapp-electron # WhatsApp client
@@ -232,7 +234,6 @@
     obs-studio # Media creator / Streaming software
     mongosh # MongoDB shell
     rofi # App launcher
-    zathura # PDF viewer
     vscode # Code editor
     obsidian # Note taking app
     cider-2 # Apple Music client
@@ -250,5 +251,11 @@
     kdePackages.kdenlive # Video editor
     carla # Audio plugin host
     pdfsam-basic # PDF editor
+    (pkgs.zathura.override {
+      plugins = with pkgs.zathuraPkgs; [
+        zathura_pdf_mupdf
+        zathura_pdf_poppler
+      ];
+    }) # PDF viewer
   ];
 }

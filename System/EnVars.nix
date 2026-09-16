@@ -35,6 +35,7 @@
     NIXPKGS_ALLOW_UNFREE = "1";
 
     # Application vars
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/${userSettings.username}/.steam/root/compatibilitytools.d";
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";

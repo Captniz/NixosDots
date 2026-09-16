@@ -46,6 +46,13 @@ in
       "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
       "qt-qml.qmlls.customExePath" = "/run/current-system/sw/bin/qmlls";
       "qmlFormat.extraArguments" = [ "-w 2 " ];
+      "workbench.editorAssociations" = {
+        "*.copilotmd" = "vscode.markdown.preview.editor";
+        "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc" =
+          "default";
+        "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui" = "default";
+        "*.qrc" = "qt-core.qrcEditor";
+      };
       # Themeing
       "editor.cursorSmoothCaretAnimation" = "on";
       "workbench.colorTheme" = "Gruvbox Dark Medium";
@@ -146,6 +153,11 @@ in
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "editor.formatOnSave" = true;
       };
+      "[rust]" = {
+        "editor.defaultFormatter" = "masterustacean.leptos-fmt";
+        "editor.formatOnSave" = true;
+      };
+      "leptos-fmt.path" = "/run/current-system/sw/bin/leptosfmt";
 
       "biome.lsp.bin" = "/run/current-system/sw/bin/biome";
       "nix.formatterPath" = "nixfmt";

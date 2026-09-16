@@ -15,6 +15,9 @@ in
   ];
   programs.zathura = {
     enable = true;
+    mappings = {
+      H = ":annotate highlight<Return>";
+    };
     options = {
       database = "sqlite";
 
