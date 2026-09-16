@@ -40,6 +40,7 @@
   };
 
   gtk = {
+    gtk4.theme = null;
     enable = true;
     colorScheme = "dark";
     iconTheme = {
