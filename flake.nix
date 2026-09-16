@@ -37,10 +37,10 @@
       flake = false;
     };
 
-    kathara = {
-      url = "github:Captniz/Kathara";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #kathara = {
+    #  url = "github:Captniz/Kathara";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs =
