@@ -75,6 +75,10 @@ in
       General = {
         Session = "Hyprland.desktop";
       };
+      Autologin = {
+        Session = "Hyprland.desktop";
+        User = "simo";
+      };
     };
   };
 }
