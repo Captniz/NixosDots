@@ -97,7 +97,7 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [ ] Aggiungi un modo per cambiare velocemente i temi (quantomeno light/dark)
 - [ ] Sistema una volta per tutte pipewire
 - [ ] Sistema il media player (Non funziona bene il tempo e il titolo cicla male)
-- [ ] 
+- [ ] Aggiungi e estensioni di vscode alla configurazione (tipo quelle per il markdown e per il latex)  
 
 #### Da renedere dichiarativo
 
@@ -113,3 +113,4 @@ HYPR Ecosystem: [link](https://wiki.hypr.land/Hypr-Ecosystem/)
 
 - [ ] Finisci i temi
 - [ ] Crea un modo veloce per cambiare i temi (quantomento ligh/dark)
+- [ ] Il gtk theme è rotto, penso che quello installato sia per gtk4 e non gtk3, quindi non funziona con le app gtk3 (tipo obsidian)
