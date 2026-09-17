@@ -201,7 +201,7 @@ in
         ];
         edit = [
           {
-            run = "\$\{EDITOR:-vi\} \"%s\"";
+            run = "\$\{EDITOR:-vi\} \"$(echo %s)\"";
             desc = "Edit";
             block = true;
             for = "unix";
@@ -209,41 +209,43 @@ in
         ];
         compress = [
           {
-            run = "7z -r -tzip a \"compressed\" \"%s1\"";
+            run = "7z -r -tzip a \"compressed\" \"$(echo %s1)\"";
             desc = "Compress here";
             for = "linux";
           }
         ];
         reveal = [
           {
-            run = "alacritty --working-directory \"$(dirname \"%s1\")\" & disown";
+            run = "alacritty --working-directory \"$(echo %d1)\"";
             desc = "Reveal";
+            orphan = true;
             for = "linux";
           }
         ];
         open = [
           {
-            run = "xdg-open \"%s1\" & disown";
+            run = "xdg-open \"$(echo %s1)\"";
             desc = "Open with default XDG";
+            orphan = true;
             for = "linux";
           }
         ];
         extract = [
           {
-            run = "ya pub extract --list \"%s\"";
+            run = "ya pub extract --list \"$(echo %s)\"";
             desc = "Extract here";
             for = "unix";
           }
         ];
         play = [
           {
-            run = "xdg-open \"%s1\" & disown";
+            run = "xdg-open \"$(echo %s1)\"";
             desc = "Play";
             for = "linux";
             orphan = true;
           }
           {
-            run = "mpv --force-window \"%s\" & disown";
+            run = "mpv --force-window \"$(echo %s)\"";
             orphan = true;
             for = "unix";
           }
