@@ -47,8 +47,11 @@
       };
     };
 
-    # AirPlay support
-    raopOpenFirewall = true;
+    # AirPlay support disabled because:
+    # - Security
+    # - Pipewire's RAOP implementation is not very good and has issues with some devices
+    # - I get to many requests and it fails pipewire making my actual speakers unusable
+/*     raopOpenFirewall = true;
 
     extraConfig.pipewire = {
       "10-airplay" = {
@@ -63,6 +66,6 @@
           }
         ];
       };
-    };
+    }; */
   };
 }
