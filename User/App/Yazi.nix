@@ -193,7 +193,7 @@ in
       opener = {
         run = [
           {
-            run = "\"%s1\"";
+            run = "\"$(echo %s1)\"";
             desc = "Run script";
             block = true;
             for = "linux";
@@ -250,7 +250,7 @@ in
             for = "unix";
           }
           {
-            run = "mediainfo \"%s1\"; echo \"Press enter to exit\"; read _";
+            run = "mediainfo \"$(echo %s1)\"; echo \"Press enter to exit\"; read _";
             block = true;
             desc = "Show media info";
             for = "unix";
@@ -258,7 +258,7 @@ in
         ];
         code = [
           {
-            run = "code \"%s1\"";
+            run = "code \"$(echo %s1)\"";
             desc = "Code";
             for = "linux";
           }
