@@ -56,6 +56,16 @@
       "image/jpeg" = [ "qimgv.desktop" ]; # Images
       "image/jpg" = [ "qimgv.desktop" ]; # Images
       "image/png" = [ "qimgv.desktop" ]; # Images
+
+      # Audio
+      "audio/mpeg" = [ "vlc.desktop" ]; # Audio
+      "audio/x-wav" = [ "vlc.desktop" ]; # Audio
+      "audio/mp3" = [ "vlc.desktop" ]; # Audio
+
+      # Video
+      "video/mp4" = [ "vlc.desktop" ]; # Video
+      "video/x-matroska" = [ "vlc.desktop" ]; # Video
+      "video/webm" = [ "vlc.desktop" ]; # Video
     };
   };
 }
