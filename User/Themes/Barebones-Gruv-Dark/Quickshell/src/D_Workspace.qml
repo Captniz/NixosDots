@@ -40,7 +40,11 @@ Rectangle {
       id: title
       anchors.left: parent.left
       anchors.verticalCenter: parent.verticalCenter
-      text: ws.toplevels.values.length > 0 ? ((ws.toplevels.values[0].lastIpcObject.initialTitle.split(" ")[0] !== "org") ? ws.toplevels.values[0].lastIpcObject.initialTitle.split(" ")[0] : ws.toplevels.values[0].lastIpcObject.initialTitle) : "Desktop"
+      text: ws.toplevels.values.length > 0 ? (
+        (ws.toplevels.values[0].lastIpcObject.initialTitle.split(" ")[0] !== "org") ? 
+          ws.toplevels.values[0].lastIpcObject.initialTitle.split(" ")[0].split("/").pop() 
+          : ws.toplevels.values[0].lastIpcObject.initialTitle.split("/").pop()
+      ) : "Desktop"
       font.family: font_family
       font.weight: active_weight
       font.italic: active_italic
