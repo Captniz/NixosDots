@@ -52,7 +52,10 @@
 
     ########### Testing
 
-    
+    zed-editor
+    nil
+    nixd
+
     ########### Temporary
 
     ########### Essentials
