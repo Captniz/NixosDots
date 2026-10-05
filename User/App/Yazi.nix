@@ -258,8 +258,8 @@ in
         ];
         code = [
           {
-            run = "code \"$(echo %s1)\"";
-            desc = "Code";
+            run = "${userSettings.ide} \"$(echo %s1)\"";
+            desc = "Open with IDE";
             for = "linux";
           }
         ];

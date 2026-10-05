@@ -23,7 +23,6 @@
     ./User/App/Zathura.nix
     ./User/App/Git.nix
     ./User/App/Quickshell.nix
-    ./User/App/Vscode.nix
     ./User/App/Hyprlock.nix
     ./User/App/Yazi.nix
     ./User/App/HyprIdle.nix
@@ -35,6 +34,7 @@
     ./User/App/FastFetch.nix
     ./User/App/Zen.nix
     ./User/App/Zed.nix
+    #./User/App/Vscode.nix
     #./User/App/Kathara.nix
     #./User/App/Obsidian.nix
   ];

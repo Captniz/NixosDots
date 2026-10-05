@@ -48,13 +48,9 @@
     # dia # Diagram editor
     #lutris # Game client
     # jetbrains.idea # IDE
-    # jdk25 # temporary Java version for IDEA proj
+    # vscode # Code editor
 
     ########### Testing
-
-    zed-editor
-    nil
-    nixd
 
     ########### Temporary
 
@@ -106,7 +102,6 @@
     nodejs_22 # Node.js
     rustfmt # Rust
     rustc # Rust
-    rustup # Rust toolchain manager
     rust-analyzer # Rust language server
     leptosfmt # Leptos utility
     cargo # Rust
@@ -127,6 +122,8 @@
     typescript # TypeScript
     typescript-language-server # TypeScript
     polyml # ML
+    nil # Nix Language Server
+    nixd  # Nix Language Server
 
     ########### Dependencies/Libraries
 
@@ -234,10 +231,10 @@
     docker # Container manager
     steam # Game client
     vlc # Media player
+    zed-editor # IDE
     obs-studio # Media creator / Streaming software
     mongosh # MongoDB shell
     rofi # App launcher
-    vscode # Code editor
     obsidian # Note taking app
     cider-2 # Apple Music client
     unityhub # Unity IDE

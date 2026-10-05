@@ -75,6 +75,7 @@
         browser = "zen"; # Default browser; must select one from ./user/app/browser/
         term = "alacritty"; # Default terminal command;
         editor = "nvim"; # Default editor;
+        ide = "zeditor"; # Default IDE; !Command to run the ide in the terminal
         scriptsPath = "/etc/nixos/User/Scripts"; # Path to user scripts
       };
 

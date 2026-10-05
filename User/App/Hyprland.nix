@@ -112,7 +112,7 @@ in
         "SUPER, RETURN, New Terminal, exec, alacritty --class Term"
         "SUPER, R, Show App Launcher, exec, rofi -show drun"
         "SUPER, F, Open Browser,exec, zen-beta"
-        "SUPER, A, Open IDE,exec, code"
+        "SUPER, A, Open IDE,exec, ${userSettings.ide}"
         "SUPER, Q, Open Obsidian, exec, rofi -show obsidian"
         "SUPER, S, Screenshot, exec, grim -g \"$(slurp)\" - | swappy -f -"
         "SUPER, E, Open File-manager, exec,alacritty --class Yazi -e yazi "
