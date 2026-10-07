@@ -23,6 +23,17 @@
     ];
   };
 
+  # Enable nix-ld to use Nix packages as dynamic libraries
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      zlib
+      openssl
+      curl
+    ];
+  };
+
   # Nix store optimisations
   nix = {
     optimise = {
@@ -123,7 +134,7 @@
     typescript-language-server # TypeScript
     polyml # ML
     nil # Nix Language Server
-    nixd  # Nix Language Server
+    nixd # Nix Language Server
 
     ########### Dependencies/Libraries
 
@@ -209,6 +220,7 @@
 
     ########### Programs & Apps
 
+    inputs.lucidadl.packages.${pkgs.stdenv.hostPlatform.system}.default
     z-library-desktop # Ebook downloader
     feishin # Navidrome client
     wf-recorder # Screen recorder
