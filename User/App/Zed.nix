@@ -3,6 +3,7 @@
   lib,
   pkgs,
   userSettings,
+  inputs,
   ...
 }:
 
@@ -330,6 +331,7 @@
       completion_menu_scrollbar = "always";
       relative_line_numbers = "disabled";
       edit_predictions = {
+        provider = "copilot";
         allow_data_collection = "no";
         mode = "subtle";
       };
@@ -346,7 +348,7 @@
       autoscroll_on_clicks = false;
       base_keymap = "VSCode";
       buffer_font_fallbacks = [
-        "FiraCode Nerd Font Ret"
+        "FiraCode Nerd Font"
       ];
       buffer_font_family = "FiraMono Nerd Font Mono";
       buffer_font_size = 16.0;
@@ -377,6 +379,20 @@
         rust-analyzer = {
           binary = {
             path = "/nix/store/1xkz9vjfvj0p4a2s7v9rpkc9jix1fmln-rust-analyzer-2026-08-03/bin/rust-analyzer";
+          };
+        };
+      };
+      languages = {
+        Rust = {
+          language_servers = [ "rust-analyzer" ];
+          format_on_save = "on";
+          formatter = {
+            formatter = {
+              language_server = {
+                name = "rust-analyzer";
+                method = "rustfmt";
+              };
+            };
           };
         };
       };
