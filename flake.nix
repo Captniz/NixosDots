@@ -37,6 +37,11 @@
       flake = false;
     };
 
+    lucidadl = {
+        url = "github:Jude-A/lucidadl";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #kathara = {
     #  url = "github:Captniz/Kathara";
     #  inputs.nixpkgs.follows = "nixpkgs";

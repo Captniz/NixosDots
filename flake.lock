@@ -194,6 +194,26 @@
         "type": "github"
       }
     },
+    "lucidadl": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791362218,
+        "narHash": "sha256-CM0SUwIY4hCGbYazUx6GiI/Tbd9+J/VmJO3iDF10nHs=",
+        "owner": "Captniz",
+        "repo": "lucidadl",
+        "rev": "0796afb1a2b64bb1afea8a827b3ccd19baa87868",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Captniz",
+        "repo": "lucidadl",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1789426278,
@@ -236,6 +256,7 @@
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "hyprland-qtutils": "hyprland-qtutils",
+        "lucidadl": "lucidadl",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
         "wallpapers": "wallpapers",
