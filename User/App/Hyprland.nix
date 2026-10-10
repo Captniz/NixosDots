@@ -17,7 +17,7 @@ in
   # Programs & configs
   wayland.windowManager.hyprland = {
     enable = true;
-    configType = "hyprlang"; #!TODO CHANGE IN THE FUTURE TO LUA
+    configType = "hyprlang"; # !TODO CHANGE IN THE FUTURE TO LUA
     xwayland.enable = true;
 
     settings = {

@@ -201,15 +201,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1791362218,
-        "narHash": "sha256-CM0SUwIY4hCGbYazUx6GiI/Tbd9+J/VmJO3iDF10nHs=",
-        "owner": "Captniz",
+        "lastModified": 1791384787,
+        "narHash": "sha256-m/wHfzZGeH0lf6ItVFSky2bw294eae9sUNFuQjnX+l8=",
+        "owner": "Jude-A",
         "repo": "lucidadl",
-        "rev": "0796afb1a2b64bb1afea8a827b3ccd19baa87868",
+        "rev": "78038809171c4d12592bc266f55bfb3d31bf71fa",
         "type": "github"
       },
       "original": {
-        "owner": "Captniz",
+        "owner": "Jude-A",
         "repo": "lucidadl",
         "type": "github"
       }

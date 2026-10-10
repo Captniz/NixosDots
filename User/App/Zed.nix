@@ -8,6 +8,7 @@
 }:
 
 {
+
   programs.zed-editor = {
     enable = true;
     defaultEditor = true;
@@ -263,7 +264,7 @@
         button = true;
       };
       focus_follows_mouse = {
-        enabled = true;
+        enabled = false;
       };
       bottom_dock_layout = "contained";
       tabs = {
@@ -383,6 +384,9 @@
         };
       };
       languages = {
+        Nix = {
+          tab_size = 2;
+        };
         Rust = {
           language_servers = [ "rust-analyzer" ];
           format_on_save = "on";

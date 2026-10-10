@@ -38,8 +38,8 @@
     };
 
     lucidadl = {
-        url = "github:Jude-A/lucidadl";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Jude-A/lucidadl";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     #kathara = {
@@ -60,7 +60,7 @@
     }@inputs:
     let
       # ----- SYSTEM SETTINGS ----- #
-      systemSettings = rec {
+      systemSettings = {
         system = "x86_64-linux"; # system arch
         hostname = "nixos"; # hostname
         profile = "default"; # select a profile defined from my profiles directory
@@ -89,7 +89,7 @@
 
     in
     {
-      packages.x86_64-linux.wallpapers-path = builtins.toString wallpapers;
+      packages.x86_64-linux.wallpapers-path = toString wallpapers;
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           system = systemSettings.system;

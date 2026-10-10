@@ -27,13 +27,14 @@
     ./User/App/Yazi.nix
     ./User/App/HyprIdle.nix
     ./User/App/Nvim.nix
-    ./User/App/Hakuneko.nix
     ./User/App/Awww.nix
     ./User/App/Clipboard.nix
     ./User/App/Polkit.nix
     ./User/App/FastFetch.nix
     ./User/App/Zen.nix
     ./User/App/Zed.nix
+    ./User/App/Swappy.nix
+    #./User/App/Hakuneko.nix
     #./User/App/Vscode.nix
     #./User/App/Kathara.nix
     #./User/App/Obsidian.nix
