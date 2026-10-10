@@ -138,22 +138,27 @@ in
     syntaxHighlighting.enable = true;
     shellAliases = {
       # General
-      acp = "rsync -avh --progress";
-      clr = "clear";
-      psqlogin = "sudo -u postgres psql";
       cat = "bat";
-      gacp = "git add * ; git commit --all -m '.' ; git push --all";
-      zip = "7z a -r -tzip";
-      search = "yazi $(fzf)";
-      searchall = "cd /;yazi $(fzf)";
       cd = "z";
-      ocr = "${userSettings.scriptsPath}/OcrTextExtractor.sh";
-      unmount-ext = "sudo umount -f /mnt/ExtDrive";
-      mount-network = "${userSettings.scriptsPath}/MountNetwork.sh";
-      unmount-network = "sudo umount -f /mnt/Network";
       hybernate = "systemctl hibernate";
       hybrid-sleep = "systemctl hybrid-sleep";
+
+      # Shortcuts
+      clr = "clear";
+      unmount-ext = "sudo umount -f /mnt/ExtDrive";
+      psqlogin = "sudo -u postgres psql";
+      acp = "rsync -avh --progress";
+      gacp = "git add * ; git commit --all -m '.' ; git push --all";
+      zip = "7z a -r -tzip";
+      unmount-network = "sudo umount -f /mnt/Network";
+
+      # Scripts / Functions
+      mount-network = "${userSettings.scriptsPath}/MountNetwork.sh";
+      search = "yazi $(fzf)";
+      searchall = "cd /;yazi $(fzf)";
+      ocr = "${userSettings.scriptsPath}/OcrTextExtractor.sh";
       ssh-menu = "rofi -show 'ssh'";
+      dl-devshell = "${userSettings.scriptsPath}/DownloadShell.sh";
 
       #! Hasn't been necessary recently
       # fixaudio = "systemctl restart --user pipewire.service";
