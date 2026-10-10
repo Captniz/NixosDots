@@ -263,7 +263,7 @@
         button = true;
       };
       focus_follows_mouse = {
-        enabled = false;
+        enabled = true;
       };
       bottom_dock_layout = "contained";
       tabs = {
@@ -387,11 +387,9 @@
           language_servers = [ "rust-analyzer" ];
           format_on_save = "on";
           formatter = {
-            formatter = {
-              language_server = {
-                name = "rust-analyzer";
-                method = "rustfmt";
-              };
+            language_server = {
+              name = "rust-analyzer";
+              method = "rustfmt";
             };
           };
         };
